@@ -912,11 +912,11 @@ text-align: right;
     background:var(--bg-card-color);background: #945e01;
     position: relative; z-index: 100;
     height: 0; width: 4.55rem; top: -0.75rem;/* width: calc(var(--width_LO1)+(2*var(--n)));left: calc(-(var(--n)));  */
-    max-height: 6.5rem;
+    max-height: 8.5rem;
     display: none;
     box-shadow: var(--box-shadow1) ;
     }
-.opciones3.active {display: block;height: 6.5rem; animation: fadeIn .3s forwards;}
+.opciones3.active {display: block;height: 8.5rem; animation: fadeIn .3s forwards;}
 
 .opciones03{background: #140040;
     display: flex;justify-content: center;align-items: center;flex-direction: column;
@@ -988,7 +988,7 @@ font-size: var(--font-size1);font-family: var(--font-family1);font-weight: var(-
 background:var(--bg-card-color);
 position: relative; z-index: 100;
 height: 0; width: calc(var(--width_LO1) + var(--n));left: calc((-1) * (var(--n) / 2)); top: -0.75rem;/* width: calc(var(--width_LO1)+(2*var(--n)));left: calc(-(var(--n)));  */
-max-height: 6.5rem;
+max-height: 12.25rem;
 display: none;
 border-radius: var(--border-radius_tex);
 box-shadow: var(--box-shadow1) ;
@@ -1002,7 +1002,7 @@ box-shadow: var(--box-shadow1) ;
   /*
 
 */
-.opciones.active {display: block;height: 6.5rem;padding: 0.25rem; animation: fadeIn .3s forwards;}
+.opciones.active {display: block;height: 12.25rem;padding: 0.25rem; animation: fadeIn .3s forwards;}
 
 .opciones0{
     display: flex;justify-content: center;align-items: center;flex-direction: column;
@@ -1332,13 +1332,29 @@ transition: .5s ease all;
                             </div>
                       
                             <div class="opciones" id="opciones3">
-                            <div class="opciones0" id="opciones03">
+                            <div class="opciones0" id="opciones03"> <!-- 'BTCUSDT','ETHUSDT','BNBUSDT','SOLUSDT','XRPUSDT','AVAXUSDT','DOGEUSDT' -->
+                              <!-- 
+                              <div class="contenido-opcion" name="contenido_opcion3">ADAUSDT </div>
+                              <div class="contenido-opcion" name="contenido_opcion3">AVAXUSDT</div>
+                              <div class="contenido-opcion" name="contenido_opcion3">BNBUSDT </div>
+                              <div class="contenido-opcion" name="contenido_opcion3">BTCUSDT </div>
+                              <div class="contenido-opcion" name="contenido_opcion3">DOGEUSDT</div>
+                              <div class="contenido-opcion" name="contenido_opcion3">DOTUSDT </div>
+                              <div class="contenido-opcion" name="contenido_opcion3">ETHUSDT </div>
+                              <div class="contenido-opcion" name="contenido_opcion3">LINKUSDT</div>
+                              <div class="contenido-opcion" name="contenido_opcion3">SOLUSDT </div>
+                              <div class="contenido-opcion" name="contenido_opcion3">TRXUSDT </div>
+                              <div class="contenido-opcion" name="contenido_opcion3">XRPUSDT </div>
+                              <div class="contenido-opcion" name="contenido_opcion3">XLMUSDT </div>
+                              <div class="contenido-opcion" name="contenido_opcion3">YFIUSDT </div>
+                              -->
+                              <div class="contenido-opcion" name="contenido_opcion3">AVAXUSDT</div>
+                              <div class="contenido-opcion" name="contenido_opcion3">BNBUSDT</div>
                               <div class="contenido-opcion" name="contenido_opcion3">BTCUSDT</div>
+                              <div class="contenido-opcion" name="contenido_opcion3">DOGEUSDT</div>
+                              <div class="contenido-opcion" name="contenido_opcion3">ETHUSDT</div>
+                              <div class="contenido-opcion" name="contenido_opcion3">SOLUSDT</div>
                               <div class="contenido-opcion" name="contenido_opcion3">XRPUSDT</div>
-                              <div class="contenido-opcion" name="contenido_opcion3">BTCUSDT</div>
-                              <div class="contenido-opcion" name="contenido_opcion3">BTCUSDT</div>
-                              <div class="contenido-opcion" name="contenido_opcion3">XRPUSDT</div>
-                              <div class="contenido-opcion" name="contenido_opcion3">BTCUSDT</div>
                             </div> 
                             </div>
                           </div>
@@ -1683,7 +1699,7 @@ transition: .5s ease all;
               <tr id="tr_3"  name="TR">
                 <td id="td_sp3" class="td_cf" name="d_sp" ><div class="d_s" id="p_s3">XRPUSDT</div></td>
                 <td id="td_ci3" class="td_cf"><div class="d_cf"><p name="L"  id="p_ci3" >7.2261  </p></div></td>
-                <td id="td_pc3" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc3" >0.525   </p></div></td>
+                <td id="td_pc3" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc3" >0.525000   </p></div></td>
                 <td id="td_pv3" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv3" >5.25    </p></div></td>
                 <td id="td_dp3" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp3" >4.725   </p></div></td>
                 <td id="td_c3"  class="td_cf"><div class="d_cf"><p name="L"  id="p_c3"  >0.10     </p> </div></td>
@@ -2171,19 +2187,10 @@ transition: .5s ease all;
    -->
 <script> 
 //########################################################################### ↓↑ ⟵ ⟶  ⭠ ⭢  ← →     ⬆ ⬇ ➡ ⬅  ⇧ ⇩ ⇦ ⇨  ⬌ ⬍ [Solo funcionan en 'Gimp': ↓↑  ← → ⇧ ⇩ ⇦ ⇨ ]  //https://textkool.com/es/symbols/arrows-symbols  
-//rgb(124, 124, 124) rgb(   78, 78, 78)
-var N= "", cont=0, cont2=0, COLOR=0, BOX0="", BOX1="", BOX2="", BOX3="", BOX4="", BOX5="", BOX6="", BOX7="", BOX8="", 
-booleanGT="", IMPRIMIRTEXTO=1, arrayBox=[0,0,0,0,0,0,0,0], precioBTC0="", precioBTC="0", PRECIOBTC=1, incremento=1000, priceArray=[], totalPriceArray0=[], totalPriceArray01=[], 
-totalPriceArray=[],totalPriceArray02=[],  totalTimeArray0=[], totalTimeArray01=[], totalTimeArray02=[], totalTimeArray=[], totalPriceArray2=[], totalTimeArray2=[], totalPriceArray3=[], totalTimeArray3=[], 
-maxLength=200, X, Y, ARROW=0, ACTUALIZAPRECIO=0, AUTO=0,
-CHECKBOX1=0,CHECKBOX2=1;
-  
+var N= "", cont=0, cont2=0, COLOR=0, booleanGT="", boleano="", IMPRIMIRTEXTO=1, ACTUALIZAPRECIO=0, CHECKBOX1=0, CHECKBOX2=1, BOX0="", BOX1="", BOX2="", BOX3="", BOX4="", BOX5="", BOX6="", BOX7="", BOX8=""; 
 //GENERAR TIEMPO 1:
 Date.prototype.addMillisecs = function(d) { this.setTime(this.getTime() + (d)); return this; }
-var mydate0=new Date(); 
-var dia0 = new String(mydate0.getDate()); 
-var m0 = Number(mydate0.getMonth()+1);; 
-var mes0 = new String(m0);
+var mydate0=new Date() , dia0 = new String(mydate0.getDate()) , m0 = Number(mydate0.getMonth()+1) , mes0 = new String(m0); 
 if (dia0.length<2) {dia0="0"+dia0;}else{dia0=dia0;} if (mes0.length<2) {mes0="0"+mes0;}else{mes0=mes0;}
 var anio0 = Number( mydate0.getYear())+1900;//CORRECCION AL SISTEMA: +1900 
 Copyright.innerText= anio0;
@@ -2403,14 +2410,14 @@ function genera_tabla() {
   //******************************************************************************(3a)
   //DATOS PARA PERIODO FINAL:tbodyF
   let diaF3='', mesF3='', anioF3='';
-  for (let ff= 1; ff<=N; ff++) {console.log('ff',(ff));
+  for (let ff= 1; ff<=N; ff++) {
     //CALCULOS INTERES COMPUESTO CON APORTES 
     CIF30 = ( (Math.pow((1+Ted/100 ),(1))-1)*CIF30+CIF30 )  +C; var RCA = formato(CIF30-C) +" "+moneda;
     //CALCULOS INTERES COMPUESTO SIN APORTES  
     var M2 = ((Math.pow((1+Ted/100 ),(ff))-1)*CI+CI); var RSA = formato(M2) +" "+moneda;
     //GENERAR TIEMPO 3:
     var mydate03=new Date(); 
-    var mydate3 = mydate03.addMillisecs(((ff)*p)*24*60*60*1000);console.log('ff-1',(ff-1));
+    var mydate3 = mydate03.addMillisecs(((ff)*p)*24*60*60*1000);
     diaF3 = new String(mydate3.getDate()); 
     var mF = Number(mydate3.getMonth()+1);; 
     mesF3 = new String(mF);
@@ -2470,7 +2477,6 @@ function genera_tabla() {
   document.getElementById("bC"+cont).click();//COLLAPSE tbodyF
 } // FIN DE function genera_tabla()
 
-var boleano=""; 
 function TAZA(taza, dias, boleano){//PARA INTRODUCIR TEXTO EN VIVO A CASILLAS, Y DE SELECTOR 'Selector2' A CASILLA 'boxTED' 
   var exponente = "";
   if (boleano==2) exponente = Number(1/(dias/360));// Para Taza Efectiva Anual
@@ -2515,25 +2521,18 @@ function visibleTr2(cont2){document.getElementById("tbody2_"+cont2).style.visibi
 
  //#####################################################################################################################
 
-
-var r="rgb(200,0,0)", v='rgb(0,200,0)', TOGGLE=1, EDITAR=1, ACTUALIZAPRECIO=1, TABLADINAMICA=1
-, simboloPar='',cuentaInicial='', gananciaXBTC='', comision='',gananciaXBTC='', gananciaXFraccion='', cuentaFinal='',pCompra='', pVenta=''
-, nn=3, contD=0+nn , contE=0+nn , contTD=nn , contTE=nn;
-var cuentaInicialT='', gananciaXBTCT='', comisionT='',gananciaXBTCT='', gananciaXFraccionT='', cuentaFinalT='',pCompraT='', pVentaT='';
-var  arrayBox=[0,0,0,0,0,0,0,0];
-var ANCHODIV=1, AD='', contAD=-1;
-var  colorRT=0;
-let c=0;
-let old_price1=0,precio1=0;
+var r="rgb(200,0,0)", v='rgb(0,200,0)', TOGGLE=1, EDITAR=1, ACTUALIZAPRECIO=1, TABLADINAMICA=1, simboloPar='',cuentaInicial='', gananciaXBTC='', comision='',gananciaXBTC='', gananciaXFraccion='', cuentaFinal='',pCompra='', pVenta=''
+, nn=3, contD=0+nn , contE=0+nn , contTD=nn , contTE=nn, arrayBox=[0,0,0,0,0,0,0,0,0], ANCHODIV=1, AD='', contAD=-1, colorRT=0, C=0, old_price1=0,precio1=0, cuentaInicialT='', gananciaXBTCT='', comisionT='',gananciaXBTCT='', gananciaXFraccionT='', cuentaFinalT='',pCompraT='', pVentaT=''; 
+var cuentainicial=0, cuentaFinal=0, sumaTotal_ci=0, sumaTotal_cf=0, array_ci=[], array_cf=[];
+let pvBTC=0,pvXRP=0, precio='';
 
 function formato(input) { // OJO::::: RECTIFICAR PARA: 18888888888888888 INTRODUCIDO EN id="precioCompra", DA COMO RESULTADO: 18,888,888,888,888,890.00  // 1999999999999999999 ➡ 2,000,000,000,000,000,000.00  // 19999999999999999 ➡ 20,000,000,000,000,000.00
   var cadena= new String(input); var x = cadena.split("."); //var x = cadena.replace(/,/g,"").split(".");
   var x1 =  x[0];//PARTE ENTERA
   var x2 = "";//PARTE DECIMAL 
   var rgx0 = /[a-zA-Z]/;
-  var moneda="Soles"; // var moneda=document.getElementById("money").value;
   if (rgx0.test(cadena)==true) { //SI ENCUENTRA LETRAS EN LA CADENA: infinity NaN isNaN 5.554680159996e+333
-    return cadena; //PENDIENTE DE REVISION: /\d+/.test(cadena) ? c= cadena+" "+moneda :c= cadena; return c; ////SI ENCUENTRA NUMERACION EN LA CADENA RETORNA cadena + moneda, SI ENCUENTRA SOLO LETRAS: infinity NaN isNaN RETORNA cadena
+    return cadena;////SI ENCUENTRA NUMERACION EN LA CADENA RETORNA cadena + moneda, SI ENCUENTRA SOLO LETRAS: infinity NaN isNaN RETORNA cadena
     }
     else {//SI ENCUENTRA SOLO NUMEROS EN LA CADENA
       for (var j = 0; j < cadena.length; j++) { if (cadena.charAt(j)==".") break; }
@@ -2555,27 +2554,7 @@ function formato1(input) { //FORMATO SOLO PARA CASILLA id="tea1", SOLO CAMBIA UN
   var rgx0 = /[a-zA-Z]/;
   var moneda="Soles"; // var moneda=document.getElementById("money").value;
   if (rgx0.test(cadena)==true) { //SI ENCUENTRA LETRAS EN LA CADENA: infinity NaN isNaN 5.554680159996e+333
-    return cadena; //PENDIENTE DE REVISION: /\d+/.test(cadena) ? c= cadena+" "+moneda :c= cadena; return c; ////SI ENCUENTRA NUMERACION EN LA CADENA RETORNA cadena + moneda, SI ENCUENTRA SOLO LETRAS: infinity NaN isNaN RETORNA cadena
-    }
-    else {//SI ENCUENTRA SOLO NUMEROS EN LA CADENA
-      for (var j = 0; j < cadena.length; j++) { if (cadena.charAt(j)==".") break; }
-      var d = cadena.substring(j,j+20+1);//CORTAR CADENA DE DECIMALES A 20 DIGITOS INCLUIDO EL PUNTO
-      if (d.length==0) {x2= d + ".00";} else if(d.length==2){x2= d + "0";} else{x2= d + "";}
-      var rgx = /(\d+)(\d{3})/;
-      for (i = 1; i <= Math.trunc(x1.length/3); i++) {// trunc OBTIENE LA PARTE ENTERA DE: LA LONGITUD DE x1 DIVIDIDO POR 3
-          x1 = x1.replace(rgx, '$1' + ',' + '$2');  
-        }       
-      return x1+x2;
-    } 
-} 
-function formato2(input) { //FORMATO SOLO PARA CASILLA id="tea1", SOLO CAMBIA UNA LINEA: var d = cadena.substring(j,j+20+1);  
-  var cadena= new String(input); var x = cadena.split("."); //var x = cadena.replace(/,/g,"").split(".");
-  var x1 =  x[0];//PARTE ENTERA
-  var x2 = "";//PARTE DECIMAL 
-  var rgx0 = /[a-zA-Z]/;
-  var moneda="Soles"; // var moneda=document.getElementById("money").value;
-  if (rgx0.test(cadena)==true) { //SI ENCUENTRA LETRAS EN LA CADENA: infinity NaN isNaN 5.554680159996e+333
-    return cadena; //PENDIENTE DE REVISION: /\d+/.test(cadena) ? c= cadena+" "+moneda :c= cadena; return c; ////SI ENCUENTRA NUMERACION EN LA CADENA RETORNA cadena + moneda, SI ENCUENTRA SOLO LETRAS: infinity NaN isNaN RETORNA cadena
+    return cadena; //SI ENCUENTRA NUMERACION EN LA CADENA RETORNA cadena + moneda, SI ENCUENTRA SOLO LETRAS: infinity NaN isNaN RETORNA cadena
     }
     else {//SI ENCUENTRA SOLO NUMEROS EN LA CADENA
       for (var j = 0; j < cadena.length; j++) { if (cadena.charAt(j)==".") break; }
@@ -2588,39 +2567,191 @@ function formato2(input) { //FORMATO SOLO PARA CASILLA id="tea1", SOLO CAMBIA UN
       return x1+x2;
     } 
 } 
+function formato2(input) { //  CORREGIR: DA 66,600. POR 66,600.00  //ELIMINAR CEROS DEMAS 0.456000 A 0.456  
+  var cadena= new String(input); var x = cadena.split("."); //var x = cadena.replace(/,/g,"").split(".");
+  var x1 =  x[0];//PARTE ENTERA
+  var x2 = "";//PARTE DECIMAL 
+  var rgx0 = /[a-zA-Z]/;
+  var nuevaCadena = "", nuevaCadena2='';
+  if (rgx0.test(cadena)==true) { //SI ENCUENTRA LETRAS EN LA CADENA: infinity NaN isNaN 5.554680159996e+333
+    return cadena;////SI ENCUENTRA NUMERACION EN LA CADENA RETORNA cadena + moneda, SI ENCUENTRA SOLO LETRAS: infinity NaN isNaN RETORNA cadena
+    }
+    else {//SI ENCUENTRA SOLO NUMEROS EN LA CADENA
+      for (var j = 0; j < cadena.length; j++) { if (cadena.charAt(j)==".") break; }
+      var d = cadena.substring(j,j+6+1);//CORTAR CADENA DE DECIMALES A 6 DIGITOS 
+      for (var j = d.length-1; j >= 0; j--) { //ELIMINAR CEROS DEMAS 0.456000 A 0.456 
+        if (d.charAt(j)!="0") break; nuevaCadena += d[i];//  ⟵ ⟵ ⟵ ⟵ ⟵ ⟵ ⟵ ⟵ ⟵ ⟵ ⟵ CORREGIR 'i'
+      }
+      nuevaCadena2=d.substring(0 ,d.length - nuevaCadena.length);
+      ///x2= nuevaCadena2 + "";  
+      if (nuevaCadena2.length==0) {x2= nuevaCadena2 + ".00";} else if(nuevaCadena2.length==2){x2= nuevaCadena2 + "0";} else{x2= nuevaCadena2 + "";}
+      var rgx = /(\d+)(\d{3})/;
+      for (i = 1; i <= Math.trunc(x1.length/3); i++) {// trunc OBTIENE LA PARTE ENTERA DE: LA LONGITUD DE x1 DIVIDIDO POR 3
+          x1 = x1.replace(rgx, '$1' + ',' + '$2');  
+        }       
+      return x1+x2;
+    } 
+} 
+
+function F1(m,n) { //FORMATEA CON n DECIMALES 
+  let cadena= new String(m), rgx = /(\d+)(\d{3})/, ceros='',nuevaCadena='', decimal, d, nuevaParteEntera='', e; //console.log('cadena====',cadena);//var x = cadena.replace(/,/g,"").split(".");
+  (n==undefined || n==0 || n=='')? n=Number(n) : n=Number(n)//n=2: PARA UN RETORNO CON DOS DECIMALES COMO MINIMO
+  if (/[a-zA-Z]/.test(cadena)==true) { //SI ENCUENTRA LETRAS EN LA CADENA: infinity NaN isNaN 5.554680159996e+333
+    return cadena; 
+  }
+  else {//SI ENCUENTRA SOLO NUMEROS Y UN PUNTO EN LA CADENA
+      if (/[.]/.test(cadena)==true) {//SI ENCUENTRA PUNTO EN LA CADENA
+          e = cadena.split('.')[0];//d: PARTE ENTERA
+          d = cadena.split('.')[1];//d: PARTE DECIMAL
+          if (d.length >=n) {
+              decimal = d.substring(0, n);//CORTAR CADENA DE DECIMALES A n DIGITOS  
+          }
+          if (d.length < n) {
+              for (let i = 1; i <= n-d.length; i++) {ceros += '0';}//COMPLETA PARTE DECIMAL CON CEROS
+              decimal = d+ceros;//console.log('decimal....',decimal);
+          }
+          //AGREGAR COMAS A LA PARTE ENTERA:
+          for (i = 1; i <= Math.trunc(e.length/3); i++) {// trunc OBTIENE LA PARTE ENTERA DE: LA LONGITUD DE e DIVIDIDO POR 3
+              e = e.replace(rgx, '$1' + ',' + '$2');  
+          } 
+          (n==undefined || n==0 || n=='')? nuevaParteEntera=e+'' : nuevaParteEntera=e+'.'+decimal;
+          return nuevaParteEntera;
+      } 
+      else {
+          for (let i = 1; i <= n; i++) {ceros += '0';}//GENERAR CEROS PARA PARTE DECIMAL DE 2CADENA
+          //AGREGAR COMAS A LA CADENA:
+          for (let i = 1; i <= Math.trunc(cadena.length/3); i++) {// trunc OBTIENE LA PARTE ENTERA DE: LA LONGITUD DE e DIVIDIDO POR 3
+              cadena = cadena.replace(rgx, '$1' + ',' + '$2');  
+          } 
+          (n==undefined || n==0 || n=='')? nuevaCadena = cadena : nuevaCadena = cadena+'.'+ceros;
+          return nuevaCadena;
+      }
+  }
+} 
+
+function F2(m) { //ELIMINAR CEROS DEMAS 0.456000 A 0.456  
+  let cadena= new String(m), rgx = /(\d+)(\d{3})/, d, e, ceros = "", parteDecimal='';//console.log('cadena::::',cadena);//var x = cadena.replace(/,/g,"").split(".");
+  if (/[a-zA-Z]/.test(cadena)==true) { //SI ENCUENTRA LETRAS EN LA CADENA: infinity NaN isNaN 5.554680159996e+333
+    return cadena; 
+  }
+  else {//SI ENCUENTRA SOLO NUMEROS Y UN PUNTO EN LA CADENA
+      if (/[.]/.test(cadena)==true) {//SI ENCUENTRA PUNTO EN LA CADENA
+          e = cadena.split('.')[0];//d: PARTE ENTERA
+          d = cadena.split('.')[1];//d: PARTE DECIMAL
+          for (let j = d.length-1; j >= 0; j--) { //ELIMINAR CEROS DEMAS 0.456000 A 0.456 
+            if (d.charAt(j)!="0") break; ceros += d[j];
+          }
+          parteDecimal=d.substring(0 ,d.length - ceros.length);
+          if(parteDecimal.length==1){parteDecimal=parteDecimal+'0'}//COMPLETA PARTE DECIMAL
+          if(parteDecimal==''){parteDecimal='00'}//COMPLETA PARTE DECIMAL
+          //AGREGAR COMAS A LA PARTE ENTERA:
+          for (let i = 1; i <= Math.trunc(e.length/3); i++) {// trunc OBTIENE LA PARTE ENTERA DE: LA LONGITUD DE e DIVIDIDO POR 3
+              e = e.replace(rgx, '$1' + ',' + '$2');  
+          } 
+          return e+'.'+parteDecimal; //console.log('e....',e);
+      } 
+      else {
+          //AGREGAR COMAS A LA CADENA:
+          for (let i = 1; i <= Math.trunc(cadena.length/3); i++) {// trunc OBTIENE LA PARTE ENTERA DE: LA LONGITUD DE e DIVIDIDO POR 3
+              cadena = cadena.replace(rgx, '$1' + ',' + '$2');  
+          } 
+          return cadena+'';
+      }
+  }
+} 
+
 
 function cleanBoxes(box){
-  var cb0= new String(box);
-  var cb1 = cb0.replace(/ /g, '');//La g significa repetir la búsqueda a través de toda la cadena. // [ CI0.split(/\s/).join('')) ] //[ CI0.replaceAll(" ","") NO FUNCIONA EN EXPLORER ]          
+  var cb0= new String(box) , cb1 = cb0.replace(/ /g, '');//La g significa repetir la búsqueda a través de toda la cadena. // [ CI0.split(/\s/).join('')) ] //[ CI0.replaceAll(" ","") NO FUNCIONA EN EXPLORER ]          
   return cb1; // RETORNA CADENA SIN ESPACIOS VACIOS.
+}
+
+/*ADAUSDT 
+AVAXUSDT
+BNBUSDT 
+BTCUSDT 
+DOGEUSDT
+DOTUSDT 
+ETHUSDT 
+LINKUSDT
+SHIBUSDT
+SOLUSDT 
+TONUSDT 
+TRXUSDT 
+XRPUSDT
+let d='';
+function decimales(){
+  switch (document.getElementById('simbolo').textContent) {
+    case 'ADAUSDT' :d=6; break;
+    case 'AVAXUSDT':d=2; break;
+    case 'BNBUSDT': d=2; break;
+    case 'BTCUSDT': d=2; break;
+    case 'DOGEUSDT':d=6; break;
+    case 'DOTUSDT': d=2; break;
+    case 'ETHUSDT': d=2; break;
+    case 'LINKUSDT':d=2; break;
+    case 'SHIBUSDT':d=8; break;
+    case 'SOLUSDT': d=2; break;
+    case 'TONUSDT': d=2; break;
+    case 'TRXUSDT': d=2; break;
+    case 'XRPUSDT': d=6; break;
+    case 'XLMUSDT': d=6; break;
+    case 'YFIUSDT': d=6; break;
+    case 'ZETAUSDT':d=6; break;
+    //return d;
+  }//console.log("d:", d);
 } 
-let pvBTC=0,pvXRP=0;
-function cotizaciónBtc_binance() {//CAMBIO DE PRECIO CADA 1 SEGUNDO //SIN USO, NO ELIMINAR.
-  //Cotización de Bitcoin en tiempo real Binance: (1): https://www.youtube.com/watch?v=IAOHydmDrmQ  (2): https://github.com/infodp/crypto_cotizacion_vanilla_js  
+*/
+let d='';
+function decimales(){
+  switch (document.getElementById('simbolo').textContent) {
+    case 'AVAXUSDT':d=2; break;
+    case 'BNBUSDT': d=2; break;
+    case 'BTCUSDT': d=2; break;
+    case 'DOGEUSDT':d=6; break;///d=6
+    case 'ETHUSDT': d=2; break;
+    case 'SOLUSDT': d=2; break;
+    case 'XRPUSDT': d=6; break;///d=6
+  }//console.log("d:", d);
+  return d;
+} 
+
+function cotizacion_binance() {//CAMBIO DE PRECIO CADA 1 SEGUNDO //Cotización de Bitcoin en tiempo real Binance: (1): https://www.youtube.com/watch?v=IAOHydmDrmQ  (2): https://github.com/infodp/crypto_cotizacion_vanilla_js  
+  cuentaInicial= (cleanBoxes(document.getElementById("cuentaSpotI").value.replace(/[-,]/g,"")));
+  pCompra= (cleanBoxes(document.getElementById("precioCompra").value.replace(/[-,]/g,"")));
+
   fetch('https://api.binance.com/api/v3/ticker/price')
   .then( respuesta => respuesta.json() )
   .then( datos => mostrarData(datos))
   .catch( e => console.log(e))
   
-    let precio='' , S;
-    let mostrarData = (data)=>{///console.log(data)
-    if (document.getElementById('simbolo').textContent=='BTCUSDT') {S='BTCUSDT';}
-    if (document.getElementById('simbolo').textContent=='XRPUSDT') {S='XRPUSDT';}
-    for (let i=10; i < 310; i++) {//XRPUSDT:i=307  BTCUSDT:i=12 //for (let i=0; i < data.length/50; i++)   //LONGITUD TOTAL: length: 2447
-        if (data[i].symbol==S){precio=(data[i].price);}
-        //pvBTC=data[12].price
-        //pvXRP=data[307].price
-        if (data[i].symbol=='BTCUSDT'){pvBTC=(data[i].price);}
-        if (data[i].symbol=='XRPUSDT'){pvXRP=(data[i].price);}
+  let mostrarData = (data)=>{//BTCUSDT:i=11 ETHUSDT 12, BNBUSDT 98, SOLUSDT 779, XRPUSDT,  296, AVAXUSDT 1052, DOGEUSDT 558, 
+    let sy=document.getElementById('simbolo').textContent;
+    for (let i=0; i < 1060; i++) {//TOTAL:2736 //XRPUSDT:i=307  BTCUSDT:i=12 //for (let i=0; i < data.length/50; i++)   //LONGITUD TOTAL: length: 2447
+      if (data[i].symbol==sy){pVenta=(data[i].price);}/*console.log('pVenta',pVenta);*/
     }
-    document.getElementById('cotizacionBTC').innerText=(S=='BTCUSDT')? formato(precio):formato2(precio); // formato(10000+Number(data.p));
+    decimales();//console.log("d:", d);
+    gananciaXBTC= Number(pVenta) - Number(pCompra);
+    comision= (cleanBoxes(document.getElementById("commission").value.replace(/[-,]/g,"")));
+    var gananciaXFraccion0= (gananciaXBTC - (((Number(pCompra)/100)*Number(comision)) +(((Number(pCompra) + gananciaXBTC)/100)*Number(comision))))*(Number(cuentaInicial)/Number(pCompra)) ;
+    cuentaFinal= Number(cuentaInicial)+gananciaXFraccion0;
+    gananciaXFraccion= gananciaXFraccion0;
+    document.getElementById('Difprecio').value   = F2(F1(gananciaXBTC, d).replace(/[,]/g,""));
+    document.getElementById('precioVenta').value = F2(F1(pVenta, d).replace(/[,]/g,""));
+    document.getElementById("profit").value      = F2(F1(gananciaXFraccion, d).replace(/[,]/g,""));
+    document.getElementById("cuentaSpotF").value = F2(F1(cuentaFinal, d).replace(/[,]/g,"")); 
+
+    actualizaColor(document.getElementById("profit"),gananciaXFraccion,0);
+    actualizaColor(document.getElementById("cuentaSpotF"),cuentaFinal,cuentaInicial);
+
+    document.getElementById('cotizacionBTC').innerText=(sy=='BTCUSDT')? F2(F1(pVenta, d).replace(/[,]/g,"")):F2(F1(pVenta, d).replace(/[,]/g,"")); // formato(10000+Number(data.p));
     precio1= Number(cleanBoxes(document.getElementById("cotizacionBTC").textContent.replace(/[-,]/g,"")));
     if(precio1 > old_price1){cotizacionBTC.style.color=v;svgDOWN1.style.display='none'; svgUP1.style.display='inline';} //else if(price==old_price){cotizacionBTC.style.color="white";}
     else{cotizacionBTC.style.color=r;svgDOWN1.style.display='inline'; svgUP1.style.display='none';}
     old_price1=precio1;
-    document.getElementById('precioVentaVivo').value = (S=='BTCUSDT')? formato(precio):formato2(precio);
+    document.getElementById('precioVentaVivo').value = (sy=='BTCUSDT')? F2(F1(pVenta, d).replace(/[,]/g,"")):F2(F1(pVenta, d).replace(/[,]/g,"")); 
   } //return precioBTC; 
-  
+  actualizaDiferenciaPrecio(); 
 }
 
 function actualizaColor1() {
@@ -2640,40 +2771,29 @@ function cotizaciónBtc_binance_price24hr() {//CAMBIO DE PRECIO CADA 1 SEGUNDO /
   .catch( e => console.log(e))
  const mostrarData = (data)=>{///console.log(data) 
   if (document.getElementById('simbolo').textContent=='BTCUSDT') {
-    c=0;volumen1.textContent='BTC';volumen2.textContent='BTC';monedas1.textContent='BTC';monedas2.textContent='BTC';
+    C=0;volumen1.textContent='BTC';volumen2.textContent='BTC';monedas1.textContent='BTC';monedas2.textContent='BTC';
   }
   if (document.getElementById('simbolo').textContent=='XRPUSDT') {
-    c=1;volumen1.textContent='XRP';volumen2.textContent='XRP';monedas1.textContent='XRP';monedas2.textContent='XRP';
+    C=1;volumen1.textContent='XRP';volumen2.textContent='XRP';monedas1.textContent='XRP';monedas2.textContent='XRP';
   }
-  // console.log('data[0]',data[0]);
-  // //24h Máximo, 24h Mínimo :
-  // console.log('data[0].highPrice',data[0].highPrice); console.log('data[0].lowPrice',data[0].lowPrice);
-  // //Cambio en 24 h :
-  // console.log('data[0].priceChange',data[0].priceChange); console.log('data[0].priceChangePercent',data[0].priceChangePercent);
-  // //24h Volumen(BTC),  24h Volumen(USDT) :
-  // console.log('data[0].volume',data[0].volume); console.log('data[0].quoteVolume',data[0].quoteVolume);
-  //24h Máximo, 24h Mínimo :
-  tdPMax24h_a.innerText=((c==0)? formato(data[c].highPrice)+' USDT': formato2(data[c].highPrice)+' USDT'); tdPMin24h_a.innerText=((c==0)? formato(data[c].lowPrice)+' USDT':formato2(data[c].lowPrice)+' USDT');
-  tdPMax24h_b.innerText=((c==0)? formato(data[c].highPrice)+' USDT': formato2(data[c].highPrice)+' USDT'); tdPMin24h_b.innerText=((c==0)? formato(data[c].lowPrice)+' USDT':formato2(data[c].lowPrice)+' USDT');
+
+  tdPMax24h_a.innerText=((C==0)? formato(data[C].highPrice)+' USDT': formato1(data[C].highPrice)+' USDT'); tdPMin24h_a.innerText=((C==0)? formato(data[C].lowPrice)+' USDT':formato1(data[C].lowPrice)+' USDT');
+  tdPMax24h_b.innerText=((C==0)? formato(data[C].highPrice)+' USDT': formato1(data[C].highPrice)+' USDT'); tdPMin24h_b.innerText=((C==0)? formato(data[C].lowPrice)+' USDT':formato1(data[C].lowPrice)+' USDT');
 
   //Cambio en 24 h :
-  tdC24h_a.innerText=(c==0)? formato(data[c].priceChange)+' USDT':formato2(data[c].priceChange)+' USDT'; tdCp24h_a.innerText=(c==0)? formato(data[c].priceChangePercent)+' %':formato2(data[c].priceChangePercent)+' %';
-  tdC24h_b.innerText=(c==0)? formato(data[c].priceChange)+' USDT':formato2(data[c].priceChange)+' USDT'; tdCp24h_b.innerText=(c==0)? formato(data[c].priceChangePercent)+' %':formato2(data[c].priceChangePercent)+' %';
+  tdC24h_a.innerText=(C==0)? formato(data[C].priceChange)+' USDT':formato1(data[C].priceChange)+' USDT'; tdCp24h_a.innerText=(C==0)? formato(data[C].priceChangePercent)+' %':formato1(data[C].priceChangePercent)+' %';
+  tdC24h_b.innerText=(C==0)? formato(data[C].priceChange)+' USDT':formato1(data[C].priceChange)+' USDT'; tdCp24h_b.innerText=(C==0)? formato(data[C].priceChangePercent)+' %':formato1(data[C].priceChangePercent)+' %';
 
     //24h Volumen(BTC),  24h Volumen(USDT) :
-  tdV24hBTC_a.innerText=(c==0)? formato(data[c].volume)+' BTC':formato(data[c].volume / 1000000)+'M XRP'; tdV24hUSDT_a.innerText=(c==0)? formato(data[c].quoteVolume/1000000)+'B USDT':formato(data[c].quoteVolume/1000000)+'B USDT';
-  tdV24hBTC_b.innerText=(c==0)? formato(data[c].volume)+' BTC':formato(data[c].volume / 1000000)+'M XRP'; tdV24hUSDT_b.innerText=(c==0)? formato(data[c].quoteVolume/1000000)+'B USDT':formato(data[c].quoteVolume/1000000)+'B USDT';
+  tdV24hBTC_a.innerText=(C==0)? formato(data[C].volume)+' BTC':formato(data[C].volume / 1000000)+'M XRP'; tdV24hUSDT_a.innerText=(C==0)? formato(data[C].quoteVolume/1000000)+'B USDT':formato(data[C].quoteVolume/1000000)+'B USDT';
+  tdV24hBTC_b.innerText=(C==0)? formato(data[C].volume)+' BTC':formato(data[C].volume / 1000000)+'M XRP'; tdV24hUSDT_b.innerText=(C==0)? formato(data[C].quoteVolume/1000000)+'B USDT':formato(data[C].quoteVolume/1000000)+'B USDT';
 
-
-  actualizaColor(document.getElementById('tdC24h_a'),data[c].priceChange,0);
-  actualizaColor(document.getElementById('tdCp24h_a'),data[c].priceChange,0);
-  actualizaColor(document.getElementById('tdC24h_b'),data[c].priceChange,0);
-  actualizaColor(document.getElementById('tdCp24h_b'),data[c].priceChange,0);
+  actualizaColor(document.getElementById('tdC24h_a'),data[C].priceChange,0);
+  actualizaColor(document.getElementById('tdCp24h_a'),data[C].priceChange,0);
+  actualizaColor(document.getElementById('tdC24h_b'),data[C].priceChange,0);
+  actualizaColor(document.getElementById('tdCp24h_b'),data[C].priceChange,0);
 }
 }
-///cotizaciónBtc_binance_price24hr();
-
-// let WS=new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@trade'); 
 
 function cotizaciónBtc_WebSocket() {//CAMBIO DE PRECIO CADA 1 SEGUNDO , NO NECESITA TIMER.
   //Cotización de Bitcoin en tiempo real con WebSocket:  https://www.youtube.com/watch?v=bBqytMjLpoU    // https://drive.google.com/file/d/1b515bf3JMqNFcM6oITRZ7UcNHeZhUxeo/view 
@@ -2722,10 +2842,9 @@ function cotizaciónBtc_WebSocket1() {//CAMBIO DE PRECIO CADA 1 SEGUNDO , NO NEC
 }
  function actualizaDiferenciaPrecio(){
   let pc=Number(document.getElementById('precioCompra').value.replace(/[-,]/g,"")); let pv=Number(document.getElementById('precioVenta').value.replace(/[-,]/g,""));
-  let DF=0;//formato(Math.abs(pc - pv));
-  if (document.getElementById('simbolo').textContent=='BTCUSDT') {DF=formato (pv - pc);}
-  if (document.getElementById('simbolo').textContent=='XRPUSDT') {DF=formato2(pv - pc);}
-  Difprecio.value=DF;
+
+  ///let DF=pv - pc;//formato(Math.abs(pc - pv));
+  //Difprecio.value=DF;
   if (pv == pc){
     svgDOWN.style.display='none' ; svgUP.style.display='none'; 
   }
@@ -2737,50 +2856,39 @@ function cotizaciónBtc_WebSocket1() {//CAMBIO DE PRECIO CADA 1 SEGUNDO , NO NEC
   actualizaColor(document.getElementById('Difprecio'),pv,pc);
 }
 
-function actualizaPreciosCard() { ///ACTUALIZA LAS RESPUESTAS CON EL PRECIO DEL MOMENTO. 
-  var precioActual=Number(cleanBoxes(cotizacionBTC.textContent.replace(/[-,]/g,"")));
-  cuentaInicial= Number(cleanBoxes(document.getElementById("cuentaSpotI").value.replace(/[-,]/g,"")));
-  pCompra= Number(cleanBoxes(document.getElementById("precioCompra").value.replace(/[-,]/g,"")));
-  (EDITAR==1)? pVenta= Number(cleanBoxes(document.getElementById("precioVentaVivo").value.replace(/[-,]/g,""))) : pVenta= Number(cleanBoxes(document.getElementById("precioVenta").value.replace(/[-,]/g,"")));
-  comision= Number(cleanBoxes(document.getElementById("commission").value.replace(/[-,]/g,"")));
-  gananciaXBTC= pVenta - pCompra;
-  var gananciaXFraccion0= (gananciaXBTC - (((pCompra/100)*comision) +(((pCompra + gananciaXBTC)/100)*comision)))*(cuentaInicial/pCompra) ;
-  cuentaFinal= cuentaInicial+gananciaXFraccion0;
+function actualizaPreciosCard() {//ACTUALIZA LOS FORMATOS DE LAS CASILLAS. 
+  cuentaInicial= (cleanBoxes(document.getElementById("cuentaSpotI").value.replace(/[-,]/g,"")));
+  pCompra= (cleanBoxes(document.getElementById("precioCompra").value.replace(/[-,]/g,"")));
+  ///console.log('pCompra',pCompra);
+  (EDITAR==1)? pVenta= (cleanBoxes(document.getElementById("precioVentaVivo").value.replace(/[-,]/g,""))) : pVenta= (cleanBoxes(document.getElementById("precioVenta").value.replace(/[-,]/g,"")));
+  comision= (cleanBoxes(document.getElementById("commission").value.replace(/[-,]/g,"")));
+  gananciaXBTC= Number(pVenta) - Number(pCompra);
+  var gananciaXFraccion0= (gananciaXBTC - (((Number(pCompra)/100)*Number(comision)) +(((Number(pCompra) + gananciaXBTC)/100)*Number(comision))))*(Number(cuentaInicial)/Number(pCompra)) ;
+  cuentaFinal= Number(cuentaInicial)+gananciaXFraccion0;
   gananciaXFraccion= gananciaXFraccion0;
-  
-  document.getElementById("profit").value= formato(gananciaXFraccion); //(gananciaXFraccion > 0)? profit.style.color=v : profit.style.color=r;
-  document.getElementById("cuentaSpotF").value= formato(cuentaFinal); 
+  decimales(); 
+  document.getElementById('cuentaSpotI').value = F2(F1(cuentaInicial, d).replace(/[,]/g,""));
+  document.getElementById('precioCompra').value= F2(F1(pCompra, d).replace(/[,]/g,""));
+  document.getElementById('precioVenta').value = F2(F1(pVenta, d).replace(/[,]/g,""));
+  document.getElementById('Difprecio').value   = F2(F1(gananciaXBTC, d).replace(/[,]/g,""));
+  document.getElementById('commission').value  = F2(F1(comision, d).replace(/[,]/g,""));
+  document.getElementById("profit").value      = F2(F1(gananciaXFraccion, d).replace(/[,]/g,""));
+  document.getElementById("cuentaSpotF").value = F2(F1(cuentaFinal, d).replace(/[,]/g,"")); 
+
   actualizaColor(document.getElementById("profit"),gananciaXFraccion,0);
   actualizaColor(document.getElementById("cuentaSpotF"),cuentaFinal,cuentaInicial);
-  if (document.getElementById('simbolo').textContent=='BTCUSDT') {
-    document.getElementById('precioCompra').value = formato(pCompra);
-    document.getElementById('precioVenta').value = formato(pVenta);
-    document.getElementById('Difprecio').value = formato(gananciaXBTC);
-    document.getElementById('cuentaSpotI').value = formato(cuentaInicial);
-    document.getElementById('commission').value = formato2(comision);
-  }
-  if (document.getElementById('simbolo').textContent=='XRPUSDT') {
-    document.getElementById('precioCompra').value = formato2(pCompra);
-    document.getElementById('precioVenta').value = formato2(pVenta);
-    document.getElementById('Difprecio').value = formato2(gananciaXBTC);
-    document.getElementById('cuentaSpotI').value = formato2(cuentaInicial);
-    document.getElementById('commission').value = formato2(comision);
-  } 
-  var now = new Date().getTime();// document.getElementById("cuentaInicial").value= now;
+  
   actualizaDiferenciaPrecio(); 
 } 
 
 function agregarAtabla(){ 
-  actualizaPreciosCard();//FUNCION NESESARIA PARA INSERTAR VALORES EN TABLA     class='d_cf' 
-  var contC=0 , est='', simbolo=document.getElementById('simbolo').textContent, FCI='',FPC='',FPV='', FDP='',FC='',FP='',FCF='';
+  actualizaPreciosCard();//FUNCION NESESARIA PARA INSERTAR VALORES EN TABLA, SE PUEDE REEMPLAZAR POR  cotizacion_binance() ;PERO SE DEMORA MUCHO   
+  var contC=0 , est='', FCI='',FPC='',FPV='', FDP='',FC='',FP='',FCF='';
   (TABLADINAMICA==1)? (est='', contD=contD+1 ,contC=contD, contTD=contTD+1):(est='E', contE=contE+1 ,contC=contE, contTE=contTE+1);
-  if (document.getElementById('simbolo').textContent=='BTCUSDT') {
-    FCI=formato(cuentaInicial);FPC=formato(pCompra);FPV=formato(pVenta);FDP=formato(gananciaXBTC);FC=formato2(comision);FP=formato(gananciaXFraccion);FCF=formato(cuentaFinal);
-  }
-  if (document.getElementById('simbolo').textContent=='XRPUSDT') {
-    FCI=formato2(cuentaInicial);FPC=formato2(pCompra);FPV=formato2(pVenta);FDP=formato2(gananciaXBTC);FC=formato2(comision);FP=formato2(gananciaXFraccion);FCF=formato2(cuentaFinal);
-  } 
-  var TR= "<tr id='tr_"+est+contC+"'"+" name='TR'><td class='td_cf' id='td_sp"+est+contC+"'><div class='d_s' id='p_s"+est+contC+"'>"+simbolo+
+  decimales();console.log("d::::::", d);
+  FCI=F2(F1(cuentaInicial, d).replace(/[,]/g,""));FPC=F2(F1(pCompra, d).replace(/[,]/g,""));FPV=F2(F1(pVenta, d).replace(/[,]/g,""));FDP=F2(F1(gananciaXBTC, d).replace(/[,]/g,""));FC=F2(F1(comision, d).replace(/[,]/g,""));FP=F2(F1(gananciaXFraccion, d).replace(/[,]/g,""));FCF=F2(F1(cuentaFinal, d).replace(/[,]/g,""));
+
+  var TR= "<tr id='tr_"+est+contC+"'"+" name='TR'><td class='td_cf' id='td_sp"+est+contC+"'><div class='d_s' id='p_s"+est+contC+"'>"+document.getElementById('simbolo').textContent+
   "</div></td><td class='td_cf' id='td_ci"+est+contC+"'><div   class='d_cf'><p name='L"+est+"' id='p_ci"+est+contC+"'>"+
   FCI+"</p></div></td><td class='td_cf' id='td_pc"+est+contC+"'><div  class='d_cf' ><p name='L"+est+"'  id='p_pc"+est+contC+"'>"+
   FPC+"</p></div></td><td class='td_cf' id='td_pv"+est+contC+"'><div  class='d_cf' ><p name='L"+est+"1' id='p_pv"+est+contC+"'>"+
@@ -2795,9 +2903,9 @@ function agregarAtabla(){
   : (document.getElementById('tabla_2a').style.display='inline', document.getElementById('tbodyE').innerHTML += TR, document.querySelector('.marcoTabla2').style.display='block');
 
   for (let i = 1; i <= contC; i++) { 
-  actualizaColor(document.getElementById('td_dp'+est+contC), pVenta, pCompra);
-  actualizaColor(document.getElementById('td_p'+est+contC), gananciaXFraccion, 0);
-  actualizaColor( document.getElementById('td_cf'+est+contC), cuentaFinal, cuentaInicial);
+  actualizaColor(document.getElementById( 'td_dp'+est+contC), Number(pVenta), Number(pCompra));
+  actualizaColor(document.getElementById( 'td_p'+est+contC), gananciaXFraccion, 0);
+  actualizaColor( document.getElementById('td_cf'+est+contC), cuentaFinal, Number(cuentaInicial));
   }
   suma(contD,'');suma(contE,'E');
   contAD=contAD+1; 
@@ -2807,53 +2915,49 @@ function agregarAtabla(){
 }
 
 function actualizaPreciosTablaDinamica(n,s){
-  var pVentaT= '';//pVentaT= Number(cleanBoxes(cotizacionBTC.textContent.replace(/[,]/g,"")));
-  //console.log('pvBTC',pvBTC);console.log('pvXRP',pvXRP);
-
-  for (let i = 1; i <= n; i++) {
-    for (let j = 1; j <= n; j++) {
-      pVentaT= Number(cleanBoxes(document.getElementById("p_pv"+s+j).textContent.replace(/[,]/g,"")));
-      cuentaInicialT= Number(cleanBoxes(document.getElementById("p_ci"+s+j).textContent.replace(/[,]/g,"")));
-      pCompraT= Number(cleanBoxes(document.getElementById("p_pc"+s+j).textContent.replace(/[,]/g,"")));
-      
-      //console.log('pVentaT',pVentaT);
-      
-      comisionT= Number(cleanBoxes(document.getElementById("p_c"+s+j).textContent.replace(/[,]/g,"")));
-      gananciaXBTCT= pVentaT - pCompraT;
-      var gananciaXFraccion0= (gananciaXBTCT - (((pCompraT/100)*comisionT) +(((pCompraT + gananciaXBTCT)/100)*comisionT)))*(cuentaInicialT/pCompraT) ;
-      cuentaFinalT= cuentaInicialT+gananciaXFraccion0;
-      gananciaXFraccionT= gananciaXFraccion0;
-
-      //document.getElementById('p_s'+s+j).innerText = document.getElementById('simbolo').textContent;
-      var PV=''; 
-      if (document.getElementById('p_s'+s+j).textContent=='BTCUSDT') {
-        document.getElementById('p_ci'+s+j).innerText = formato(cuentaInicialT);
-        document.getElementById('p_pc'+s+j).innerText = formato(pCompraT);
-        (s=='')? PV= pvBTC : PV= formato(pVentaT); document.getElementById('p_pv'+s+j).innerText = formato(PV);
-        //console.log('pvBTC',pvBTC);console.log('pvXRP',pvXRP);
-        document.getElementById('p_dp'+s+j).innerText = formato(gananciaXBTCT);
-        document.getElementById('p_c' +s+j).innerText = formato2(comisionT); 
-        document.getElementById('p_p'+s+j).innerText= formato(gananciaXFraccionT); 
-        document.getElementById('p_cf'+s+j).innerText= formato(cuentaFinalT);
-      }
-      if (document.getElementById('p_s'+s+j).textContent=='XRPUSDT') {
-        document.getElementById('p_ci'+s+j).innerText = formato2(cuentaInicialT);
-        document.getElementById('p_pc'+s+j).innerText = formato2(pCompraT);
-        (s=='')? PV= pvXRP : PV= formato2(pVentaT); document.getElementById('p_pv'+s+j).innerText = formato2(PV);
-        document.getElementById('p_dp'+s+j).innerText = formato2(gananciaXBTCT);
-        document.getElementById('p_c' +s+j).innerText = formato2(comisionT); 
-        document.getElementById('p_p'+s+j).innerText= formato2(gananciaXFraccionT); 
-        document.getElementById('p_cf'+s+j).innerText= formato2(cuentaFinalT);
-      }
-      actualizaColor(document.getElementById('p_p'+s+j),gananciaXFraccionT,0);
-      actualizaColor(document.getElementById('p_dp'+s+j),cuentaFinalT,cuentaInicialT);
-      actualizaColor(document.getElementById('p_cf'+s+j),cuentaFinalT,cuentaInicialT); 
+  var pVentaT= '', precioVentaTr='';//pVentaT= Number(cleanBoxes(cotizacionBTC.textContent.replace(/[,]/g,"")));
+  for (let j = 1; j <= n; j++) {
+    fetch('https://api.binance.com/api/v3/ticker/price')
+    .then( respuesta => respuesta.json() )
+    .then( datos => mostrarData(datos))
+    .catch( e => console.log(e))
+    let mostrarData = (data)=>{
+      pVentaT= (cleanBoxes(document.getElementById("p_pv"+s+j).textContent.replace(/[,]/g,"")));
+      cuentaInicialT= (cleanBoxes(document.getElementById("p_ci"+s+j).textContent.replace(/[,]/g,"")));
+      pCompraT= (cleanBoxes(document.getElementById("p_pc"+s+j).textContent.replace(/[,]/g,"")));
+      comisionT= (cleanBoxes(document.getElementById("p_c"+s+j).textContent.replace(/[,]/g,"")));
+      var PV='';
+      for (let i=0; i < 1060; i++) {//TOTAL:2736 //XRPUSDT:i=307  BTCUSDT:i=12 //for (let i=0; i < data.length/50; i++)   //LONGITUD TOTAL: length: 2447
+        if (data[i].symbol==(document.getElementById('p_s'+s+j).textContent)){precioVentaTr=(data[i].price);
+          gananciaXBTCT= Number(precioVentaTr) - Number(pCompraT);
+          var gananciaXFraccion0= (gananciaXBTCT - (((Number(pCompraT)/100)*Number(comisionT)) +(((Number(pCompraT) + gananciaXBTCT)/100)*Number(comisionT))))*(Number(cuentaInicialT)/Number(pCompraT)) ;
+          cuentaFinalT= Number(cuentaInicialT)+gananciaXFraccion0;
+          gananciaXFraccionT= gananciaXFraccion0;
+          let d='';
+          switch (data[i].symbol) {
+           case 'AVAXUSDT':d=2; break;
+           case 'BNBUSDT': d=2; break;
+           case 'BTCUSDT': d=2; break;
+           case 'DOGEUSDT':d=6; break;///d=6
+           case 'ETHUSDT': d=2; break;
+           case 'SOLUSDT': d=2; break; 
+           case 'XRPUSDT': d=6; break;///d=6
+          }///console.log("d======", d);
+          (s=='')? PV= precioVentaTr : PV= precioVentaTr; document.getElementById('p_pv'+s+j).innerText = F2(F1(PV, d).replace(/[,]/g,""));
+          document.getElementById('p_pc'+s+j).innerText= F2(F1(pCompraT, d).replace(/[,]/g,""));
+          document.getElementById('p_dp'+s+j).innerText= F2(F1(gananciaXBTCT, d).replace(/[,]/g,""));
+          document.getElementById('p_p'+s+j).innerText = F2(F1(gananciaXFraccionT, d).replace(/[,]/g,"")); 
+          document.getElementById('p_cf'+s+j).innerText= F2(F1(cuentaFinalT, d).replace(/[,]/g,""));
+          actualizaColor(document.getElementById('p_p'+s+j),gananciaXFraccionT,0);
+          actualizaColor(document.getElementById('p_dp'+s+j),cuentaFinalT,Number(cuentaInicialT));
+          actualizaColor(document.getElementById('p_cf'+s+j),cuentaFinalT,Number(cuentaInicialT));
+        }
+      } //console.log("d:", d);
     }
-  }
- suma(contD,'');suma(contE,'E');
+  } 
+  suma(contD,'');suma(contE,'E');
 }
 
-var cuentainicial=0, cuentaFinal=0, sumaTotal_ci=0, sumaTotal_cf=0, array_ci=[], array_cf=[];
 function suma(n,s){//console.log("n, s:", n,s);
   array_cf=[];array_ci=[];
   for (let i = 1; i < n+1; i++) { //console.log("Valor de i:", i);
@@ -2867,9 +2971,9 @@ function suma(n,s){//console.log("n, s:", n,s);
   }
   //console.log("array_cf:", array_cf);console.log("sumaTotal_cf:", sumaTotal_cf);
   //console.log("------------------");
-  document.getElementById('capitalIniciaTotal'+s).innerText = formato(sumaTotal_ci);
-  document.getElementById('capitalFinalTotal'+s).innerText = formato(sumaTotal_cf); 
-  document.getElementById('diferenciaTotal'+s).innerText = formato(sumaTotal_cf - sumaTotal_ci); 
+  document.getElementById('capitalIniciaTotal'+s).innerText = formato(sumaTotal_ci) + ' USDT';
+  document.getElementById('capitalFinalTotal'+s).innerText = formato(sumaTotal_cf) + ' USDT'; 
+  document.getElementById('diferenciaTotal'+s).innerText = formato(sumaTotal_cf - sumaTotal_ci) + ' USDT'; 
 
   if (sumaTotal_cf>sumaTotal_ci) {
     document.getElementById('gananciasPerdidas'+s).innerText = 'Ganancias';
@@ -2911,7 +3015,7 @@ function nivelarColumnas() {/// console.log('columnCenterOffset ::::::: ',column
 
 function onload() {
   resetar();nivelarColumnas();
-  cotizaciónBtc_binance();startTimer();
+  cotizacion_binance();startTimer();
   anchoDivsCeldas1();actualizaColorTr();
   ///document.getElementById('agregarATabla').click(); document.getElementById('td_x'+contTD).click();
 }
@@ -2931,14 +3035,6 @@ function resetarMascara() {// console.log('window.innerWidth ::::::::: ',window.
 }
 resetarMascara();
 //FIN DE: RESETAR MASCARA ======================================================================================
-
-function simbolo(){
-  let S='';
-  if (document.getElementById('simbolo').textContent=='BTCUSDT') {
-    WS=new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@trade');
-  }
-  else{WS=''}
-}
 
 function editar(){
   if (EDITAR==1)  {
@@ -3002,7 +3098,7 @@ function article2_columnLeft(){
 
 function eliminarTablaD(){
   ///contTD=0;
-  document.getElementById('tabla_1a').style.display='none';document.querySelector('.marcoTabla1').style.display='none';//document.getElementById('tr_'+c).remove(); 
+  document.getElementById('tabla_1a').style.display='none';document.querySelector('.marcoTabla1').style.display='none';//document.getElementById('tr_'+C).remove(); 
   for (let i = 1; i <= contD; i++) {
     document.getElementById('tr_'+i).style.display='none';document.getElementById("p_ci"+i).innerText=0;
   }
@@ -3012,7 +3108,7 @@ function eliminarTablaD(){
 }
 function eliminarTablaE(){
   ///contTE=0;
-  document.getElementById('tabla_2a').style.display='none';document.querySelector('.marcoTabla2').style.display='none';//document.getElementById('tr_'+c).remove(); 
+  document.getElementById('tabla_2a').style.display='none';document.querySelector('.marcoTabla2').style.display='none';//document.getElementById('tr_'+C).remove(); 
   for (let i = 1; i <= contE; i++) {
     document.getElementById('tr_E'+i).style.display='none';document.getElementById("p_ciE"+i).innerText=0;
   }
@@ -3042,10 +3138,7 @@ function eliminarTrE(c){
 
 ///------------------------------------------------------------------------------------------------------------------------
 // EVITAR QUE INGRESEN LETRAS A LAS CASILLAS (SOLO ',,,,' Y '.' LA: 'E e + -' DE NOTACION CIENT. FALTA CORREGIR): 
-var boxes = document.getElementsByName("box");
-var cadena = "";  var arrayCadenaE="";  var arrayCadenaD=[""]; var arrayEnteros = [""]; var arrayDecimal=[""];  var stringBoxD = ""; var stringBoxD0 = "";var stringBoxE = ""; var stringBoxE0 = ""; var E = ""; var D = "";
-var punto= ""; var numero= ""; var entero= "";  var decimal= "";
-var arrayCadena = [""]; var sumarBoxes = ""; var sumarBoxes0 = "",sumarBoxes1 = ""; var box = "";
+var boxes = document.getElementsByName("box"), arrayCadena = [""]; var sumarBoxes = ""; var sumarBoxes0 = "",sumarBoxes1 = ""; var box = "";
 
 for (let y = 0; y < boxes.length; y++) { // RECORRE CADA CASILLA
   boxes[y].addEventListener("mousedown", (e) => { // "click" , "mousedown" , "mouseup"
@@ -3096,67 +3189,47 @@ boxes[3].addEventListener("input", (e) => {
     boxTED.value= formato1(TAZA(tea1, td));       
   }
 }); 
-
-for (let i = 5; i < boxes.length - 2; i++) { // RECORRE CASILLAS, DESDE CASILLA 5 HASTA CASILLA 8('TRADE CRIPTOMONEDAS'). 
+// OJO: var arrayBox=[0,0,0,0,0,0,0,0,0] ⟵ SI SE AUMENTAN LOS 'box' ,AUMENTAR TAMBIEN LOS '0'
+for (let i = 5; i < boxes.length - 0; i++) { // RECORRE CASILLAS, DESDE CASILLA 5 HASTA CASILLA 8('TRADE CRIPTOMONEDAS'). 
 boxes[i].addEventListener("input", (e) => {
   var  GANANCIA="", CUENTASPOTF="", b= String(boxes[i].value); 
-  var cuentaSpotI= Number(cleanBoxes(document.getElementById("cuentaSpotI").value.replace(/[-,]/g,"")));
-  var precioCompra= Number(cleanBoxes(document.getElementById("precioCompra").value.replace(/[-,]/g,"")));
-  var precioVenta= Number(cleanBoxes(document.getElementById("precioVenta").value.replace(/[-,]/g,"")));
-  var comision= Number(cleanBoxes(document.getElementById("commission").value.replace(/[-,]/g,"")));
-  var gananciaXBTC= precioVenta - precioCompra;
-  var gananciaXFraccion0= (gananciaXBTC - (((precioCompra/100)*comision) +(((precioCompra + gananciaXBTC)/100)*comision)))*(cuentaSpotI/precioCompra) ;
-  var cuentaFinal= cuentaSpotI+gananciaXFraccion0, gananciaXFraccion= gananciaXFraccion0; 
+  var cuentaSpotI= (cleanBoxes(document.getElementById("cuentaSpotI").value.replace(/[-,]/g,"")));
+  var precioCompra= (cleanBoxes(document.getElementById("precioCompra").value.replace(/[-,]/g,"")));
+  var precioVenta= (cleanBoxes(document.getElementById("precioVenta").value.replace(/[-,]/g,"")));
+  var comision= (cleanBoxes(document.getElementById("commission").value.replace(/[-,]/g,"")));
+  var gananciaXBTC= Number(precioVenta) - Number(precioCompra);
+  var gananciaXFraccion0= (gananciaXBTC - (((Number(precioCompra)/100)*Number(comision)) +(((Number(precioCompra) + gananciaXBTC)/100)*Number(comision))))*(Number(cuentaSpotI)/Number(precioCompra)) ;
+  var cuentaFinal= Number(cuentaSpotI)+gananciaXFraccion0, gananciaXFraccion= gananciaXFraccion0; 
   //var patron1 = new RegExp(/^\d{1,3}(?:,\d{3})*(?:\.\d+)?$/gm);//'111,111.111' Validar coma al separar miles con expresión regular: https://es.stackoverflow.com/questions/202880/validar-coma-al-separar-miles-con-expresi%C3%B3n-regular      var patron2 = new RegExp(/^\d{1,3}(?:,\d{3})*(?:\.)?$/gm);//'111,111.' Validar coma al separar miles con expresión regular: https://es.stackoverflow.com/questions/202880/validar-coma-al-separar-miles-con-expresi%C3%B3n-regular
   var ch1 = b.slice(0, 1), ch2 = b.slice(1, 2), ch3 = b.slice(2, 3); //Encontrar primer caracter de la cadena //Encontrar segundo caracter de la cadena //Encontrar tercer caracter de la cadena
   if (b=="") {GANANCIA= ""; CUENTASPOTF= ""; arrayBox.splice(i, 1, i);} //if: SI LA CASILLA ESTA VACIA
   else { //else: SI LA CASILLA NO ESTA VACIA
+    decimales();//console.log("d:", d);
     if (/[-,]/.test(b)==true && ch1!='0') {//BUSCA COMA Y SIN CEROS AL INICIO DEL NUMERO 
-      (/^\d{1,3}(?:,\d{3})*(?:\.\d+)?$/gm.test(b)==true)? (GANANCIA= formato1(gananciaXFraccion), CUENTASPOTF= formato1(cuentaFinal), arrayBox.splice(i, 1, 0)) : (GANANCIA= "", CUENTASPOTF= "", arrayBox.splice(i, 1, i));//REJEX PARA NUMERACION CON COMAS:111,222.55➞ /^\d{1,3}(?:,\d{3})*(?:\.\d+)?$/gm 
-      //if (/^\d{1,3}(?:,\d{3})*(?:\.\d+)?$/gm.test(b)==true) {//REJEX PARA NUMERACION CON COMAS:111,222.55➞ /^\d{1,3}(?:,\d{3})*(?:\.\d+)?$/gm 
-      //  GANANCIA= formato1(gananciaXFraccion); CUENTASPOTF= formato1(cuentaFinal); arrayBox.splice(i, 1, 0); 
-      //} else {
-      //  GANANCIA= ""; CUENTASPOTF= ""; arrayBox.splice(i, 1, i); 
-      //}
+      (/^\d{1,3}(?:,\d{3})*(?:\.\d+)?$/gm.test(b)==true)? (GANANCIA= F2(F1(gananciaXFraccion,d).replace(/[,]/g,"")), CUENTASPOTF= F2(F1(cuentaFinal,d).replace(/[,]/g,"")), arrayBox.splice(i, 1, 0)) : (GANANCIA= "", CUENTASPOTF= "", arrayBox.splice(i, 1, i));//REJEX PARA NUMERACION CON COMAS:111,222.55➞ /^\d{1,3}(?:,\d{3})*(?:\.\d+)?$/gm 
     } else {
       b.replace(/,/g,"")
       if (ch1!="0") {
-        (/^\d+(?:\.\d+)?$/gm.test(b)==true)? (GANANCIA= formato1(gananciaXFraccion), CUENTASPOTF= formato1(cuentaFinal), arrayBox.splice(i, 1, 0)) : (GANANCIA= "", CUENTASPOTF= "", arrayBox.splice(i, 1, i));//REJEX PARA NUMERACION SIN COMAS:111222.55➞ /^\d+(?:\.\d+)?$/gm 
-        //if (/^\d+(?:\.\d+)?$/gm.test(b)==true) {//REJEX PARA NUMERACION SIN COMAS:111222.55➞ /^\d+(?:\.\d+)?$/gm 
-        //  GANANCIA= formato1(gananciaXFraccion); CUENTASPOTF= formato1(cuentaFinal); arrayBox.splice(i, 1, 0); 
-        //} else {
-        //  GANANCIA= ""; CUENTASPOTF= ""; arrayBox.splice(i, 1, i);  
-        //}
+        (/^\d+(?:\.\d+)?$/gm.test(b)==true)? (GANANCIA= F2(F1(gananciaXFraccion,d).replace(/[,]/g,"")), CUENTASPOTF= F2(F1(cuentaFinal,d).replace(/[,]/g,"")), arrayBox.splice(i, 1, 0)) : (GANANCIA= "", CUENTASPOTF= "", arrayBox.splice(i, 1, i));//REJEX PARA NUMERACION SIN COMAS:111222.55➞ /^\d+(?:\.\d+)?$/gm 
       } else {
         if (/^0+$/gm.test(b)==true) {//REJEX PARA UNO O MÁS CEROS:000000➞ /^0+$/gm
-          //GANANCIA= formato1(gananciaXFraccion); CUENTASPOTF= formato1(cuentaFinal); arrayBox.splice(i, 1, 0); 
-          (b=="0")? (GANANCIA= formato1(gananciaXFraccion), CUENTASPOTF= formato1(cuentaFinal), arrayBox.splice(i, 1, 0)) : (GANANCIA= "", CUENTASPOTF= "", arrayBox.splice(i, 1, i)); 
+          (b=="0")? (GANANCIA= F2(F1(gananciaXFraccion,d).replace(/[,]/g,"")), CUENTASPOTF= F2(F1(cuentaFinal,d).replace(/[,]/g,"")), arrayBox.splice(i, 1, 0)) : (GANANCIA= "", CUENTASPOTF= "", arrayBox.splice(i, 1, i)); 
         } else {
           if (ch1!="0") {
-            (/^\d+(?:\.\d+)?$/gm.test(b)==true)? (GANANCIA= formato1(gananciaXFraccion), CUENTASPOTF= formato1(cuentaFinal), arrayBox.splice(i, 1, 0)) : (GANANCIA= "", CUENTASPOTF= "", arrayBox.splice(i, 1, i));//REJEX PARA NUMERACION SIN COMAS:111222.55➞ /^\d+(?:\.\d+)?$/gm 
-            //if (/^\d+(?:\.\d+)?$/gm.test(b)==true) {//REJEX PARA NUMERACION SIN COMAS:111222.55➞ /^\d+(?:\.\d+)?$/gm 
-            //  GANANCIA= formato1(gananciaXFraccion); CUENTASPOTF= formato1(cuentaFinal); arrayBox.splice(i, 1, 0); 
-            //} else {
-            //  GANANCIA= ""; CUENTASPOTF= ""; arrayBox.splice(i, 1, i); 
-            //}
+            (/^\d+(?:\.\d+)?$/gm.test(b)==true)? (GANANCIA= F2(F1(gananciaXFraccion,d).replace(/[,]/g,"")), CUENTASPOTF= F2(F1(cuentaFinal,d).replace(/[,]/g,"")), arrayBox.splice(i, 1, 0)) : (GANANCIA= "", CUENTASPOTF= "", arrayBox.splice(i, 1, i));//REJEX PARA NUMERACION SIN COMAS:111222.55➞ /^\d+(?:\.\d+)?$/gm 
           } else {
-            (ch2=="." && ch3!="" && /[-,]/.test(b)==false)? (GANANCIA= formato1(gananciaXFraccion), CUENTASPOTF= formato1(cuentaFinal), arrayBox.splice(i, 1, 0)) : (GANANCIA= "", CUENTASPOTF= "", arrayBox.splice(i, 1, i));
-            //if (ch2==".") {
-            //  GANANCIA= formato1(gananciaXFraccion); CUENTASPOTF= formato1(cuentaFinal); arrayBox.splice(i, 1, 0); 
-            //} else {
-            //  GANANCIA= ""; CUENTASPOTF= ""; arrayBox.splice(i, 1, i); 
-            //}
+            (ch2=="." && ch3!="" && /[-,]/.test(b)==false)? (GANANCIA= F2(F1(gananciaXFraccion,d).replace(/[,]/g,"")), CUENTASPOTF= F2(F1(cuentaFinal,d).replace(/[,]/g,"")), arrayBox.splice(i, 1, 0)) : (GANANCIA= "", CUENTASPOTF= "", arrayBox.splice(i, 1, i));
           }
         }
       }
-    }
+    } 
   } console.log(arrayBox);
   let sum = 0;//SUMAR ELEMENTOS DEL ARRAY P' IMPRIMIR TEXTO EN CASILLAS Ó DEJARLO VACIO.
   for (let index = 0; index < arrayBox.length; index++) {sum += arrayBox[index];}//arrayBox=[0, 0, 0, 0, 0, 0, 0, 0, 0] → [0, 0, 0, 0, 0, 0, 0, 0, 8] → [0, 0, 0, 0, 0, 0, 0, 7, 8] → ...      
   if (sum==0) { 
     profit.value= GANANCIA; cuentaSpotF.value= CUENTASPOTF; IMPRIMIRTEXTO=1;
     actualizaColor(document.getElementById("profit"),gananciaXFraccion,0);
-    actualizaColor(document.getElementById("cuentaSpotF"),cuentaFinal,cuentaSpotI);
+    actualizaColor(document.getElementById("cuentaSpotF"),cuentaFinal,Number(cuentaSpotI));
     //if (gananciaXFraccion == 0) {
     //  profit.style.color= colorLetra.getPropertyValue("color");//Obtener el color de un texto en una casilla 
     //} 
@@ -3201,7 +3274,7 @@ boxes[i].addEventListener("input", (e) => {
      select_s.classList.toggle('active');
      opciones_3.classList.toggle('active');
 
-     //cotizaciónBtc_binance(); cotizaciónBtc_binance_price24hr();
+     //cotizacion_binance(); cotizaciónBtc_binance_price24hr();
      })
  }
  
@@ -3210,7 +3283,6 @@ boxes[i].addEventListener("input", (e) => {
    opciones_3.classList.toggle('active');
  }); 
    */
-
  ///%%%%%%%%%%%% FIN DE LISTA DE OPCIONES s %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
  ///%%%%%%%%%%%%  LISTA DE OPCIONES 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3277,7 +3349,7 @@ boxes[i].addEventListener("input", (e) => {
       contenidoSelect3.innerHTML = e.currentTarget.innerHTML;
       select3.classList.toggle('active');
       opciones3.classList.toggle('active');
-      cotizaciónBtc_binance(); cotizaciónBtc_binance_price24hr();
+      cotizacion_binance(); cotizaciónBtc_binance_price24hr(); //actualizaPreciosCard();
      })
   } 
   select3.addEventListener('click', function () {
@@ -3414,23 +3486,12 @@ function anchoDivsCeldas2() { // https://es.stackoverflow.com/questions/579867/c
   }
 }
 
-function newYear(){ // 'August' , 'September' // 25 , 26 // 2024 , 2024 // 0,0 // 0,0 // 0,0  
-  /*
-  if (document.getElementById('simbolo').textContent=='BTCUSDT') {
-    cotizaciónBtc_WebSocket();; console.log('simbolo' , document.getElementById('simbolo').textContent);
-  }
-  if (document.getElementById('simbolo').textContent=='XRPUSDT') {
-    cotizaciónBtc_WebSocket1(); console.log('simbolo' , document.getElementById('simbolo').textContent);
-  }*/
-    cotizaciónBtc_binance();
-  actualizaPreciosCard();actualizaPreciosTablaDinamica(contD,'');;
+function newYear(){ 
+  cotizacion_binance();actualizaPreciosCard();
+  actualizaPreciosTablaDinamica(contD,'');;
   cotizaciónBtc_binance_price24hr();
   anchoDivsCeldas2();
-  
-
-  //arraysAnchoDivs();
-  //if (window.innerWidth>900) {{document.getElementById("navbar1").style.left= -100+"%"; document.getElementById("body").style.overflow= "auto";   TOGGLE=1; document.getElementById('mascara').style.backgroundColor='rgba(0,0,0, 0.0)';} }// document.getElementById("body").style.overflow= "auto";
- } 
+} 
  
  var timerID; 
  function startTimer() {timerID=window.setInterval(newYear,1000);} 
@@ -4351,6 +4412,7 @@ function newYear(){ // 'August' , 'September' // 25 , 26 // 2024 , 2024 // 0,0 /
 //# sourceMappingURL=doc/decimal.js.map  
 
 ////################ FIN DE  decimal.js ###################
+
 
 
 
