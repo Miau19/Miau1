@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="style.css" /><link rel="stylesheet" href="css/CF[2024]-2b.css" /> -->
-    <title>CF[2024]-2c-paratelefo</title>
+    <title>CF[2024]-2c-paratelefono</title>
 
     <style type="text/css">
 @import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
@@ -17,8 +17,8 @@
     --bg-color:rgb(28, 28, 28);           /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(0, 0%, 14%) */
     --bg-card-color: rgb(17, 17, 17);      /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(0, 0%, 11%) */
     --pr1mary-color: rgb(192, 192, 192);/* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(228, 100%, 30%) */
-    --text-color:rgb(0, 100, 100);    /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(214, 7%, 79%) */
-    --border-color: rgb(106, 106, 106);
+    --text-color:rgb(193, 193, 193);    /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(214, 7%, 79%) */
+    --border-color: rgb(141, 141, 141);
     --border-radius_tex: 0.5rem;  /* PARA ARCO INTERNO */
     --border-radius: 0.75rem;  /* PARA ARCO EXTERNO (ARCO INTERNO + PADDING)*/
     --transition: color 0.1s, background-color 0.6s ease-in-out;
@@ -40,7 +40,7 @@
     --width_LO1: 12rem;--width_LO2: 10rem;--width_LO3: 6.5rem;
     --n: 0.6rem;
     /*FIN DE: VALORES PARA CONTROL DE LISTA DE OPCIONES */
-    --widhtSvg: 0.55rem; --heightSvg: 0.55rem; /* VALORES PARA LOS svg DE TABLAS*/
+    --widhtSvg: 0.5rem; --heightSvg: 0.5rem; /* VALORES PARA LOS svg DE TABLAS*/
     --button-color: rgb(1, 61, 225);/* --button-color: rgb(1, 61, 225); */
 }
 
@@ -581,33 +581,39 @@ z-index: 10;
 .main_grid_2 .tablas .tabla-css td{
     color: var(--text-color); font-size: var(--font-size4);font-family: var(--font-family2); font-weight: var(--font-weight2);
 }
-.main_grid_2 .tablas .tabla-css .tdHead{
-    padding: 0.25rem  0.5rem ;
+.main_grid_2 .tablas .tabla-css .tdHead{ border: 1px solid rgb(135, 164, 1);
+    padding: 0.0rem  0.0rem ;
 }
 
-.main_grid_2 .tabla-css .tdHead .d_s {
+.main_grid_2 .tabla-css .tdHead .d_s {background: #4c3000;
     display: block;justify-content: start;align-items: center;
     text-align: left;white-space: nowrap; /* white-space: nowrap; suprime saltos de linea del origen*/
+    padding: 0.0rem  0.250rem ;
 }
 
 .main_grid_2 .tabla-css .tdHead div{
     display: block;justify-content: end;align-items: center;
     text-align: right;white-space: nowrap; /* white-space: nowrap; suprime saltos de linea del origen*/
 }
-.main_grid_2 .tabla-css .td_cf{ 
-    color: var(--text-color);font-size: var(--font-size4);font-family: var(--font-family2); font-weight: var(--font-weight2); 
-    padding: 0.25rem  0.5rem ;
+.main_grid_2 .tabla-css .tdHead .d_cf p{padding: 0px;margin: 0; background: #000754;
+    text-align: right; margin: 0.25rem  0.250rem ;
 }
-.main_grid_2 .tabla-css .td_cf .d_s {
+.main_grid_2 .tabla-css .td_cf{ border: 1px solid rgb(32, 123, 4);
+    color: var(--text-color);font-size: var(--font-size4);font-family: var(--font-family2); font-weight: var(--font-weight2); 
+    padding: 0.0rem  0.0rem ;
+}
+.main_grid_2 .tabla-css .td_cf .d_s {background: #945e01;
     display: block;justify-content: start;align-items: center;
     text-align: left;white-space: nowrap; /* white-space: nowrap; suprime saltos de linea del origen*/
+    padding: 0.0rem  0.250rem ;
 }
-.main_grid_2 .tabla-css .td_cf .d_cf{width: 100%;
+.main_grid_2 .tabla-css .td_cf .d_cf{width: 100%;background: #740286;
     display: block;justify-content: end;align-items: center;
 }
-.main_grid_2 .tabla-css .td_cf .d_cf p{padding: 0px;margin: 0; 
-text-align: right;
+.main_grid_2 .tabla-css .td_cf .d_cf p{padding: 0px;margin: 0; background: #000754;
+text-align: right; margin: 0.25rem  0.250rem ;
 }
+
 .main_grid_2 .tablas .tabla-css .td_x{
     border: none;
 }
@@ -618,7 +624,10 @@ text-align: right;
     cursor: pointer; background-color: rgb(176, 0, 0);
 }
 .main_grid_2 .tabla-css .td_x svg{/* viewBox='-30 -36 100 100' width='21px' height='16px' */
-    fill: var(--text-color); width: var(--widhtSvg);height: var(--heightSvg);
+    width: var(--widhtSvg);height: var(--heightSvg);
+}
+.main_grid_2 .tabla-css .td_x svg path{/* viewBox='-30 -36 100 100' width='21px' height='16px' */
+    fill: var(--text-color);stroke-width: 1px; stroke: var(--text-color); width: var(--widhtSvg);height: var(--heightSvg);
 }
 .main_grid_2 .tabla-css .tdFinalT1, .main_grid_2 .tabla-css .tdFinalT2{
     padding: 0.25rem  0.525rem ;
@@ -629,9 +638,17 @@ text-align: right;
 
 .td_Dtitulo{ margin: 0;padding: 0;}/* box-shadow: var(--box-shadow1); */
 .div_Dtitulo{width: 100%; display: flex;justify-content: space-between; align-items: center; padding-left: 0.525rem;}
-#div_Dsvg , #div_DsvgE{display: flex;justify-content: center; align-items: center; padding: 0.5rem  0.525rem;margin: 0;}
+.divs_svgs{display: flex;justify-content: center;align-items: center;}
+.div_Dsvg , .div_DsvgE{ display: flex;justify-content: center; align-items: center; padding: 0.5rem  1.0rem;}
 #div_Dsvg:hover , #div_DsvgE:hover{cursor: pointer; background-color: rgb(200, 0, 0);}
-#div_Dsvg svg , #div_DsvgE svg{fill: var(--text-color); width: var(--widhtSvg);height: var(--heightSvg);}
+#div_svg_max , #div_svg_maxE{display: none;}
+#div_svg_min:hover , #div_svg_max:hover , #div_svg_minE:hover , #div_svg_maxE:hover{cursor: pointer; background-color: var(--button-color);}
+
+#div_Dsvg svg , #div_DsvgE svg{width: var(--widhtSvg);height: var(--heightSvg);margin: 0.125rem; }
+#div_svg_min svg , #div_svg_max svg{ width: 0.75rem;height: 0.75rem;margin: 0.0rem; }/* width: 0.75rem;height: 0.75rem;; */
+#div_svg_minE svg, #div_svg_maxE svg{width: 0.75rem;height: 0.75rem;margin: 0.0rem; }/*  width: 0.75rem;height: 0.75rem;; */
+
+.div_Dsvg svg .path , .div_DsvgE svg .path{fill: var(--text-color);stroke-width: 1px; stroke: var(--text-color);}
 #tabla_2a{display: none;}
 
 .main_grid_3{background-color: var(--bg-card-color);
@@ -808,7 +825,7 @@ text-align: right;
 
 .csvg, .csvgB{display: block;justify-content: center;align-items: center;  width: var(--widhtSvg);height: var(--heightSvg);}  
 .cpath{fill: var(--text-color);stroke-width: 4px;stroke: var(--text-color)}
-.cpathB{fill: var(--text-color);}
+.cpathB{fill: var(--text-color);stroke-width: 4px;stroke: var(--text-color)}
 
 .btnArrowUp:hover{background-color: rgb(20, 118, 255);cursor:pointer;}
 .btnArrowDown:hover{background-color: rgb(20, 118, 255);cursor:pointer;}
@@ -972,8 +989,10 @@ transition: .2s ease all;
 
 .select svg {
   width: var(--widhtSvg);height: var(--heightSvg);
-  stroke-width: 4px;stroke: var(--text-color);
 }
+.select svg path{
+    fill:  var(--text-color); stroke-width: 4px;stroke: var(--text-color);
+  }
 
 .contenido-select, .contenido-select3{padding: 0 0.0rem;width: 100% ;
 color:  var(--text-color);
@@ -1324,7 +1343,7 @@ transition: .5s ease all;
                           <div class="selectbox">
                             <div class="select" id="select3">
                               <div class="contenido-select3" id="simbolo">BTCUSDT</div>
-                              <div>
+                              <div >
                               <svg  class="svg1"  viewBox="0 -9 64 64" >
                                 <path d="M32,37.21a2,2,0,0,1-1.28-.46l-28-23.21a2,2,0,1,1,2.55-3.08L32,32.62,58.72,10.46a2,2,0,1,1,2.55,3.08l-28,23.21A2,2,0,0,1,32,37.21Z"/>
                               </svg>
@@ -1650,29 +1669,86 @@ transition: .5s ease all;
         <div class="tablas" id="tablas">
           <div id="Lp"><p name="Lp1"></p></div>
           <div class="marcoTabla1" id="marcoTabla1"><!-- ESTA div ES PARA Q' NO SE BORREN LOS BORDES DE LA TABLA EN NAVEGADOR FIREFOX -->
-          <table class="tabla-css" id="tabla_1a">
+           <!-- 
+            <svg  height="32px" id="Layer_1" version="1.0" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path style="background:rgb(0,0,250);stroke-width: 1px; stroke: rgb(177, 253, 0); fill:rgba(255, 0, 0,1)" d="M14.436,18.655v8.665c0,0.677-0.549,1.226-1.227,1.226s-1.227-0.548-1.227-1.226v-5.707l-9.891,9.891  c-0.238,0.239-0.553,0.359-0.867,0.359c-0.313,0-0.625-0.12-0.865-0.359c-0.479-0.479-0.479-1.254,0-1.733l9.891-9.892H4.543  c-0.678,0-1.227-0.548-1.227-1.225c0-0.676,0.549-1.226,1.227-1.226h8.666C13.887,17.43,14.436,17.979,14.436,18.655z M31.641,0.495  c-0.477-0.479-1.252-0.479-1.732,0L19.883,10.522V4.815c0-0.677-0.549-1.225-1.227-1.225c-0.676,0-1.225,0.548-1.225,1.225v8.665  c0,0.677,0.549,1.226,1.225,1.226h8.664c0.678,0,1.227-0.549,1.227-1.226s-0.549-1.225-1.227-1.225h-5.705L31.641,2.229  C32.119,1.75,32.119,0.975,31.641,0.495z"/></svg>
+            <svg  height="32px" id="Layer_1" version="1.0" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path style="background:rgb(0,0,250);stroke-width: 1px; stroke: rgb(255, 0, 0); fill:rgba(255, 0, 0,1)" d="M14.075,17.789c0.478,0.479,0.478,1.254,0,1.732l-9.89,9.891h5.705c0.678,0,1.225,0.549,1.225,1.227  s-0.547,1.225-1.225,1.225H1.226C0.549,31.863,0,31.316,0,30.639v-8.666c0-0.676,0.549-1.225,1.226-1.225  c0.678,0,1.227,0.549,1.227,1.225v5.709l9.89-9.893c0.239-0.238,0.553-0.359,0.865-0.359C13.521,17.43,13.835,17.551,14.075,17.789z   M30.774,0.137H22.11c-0.678,0-1.226,0.547-1.226,1.225s0.548,1.227,1.226,1.227h5.705L17.79,12.615  c-0.479,0.479-0.479,1.254,0,1.732c0.478,0.479,1.253,0.479,1.732,0L29.548,4.32v5.707c0,0.676,0.549,1.225,1.227,1.225  c0.677,0,1.226-0.549,1.226-1.225V1.361C32,0.684,31.451,0.137,30.774,0.137z"/></svg>
+            <svg  style="background:rgb(0, 0, 0);stroke-width: 4px; stroke: rgb(255, 0, 0); fill:rgba(255, 0, 0,1)" viewBox="0 -9 64 64" height="32px"  width="32px"  >
+              <path d="M32,37.21a2,2,0,0,1-1.28-.46l-28-23.21a2,2,0,1,1,2.55-3.08L32,32.62,58.72,10.46a2,2,0,1,1,2.55,3.08l-28,23.21A2,2,0,0,1,32,37.21Z"/>
+            </svg>
+            <svg  style="background:rgb(0, 0, 0);stroke-width: 1px; stroke: rgb(255, 0, 0); fill:rgba(255, 0, 0,1)" height="32px"  width="32px"  xmlns='http://www.w3.org/2000/svg' viewBox='-15 -10 80 80'><path fill='' d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512"  height="32px"  width="32px" xml:space="preserve">
+                <path  style="stroke-width: 4px; stroke: rgb(177, 253, 0); fill:rgb(255, 0, 0);"  d="M203.708,287.611H46.829c-11.422,0-20.682,9.259-20.682,20.682s9.26,20.682,20.682,20.682h136.197v136.197    c0,11.423,9.26,20.682,20.682,20.682c11.423,0,20.682-9.26,20.682-20.682V308.293C224.39,296.87,215.13,287.611,203.708,287.611z"/>
+                <path  style="stroke-width: 4px; stroke: rgb(177, 253, 0); fill:rgb(255, 0, 0);"  d="M465.172,183.025H328.976V46.828c0-11.422-9.259-20.682-20.682-20.682s-20.682,9.26-20.682,20.682v156.879    c0,11.422,9.259,20.682,20.682,20.682h156.879c11.423,0,20.682-9.26,20.682-20.682    C485.854,192.285,476.595,183.025,465.172,183.025z"/>
+                <path  style="stroke-width: 4px; stroke: rgb(177, 253, 0); fill:rgb(255, 0, 0);"  d="M505.943,6.058c-8.077-8.077-21.172-8.077-29.249,0L293.669,189.083c-8.076,8.077-8.076,21.172,0,29.249    c4.038,4.038,9.332,6.058,14.625,6.058c5.293,0,10.586-2.019,14.625-6.058L505.943,35.307    C514.019,27.23,514.019,14.135,505.943,6.058z"/>
+                <path  style="stroke-width: 4px; stroke: rgb(177, 253, 0); fill:rgb(255, 0, 0);"  d="M218.332,293.669c-8.076-8.077-21.172-8.077-29.249,0L6.058,476.693c-8.077,8.077-8.077,21.172,0,29.249    C10.096,509.982,15.39,512,20.683,512c5.293,0,10.586-2.019,14.625-6.058l183.025-183.025    C226.409,314.841,226.409,301.746,218.332,293.669z"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512"  height="32px"  width="32px" xml:space="preserve">
+                  <path  style="stroke-width: 1px; stroke: rgb(177, 253, 0); fill:rgb(255, 0, 0);"  d="M491.318,0H334.439c-11.423,0-20.682,9.26-20.682,20.682c0,11.422,9.259,20.682,20.682,20.682h136.197v136.197    c0,11.422,9.259,20.682,20.682,20.682c11.423,0,20.682-9.26,20.682-20.682V20.682C512,9.26,502.741,0,491.318,0z"/>
+                  <path  style="stroke-width: 1px; stroke: rgb(177, 253, 0); fill:rgb(255, 0, 0);"  d="M177.561,470.636H41.365V334.439c0-11.423-9.26-20.682-20.682-20.682C9.26,313.757,0,323.016,0,334.439v156.879    C0,502.741,9.26,512,20.682,512h156.879c11.422,0,20.682-9.259,20.682-20.682C198.244,479.895,188.983,470.636,177.561,470.636z"/>
+                  <path  style="stroke-width: 1px; stroke: rgb(177, 253, 0); fill:rgb(255, 0, 0);"  d="M505.943,6.058c-8.077-8.077-21.172-8.077-29.249,0L293.669,189.083c-8.076,8.077-8.076,21.172,0,29.249    c4.038,4.038,9.332,6.058,14.625,6.058c5.292,0,10.586-2.019,14.625-6.058L505.943,35.307    C514.019,27.23,514.019,14.135,505.943,6.058z"/>
+                  <path  style="stroke-width: 1px; stroke: rgb(177, 253, 0); fill:rgb(255, 0, 0);"  d="M218.332,293.669c-8.076-8.077-21.172-8.077-29.249,0L6.058,476.693c-8.077,8.077-8.077,21.172,0,29.249    C10.096,509.982,15.39,512,20.682,512c5.293,0,10.586-2.019,14.625-6.058l183.025-183.025    C226.409,314.841,226.409,301.746,218.332,293.669z"/>
+            </svg>
+          -->
+
+            <table class="tabla-css" id="tabla_1a">
             <thead>
               <tr name="TR">
-                <td colspan="9" rowspan="1" class="td_Dtitulo"><div class="div_Dtitulo"><div>TABLA DIN&Aacute;MICA</div> <div id="div_Dsvg" onclick="eliminarTablaD()"><svg xmlns='http://www.w3.org/2000/svg' viewBox='-15 -10 80 80'><path fill='' d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg></div></div></td>
+                <td colspan="9" rowspan="1" class="td_Dtitulo">
+                  <div class="div_Dtitulo">
+
+                  <div>TABLA DIN&Aacute;MICA</div>
+                  <div class="divs_svgs">
+                    <!-- 
+                    <div class="div_Dsvg"  id="div_svg_min" >
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512"  xml:space="preserve">
+                      <path class="path" d="M203.708,287.611H46.829c-11.422,0-20.682,9.259-20.682,20.682s9.26,20.682,20.682,20.682h136.197v136.197    c0,11.423,9.26,20.682,20.682,20.682c11.423,0,20.682-9.26,20.682-20.682V308.293C224.39,296.87,215.13,287.611,203.708,287.611z"/>
+                      <path class="path" d="M465.172,183.025H328.976V46.828c0-11.422-9.259-20.682-20.682-20.682s-20.682,9.26-20.682,20.682v156.879    c0,11.422,9.259,20.682,20.682,20.682h156.879c11.423,0,20.682-9.26,20.682-20.682    C485.854,192.285,476.595,183.025,465.172,183.025z"/>
+                      <path class="path" d="M505.943,6.058c-8.077-8.077-21.172-8.077-29.249,0L293.669,189.083c-8.076,8.077-8.076,21.172,0,29.249    c4.038,4.038,9.332,6.058,14.625,6.058c5.293,0,10.586-2.019,14.625-6.058L505.943,35.307    C514.019,27.23,514.019,14.135,505.943,6.058z"/>
+                      <path class="path" d="M218.332,293.669c-8.076-8.077-21.172-8.077-29.249,0L6.058,476.693c-8.077,8.077-8.077,21.172,0,29.249    C10.096,509.982,15.39,512,20.683,512c5.293,0,10.586-2.019,14.625-6.058l183.025-183.025    C226.409,314.841,226.409,301.746,218.332,293.669z"/>
+                  </svg>
+                </div>
+                <div class="div_Dsvg"  id="div_svg_max">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve">
+                        <path class="path" d="M491.318,0H334.439c-11.423,0-20.682,9.26-20.682,20.682c0,11.422,9.259,20.682,20.682,20.682h136.197v136.197    c0,11.422,9.259,20.682,20.682,20.682c11.423,0,20.682-9.26,20.682-20.682V20.682C512,9.26,502.741,0,491.318,0z"/>
+                        <path class="path" d="M177.561,470.636H41.365V334.439c0-11.423-9.26-20.682-20.682-20.682C9.26,313.757,0,323.016,0,334.439v156.879    C0,502.741,9.26,512,20.682,512h156.879c11.422,0,20.682-9.259,20.682-20.682C198.244,479.895,188.983,470.636,177.561,470.636z"/>
+                        <path class="path" d="M505.943,6.058c-8.077-8.077-21.172-8.077-29.249,0L293.669,189.083c-8.076,8.077-8.076,21.172,0,29.249    c4.038,4.038,9.332,6.058,14.625,6.058c5.292,0,10.586-2.019,14.625-6.058L505.943,35.307    C514.019,27.23,514.019,14.135,505.943,6.058z"/>
+                        <path class="path" d="M218.332,293.669c-8.076-8.077-21.172-8.077-29.249,0L6.058,476.693c-8.077,8.077-8.077,21.172,0,29.249    C10.096,509.982,15.39,512,20.682,512c5.293,0,10.586-2.019,14.625-6.058l183.025-183.025    C226.409,314.841,226.409,301.746,218.332,293.669z"/>
+                  </svg>
+                </div>
+              -->
+                    <div class="div_Dsvg"  id="div_svg_min" onclick="expandirD()">
+                      <svg id="" version="1.0" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path class="path"  d="M14.436,18.655v8.665c0,0.677-0.549,1.226-1.227,1.226s-1.227-0.548-1.227-1.226v-5.707l-9.891,9.891  c-0.238,0.239-0.553,0.359-0.867,0.359c-0.313,0-0.625-0.12-0.865-0.359c-0.479-0.479-0.479-1.254,0-1.733l9.891-9.892H4.543  c-0.678,0-1.227-0.548-1.227-1.225c0-0.676,0.549-1.226,1.227-1.226h8.666C13.887,17.43,14.436,17.979,14.436,18.655z M31.641,0.495  c-0.477-0.479-1.252-0.479-1.732,0L19.883,10.522V4.815c0-0.677-0.549-1.225-1.227-1.225c-0.676,0-1.225,0.548-1.225,1.225v8.665  c0,0.677,0.549,1.226,1.225,1.226h8.664c0.678,0,1.227-0.549,1.227-1.226s-0.549-1.225-1.227-1.225h-5.705L31.641,2.229  C32.119,1.75,32.119,0.975,31.641,0.495z"/></svg>
+                    </div>
+                    <div class="div_Dsvg"  id="div_svg_max" onclick="contraerD()">
+                      <svg id="" version="1.0" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path class="path" d="M14.075,17.789c0.478,0.479,0.478,1.254,0,1.732l-9.89,9.891h5.705c0.678,0,1.225,0.549,1.225,1.227  s-0.547,1.225-1.225,1.225H1.226C0.549,31.863,0,31.316,0,30.639v-8.666c0-0.676,0.549-1.225,1.226-1.225  c0.678,0,1.227,0.549,1.227,1.225v5.709l9.89-9.893c0.239-0.238,0.553-0.359,0.865-0.359C13.521,17.43,13.835,17.551,14.075,17.789z   M30.774,0.137H22.11c-0.678,0-1.226,0.547-1.226,1.225s0.548,1.227,1.226,1.227h5.705L17.79,12.615  c-0.479,0.479-0.479,1.254,0,1.732c0.478,0.479,1.253,0.479,1.732,0L29.548,4.32v5.707c0,0.676,0.549,1.225,1.227,1.225  c0.677,0,1.226-0.549,1.226-1.225V1.361C32,0.684,31.451,0.137,30.774,0.137z"/></svg>
+                    </div>
+                   <div class="div_Dsvg" id="div_Dsvg" onclick="eliminarTablaD()">
+                     <svg xmlns='http://www.w3.org/2000/svg' viewBox='-15 -10 80 80'><path class="path" d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg>
+                   </div>
+                  </div> 
+
+                  </div>
+              </td>
               </tr>
 
               <tr name="TR" >
                 <td class="tdHead"><div class="d_s">S&iacute;mbolo </div></td>
-                <td class="tdHead"><div name="L" >Capital inicial</div></td>
-                <td class="tdHead"><div name="L" >Compra         </div></td>
-                <td class="tdHead"><div name="L1">Venta          </div></td>
-                <td class="tdHead"><div name="L2">Diferencia     </div></td>
-                <td class="tdHead"><div name="L" >Comisi&oacute;n</div></td>
-                <td class="tdHead"><div name="L3">Ganancia       </div></td>
-                <td class="tdHead"><div name="L4">Capital final  </div></td>
-                <td class="tdHead"><div>Eliminar       </div></td>
+                <td class="tdHead"><div class="d_cf"><p          > Capital inicial</p></div></td>
+                <td class="tdHead"><div class="d_cf"><p name="L" > Compra         </p></div></td>
+                <td class="tdHead"><div class="d_cf"><p name="L1"> Venta          </p></div></td>
+                <td class="tdHead"><div class="d_cf"><p name="L2"> Diferencia     </p></div></td>
+                <td class="tdHead"><div class="d_cf"><p name="L" > Comisi&oacute;n</p></div></td>
+                <td class="tdHead"><div class="d_cf"><p name="L3"> Ganancia       </p></div></td>
+                <td class="tdHead"><div class="d_cf"><p name="L4"> Capital final  </p></div></td>
+                <td class="tdHead"><div class="d_s">Eliminar       </div></td>
               </tr>
             </thead> 
 
               <tbody id="tbodyD">
               <tr id="tr_1"  name="TR">
-                <td id="td_sp1" class="td_cf" name="d_sp" ><div class="d_s" id="p_s1">BTCUSDT</div></td>
-                <td id="td_ci1" class="td_cf"><div class="d_cf"><p name="L"  id="p_ci1">1,550.46 </p></div></td>
+                <td id="td_sp1" class="td_cf" name="d_sp" ><div class="d_s"  id="p_s1" >BTCUSDT</div></td>
+                <td id="td_ci1" class="td_cf"><div class="d_cf"><p           id="p_ci1">1,550.46 </p></div></td>
                 <td id="td_pc1" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc1">64,522.00</p></div></td>
                 <td id="td_pv1" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv1">74,000.00</p></div></td>
                 <td id="td_dp1" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp1">9,478.00 </p></div></td>
@@ -1685,7 +1761,7 @@ transition: .5s ease all;
               </tr>
               <tr id="tr_2"  name="TR">
                 <td id="td_sp2" class="td_cf" name="d_sp" ><div class="d_s"  id="p_s2">BTCUSDT</div></td>
-                <td id="td_ci2" class="td_cf"><div class="d_cf"><p name="L"  id="p_ci2" >617.23   </p></div></td>
+                <td id="td_ci2" class="td_cf"><div class="d_cf"><p           id="p_ci2" >617.23   </p></div></td>
                 <td id="td_pc2" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc2" >58,000.00</p></div></td>
                 <td id="td_pv2" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv2" >74,000.00</p></div></td>
                 <td id="td_dp2" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp2" >16,000.00</p></div></td>
@@ -1697,8 +1773,8 @@ transition: .5s ease all;
                 </td>
               </tr>
               <tr id="tr_3"  name="TR">
-                <td id="td_sp3" class="td_cf" name="d_sp" ><div class="d_s" id="p_s3">XRPUSDT</div></td>
-                <td id="td_ci3" class="td_cf"><div class="d_cf"><p name="L"  id="p_ci3" >7.2261  </p></div></td>
+                <td id="td_sp3" class="td_cf" name="d_sp" ><div class="d_s"  id="p_s3">XRPUSDT</div></td>
+                <td id="td_ci3" class="td_cf"><div class="d_cf"><p           id="p_ci3" >7.2261  </p></div></td>
                 <td id="td_pc3" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc3" >0.525000   </p></div></td>
                 <td id="td_pv3" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv3" >5.25    </p></div></td>
                 <td id="td_dp3" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp3" >4.725   </p></div></td>
@@ -1736,58 +1812,73 @@ transition: .5s ease all;
          <table class="tabla-css" id="tabla_2a">
           <thead>
             <tr name="TR" >
-              <td colspan="9" rowspan="1" class="td_Dtitulo"><div class="div_Dtitulo"><div>TABLA EST&Aacute;TICA</div> <div id="div_DsvgE" onclick="eliminarTablaE()"><svg xmlns='http://www.w3.org/2000/svg' viewBox='-15 -10 80 80'><path fill='' d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg></div></div></td>
+              <td colspan="9" rowspan="1" class="td_Dtitulo">
+                <div class="div_Dtitulo">
+                  <div>TABLA EST&Aacute;TICA</div> 
+                  <div class="divs_svgs">
+                    <div class="div_Dsvg"  id="div_svg_minE" onclick="expandirE()">
+                      <svg id="" version="1.0" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path class="path"  d="M14.436,18.655v8.665c0,0.677-0.549,1.226-1.227,1.226s-1.227-0.548-1.227-1.226v-5.707l-9.891,9.891  c-0.238,0.239-0.553,0.359-0.867,0.359c-0.313,0-0.625-0.12-0.865-0.359c-0.479-0.479-0.479-1.254,0-1.733l9.891-9.892H4.543  c-0.678,0-1.227-0.548-1.227-1.225c0-0.676,0.549-1.226,1.227-1.226h8.666C13.887,17.43,14.436,17.979,14.436,18.655z M31.641,0.495  c-0.477-0.479-1.252-0.479-1.732,0L19.883,10.522V4.815c0-0.677-0.549-1.225-1.227-1.225c-0.676,0-1.225,0.548-1.225,1.225v8.665  c0,0.677,0.549,1.226,1.225,1.226h8.664c0.678,0,1.227-0.549,1.227-1.226s-0.549-1.225-1.227-1.225h-5.705L31.641,2.229  C32.119,1.75,32.119,0.975,31.641,0.495z"/></svg>
+                    </div>
+                    <div class="div_Dsvg"  id="div_svg_maxE" onclick="contraerE()">
+                     <svg id="" version="1.0" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path class="path"  d="M14.075,17.789c0.478,0.479,0.478,1.254,0,1.732l-9.89,9.891h5.705c0.678,0,1.225,0.549,1.225,1.227  s-0.547,1.225-1.225,1.225H1.226C0.549,31.863,0,31.316,0,30.639v-8.666c0-0.676,0.549-1.225,1.226-1.225  c0.678,0,1.227,0.549,1.227,1.225v5.709l9.89-9.893c0.239-0.238,0.553-0.359,0.865-0.359C13.521,17.43,13.835,17.551,14.075,17.789z   M30.774,0.137H22.11c-0.678,0-1.226,0.547-1.226,1.225s0.548,1.227,1.226,1.227h5.705L17.79,12.615  c-0.479,0.479-0.479,1.254,0,1.732c0.478,0.479,1.253,0.479,1.732,0L29.548,4.32v5.707c0,0.676,0.549,1.225,1.227,1.225  c0.677,0,1.226-0.549,1.226-1.225V1.361C32,0.684,31.451,0.137,30.774,0.137z"/></svg>
+                   </div>
+                <div class="div_Dsvg"  id="div_DsvgE" onclick="eliminarTablaE()">
+                  <svg xmlns='http://www.w3.org/2000/svg' viewBox='-15 -10 80 80'><path class="path"  d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg>
+                </div>
+              </div>
+              </div>
+            </td>
             </tr>
 
             <tr name="TR" >
               <td class="tdHead"><div class="d_s">S&iacute;mbolo </div></td>
-              <td class="tdHead"><div>Capital inicial</div></td>
-              <td class="tdHead"><div>Compra         </div></td>
-              <td class="tdHead"><div>Venta          </div></td>
-              <td class="tdHead"><div>Diferencia     </div></td>
-              <td class="tdHead"><div>Comisi&oacute;n</div></td>
-              <td class="tdHead"><div>Ganancia       </div></td>
-              <td class="tdHead"><div>Capital final  </td>
-              <td class="tdHead"><div>Eliminar       </div></td>
+              <td class="tdHead"><div class="d_cf"><p           >Capital inicial</p></div></td>
+              <td class="tdHead"><div class="d_cf"><p name="LE" >Compra         </p></div></td>
+              <td class="tdHead"><div class="d_cf"><p name="LE1">Venta          </p></div></td>
+              <td class="tdHead"><div class="d_cf"><p name="LE2">Diferencia     </p></div></td>
+              <td class="tdHead"><div class="d_cf"><p name="LE" >Comisi&oacute;n</p></div></td>
+              <td class="tdHead"><div class="d_cf"><p name="LE3">Ganancia       </p></div></td>
+              <td class="tdHead"><div class="d_cf"><p name="LE4">Capital final  </p></td>
+              <td class="tdHead"><div class="d_s">Eliminar       </div></td>
             </tr>
           </thead> 
 
             <tbody id="tbodyE">
             <tr id="tr_E1"  name="TR" style="display: none;">
               <td id="td_spE1" class="td_cf" name="d_spE" ><div class="d_s" id="p_sE1">BTCUSDT </div></td>
-              <td id="td_ciE1" class="td_cf"><div name="d_ciE" class="d_cf" id="p_ciE1">0.00     </div></td>
-              <td id="td_pcE1" class="td_cf"><div name="d_pcE" class="d_cf" id="p_pcE1">66,600.00</div></td>
-              <td id="td_pvE1" class="td_cf"><div name="d_pvE" class="d_cf" id="p_pvE1">67,600.00</div></td>
-              <td id="td_dpE1" class="td_cf"><div name="d_dpE" class="d_cf" id="p_dpE1">1,000.00 </div></td>
-              <td id= "td_cE1" class="td_cf"><div name="d_cE"  class="d_cf" id="p_cE1">0.10      </div> </td>
-              <td id= "td_pE1" class="td_cf"><div name="d_pE"  class="d_cf" id="p_pE1">0.00      </div> </td>
-              <td id="td_cfE1" class="td_cf"><div name="d_cfE" class="d_cf" id="p_cfE1">0.00     </div> </td>
+              <td id="td_ciE1" class="td_cf"><div            class="d_cf" id="p_ciE1">0.00     </div></td>
+              <td id="td_pcE1" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE1">66,600.00</div></td>
+              <td id="td_pvE1" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE1">67,600.00</div></td>
+              <td id="td_dpE1" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE1">1,000.00 </div></td>
+              <td id= "td_cE1" class="td_cf"><div name="LE"  class="d_cf" id="p_cE1">0.10      </div> </td>
+              <td id= "td_pE1" class="td_cf"><div name="LE3" class="d_cf" id="p_pE1">0.00      </div> </td>
+              <td id="td_cfE1" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE1">0.00     </div> </td>
               <td class="td_x" onclick="eliminarTrE(1)" onmouseover="bordeOverTrE(1)" onmouseout="bordeOutTrE(1)">
                 <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
               </td>
             </tr>
             <tr id="tr_E2"  name="TR" style="display: none;">  
               <td id="td_spE2" class="td_cf" name="d_spE" ><div class="d_s" id="p_sE2">BTCUSDT </div></td>
-              <td id="td_ciE2" class="td_cf"><div name="d_ciE" class="d_cf" id="p_ciE2">0.00     </div></td>
-              <td id="td_pcE2" class="td_cf"><div name="d_pcE" class="d_cf" id="p_pcE2">66,600.00</div></td>
-              <td id="td_pvE2" class="td_cf"><div name="d_pvE" class="d_cf" id="p_pvE2">67,600.00</div></td>
-              <td id="td_dpE2" class="td_cf"><div name="d_dpE" class="d_cf" id="p_dpE2">1,000.00 </div></td>
-              <td id= "td_cE2" class="td_cf"><div name="d_cE"  class="d_cf" id="p_cE2">0.10      </div> </td>
-              <td id= "td_pE2" class="td_cf"><div name="d_pE"  class="d_cf" id="p_pE2">0.00      </div> </td>
-              <td id="td_cfE2" class="td_cf"><div name="d_cfE" class="d_cf" id="p_cfE2">0.00     </div> </td>
+              <td id="td_ciE2" class="td_cf"><div           class="d_cf" id="p_ciE2">0.00     </div></td>
+              <td id="td_pcE2" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE2">66,600.00</div></td>
+              <td id="td_pvE2" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE2">67,600.00</div></td>
+              <td id="td_dpE2" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE2">1,000.00 </div></td>
+              <td id= "td_cE2" class="td_cf"><div name="LE"  class="d_cf" id="p_cE2">0.10      </div> </td>
+              <td id= "td_pE2" class="td_cf"><div name="LE3" class="d_cf" id="p_pE2">0.00      </div> </td>
+              <td id="td_cfE2" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE2">0.00     </div> </td>
               <td class="td_x" onclick="eliminarTrE(2)" onmouseover="bordeOverTrE(2)" onmouseout="bordeOutTrE(2)">
                 <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
               </td>
             </tr>
             <tr id="tr_E3"  name="TR" style="display: none;">  
               <td id="td_spE3" class="td_cf" name="d_spE" ><div class="d_s" id="p_sE3">BTCUSDT </div></td>
-              <td id="td_ciE3" class="td_cf"><div name="d_ciE" class="d_cf" id="p_ciE3">0.00     </div></td>
-              <td id="td_pcE3" class="td_cf"><div name="d_pcE" class="d_cf" id="p_pcE3">66,600.00</div></td>
-              <td id="td_pvE3" class="td_cf"><div name="d_pvE" class="d_cf" id="p_pvE3">67,600.00</div></td>
-              <td id="td_dpE3" class="td_cf"><div name="d_dpE" class="d_cf" id="p_dpE3">1,000.00 </div></td>
-              <td id= "td_cE3" class="td_cf"><div name="d_cE"  class="d_cf" id="p_cE3">0.10      </div> </td>
-              <td id= "td_pE3" class="td_cf"><div name="d_pE"  class="d_cf" id="p_pE3">0.00      </div> </td>
-              <td id="td_cfE3" class="td_cf"><div name="d_cfE" class="d_cf" id="p_cfE3">0.00     </div> </td>
+              <td id="td_ciE3" class="td_cf"><div           class="d_cf" id="p_ciE3">0.00     </div></td>
+              <td id="td_pcE3" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE3">66,600.00</div></td>
+              <td id="td_pvE3" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE3">67,600.00</div></td>
+              <td id="td_dpE3" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE3">1,000.00 </div></td>
+              <td id= "td_cE3" class="td_cf"><div name="LE"  class="d_cf" id="p_cE3">0.10      </div> </td>
+              <td id= "td_pE3" class="td_cf"><div name="LE3" class="d_cf" id="p_pE3">0.00      </div> </td>
+              <td id="td_cfE3" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE3">0.00     </div> </td>
               <td class="td_x" onclick="eliminarTrE(3)" onmouseover="bordeOverTrE(3)" onmouseout="bordeOutTrE(3)">
                 <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
               </td>
@@ -2524,7 +2615,7 @@ function visibleTr2(cont2){document.getElementById("tbody2_"+cont2).style.visibi
 var r="rgb(200,0,0)", v='rgb(0,200,0)', TOGGLE=1, EDITAR=1, ACTUALIZAPRECIO=1, TABLADINAMICA=1, simboloPar='',cuentaInicial='', gananciaXBTC='', comision='',gananciaXBTC='', gananciaXFraccion='', cuentaFinal='',pCompra='', pVenta=''
 , nn=3, contD=0+nn , contE=0+nn , contTD=nn , contTE=nn, arrayBox=[0,0,0,0,0,0,0,0,0], ANCHODIV=1, AD='', contAD=-1, colorRT=0, C=0, old_price1=0,precio1=0, cuentaInicialT='', gananciaXBTCT='', comisionT='',gananciaXBTCT='', gananciaXFraccionT='', cuentaFinalT='',pCompraT='', pVentaT=''; 
 var cuentainicial=0, cuentaFinal=0, sumaTotal_ci=0, sumaTotal_cf=0, array_ci=[], array_cf=[];
-let pvBTC=0,pvXRP=0, precio='';
+let pvBTC=0,pvXRP=0, precio='', EXPANDIR_D=1, EXPANDIR_E=1;
 
 function formato(input) { // OJO::::: RECTIFICAR PARA: 18888888888888888 INTRODUCIDO EN id="precioCompra", DA COMO RESULTADO: 18,888,888,888,888,890.00  // 1999999999999999999 ➡ 2,000,000,000,000,000,000.00  // 19999999999999999 ➡ 20,000,000,000,000,000.00
   var cadena= new String(input); var x = cadena.split("."); //var x = cadena.replace(/,/g,"").split(".");
@@ -2966,7 +3057,7 @@ function agregarAtabla(){
 
   var TR= "<tr id='tr_"+est+contC+"'"+" name='TR'>"+
   "<td class='td_cf' id='td_sp"+est+contC+"'><div class='d_s' id='p_s"+est+contC+"'>"+S+"</div></td>"+
-  "<td class='td_cf' id='td_ci"+est+contC+"'><div  class='d_cf'><p name='L"+est+"'  id='p_ci"+est+contC+"'>"+FCI+"</p></div></td>"+
+  "<td class='td_cf' id='td_ci"+est+contC+"'><div  class='d_cf'><p                  id='p_ci"+est+contC+"'>"+FCI+"</p></div></td>"+
   "<td class='td_cf' id='td_pc"+est+contC+"'><div  class='d_cf'><p name='L"+est+"'  id='p_pc"+est+contC+"'>"+FPC+"</p></div></td>"+
   "<td class='td_cf' id='td_pv"+est+contC+"'><div  class='d_cf'><p name='L"+est+"1' id='p_pv"+est+contC+"'>"+FPV+"</p></div></td>"+
   "<td class='td_cf' id='td_dp"+est+contC+"'><div  class='d_cf'><p name='L"+est+"2' id='p_dp"+est+contC+"'>"+FDP+"</p></div></td>"+
@@ -2989,6 +3080,8 @@ function agregarAtabla(){
   //contAD=contAD+1; 
   //(ANCHODIV==1)? (AD=16, ANCHODIV=0) : (AD=16, ANCHODIV=1);//console.log("contAD", contAD);
   anchoDivsCeldas1();actualizaColorTr();
+  (EXPANDIR_D==1)? contraerD() : expandirD();
+  (EXPANDIR_E==1)? contraerE() : expandirE();
 }
 
 function actualizaPreciosTablaDinamica(n,s){
@@ -3085,6 +3178,7 @@ function onload() {
   resetar();nivelarColumnas();
   cotizacion_binance();startTimer();
   anchoDivsCeldas1();actualizaColorTr();
+  expandirD();expandirE();
   ///document.getElementById('agregarATabla').click(); document.getElementById('td_x'+contTD).click();
 }
 function resetar() {
@@ -3202,6 +3296,59 @@ function eliminarTrE(c){
   document.getElementById("p_pvE"+c).innerText=0; document.getElementById("p_dpE"+c).innerText=0; document.getElementById("p_cE" +c).innerText=0; document.getElementById("p_pE" +c).innerText=0; document.getElementById("p_cfE"+c).innerText=0
   actualizaPreciosTablaDinamica(contE,'E');
   if (contTE==nn) {document.getElementById('tabla_2a').style.display='none';document.querySelector('.marcoTabla2').style.display='none';}
+}
+
+function expandirD(){
+  EXPANDIR_D=0;
+  document.getElementById('div_svg_min').style.display ="none"; document.getElementById('div_svg_max').style.display ="flex";
+  for (let j = 0; j < document.getElementsByName('L1').length; j++) {console.log("document.getElementsByName('L1').length",document.getElementsByName('L1').length); 
+    document.getElementsByName('L1')[j].style.display='none'; //document.getElementsByName('L1')[j].style.padding='0.25rem  0.0rem';
+    document.getElementsByName('L2')[j].style.display='none'; //document.getElementsByName('L2')[j].style.padding='0.25rem  0.0rem';
+    document.getElementsByName('L3')[j].style.display='none'; //document.getElementsByName('L3')[j].style.padding='0.25rem  0.0rem';
+  }
+  for (let j = 0; j < document.getElementsByName('L').length; j++) { 
+    document.getElementsByName('L')[j].style.display='none';  //document.getElementsByName('L')[j].style.textAlign='right';
+  }
+  anchoDivsCeldas1();
+}
+function contraerD(){
+  EXPANDIR_D=1;
+  document.getElementById('div_svg_max').style.display ="none"; document.getElementById('div_svg_min').style.display ="flex";
+  for (let j = 0; j < document.getElementsByName('L1').length; j++) {
+    document.getElementsByName('L1')[j].style.display='block'; //document.getElementsByName('L1')[j].style.padding='0.25rem  0.5rem';
+    document.getElementsByName('L2')[j].style.display='block'; //document.getElementsByName('L2')[j].style.padding='0.25rem  0.5rem';
+    document.getElementsByName('L3')[j].style.display='block'; //document.getElementsByName('L3')[j].style.padding='0.25rem  0.5rem';
+  }
+  for (let j = 0; j < document.getElementsByName('L').length; j++) {console.log("document.getElementsByName('L1').length",document.getElementsByName('L1').length); 
+    document.getElementsByName('L')[j].style.display='block'; //document.getElementsByName('L')[j].style.textAlign='right';
+  } 
+  //anchoDivsCeldas2();
+}
+
+function expandirE(){
+  EXPANDIR_E=0;
+  document.getElementById('div_svg_minE').style.display ="none"; document.getElementById('div_svg_maxE').style.display ="flex";
+  for (let j = 0; j < document.getElementsByName('LE1').length; j++) {
+    document.getElementsByName('LE1')[j].style.display='none'; //document.getElementsByName('L1')[j].style.padding='0.25rem  0.0rem';
+    document.getElementsByName('LE2')[j].style.display='none'; //document.getElementsByName('L2')[j].style.padding='0.25rem  0.0rem';
+    document.getElementsByName('LE3')[j].style.display='none'; //document.getElementsByName('L3')[j].style.padding='0.25rem  0.0rem';
+  }
+  for (let j = 0; j < document.getElementsByName('LE').length; j++) { 
+    document.getElementsByName('LE')[j].style.display='none';  //document.getElementsByName('L')[j].style.textAlign='right';
+  }
+  anchoDivsCeldas1();
+}
+function contraerE(){
+  EXPANDIR_E=1;
+  document.getElementById('div_svg_maxE').style.display ="none"; document.getElementById('div_svg_minE').style.display ="flex";
+  for (let j = 0; j < document.getElementsByName('LE1').length; j++) {
+    document.getElementsByName('LE1')[j].style.display='block'; //document.getElementsByName('L1')[j].style.padding='0.25rem  0.5rem';
+    document.getElementsByName('LE2')[j].style.display='block'; //document.getElementsByName('L2')[j].style.padding='0.25rem  0.5rem';
+    document.getElementsByName('LE3')[j].style.display='block'; //document.getElementsByName('L3')[j].style.padding='0.25rem  0.5rem';
+  }
+  for (let j = 0; j < document.getElementsByName('LE').length; j++) {
+    document.getElementsByName('LE')[j].style.display='block'; //document.getElementsByName('L')[j].style.textAlign='right';
+  } 
 }
 
 ///------------------------------------------------------------------------------------------------------------------------
@@ -3562,7 +3709,7 @@ function newYear(){
 } 
  
  var timerID; 
- function startTimer() {timerID=window.setInterval(newYear,2000);} 
+ function startTimer() {timerID=window.setInterval(newYear,1000);} 
  function stopTimer() {clearInterval(timerID);} 
 
 ////################ decimal.js #########################
@@ -4480,7 +4627,6 @@ function newYear(){
 //# sourceMappingURL=doc/decimal.js.map  
 
 ////################ FIN DE  decimal.js ###################
-
 
 
 
