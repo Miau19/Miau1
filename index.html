@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="style.css" /><link rel="stylesheet" href="css/CF[2024]-2b.css" /> -->
-    <title>CF[2024]-2c-paratelefono</title>
+    <title>CF[2024]-2c-paratelef</title>
 
     <style type="text/css">
 @import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
@@ -602,7 +602,7 @@ z-index: 10;
     color: var(--text-color);font-size: var(--font-size4);font-family: var(--font-family2); font-weight: var(--font-weight2); 
     padding: 0.0rem  0.0rem ;
 }
-.main_grid_2 .tabla-css .td_cf .d_s {background: #945e01;
+.main_grid_2 .tabla-css .td_cf .d_s {background: #002109;
     display: block;justify-content: start;align-items: center;
     text-align: left;white-space: nowrap; /* white-space: nowrap; suprime saltos de linea del origen*/
     padding: 0.0rem  0.250rem ;
@@ -1435,6 +1435,7 @@ transition: .5s ease all;
                 <div class="buttons" >
                   <div type="button"  class="button_CF" id="editando" onclick="editar()" >Iniciar edici&oacute;n</div>
                    <div type="button" class="button_CF" id="agregarATabla" onclick="agregarAtabla()" >Insertar en tabla din&aacute;mica</div>
+                   <div type="button" class="button_CF" id="x" onclick="" >x</div>
                 </div>
 
               </article>
@@ -1665,7 +1666,14 @@ transition: .5s ease all;
       </article>
   
       <article class="main_grid_2" id="main_grid_2">
-        
+         <!-- 
+        <div id="d1" style="background: blue;">xxx</div>
+        <div id="d1a" style="background: blue;">xxx</div>
+        <div id="d2" style="background: rgb(2, 92, 2);">xxx</div>
+        <div id="d2a" style="background: blue;">xxx</div>
+        <div id="d3" style="background: blue;">xxx</div>
+        <div id="d3a" style="background: blue;">xxx</div>
+      -->
         <div class="tablas" id="tablas">
           <div id="Lp"><p name="Lp1"></p></div>
           <div class="marcoTabla1" id="marcoTabla1"><!-- ESTA div ES PARA Q' NO SE BORREN LOS BORDES DE LA TABLA EN NAVEGADOR FIREFOX -->
@@ -2888,19 +2896,19 @@ function cotizacion_binance() {//CAMBIO DE PRECIO CADA 1 SEGUNDO //Cotización d
     cuentaFinal= Number(cuentaInicial)+gananciaXFraccion0;
     gananciaXFraccion= gananciaXFraccion0;
     document.getElementById('Difprecio').value   = F2(F1(gananciaXBTC, d(S)));
-    document.getElementById('precioVenta').value = F2(F1(pVenta, d(S)));
+    document.getElementById('precioVenta').value = F2(F1(pVenta, 4));
     document.getElementById("profit").value      = F2(F1(gananciaXFraccion, d(S)));
     document.getElementById("cuentaSpotF").value = F2(F1(cuentaFinal, d(S))); 
 
     actualizaColor(document.getElementById("profit"),gananciaXFraccion,0);
     actualizaColor(document.getElementById("cuentaSpotF"),cuentaFinal,cuentaInicial);
 
-    document.getElementById('cotizacionBTC').innerText=F2(F1(pVenta, d(S))); // formato(10000+Number(data.p));
+    document.getElementById('cotizacionBTC').innerText=F2(F1(pVenta, 4)); // formato(10000+Number(data.p));
     precio1= Number(cleanBox(document.getElementById("cotizacionBTC").textContent));
     if(precio1 > old_price1){cotizacionBTC.style.color=v;svgDOWN1.style.display='none'; svgUP1.style.display='inline';} //else if(price==old_price){cotizacionBTC.style.color="white";}
     else{cotizacionBTC.style.color=r;svgDOWN1.style.display='inline'; svgUP1.style.display='none';}
     old_price1=precio1;
-    document.getElementById('precioVentaVivo').value =F2(F1(pVenta, d(S))); 
+    document.getElementById('precioVentaVivo').value =F2(F1(pVenta, 4)); 
   } 
   actualizaDiferenciaPrecio(); 
 }
@@ -2962,6 +2970,67 @@ function cotizaciónBtc_binance_price24hr() {//CAMBIO DE PRECIO CADA 1 SEGUNDO /
  }
 }
 
+let pAVAX='30.07'.pBNB='609.90', pBTC='70000.00',pDOGE='0.12', pETH='2690.33',pSOL='158.55', pXRP='0.5855';
+function wsAVAX() {//CAMBIO DE PRECIO CADA 1 SEGUNDO , NO NECESITA TIMER.
+  //Cotización de Bitcoin en tiempo real con WebSocket:  https://www.youtube.com/watch?v=bBqytMjLpoU    // https://drive.google.com/file/d/1b515bf3JMqNFcM6oITRZ7UcNHeZhUxeo/view 
+  ws1=new WebSocket('wss://stream.binance.com:9443/ws/avaxusdt@trade'); 
+  ws1.onmessage=(event)=>{
+    data1=JSON.parse(event.data);
+    //d1.textContent=data.p; //console.log("1 data.p:", data.p);
+    pAVAX=data1.p;
+  } 
+}
+function wsBNB() {//CAMBIO DE PRECIO CADA 1 SEGUNDO , NO NECESITA TIMER.
+  //Cotización de Bitcoin en tiempo real con WebSocket:  https://www.youtube.com/watch?v=bBqytMjLpoU    // https://drive.google.com/file/d/1b515bf3JMqNFcM6oITRZ7UcNHeZhUxeo/view 
+  ws2=new WebSocket('wss://stream.binance.com:9443/ws/bnbusdt@trade'); 
+  ws2.onmessage=(event)=>{
+    data2=JSON.parse(event.data);
+    pBNB=data2.p;
+  } 
+}
+function wsBTC() {//CAMBIO DE PRECIO CADA 1 SEGUNDO , NO NECESITA TIMER.
+  //Cotización de Bitcoin en tiempo real con WebSocket:  https://www.youtube.com/watch?v=bBqytMjLpoU    // https://drive.google.com/file/d/1b515bf3JMqNFcM6oITRZ7UcNHeZhUxeo/view 
+  ws3=new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@trade'); 
+  ws3.onmessage=(event)=>{
+    data3=JSON.parse(event.data);
+    pBTC=data3.p;
+  } 
+}
+function wsDOGE() {//CAMBIO DE PRECIO CADA 1 SEGUNDO , NO NECESITA TIMER.
+  //Cotización de Bitcoin en tiempo real con WebSocket:  https://www.youtube.com/watch?v=bBqytMjLpoU    // https://drive.google.com/file/d/1b515bf3JMqNFcM6oITRZ7UcNHeZhUxeo/view 
+  ws4=new WebSocket('wss://stream.binance.com:9443/ws/dogeusdt@trade'); 
+  ws4.onmessage=(event)=>{
+    data4=JSON.parse(event.data);
+    pDOGE=data4.p;
+
+  } 
+}
+function wsETH() {//CAMBIO DE PRECIO CADA 1 SEGUNDO , NO NECESITA TIMER.
+  //Cotización de Bitcoin en tiempo real con WebSocket:  https://www.youtube.com/watch?v=bBqytMjLpoU    // https://drive.google.com/file/d/1b515bf3JMqNFcM6oITRZ7UcNHeZhUxeo/view 
+  ws5=new WebSocket('wss://stream.binance.com:9443/ws/ethusdt@trade'); 
+  ws5.onmessage=(event)=>{
+    data5=JSON.parse(event.data);
+    pETH=data5.p;
+
+  } 
+}
+function wsSOL() {//CAMBIO DE PRECIO CADA 1 SEGUNDO , NO NECESITA TIMER.
+  //Cotización de Bitcoin en tiempo real con WebSocket:  https://www.youtube.com/watch?v=bBqytMjLpoU    // https://drive.google.com/file/d/1b515bf3JMqNFcM6oITRZ7UcNHeZhUxeo/view 
+  ws6=new WebSocket('wss://stream.binance.com:9443/ws/solusdt@trade'); 
+  ws6.onmessage=(event)=>{
+    data6=JSON.parse(event.data);
+    pSOL=data6.p;
+  } 
+}
+function wsXRP() {//CAMBIO DE PRECIO CADA 1 SEGUNDO , NO NECESITA TIMER.
+  //Cotización de Bitcoin en tiempo real con WebSocket:  https://www.youtube.com/watch?v=bBqytMjLpoU    // https://drive.google.com/file/d/1b515bf3JMqNFcM6oITRZ7UcNHeZhUxeo/view 
+  ws7=new WebSocket('wss://stream.binance.com:9443/ws/xrpusdt@trade'); 
+  ws7.onmessage=(event)=>{
+    data7=JSON.parse(event.data);
+    pXRP=data7.p;
+  } 
+}
+
 function cotizaciónBtc_WebSocket() {//CAMBIO DE PRECIO CADA 1 SEGUNDO , NO NECESITA TIMER.
   //Cotización de Bitcoin en tiempo real con WebSocket:  https://www.youtube.com/watch?v=bBqytMjLpoU    // https://drive.google.com/file/d/1b515bf3JMqNFcM6oITRZ7UcNHeZhUxeo/view 
   ws=new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@trade'); 
@@ -2978,7 +3047,7 @@ function cotizaciónBtc_WebSocket() {//CAMBIO DE PRECIO CADA 1 SEGUNDO , NO NECE
     //simbolo.innerText=formato(simboloPar)+':'; 
     // title.innerText=formato(profit.value) +' | '+ formato(data.p) +  '' +' | CF[2024]-0b';
     // console.log("data:", data);
-  } 
+  }  
 }
 
 function cotizaciónBtc_WebSocket1() {//CAMBIO DE PRECIO CADA 1 SEGUNDO , NO NECESITA TIMER.
@@ -3037,7 +3106,8 @@ function actualizaPreciosCard() {//ACTUALIZA LOS FORMATOS DE LAS CASILLAS.
   let S=document.getElementById('simbolo').textContent; 
   document.getElementById('cuentaSpotI').value = F2(F1(cuentaInicial, d(S)));
   document.getElementById('precioCompra').value= F2(F1(pCompra, d(S)));
-  document.getElementById('precioVenta').value = F2(F1(pVenta, d(S)));
+  document.getElementById('precioVenta').value = F2(F1(pVenta, 4));
+  ///document.getElementById('precioVentaVivo').value = F2(F1(pVenta, 4));
   document.getElementById('Difprecio').value   = F2(F1(gananciaXBTC, d(S)));
   document.getElementById('commission').value  = F2(F1(comision, d(S)));
   document.getElementById("profit").value      = F2(F1(gananciaXFraccion, d(S)));
@@ -3082,29 +3152,107 @@ function agregarAtabla(){
   anchoDivsCeldas1();actualizaColorTr();
   (EXPANDIR_D==1)? contraerD() : expandirD();
   (EXPANDIR_E==1)? contraerE() : expandirE();
+  //actualizaPreciosTablaDinamica(contD,'');;
 }
 
-function actualizaPreciosTablaDinamica(n,s){
-  var pVentaT= '', precioVentaTr='';//pVentaT= Number(cleanBox(cotizacionBTC.textContent.replace(/[,]/g,"")));
-  for (let j = 1; j <= n; j++) {
-    fetch('https://api.binance.com/api/v3/ticker/price')
-    .then( respuesta => respuesta.json() )
-    .then( datos => mostrarData(datos))
-    .catch( e => console.log(e))
-    let mostrarData = (data)=>{
-      pVentaT= (cleanBox(document.getElementById("p_pv"+s+j).textContent.replace(/[,]/g,"")));
+
+function actualizaPreciosTablaDinamica(n,s){ 
+  /*
+  ws1=new WebSocket('wss://stream.binance.com:9443/ws/avaxusdt@trade'); 
+  ws1.onmessage=(event)=>{
+    data1=JSON.parse(event.data);
+    //d1.textContent=data.p; //console.log("1 data.p:", data.p);
+    pAVAX=data1.p;
+  } 
+  ws2=new WebSocket('wss://stream.binance.com:9443/ws/bnbusdt@trade'); 
+  ws2.onmessage=(event)=>{
+    data2=JSON.parse(event.data);
+    pBNB=data2.p;
+  } 
+  ws3=new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@trade'); 
+  ws3.onmessage=(event)=>{
+    data3=JSON.parse(event.data);
+    pBTC=data3.p;
+  } 
+  ws4=new WebSocket('wss://stream.binance.com:9443/ws/dogeusdt@trade'); 
+  ws4.onmessage=(event)=>{
+    data4=JSON.parse(event.data);
+    pDOGE=data4.p;
+
+  } 
+  ws5=new WebSocket('wss://stream.binance.com:9443/ws/ethusdt@trade'); 
+  ws5.onmessage=(event)=>{
+    data5=JSON.parse(event.data);
+    pETH=data5.p;
+
+  } 
+  ws6=new WebSocket('wss://stream.binance.com:9443/ws/solusdt@trade'); 
+  ws6.onmessage=(event)=>{
+    data6=JSON.parse(event.data);
+    pSOL=data6.p;
+  } 
+  ws7=new WebSocket('wss://stream.binance.com:9443/ws/xrpusdt@trade'); 
+  ws7.onmessage=(event)=>{
+    data7=JSON.parse(event.data);
+    pXRP=data7.p;
+  } 
+  */
+  wsAVAX();wsBNB();wsBTC();wsDOGE();wsETH();wsSOL();wsXRP();
+  var S='', PV='';
+  for (let j = 1; j <= n; j++) { //console.log("n ======", n);
+    //fetch('https://api.binance.com/api/v3/ticker/price')
+    //.then( respuesta => respuesta.json() )
+    //.then( datos => mostrarData(datos))
+    //.catch( e => console.log(e))
+    //let mostrarData = (data)=>{
+      var precioVentaTr='0000.0000';//pVentaT= Number(cleanBox(cotizacionBTC.textContent.replace(/[,]/g,"")));
       cuentaInicialT= (cleanBox(document.getElementById("p_ci"+s+j).textContent.replace(/[,]/g,"")));
       pCompraT= (cleanBox(document.getElementById("p_pc"+s+j).textContent.replace(/[,]/g,"")));
       comisionT= (cleanBox(document.getElementById("p_c"+s+j).textContent.replace(/[,]/g,"")));
-      var PV='';
+
+      if(document.getElementById('p_s'+s+j).textContent=='AVAXUSDT') {document.getElementById('p_pv'+s+j).innerText = F2(F1(pAVAX, 2));}
+      if(document.getElementById('p_s'+s+j).textContent=='BNBUSDT' ) {document.getElementById('p_pv'+s+j).innerText = F2(F1(pBNB , 2));}
+      if(document.getElementById('p_s'+s+j).textContent=='BTCUSDT' ) {document.getElementById('p_pv'+s+j).innerText = F2(F1(pBTC , 2));}
+      if(document.getElementById('p_s'+s+j).textContent=='DOGEUSDT') {document.getElementById('p_pv'+s+j).innerText = F2(F1(pDOGE, 4));}
+      if(document.getElementById('p_s'+s+j).textContent=='ETHUSDT' ) {document.getElementById('p_pv'+s+j).innerText = F2(F1(pETH , 2));}
+      if(document.getElementById('p_s'+s+j).textContent=='SOLUSDT' ) {document.getElementById('p_pv'+s+j).innerText = F2(F1(pSOL , 2));}
+      if(document.getElementById('p_s'+s+j).textContent=='XRPUSDT' ) {document.getElementById('p_pv'+s+j).innerText = F2(F1(pXRP , 4));}
+     
+      pVentaT= (cleanBox(document.getElementById("p_pv"+s+j).textContent.replace(/[,]/g,"")));
+
+      gananciaXBTCT= Number(pVentaT) - Number(pCompraT);
+      var gananciaXFraccion0= (gananciaXBTCT - (((Number(pCompraT)/100)*Number(comisionT)) +(((Number(pCompraT) + gananciaXBTCT)/100)*Number(comisionT))))*(Number(cuentaInicialT)/Number(pCompraT)) ;
+      cuentaFinalT= Number(cuentaInicialT)+gananciaXFraccion0;
+      gananciaXFraccionT= gananciaXFraccion0;
+      //let S=document.getElementById('p_s'+s+j);//console.log("d======", d(S));
+      // (s=='')? PV= precioVentaTr : PV= pVentaT; document.getElementById('p_pv'+s+j).innerText = F2(F1(PV, d(S)));
+      
+      //document.getElementById('p_pv'+s+j).innerText = F2(F1(precioVentaTr, d(S)));
+      if(document.getElementById('p_s'+s+j).textContent=='AVAXUSDT') { document.getElementById('p_pc'+s+j).innerText= F2(F1(pCompraT, 2));document.getElementById('p_dp'+s+j).innerText= F2(F1(gananciaXBTCT, 2));document.getElementById('p_p'+s+j).innerText = F2(F1(gananciaXFraccionT, 2)); document.getElementById('p_cf'+s+j).innerText= F2(F1(cuentaFinalT, 2));}
+      if(document.getElementById('p_s'+s+j).textContent=='BNBUSDT' ) { document.getElementById('p_pc'+s+j).innerText= F2(F1(pCompraT, 2));document.getElementById('p_dp'+s+j).innerText= F2(F1(gananciaXBTCT, 2));document.getElementById('p_p'+s+j).innerText = F2(F1(gananciaXFraccionT, 2)); document.getElementById('p_cf'+s+j).innerText= F2(F1(cuentaFinalT, 2));}
+      if(document.getElementById('p_s'+s+j).textContent=='BTCUSDT' ) { document.getElementById('p_pc'+s+j).innerText= F2(F1(pCompraT, 2));document.getElementById('p_dp'+s+j).innerText= F2(F1(gananciaXBTCT, 2));document.getElementById('p_p'+s+j).innerText = F2(F1(gananciaXFraccionT, 2)); document.getElementById('p_cf'+s+j).innerText= F2(F1(cuentaFinalT, 2));}
+      if(document.getElementById('p_s'+s+j).textContent=='DOGEUSDT') { document.getElementById('p_pc'+s+j).innerText= F2(F1(pCompraT, 4));document.getElementById('p_dp'+s+j).innerText= F2(F1(gananciaXBTCT, 4));document.getElementById('p_p'+s+j).innerText = F2(F1(gananciaXFraccionT, 4)); document.getElementById('p_cf'+s+j).innerText= F2(F1(cuentaFinalT, 4));}
+      if(document.getElementById('p_s'+s+j).textContent=='ETHUSDT' ) { document.getElementById('p_pc'+s+j).innerText= F2(F1(pCompraT, 2));document.getElementById('p_dp'+s+j).innerText= F2(F1(gananciaXBTCT, 2));document.getElementById('p_p'+s+j).innerText = F2(F1(gananciaXFraccionT, 2)); document.getElementById('p_cf'+s+j).innerText= F2(F1(cuentaFinalT, 2));}
+      if(document.getElementById('p_s'+s+j).textContent=='SOLUSDT' ) { document.getElementById('p_pc'+s+j).innerText= F2(F1(pCompraT, 2));document.getElementById('p_dp'+s+j).innerText= F2(F1(gananciaXBTCT, 2));document.getElementById('p_p'+s+j).innerText = F2(F1(gananciaXFraccionT, 2)); document.getElementById('p_cf'+s+j).innerText= F2(F1(cuentaFinalT, 2));}
+      if(document.getElementById('p_s'+s+j).textContent=='XRPUSDT' ) { document.getElementById('p_pc'+s+j).innerText= F2(F1(pCompraT, 4));document.getElementById('p_dp'+s+j).innerText= F2(F1(gananciaXBTCT, 4));document.getElementById('p_p'+s+j).innerText = F2(F1(gananciaXFraccionT, 4)); document.getElementById('p_cf'+s+j).innerText= F2(F1(cuentaFinalT, 4));}
+     
+     
+      actualizaColor(document.getElementById('p_p'+s+j),gananciaXFraccionT,0);
+      actualizaColor(document.getElementById('p_dp'+s+j),cuentaFinalT,Number(cuentaInicialT));
+      actualizaColor(document.getElementById('p_cf'+s+j),cuentaFinalT,Number(cuentaInicialT));
+      /*
       for (let i=0; i < 1060; i++) {//TOTAL:2736 //XRPUSDT:i=307  BTCUSDT:i=12 //for (let i=0; i < data.length/50; i++)   //LONGITUD TOTAL: length: 2447
-        if (data[i].symbol==(document.getElementById('p_s'+s+j).textContent)){precioVentaTr=(data[i].price);
+        if (data[i].symbol==(document.getElementById('p_s'+s+j).textContent)){(s=='')? precioVentaTr=data[i].price : precioVentaTr=pVentaT;
+          //let S=data[i].symbol;//console.log("d======", d(S));
+          //document.getElementById('p_pv'+s+j).innerText = F2(F1(precioVentaTr, d(S)));
+          
           gananciaXBTCT= Number(precioVentaTr) - Number(pCompraT);
           var gananciaXFraccion0= (gananciaXBTCT - (((Number(pCompraT)/100)*Number(comisionT)) +(((Number(pCompraT) + gananciaXBTCT)/100)*Number(comisionT))))*(Number(cuentaInicialT)/Number(pCompraT)) ;
           cuentaFinalT= Number(cuentaInicialT)+gananciaXFraccion0;
           gananciaXFraccionT= gananciaXFraccion0;
           let S=data[i].symbol;//console.log("d======", d(S));
-          (s=='')? PV= precioVentaTr : PV= precioVentaTr; document.getElementById('p_pv'+s+j).innerText = F2(F1(PV, d(S)));
+          // (s=='')? PV= precioVentaTr : PV= pVentaT; document.getElementById('p_pv'+s+j).innerText = F2(F1(PV, d(S)));
+          document.getElementById('p_pv'+s+j).innerText = F2(F1(precioVentaTr, d(S)));
           document.getElementById('p_pc'+s+j).innerText= F2(F1(pCompraT, d(S)));
           document.getElementById('p_dp'+s+j).innerText= F2(F1(gananciaXBTCT, d(S)));
           document.getElementById('p_p'+s+j).innerText = F2(F1(gananciaXFraccionT, d(S))); 
@@ -3113,11 +3261,36 @@ function actualizaPreciosTablaDinamica(n,s){
           actualizaColor(document.getElementById('p_dp'+s+j),cuentaFinalT,Number(cuentaInicialT));
           actualizaColor(document.getElementById('p_cf'+s+j),cuentaFinalT,Number(cuentaInicialT));
         }
-      } //console.log("d:", d(S));
-    }
+      */
+    //} 
   } 
+  //if (j==n) {document.getElementById('x').click;} 
   suma(contD,'');suma(contE,'E');
 }
+
+
+/* //https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration#declaracion_while
+let i = 0;
+let n = 0;
+while (i < 5) {
+  i++;
+  if (i === 3) {
+    // continue;
+  }
+  n += i;
+  console.log('i,n',i,n);
+}
+let ii = 0;
+let nn1 = 0;
+while (ii < 5) {
+  ii++;
+  if (ii === 3) {
+    continue;
+  }
+  nn1 += ii;
+  console.log('ii,nn',ii,nn1);
+}
+*/
 
 function suma(n,s){//console.log("n, s:", n,s);
   array_cf=[];array_ci=[];
@@ -3175,10 +3348,12 @@ function nivelarColumnas() {/// console.log('columnCenterOffset ::::::: ',column
 }
 
 function onload() {
+ ////s wsAVAX();wsBNB();wsBTC();wsDOGE();wsETH();wsSOL();wsXRP();
   resetar();nivelarColumnas();
   cotizacion_binance();startTimer();
   anchoDivsCeldas1();actualizaColorTr();
   expandirD();expandirE();
+  //actualizaPreciosTablaDinamica(contD,'');;
   ///document.getElementById('agregarATabla').click(); document.getElementById('td_x'+contTD).click();
 }
 function resetar() {
@@ -3300,55 +3475,37 @@ function eliminarTrE(c){
 
 function expandirD(){
   EXPANDIR_D=0;
-  document.getElementById('div_svg_min').style.display ="none"; document.getElementById('div_svg_max').style.display ="flex";
-  for (let j = 0; j < document.getElementsByName('L1').length; j++) {console.log("document.getElementsByName('L1').length",document.getElementsByName('L1').length); 
-    document.getElementsByName('L1')[j].style.display='none'; //document.getElementsByName('L1')[j].style.padding='0.25rem  0.0rem';
-    document.getElementsByName('L2')[j].style.display='none'; //document.getElementsByName('L2')[j].style.padding='0.25rem  0.0rem';
-    document.getElementsByName('L3')[j].style.display='none'; //document.getElementsByName('L3')[j].style.padding='0.25rem  0.0rem';
+  div_svg_min.style.display ="none"; div_svg_max.style.display ="flex";
+  for (let j = 0; j < document.getElementsByName('L1').length; j++) {
+    document.getElementsByName('L1')[j].style.display='none'; document.getElementsByName('L2')[j].style.display='none'; document.getElementsByName('L3')[j].style.display='none'; 
   }
-  for (let j = 0; j < document.getElementsByName('L').length; j++) { 
-    document.getElementsByName('L')[j].style.display='none';  //document.getElementsByName('L')[j].style.textAlign='right';
-  }
+  for (let j = 0; j < document.getElementsByName('L').length; j++) { document.getElementsByName('L')[j].style.display='none';}
   anchoDivsCeldas1();
 }
 function contraerD(){
   EXPANDIR_D=1;
-  document.getElementById('div_svg_max').style.display ="none"; document.getElementById('div_svg_min').style.display ="flex";
+  div_svg_max.style.display ="none"; div_svg_min.style.display ="flex";
   for (let j = 0; j < document.getElementsByName('L1').length; j++) {
-    document.getElementsByName('L1')[j].style.display='block'; //document.getElementsByName('L1')[j].style.padding='0.25rem  0.5rem';
-    document.getElementsByName('L2')[j].style.display='block'; //document.getElementsByName('L2')[j].style.padding='0.25rem  0.5rem';
-    document.getElementsByName('L3')[j].style.display='block'; //document.getElementsByName('L3')[j].style.padding='0.25rem  0.5rem';
+    document.getElementsByName('L1')[j].style.display='block'; document.getElementsByName('L2')[j].style.display='block'; document.getElementsByName('L3')[j].style.display='block'; 
   }
-  for (let j = 0; j < document.getElementsByName('L').length; j++) {console.log("document.getElementsByName('L1').length",document.getElementsByName('L1').length); 
-    document.getElementsByName('L')[j].style.display='block'; //document.getElementsByName('L')[j].style.textAlign='right';
-  } 
-  //anchoDivsCeldas2();
+  for (let j = 0; j < document.getElementsByName('L').length; j++) {document.getElementsByName('L')[j].style.display='block'; } 
+  anchoDivsCeldas1();
 }
 
 function expandirE(){
   EXPANDIR_E=0;
-  document.getElementById('div_svg_minE').style.display ="none"; document.getElementById('div_svg_maxE').style.display ="flex";
+  div_svg_minE.style.display ="none"; div_svg_maxE.style.display ="flex";
   for (let j = 0; j < document.getElementsByName('LE1').length; j++) {
-    document.getElementsByName('LE1')[j].style.display='none'; //document.getElementsByName('L1')[j].style.padding='0.25rem  0.0rem';
-    document.getElementsByName('LE2')[j].style.display='none'; //document.getElementsByName('L2')[j].style.padding='0.25rem  0.0rem';
-    document.getElementsByName('LE3')[j].style.display='none'; //document.getElementsByName('L3')[j].style.padding='0.25rem  0.0rem';
+    document.getElementsByName('LE1')[j].style.display='none';document.getElementsByName('LE2')[j].style.display='none';document.getElementsByName('LE3')[j].style.display='none';
   }
-  for (let j = 0; j < document.getElementsByName('LE').length; j++) { 
-    document.getElementsByName('LE')[j].style.display='none';  //document.getElementsByName('L')[j].style.textAlign='right';
-  }
-  anchoDivsCeldas1();
+  for (let j = 0; j < document.getElementsByName('LE').length; j++) { document.getElementsByName('LE')[j].style.display='none';  }
 }
 function contraerE(){
   EXPANDIR_E=1;
-  document.getElementById('div_svg_maxE').style.display ="none"; document.getElementById('div_svg_minE').style.display ="flex";
+  div_svg_maxE.style.display ="none"; div_svg_minE.style.display ="flex";
   for (let j = 0; j < document.getElementsByName('LE1').length; j++) {
-    document.getElementsByName('LE1')[j].style.display='block'; //document.getElementsByName('L1')[j].style.padding='0.25rem  0.5rem';
-    document.getElementsByName('LE2')[j].style.display='block'; //document.getElementsByName('L2')[j].style.padding='0.25rem  0.5rem';
-    document.getElementsByName('LE3')[j].style.display='block'; //document.getElementsByName('L3')[j].style.padding='0.25rem  0.5rem';
-  }
-  for (let j = 0; j < document.getElementsByName('LE').length; j++) {
-    document.getElementsByName('LE')[j].style.display='block'; //document.getElementsByName('L')[j].style.textAlign='right';
-  } 
+    document.getElementsByName('LE1')[j].style.display='block'; document.getElementsByName('LE2')[j].style.display='block'; document.getElementsByName('LE3')[j].style.display='block'; }
+  for (let j = 0; j < document.getElementsByName('LE').length; j++) {document.getElementsByName('LE')[j].style.display='block';} 
 }
 
 ///------------------------------------------------------------------------------------------------------------------------
@@ -3706,6 +3863,7 @@ function newYear(){
   actualizaPreciosTablaDinamica(contD,'');;
   cotizaciónBtc_binance_price24hr();
   anchoDivsCeldas2();
+  // d1a.textContent=d1.textContent; d2a.textContent=d2.textContent; d3a.textContent=d3.textContent;
 } 
  
  var timerID; 
@@ -4627,6 +4785,7 @@ function newYear(){
 //# sourceMappingURL=doc/decimal.js.map  
 
 ////################ FIN DE  decimal.js ###################
+
 
 
 
