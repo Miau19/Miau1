@@ -27,9 +27,9 @@
     --font-size1: 0.9rem;/*TAMAÑO TEXTO NORMAL --font-size1: 0.80rem;*/ 
     --font-size2: 1.25rem; /*TAMAÑO PARA SUB TITULOS --font-size2: 0.86rem;*/ 
     --font-size3: 1rem; /*TAMAÑO PARA TITULOS --font-size3: 1.25rem; */
-    --font-size4: 0.75rem; /*TAMAÑO PARA TELEF CON WIDTH 320PX --font-size4: 0.8rem; */
-    --font-weight1: 700;  /*GROSOR PARA TEXTO TITULOS*/ 
+    --font-size4: 0.70rem; /*TAMAÑO PARA TELEF CON WIDTH 320PX --font-size4: 0.8rem; */
     --font-size5: 0.70rem;/* PARA @media screen and  (max-width: 320px) */
+    --font-weight1: 700;  /*GROSOR PARA TEXTO TITULOS*/ 
     --font-weight2: 700;  /*GROSOR TEXTO NORMAL*/
     --box-shadow1: 0 0 2px var(--border-color); /* --box-shadow1: none . Elimina (o simplemente no establece) sombra en un elemento.*/
     --box-shadow2: 0 0 4px var(--border-color); /* --box-shadow1: none . Elimina (o simplemente no establece) sombra en un elemento.*/
@@ -272,21 +272,22 @@ z-index: 10;
 
 #card_3a h1,#card_3a  p {padding: 0rem;}
 
-.tablaP24h{
+.tablaP24h{ 
     border-collapse: collapse;
     color: var(--text-color);
     margin: 0px 0 10px 0;
 }
-.tablaP24h .tdP24h_2{
-    margin: 0;padding: 0;
-}
+
 .tablaP24h .tdP24h{
-    text-align: left;margin: 0;padding: 0;
+    text-align: left;
 }
 
-.tablaP24h .tdP24h_2 div{
-    display: block;justify-content: end;
-    text-align: right; padding: 0.25rem 0.25rem;
+.tablaP24h .tdP24h_2 .div_v{
+  display: block;justify-content: end;align-items: center; 
+}
+.tablaP24h .tdP24h_2 .div_v p{
+  padding: 0rem;margin: 0.5rem;
+  text-align: right;
 }
   .nav-menu_visible {
     left: 0;
@@ -1589,30 +1590,37 @@ transition: .5s ease all;
                </div>
            <table class="tablaP24h">
             <tr>
-              <td class="tdP24h">Precio Máximo en 24h</td>
-              <td class="tdP24h_2"> <div id="tdPMax24h_a">0&nbsp;</div></td>
+              <td class="tdP24h">Precio Máximo en 24h&nbsp;</td>
+              <td class="tdP24h_2"> <div class="div_v"><p id="tdPMax24h_a">0&nbsp;</p></div></td>
             </tr>
             <tr>
-              <td class="tdP24h">Precio Mínimo en 24h </td>
-              <td class="tdP24h_2"> <div id="tdPMin24h_a">0&nbsp;</div></td>
+              <td class="tdP24h">Precio Mínimo en 24h&nbsp;</td>
+              <td class="tdP24h_2"> <div class="div_v"><p id="tdPMin24h_a">0&nbsp;</p></div></td>
             </tr>
             <tr>
-              <td class="tdP24h">Cambio en 24h</td>
-              <td class="tdP24h_2"> <div id="tdC24h_a">0&nbsp;</div></td>
+              <td class="tdP24h">Cambio en 24h&nbsp;</td>
+              <td class="tdP24h_2"> <div class="div_v"><p id="tdC24h_a">0&nbsp;</p></div></td>
             </tr>
             <tr>
-              <td class="tdP24h">Cambio(%) en 24h</td>
-              <td class="tdP24h_2"> <div id="tdCp24h_a">0&nbsp;</div></td>
+              <td class="tdP24h">Cambio(%) en 24h&nbsp;</td>
+              <td class="tdP24h_2"> <div class="div_v"><p id="tdCp24h_a">0&nbsp;</p></div></td>
             </tr>
             <tr>
-              <td class="tdP24h"><div class="tituloCard" ><p > Volumen(</p><p id="volumen1" >BTC</p><p > ) en 24h</p></div></td>         
-              <td class="tdP24h_2"> <div style="display: flex;align-items: center;"><div id="tdV24hBTC_a">0</div><p id="volumen1a" style="padding: 0;margin: 0;"></p></div></td>
+              <td class="tdP24h"><div class="tituloCard" ><p > Volumen(</p><p id="volumen1" >BTC</p><p > ) en 24h&nbsp;</p></div></td>         
+              <td class="tdP24h_2"> <div class="div_v"><p> <span id="tdV24hBTC_a" >0</span>&nbsp;<span id="volumen1a"></span> </p></div></td>
             </tr>
             <tr>    
               <td class="tdP24h">Volumen(USDT) en 24h&nbsp;</td>
-              <td class="tdP24h_2"> <div id="tdV24hUSDT_a">0&nbsp;</div></td>
+              <td class="tdP24h_2"> <div class="div_v"><p id="tdV24hUSDT_a">0</p></div></td>
             </tr>
            </table><br>
+
+
+
+
+
+
+
            <div class="hr"></div><br>
            <h3 style="text-transform: uppercase">Criptomonedas</h3>
            <p>
@@ -2330,29 +2338,58 @@ transition: .5s ease all;
            <table class="tablaP24h">
             <tr>
               <td class="tdP24h">Precio Máximo en 24h</td>
-              <td class="tdP24h_2"> <div id="tdPMax24h_b">0&nbsp;</div></td>
+              <td class="tdP24h_2"> <div class="div_v"><p id="tdPMax24h_b" >0&nbsp;</p></div></td>
             </tr>
             <tr>
               <td class="tdP24h">Precio Mínimo en 24h </td>
-              <td class="tdP24h_2"> <div id="tdPMin24h_b">0&nbsp;</div></td>
+              <td class="tdP24h_2"> <div class="div_v"><p id="tdPMin24h_b">0&nbsp;</p></div></td>
             </tr>
             <tr>
               <td class="tdP24h">Cambio en 24h</td>
-              <td class="tdP24h_2"> <div id="tdC24h_b">0&nbsp;</div></td>
+              <td class="tdP24h_2"> <div class="div_v"><p id="tdC24h_b">0&nbsp;</p></div></td>
             </tr>
             <tr>
               <td class="tdP24h">Cambio(%) en 24h</td>
-              <td class="tdP24h_2"> <div id="tdCp24h_b">0&nbsp;</div></td>
+              <td class="tdP24h_2"> <div class="div_v" ><p id="tdCp24h_b">0&nbsp;</p></div></td>
             </tr>
             <tr>
               <td class="tdP24h"><div class="tituloCard" ><p > Volumen(</p><p id="volumen2" >BTC</p><p > ) en 24h</p></div></td>         
-              <td class="tdP24h_2"> <div style="display: flex;align-items: center;"> <div id="tdV24hBTC_b">0</div><p id="volumen2a" style="padding: 0;margin: 0;"></p></div></td>
+              <td class="tdP24h_2" > <div class="div_v"><p>  <span id="tdV24hBTC_b">0</span>&nbsp;<span id="volumen2a"></span>  </p></div></td>
             </tr>
             <tr>    
               <td class="tdP24h">Volumen(USDT) en 24h&nbsp;</td>
-              <td class="tdP24h_2"> <div id="tdV24hUSDT_b">0&nbsp;</div></td>
+              <td class="tdP24h_2"> <div class="div_v"><p id="tdV24hUSDT_b">0</p></div></td>
+            </tr>
+           </table><br>            
+           <!-- 
+           <table  style="background: #2e3d32;">
+            <tr>
+              <td class="t2" style="border: 1px solid #5a5a5a;">Precio Máximo en 24h</td>
+              <td  style="border: 1px solid #5a5a5a;"> <div   style="width: 100%;background: #00603a;display: block;justify-content: end;align-items: center;"><p style="text-align: right;">0&nbsp;</p></div></td>
+            </tr>
+            <tr>
+              <td class="t2" style="border: 1px solid #5a5a5a;">Precio Mínimo en 24h </td>
+              <td  style="border: 1px solid #5a5a5a;"> <div   style="width: 100%;background: #530060;display: block;justify-content: end;align-items: center;"><p style="text-align: right;">00&nbsp;</p></div></td>
+            </tr>
+            <tr>
+              <td class="t2" style="border: 1px solid #5a5a5a;">Cambio en 24h</td>
+              <td  style="border: 1px solid #5a5a5a;"> <div   style="width: 100%;background: #530060;display: block;justify-content: end;align-items: center;"><p style="text-align: right;">000&nbsp;</p></div></td>
+            </tr>
+            <tr>
+              <td class="t2" style="border: 1px solid #5a5a5a;">Cambio(%) en 24h</td>
+              <td  style="border: 1px solid #5a5a5a;"> <div   style="width: 100%;background: #530060;display: block;justify-content: end;align-items: center;"><p style="text-align: right;">0000&nbsp;</p></div></td>
+            </tr>
+            <tr>
+              <td class="t2" style="border: 1px solid #5a5a5a;">Volumen()</td>         
+              <td  style="border: 1px solid #5a5a5a;"><div   style="width: 100%;background: #530060;display: block;justify-content: end;align-items: center;"><p  style="text-align: right;"><span>000000&nbsp;</span><span>000000</span></p></div></td>
+            </tr>
+            <tr>    
+              <td class="t2" style="border: 1px solid #5a5a5a;">Volumen(USDT) en 24h&nbsp;</td>
+              <td  style="border: 1px solid #5a5a5a;"> <div   style="width: 100%;background: #530060;display: block;justify-content: end;align-items: center;"><p style="text-align: right;">0&nbsp;</p></div></td>
             </tr>
            </table><br>
+           -->
+
            <div class="hr"></div><br>
            <h3 style="text-transform: uppercase">Criptomonedas</h3>
            <p>
@@ -3245,11 +3282,11 @@ function cotizaciónBtc_binance_price24hr() {//CAMBIO DE PRECIO CADA 1 SEGUNDO /
        tdPMax24h_a.innerText=F3(data[k].highPrice, n3)+' USDT'; tdPMin24h_a.innerText=F3(data[k].lowPrice, n3)+' USDT';
        tdPMax24h_b.innerText=F3(data[k].highPrice, n3)+' USDT'; tdPMin24h_b.innerText=F3(data[k].lowPrice, n3)+' USDT';
        //Cambio en 24 h :
-       tdC24h_a.innerText=F3(data[k].priceChange, n3)+' USDT'; tdCp24h_a.innerText= F3(data[k].priceChangePercent, n2)+'%';
-       tdC24h_b.innerText=F3(data[k].priceChange, n3)+' USDT'; tdCp24h_b.innerText= F3(data[k].priceChangePercent, n2)+'%';
+       tdC24h_a.innerText=F3(data[k].priceChange, n3)+' USDT'; tdCp24h_a.innerText= F3(data[k].priceChangePercent, n1)+' %';
+       tdC24h_b.innerText=F3(data[k].priceChange, n3)+' USDT'; tdCp24h_b.innerText= F3(data[k].priceChangePercent, n1)+' %';
        //24h Volumen(BTC),  24h Volumen(USDT) :
-       tdV24hBTC_a.innerText=F3(data[k].volume, n2)+''; tdV24hUSDT_a.innerText=F3(data[k].quoteVolume, n2)+' USDT ';//F3(data[k].quoteVolume/1000000)+' B USDT';
-       tdV24hBTC_b.innerText=F3(data[k].volume, n2)+''; tdV24hUSDT_b.innerText=F3(data[k].quoteVolume, n2)+' USDT ';//F3(data[k].quoteVolume/1000000)+' B USDT';    
+       tdV24hBTC_a.innerText=F3(data[k].volume, n1)+''; tdV24hUSDT_a.innerText=F3(data[k].quoteVolume, n1)+' USDT ';//F3(data[k].quoteVolume/1000000)+' B USDT';
+       tdV24hBTC_b.innerText=F3(data[k].volume, n1)+''; tdV24hUSDT_b.innerText=F3(data[k].quoteVolume, n1)+' USDT ';//F3(data[k].quoteVolume/1000000)+' B USDT';    
      }
    } 
    actualizaColor(document.getElementById('tdC24h_a') ,data[C].priceChange,0);
