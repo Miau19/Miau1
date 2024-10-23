@@ -25,7 +25,7 @@
     --font-family1: 'Saira', 'Saira Expanded SemiBold', sans-serif;/*font-family: "Roboto", sans-serif;*/ /*font-family: Impact, sans-serif;'Times New Roman'; 'Consolas'; 'Oswald'*/
     --font-family2: 'Saira', 'Saira Expanded SemiBold', sans-serif; /*PARA NUMEROS*/ 
     --font-size1: 0.9rem;/*TAMAÑO TEXTO NORMAL --font-size1: 0.80rem;*/ 
-    --font-size2: 1.25rem; /*TAMAÑO PARA SUB TITULOS --font-size2: 0.86rem;*/ 
+    --font-size2: 1.35rem; /*TAMAÑO PARA SUB TITULOS --font-size2: 0.86rem;*/ 
     --font-size3: 1rem; /*TAMAÑO PARA TITULOS --font-size3: 1.25rem; */
     --font-size4: 0.70rem; /*TAMAÑO PARA TELEF CON WIDTH 320PX --font-size4: 0.8rem; */
     --font-size5: 0.70rem;/* PARA @media screen and  (max-width: 320px) */
@@ -411,11 +411,11 @@ z-index: 10;
 @media screen and (max-width: 1260px){.card_subtitle_tex1 p ,.card_arrows1 p{font-size: var(--font-size1)}}
 @media screen and (max-width: 460px) {.card_subtitle_tex1 p ,.card_arrows1 p{font-size: var(--font-size4)}}
 
-.card_arrows1 #cotizacionBTC{font-size: var(--font-size2); }
+.card_arrows1 #cotizacionBTC{font-size: var(--font-size2); opacity: 0;}
 @media screen and (max-width: 460px) {.card_arrows1 #cotizacionBTC{font-size: var(--font-size3)}}
 
-.card_subtitle .TC2{ display: flex; background: #560081;} 
-@media screen and (max-width: 960px){ .card_subtitle .TC2{display: flex;} }
+.card_subtitle .TC2{ display: flex;padding: 0.5rem 0rem; background: #560081;} 
+@media screen and (max-width: 960px){ .card_subtitle .TC2{display: flex;padding: 0.25rem 0rem;} }
 
 .div_listaOpciones{
     display: flex;justify-content: space-between;align-items: center;flex-wrap: wrap; box-shadow: var(--box-shadow1); ; 
@@ -1144,6 +1144,7 @@ transition: .5s ease all;
   }
 }
 /*################################## FIN DE: spinner 'load' #######################################*/
+
 
 
     </style>
