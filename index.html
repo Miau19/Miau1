@@ -3391,7 +3391,7 @@ function inicializarCard() {//CAMBIO DE PRECIO CADA 1 SEGUNDO //Cotización de B
       (P[i] != '0' )? (pVenta=p[i] , load.style.display='none', arrows.style.display='flex', cotizacionBTC.innerText=F(pVenta, n3)) 
       : (pVenta=cleanBox(precioVenta.value) , load.style.display='flex', arrows.style.display='none'); 
       //(P[i] != '0' )? (load.style.display='none',arrows.style.display='flex',cotizacionBTC.innerText=F(pVenta, n3)) : (load.style.display='flex',arrows.style.display='none');
-      document.getElementById('cotizacionBTC').innerText=F(p[i], n3); 
+      document.getElementById('cotizacionBTC').innerText=F(p[i], n3); document.getElementById('cotizacionBTC').style.opacity='1'; 
     }
   } 
   c(pVenta,pCompra,comision,cuentaInicial);
