@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="style.css" /><link rel="stylesheet" href="css/CF[2024]-2b.css" /> -->
-    <title>CF[2024]-2e-paratelefono</title>
+    <title>CF[2024]-2f-paratelefono</title>
 
     <style type="text/css">
 @import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
 /* 
 @font-face {font-family: "Saira Expanded";src: url("Saira_Expanded-Bold.ttf");}
 @font-face {font-family: "Saira Expanded SemiBold";src: url("Saira_Expanded-SemiBold.ttf");}
-*/ 
-:root{  
+*/  
+:root{   
     --html-color: hsla(240, 100%, 6%, 1.0);
     --bg-color:rgb(28, 28, 28);           /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(0, 0%, 14%) */
     --bg-card-color: rgb(17, 17, 17);      /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(0, 0%, 11%) */
@@ -191,7 +191,7 @@ z-index: 10;
     }
 
 .card_left{
-    width: 100%; ;
+    width: 350px;
     border-radius: var(--border-radius); 
     box-shadow: var(--box-shadow1);
     transition: var(--transition);
@@ -257,23 +257,13 @@ z-index: 10;
     font-size: var(--font-size1); font-family: var(--font-family2);font-weight: var(--font-weight2);
      overflow: auto;
 }
-.main_grid_3 #card_3b{
-   font-size: var(--font-size1); font-family: var(--font-family2);font-weight: var(--font-weight2);
-   overflow: auto;
-   background-color: var(--bg-card-color);
-}  
+
 @media screen and  (max-width: 460px) {.columnRight #card_3a {font-size: var(--font-size4);}}
-@media screen and  (max-width: 460px) {.main_grid_3 #card_3b {font-size: var(--font-size4);}}
 
 .columnRight #card_3a::-webkit-scrollbar{width: 10px;height: 10px;background: var(--bg-card-color);}
 .columnRight #card_3a::-webkit-scrollbar-track{      background: rgb(124, 124, 124);border-radius: 5px;}
 .columnRight #card_3a::-webkit-scrollbar-thumb{      background: rgb(   78, 78, 78);border-radius: 5px;}
 .columnRight #card_3a::-webkit-scrollbar-thumb:hover{background: rgb(   55, 55, 55);}
-
-.main_grid_3 #card_3b::-webkit-scrollbar{width: 10px;height: 10px;background: var(--bg-card-color);}
-.main_grid_3 #card_3b::-webkit-scrollbar-track{      background: rgb(124, 124, 124);border-radius: 5px;}
-.main_grid_3 #card_3b::-webkit-scrollbar-thumb{      background: rgb(   78, 78, 78);border-radius: 5px;}
-.main_grid_3 #card_3b::-webkit-scrollbar-thumb:hover{background: rgb(   55, 55, 55);} 
 
 #card_3a h1,#card_3a  p {padding: 0rem;}
 
@@ -319,13 +309,20 @@ z-index: 10;
 @media screen and  (max-width: 460px) { .header2 p{font-size: var(--font-size1);} }
 
 .main_grid_1 {
-   display: grid;
-   grid-template-columns: 360px 1fr 360px;
-   background-color: var(--bg-color);
-   padding: 0.5rem  0.5rem 0  0.5rem;
-}
-@media screen and  (max-width: 1260px){ .main_grid_1{grid-template-columns: 360px 1fr ; } }
-@media screen and  (max-width: 960px) { .main_grid_1{grid-template-columns:  1fr ;} }
+    /* display: grid;
+    grid-template-columns: 350px 1fr 350px;*/
+    display: flex;justify-content: center;;flex-wrap: wrap;flex-direction: row;
+    background-color: var(--bg-color); 
+    padding: 0.5rem  0.5rem 0  0.5rem;
+ }
+ @media screen and  (max-width: 1260px) { .main_grid_1{flex-direction: row;} }
+ /* @media screen and  (max-width: 1260px){ .main_grid_1{grid-template-columns: 350px 1fr ; } }
+ @media screen and  (max-width: 960px) { .main_grid_1{grid-template-columns:  1fr ;} }*/
+ @media screen and (max-width: 320px) {.main_grid_1 {padding: 0.25rem  0.25rem 0  0.25rem;}}
+
+ .columnLeftRigth{
+    display: flex;justify-content: center;margin-bottom: 1.5rem; height: 500px; background: rgba(50, 0, 0, 1);
+ }
 
 .columnLeft{
     display: flex;
@@ -349,26 +346,21 @@ z-index: 10;
 @media screen and (max-width: 550px) {.columnCenter_articles {padding: 0 0.0rem;min-width: 100%;}}
 @media screen and (max-width: 320px) {.columnCenter_articles {padding: 0 0.0rem;}}
 
-
-.card_center{
-    width: 100%;
-    display: none;/* display: none; */flex-direction: column;align-items: flex-start;  
+.card_center{    
+    /* height: 500px; */ width: 500px;;
+    display: none;flex-direction: column;align-items: flex-start; padding: 0 0.75rem 0.75rem 0.75rem; margin: 0;
     border:none; border-radius: var(--border-radius); box-shadow: var(--box-shadow1);
-    padding: 0.70rem 1.5rem 0.25rem 1.5rem ;
     background-color: var(--bg-card-color);
 }
-@media screen and (max-width: 1260px){.card_center {padding: 0.70rem 2.5rem 0.25rem 2.5rem; margin: 0rem 4rem; }}
-@media screen and (max-width: 1130px){.card_center {padding: 0.70rem 1.5rem 0.25rem 1.5rem; margin: 0rem 2rem; }}
-@media screen and (max-width: 930px) {.card_center {padding: 0.70rem 1.5rem 0.25rem 1.5rem; margin: 0rem 0rem; }}
-@media screen and (max-width: 960px) {.card_center {padding: 0.70rem 1.5rem 0.25rem 1.5rem; margin: 0rem 6rem; }}
-@media screen and (max-width: 600px) {.card_center {padding: 0.70rem 0.5rem 0.25rem 0.5rem; margin: 0rem 0rem;  }}
-@media screen and (max-width: 670px) {.card_center {padding: 0.70rem 0.5rem 0.25rem 0.5rem; margin: 0rem 0rem;  }}
-@media screen and (max-width: 460px) {.card_center {padding: 0.70rem 0.5rem 0.25rem 0.5rem; margin: 0rem 0rem;}}
-@media screen and (max-width: 320px) {.card_center {padding: 0.70rem 0.25rem .25rem .25rem ; margin:0rem 0rem;}}
+@media screen and  (max-width: 460px) { .card_center{padding: 0 0.25rem 0.25rem 0.25rem;;} }
+@media screen and  (max-width: 1260px) { .card_center{width: 550px;;} }
+@media screen and  (max-width: 960px) { .card_center{width: 650px;;} }
+@media screen and  (max-width: 700px) { .card_center{width: 450px;;} }
+@media screen and  (max-width: 460px) { .card_center{width: 310px;;} }
 
 .card_center .card_trade_subtitle {
     display: flex;justify-content: start;align-items: center;
-    padding: 5px 0 0 0;
+    padding: 0 ;margin-top: 0.5rem;
 }
 .card_center .card_trade_subtitle p{
     font-size: var(--font-size1); margin: 5px;
@@ -377,7 +369,7 @@ z-index: 10;
 
 #article_center2{ display: inline;/* display: inline; */ }
 
-.card_subtitle {
+.card_subtitle { padding: 0;margin-top: 0.5rem; 
     display: flex;justify-content: space-between;flex-direction: row;align-items: center; flex-wrap: wrap; /* flex-wrap: wrap; EVITA QUE LOS box SE COMPRIMAN ;PERO AL QUERER DESBORDADRSE PASAN A LA SIGUIENTE LINEA*/
 }
 @media screen and (max-width: 460px){ .card_subtitle{flex-direction: row;} }
@@ -385,12 +377,15 @@ z-index: 10;
 .card_subtitle #simbolo{ opacity: 0.75; }
 .card_subtitle #simbolo:hover{cursor: pointer; opacity: 1; transform: scaleX(1.05) scaleY(1.05) translateX(0px) translateY(0px);}
 
-.card_subtitle, .arrows{
+.card_subtitle .arrows{
     display: flex;align-items:center;justify-content:space-between;
     padding: 0;margin: 0;
 }
-#arrows{display: flex;}
-/*#load{display: none; height: calc(var(--n2)); width: calc(var(--n2) * 1);background: #945e01;}*/
+.card_subtitle .arrows #cotizacionBTC{padding: 0;margin: 0;
+}
+.card_subtitle .arrows svg{padding: 0;margin: 0;
+}
+
 .load{display: flex; height: calc(var(--n2)); width: calc(var(--n2) * 1);}
 
 @media screen and  (max-width: 460px) {#load{height: calc(var(--n3)); width: calc(var(--n3) * 1);}}
@@ -419,8 +414,8 @@ z-index: 10;
 .card_arrows1 #cotizacionBTC{font-size: var(--font-size2); opacity: 0;}
 @media screen and (max-width: 460px) {.card_arrows1 #cotizacionBTC{font-size: var(--font-size3)}}
 
-.card_subtitle .TC2{ display: flex;padding: 0.5rem 0rem; } 
-@media screen and (max-width: 960px){ .card_subtitle .TC2{display: flex;padding: 0.25rem 0rem;} }
+.card_subtitle .TC2{ display: flex;padding: 0.5rem;margin: 0;} 
+@media screen and (max-width: 960px){ .card_subtitle .TC2{display: flex;padding: 0.5rem;margin: 0;} }
 
 .div_listaOpciones{
     display: flex;justify-content: space-between;align-items: center;flex-wrap: wrap; box-shadow: var(--box-shadow1); ; 
@@ -432,7 +427,7 @@ z-index: 10;
 .div_padding{
     background-color: var(--bg-color);;
     border-radius: var(--border-radius); box-shadow: var(--box-shadow1);
-    margin: 0.75rem 0.25rem ; padding: 0.25rem;
+    margin: 0.73rem 0.25rem ; padding: 0.25rem;
 }
 
 .div_padding_TED{ padding: 0px;margin-bottom: 5px; }
@@ -556,43 +551,39 @@ z-index: 10;
     color: var(--text-color); font-size: var(--font-size1);font-family: var(--font-family2); font-weight: var(--font-weight2);
     margin: 10px;    
 }
+
+.columnRight0{
+    background-color: var(--bg-color); padding: 0.125rem;}
+@media screen and  (max-width: 1260px) { .columnRight0{display: flex;order: 1;} }
+
 .columnRight{ 
     display: flex;
-    height: 100%;
+    height: 500px;  
+    width: 350px;
     color: var(--text-color);font: 1em sans-serif;
     padding: 0.5rem;
     border-radius: var(--border-radius);box-shadow: var(--box-shadow1);
-    background-color: var(--bg-card-color); 
+    background-color: var(--bg-card-color);
 }
-
-.columnRight0{background-color: var(--bg-color);height: 445px; padding: 0.125rem; }
-@media screen and  (max-width: 1260px) { .columnRight0{display: none;} }
+@media screen and  (max-width: 1260px) { .columnRight{width: auto;} }
 
 .main_grid_2{
     display: flex;justify-content: center;flex-direction: column;
-    margin: 0 0.5rem;
-    background-color: var(--bg-color);
+    background-color: var(--bg-color);overflow: auto;
 }
+.main_grid_2::-webkit-scrollbar{width: 10px;height: 10px;background: var(--bg-color);}
+.main_grid_2::-webkit-scrollbar-track{      background: rgb(124, 124, 124);border-radius: 5px;}
+.main_grid_2::-webkit-scrollbar-thumb{      background: rgb(   78, 78, 78);border-radius: 5px;}
+.main_grid_2::-webkit-scrollbar-thumb:hover{background: rgb(   55, 55, 55);}
 
 .tablas{
     display: flex; justify-content: center; flex-direction: column;
     background: rgba(80, 12, 0, 0.0);     width: 100%;padding: 5px;
-    overflow: auto;
 }
-.tablas::-webkit-scrollbar{width: 10px;height: 10px;background: var(--bg-color);}
-.tablas::-webkit-scrollbar-track{      background: rgb(124, 124, 124);border-radius: 5px;}
-.tablas::-webkit-scrollbar-thumb{      background: rgb(   78, 78, 78);border-radius: 5px;}
-.tablas::-webkit-scrollbar-thumb:hover{background: rgb(   55, 55, 55);}
 
 .tablas1{
-    display: flex;justify-content: center;flex-direction: column;;
-    background: rgba(0, 65, 33, 0.0);     width: 100%;padding: 5px;padding-top: 1rem;
-    overflow: auto;
+    display: flex;justify-content: center;flex-direction: column;; width: 100%;
 }
-.tablas1::-webkit-scrollbar{width: 10px;height: 10px;background: var(--bg-color);}
-.tablas1::-webkit-scrollbar-track{      background: rgb(124, 124, 124);border-radius: 5px;}
-.tablas1::-webkit-scrollbar-thumb{      background: rgb(   78, 78, 78);border-radius: 5px;}
-.tablas1::-webkit-scrollbar-thumb:hover{background: rgb(   55, 55, 55);}
 
 .tablas .marcoTabla1{display: block; justify-content: center;align-items: center;padding: 0px; margin-left:auto;margin-right:auto;margin-bottom: 1.5rem;box-shadow: var(--box-shadow1);/*  opacity: 0.0625;*/}
 .tablas .marcoTabla2{display: none;  justify-content: center;align-items: center;padding: 0px; margin-left:auto;margin-right:auto;margin-bottom: 1.0rem;box-shadow: var(--box-shadow1);}
@@ -692,39 +683,17 @@ text-align: right; margin: 0.25rem  0.25rem 0.25rem  0.9rem ; /*OJO  margin: 0.2
 .div_Dsvg svg .path , .div_DsvgE svg .path{fill: var(--text-color);stroke-width: 1px; stroke: var(--text-color);}
 #tabla_2a{display: none;}
 
-.main_grid_3{background-color: var(--bg-card-color);
-    display: none;
-    height: 530px; padding: 0.75rem 0.5rem;margin: 1.5rem 0.5rem 0.5rem 0.5rem ;
-    border-radius: var(--border-radius);box-shadow: var(--box-shadow1);
-    
-}
-@media screen and  (max-width: 1260px) {
-    .main_grid_3{display: flex;}
-}
-
 .columnRight #card_2a{
     display: none;
     font-size: var(--font-size1);overflow: auto;
     padding: 0.25rem; 
 }
-.main_grid_3 #card_2b{
-    display: none;
-    font-size: var(--font-size1);overflow: auto;
-    padding: 0.125rem; 
-}    
-/*@media screen and  (max-width: 1100px) {#card_2a{width: auto;}}****** ALTURA DE #card_2a ********
-*/
+
 .columnRight #card_2a::-webkit-scrollbar{width: 10px;height: 10px;background: var(--bg-card-color);}
 .columnRight #card_2a::-webkit-scrollbar-track{      background: rgb(124, 124, 124);border-radius: 5px;}
 .columnRight #card_2a::-webkit-scrollbar-thumb{      background: rgb(   78, 78, 78);border-radius: 5px;}
 .columnRight #card_2a::-webkit-scrollbar-thumb:hover{background: rgb(   55, 55, 55);}
 @media screen and  (max-width: 460px) {.columnRight #card_2a {font-size: var(--font-size4);}}
-
-.main_grid_3 #card_2b::-webkit-scrollbar{width: 10px;height: 10px;background: var(--bg-card-color);}
-.main_grid_3 #card_2b::-webkit-scrollbar-track{      background: rgb(124, 124, 124);border-radius: 5px;}
-.main_grid_3 #card_2b::-webkit-scrollbar-thumb{      background: rgb(   78, 78, 78);border-radius: 5px;}
-.main_grid_3 #card_2b::-webkit-scrollbar-thumb:hover{background: rgb(   55, 55, 55);}
-@media screen and  (max-width: 460px) {.main_grid_3 #card_2b {font-size: var(--font-size4);}}
 
 .tituloCard0{
     display: flex;justify-content: start;align-items: center;margin-top: 0.5rem;padding: 0;
@@ -1205,7 +1174,7 @@ transition: .5s ease all;
   </head>
   <body id="body"  onload="onload()">
     <div class="container">
-      <nav class="mascara" id="mascara"></nav>
+      <nav class="mascara" id="mascara"></nav> 
     <div class="container_flex_1">
       <header class="header1">
         <div class="switches">  
@@ -1221,7 +1190,7 @@ transition: .5s ease all;
           <div data-bg="rgb(14, 35, 57)"    data-card="rgb(16, 26, 41)"    data-text="rgb(180, 180, 180)" data-border="rgb(120, 120, 120)" data-menu="rgb(0, 23, 56)" class="colors__item colors__item--b" ></div>
           <div data-bg="rgb(27, 27, 28)"    data-card="rgb(20, 20, 20 )"    data-text="rgb(180, 180, 180)" data-border="rgb(120, 120, 120)" data-menu="rgb(41, 42, 44)" class="colors__item colors__item--green" ></div>
           <div data-bg="rgb(90, 104, 128)"   data-card="rgb(74, 89, 113)"  data-text="rgb(30, 30, 30)"    data-border="rgb(50, 50, 50)"    data-menu="rgb(78, 96, 124)" class="colors__item colors__item--purple"></div>
-          <div data-bg="rgb(180, 180, 180)" data-card="rgb(230, 230, 230)" data-text="rgb(67, 67, 67)"    data-border="rgb(50, 50, 50)"    data-menu="rgb(185, 200, 209)" class="colors__item colors__item--orange"></div>
+          <div data-bg="rgb(200, 200, 200)" data-card="rgb(230, 230, 230)" data-text="rgb(67, 67, 67)"    data-border="rgb(50, 50, 50)"    data-menu="rgb(185, 200, 209)" class="colors__item colors__item--orange"></div>
           
           <div id="palette" >
             <svg id="palette_svg" viewBox="20 20 475 475" >
@@ -1266,6 +1235,10 @@ transition: .5s ease all;
       <div class="header2"><div class="title2"><p id="pTitle2" >C&Aacute;LCULOS FINANCIEROS</p></div></div> 
     
       <article class="main_grid_1">
+
+
+
+        <div class="columnLeftRigth" >
         <div id="columnLeft" class="columnLeft">
             <div class="card_left">
              <div class="card__options">
@@ -1439,79 +1412,7 @@ transition: .5s ease all;
                     <svg id="svgUP1"   style="display: none;fill: rgba(0,200,0,0.85);" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 3 24 20"><path d="M15,20H9V12H4.16L12,4.16L19.84,12H15V20Z" /></svg>
                     <svg id="svgDOWN1" style="display: none;fill: rgba(200,0,0,0.85);" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 1 24 20"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z" /></svg>
                     </div>
-                   <div id="sinConexion" style="display: none;padding: 0;margin: 0;background: rgba(0, 7, 65, 0);"></div>
-                  
-                   <div class="load0" id="load0" style="display: none;">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" width="30" height="30" style="shape-rendering: auto; display: block; background: rgba(255, 255, 255, 0); --darkreader-inline-bgimage: initial; --darkreader-inline-bgcolor: rgba(25, 26, 27, 0);" data-darkreader-inline-bgimage="" data-darkreader-inline-bgcolor="" xmlns:xlink="http://www.w3.org/1999/xlink"><g><g transform="rotate(0 50 50)">
-                      <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
-                        <animate repeatCount="indefinite" begin="-0.9s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                      </rect>
-                    </g><g transform="rotate(36 50 50)">
-                      <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
-                        <animate repeatCount="indefinite" begin="-0.8s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                      </rect>
-                    </g><g transform="rotate(72 50 50)">
-                      <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
-                        <animate repeatCount="indefinite" begin="-0.7s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                      </rect>
-                    </g><g transform="rotate(108 50 50)">
-                      <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
-                        <animate repeatCount="indefinite" begin="-0.6s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                      </rect>
-                    </g><g transform="rotate(144 50 50)">
-                      <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
-                        <animate repeatCount="indefinite" begin="-0.5s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                      </rect>
-                    </g><g transform="rotate(180 50 50)">
-                      <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
-                        <animate repeatCount="indefinite" begin="-0.4s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                      </rect>
-                    </g><g transform="rotate(216 50 50)">
-                      <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
-                        <animate repeatCount="indefinite" begin="-0.3s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                      </rect>
-                    </g><g transform="rotate(252 50 50)">
-                      <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
-                        <animate repeatCount="indefinite" begin="-0.2s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                      </rect>
-                    </g><g transform="rotate(288 50 50)">
-                      <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
-                        <animate repeatCount="indefinite" begin="-0.1s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                      </rect>
-                    </g><g transform="rotate(324 50 50)">
-                      <rect fill="" height="30" width="11" ry="4.8" rx="4.8" y="3" x="44.5">
-                        <animate repeatCount="indefinite" begin="0s" dur="1s" keyTimes="0;1" values="1;0" attributeName="opacity"></animate>
-                      </rect>
-                    </g><g></g></g>
-                    </svg> 
-                    <!--  
-                    -->
-                   </div>
-                   <!-- ESTE SPINNER ES USADO EN inicializarCard() ; PERO HAY Q' CAMBIAR LOS id Y HACER NUEVO CODIGO CSS PORQUE CAUSARA CONFLICTOS CON logo EN function imagenesSVG(){...} 
-                   <div class="load" id="load"> 
-                     <div class="lds-spinner2" >
-                       <div id="spinner1" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="rotate(0 50 50)"  ><rect  height="30" width="10" ry="4.2" rx="3.5" y="5" x="46.5"></rect></g></svg></div>
-                       <div id="spinner2" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="rotate(36 50 50)" ><rect  height="30" width="10" ry="4.2" rx="3.5" y="5" x="46.5"></rect></g></svg></div>
-                       <div id="spinner3" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="rotate(72 50 50)" ><rect  height="30" width="10" ry="4.2" rx="3.5" y="5" x="46.5"></rect></g></svg></div>
-                       <div id="spinner4" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="rotate(108 50 50)"><rect  height="30" width="10" ry="4.2" rx="3.5" y="5" x="46.5"></rect></g></svg></div>
-                       <div id="spinner5" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="rotate(144 50 50)"><rect  height="30" width="10" ry="4.2" rx="3.5" y="5" x="46.5"></rect></g></svg></div>
-                       <div id="spinner6" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="rotate(180 50 50)"><rect  height="30" width="10" ry="4.2" rx="3.5" y="5" x="46.5"></rect></g></svg></div>
-                       <div id="spinner7" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="rotate(216 50 50)"><rect  height="30" width="10" ry="4.2" rx="3.5" y="5" x="46.5"></rect></g></svg></div>
-                       <div id="spinner8" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="rotate(252 50 50)"><rect  height="30" width="10" ry="4.2" rx="3.5" y="5" x="46.5"></rect></g></svg></div>
-                       <div id="spinner9" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="rotate(288 50 50)"><rect  height="30" width="10" ry="4.2" rx="3.5" y="5" x="46.5"></rect></g></svg></div>
-                       <div id="spinner10"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="rotate(324 50 50)"><rect  height="30" width="10" ry="4.2" rx="3.5" y="5" x="46.5"></rect></g></svg></div> 
-                     </div>
-                   </div> 
-                  -->
-                   <!-- spinner Loader con Cargando... con cajitas -->
-                   <div class="load1" id="load1" style="display: none;">
-                    <div class="contenedor-loader">
-                      <div class="loader1"></div>
-                      <div class="loader2"></div>
-                      <div class="loader3"></div>
-                      <div class="loader4"></div>
-                    </div>
-                   </div>                  
+                   <div id="sinConexion" style="display: none;padding: 0;margin: 0;background: rgba(0, 7, 65, 0);"></div>             
                   </div>
                   
                 </div>
@@ -1620,6 +1521,9 @@ transition: .5s ease all;
               </article>
           </div><!-- FIN DE div class="column columnCenter_articles" -->
         </div> <!--   FIN DE div id="columnCenter" -->
+        </div>
+
+
 
         <div class="columnRight0" id="columnRight0">
         <div class="columnRight" id="columnRight" >
@@ -1634,64 +1538,34 @@ transition: .5s ease all;
                   <br><br>
                   &nbsp;&nbsp;Para una mejora radical de tus finanzas, es fundamental que conozcas ambos conceptos porque te darás cuenta de que actúan de forma exponencial para tus finanzas.
                   <br> <br>
-                  &nbsp;&nbsp;Básicamente la diferencia está en que en el interés simple, el dinero que generan los intereses se calcula solo sobre 
-                  el capital invertido al principio (principal) sin tener en cuenta la posible reinversión de los intereses que vaya 
-                  generando nuestro dinero. Por otro lado, en el interés compuesto los intereses obtenidos se reinvierten creando con el 
-                  paso del tiempo un "efecto bola de nieve" y obteniéndose un resultado sensiblemente mayor.
+                  &nbsp;&nbsp;Básicamente la diferencia está en que en el interés simple, el dinero que generan los intereses se calcula solo sobre el capital invertido al principio (principal) sin tener en cuenta la posible reinversión de los intereses que vaya generando nuestro dinero. Por otro lado, en el interés compuesto los intereses obtenidos se reinvierten creando con el paso del tiempo un "efecto bola de nieve" y obteniéndose un resultado sensiblemente mayor.
                   <br><br>
-                  &nbsp;&nbsp;Ejemplo sobre el interés simple y el interés compuesto,
-                  Imaginemos que tenemos <span class="spanN">10,000</span> dólares ahorrados y los invertimos consiguiendo un
+                  &nbsp;&nbsp;Ejemplo sobre el interés simple y el interés compuesto,Imaginemos que tenemos <span class="spanN">10,000</span> dólares ahorrados y los invertimos consiguiendo un
                    <span class="spanN">10%</span> de interés anual durante <span class="spanN">5</span> años.
                   
-                  En el caso del interés simple, recibiríamos <span class="spanN">1,000</span> dólares de intereses el primer año, 
-                  el segundo año, el tercer año... y así sucesivamente. Cada año, retiraríamos esos <span class="spanN">1,000</span> 
-                  dólares y simplemente seguiríamos consiguiendo el <span class="spanN">10%</span> de <span class="spanN">10,000</span> 
-                  dólares cada <span class="spanN">12</span> meses. Esto sería así porque el capital sobre los que se calculan los 
-                  intereses se mantendría invariable en los <span class="spanN">10,000</span> dólares iniciales. 
+                  En el caso del interés simple, recibiríamos <span class="spanN">1,000</span> dólares de intereses el primer año, el segundo año, el tercer año... y así sucesivamente. Cada año, retiraríamos esos <span class="spanN">1,000</span> 
+                  dólares y simplemente seguiríamos consiguiendo el <span class="spanN">10%</span> de <span class="spanN">10,000</span> dólares cada <span class="spanN">12</span> meses. Esto sería así porque el capital sobre los que se calculan los intereses se mantendría invariable en los <span class="spanN">10,000</span> dólares iniciales. 
                   
-                  En el caso del interés compuesto, los <span class="spanN">1,000</span> dólares que consigo de intereses los 
-                  reinvertiría y permitiría que el <span class="spanN">10%</span> fuese "trabajando" cada cada vez sobre una cantidad
-                   mayor. El primer año, obtendría <span class="spanN">1,000</span> dólares, los sumaría a los <span class="spanN">
-                    10,000</span> iniciales y pondría a "trabajar" <span class="spanN">11,000</span> dólares el segundo año. 
+                  En el caso del interés compuesto, los <span class="spanN">1,000</span> dólares que consigo de intereses los reinvertiría y permitiría que el <span class="spanN">10%</span> fuese "trabajando" cada cada vez sobre una cantidad
+                   mayor. El primer año, obtendría <span class="spanN">1,000</span> dólares, los sumaría a los <span class="spanN">10,000</span> iniciales y pondría a "trabajar" <span class="spanN">11,000</span> dólares el segundo año. 
                     Esos <span class="spanN">11,000</span> dólares al 10% de interés, generarían ya al año siguiente <span class="spanN">1,100</span> dólares de intereses. Los reinvierto y tendría una nueva cantidad de <span class="spanN">12,100</span> dólares               
-                  sobre los que calcular la rentabilidad. Generaría <span class="spanN">1,210</span> dólares. Y así sucesivamente 
-                  durante <span class="spanN">5</span> años. 
+                  sobre los que calcular la rentabilidad. Generaría <span class="spanN">1,210</span> dólares. Y así sucesivamente durante <span class="spanN">5</span> años. 
                   
-                  En los primeros años, las diferencias existen pero no son muy abultadas. Sin embargo, tal y como se observa en la 
-                  Tabla #1 a medida que pasa el tiempo esas diferencias son cada vez más y más grandes, hasta tal punto que en el último
-                   año estaré generando un interés anual de <span class="spanN">1,464.10 </span> dólares en el caso del interés compuesto y
-                    solo <span class="spanN">1,000</span> dólares en el caso del interés simple.
+                  En los primeros años, las diferencias existen pero no son muy abultadas. Sin embargo, tal y como se observa en la Tabla #1 a medida que pasa el tiempo esas diferencias son cada vez más y más grandes, hasta tal punto que en el último
+                   año estaré generando un interés anual de <span class="spanN">1,464.10 </span> dólares en el caso del interés compuesto ysolo <span class="spanN">1,000</span> dólares en el caso del interés simple.
                   
-                  Si sumamos las cantidades obtenidas en ambos casos, vemos como en el caso del interés simple acabaré con
-                   <span class="spanN">15,000</span> dólares (<span class="spanN">10,000</span> iniciales y
-                    <span class="spanN">5</span> pagos de <span class="spanN">1,000</span> dólares cada año) y que en el caso del 
-                    interés compuesto terminaré con un montante acumulado de <span class="spanN">16,105.10</span> dólares (
-                      <span class="spanN">10,000</span> dólares de inicio y <span class="spanN">6,105.10</span> dólares de intereses).
-                       La diferencia es muy llamativa como puede verse en la siguiente tabla.
+                  Si sumamos las cantidades obtenidas en ambos casos, vemos como en el caso del interés simple acabaré con <span class="spanN">15,000</span> dólares (<span class="spanN">10,000</span> iniciales y
+                    <span class="spanN">5</span> pagos de <span class="spanN">1,000</span> dólares cada año) y que en el caso del interés compuesto terminaré con un montante acumulado de <span class="spanN">16,105.10</span> dólares ( <span class="spanN">10,000</span> dólares de inicio y <span class="spanN">6,105.10</span> dólares de intereses). La diferencia es muy llamativa como puede verse en la siguiente tabla.
                 </p><br>
                 <p>Tabla #1:</p><br>
                 <table class="table_ejemplo" >
-                  <tr>
-                    <td >Año</td><td>Interes simple</td><td>Interés compuesto</td>
-                  </tr>
-                  <tr>
-                    <td><span class="spanN">0</span></td><td><span class="spanN">10,000.00</span><br>(inicial)</td><td><span class="spanN">10,000.00</span><br>(inicial)</td>
-                  </tr>
-                  <tr>
-                    <td><span class="spanN">1</span></td><td><span class="spanN">11,000.00</span></td><td><span class="spanN">11,000.00</span></td>
-                  </tr>
-                  <tr>
-                    <td><span class="spanN">2</span></td><td><span class="spanN">12,000.00</span></td><td><span class="spanN">12,100.00</span></td>
-                  </tr>
-                  <tr>
-                    <td><span class="spanN">3</span></td><td><span class="spanN">13,000.00</span></td><td><span class="spanN">13,310.00</span></td>
-                  </tr>
-                  <tr>
-                    <td><span class="spanN">4</span></td><td><span class="spanN">14,000.00</span></td><td><span class="spanN">14,641.00</span></td>
-                  </tr>
-                  <tr>
-                    <td><span class="spanN">5</span></td><td><span class="spanN">15,000.00</span></td><td><span class="spanN">16,105.10</span></td>
-                  </tr>
+                  <tr><td >Año</td><td>Interes simple</td><td>Interés compuesto</td></tr>
+                  <tr><td><span class="spanN">0</span></td><td><span class="spanN">10,000.00</span><br>(inicial)</td><td><span class="spanN">10,000.00</span><br>(inicial)</td></tr>
+                  <tr><td><span class="spanN">1</span></td><td><span class="spanN">11,000.00</span></td><td><span class="spanN">11,000.00</span></td></tr>
+                  <tr><td><span class="spanN">2</span></td><td><span class="spanN">12,000.00</span></td><td><span class="spanN">12,100.00</span></td></tr>
+                  <tr><td><span class="spanN">3</span></td><td><span class="spanN">13,000.00</span></td><td><span class="spanN">13,310.00</span></td></tr>
+                  <tr><td><span class="spanN">4</span></td><td><span class="spanN">14,000.00</span></td><td><span class="spanN">14,641.00</span></td></tr>
+                  <tr><td><span class="spanN">5</span></td><td><span class="spanN">15,000.00</span></td><td><span class="spanN">16,105.10</span></td></tr>
                 </table><br><br>
                 <h3 >Interés Simple: Fórmula</h3><br>
 
@@ -1843,700 +1717,482 @@ transition: .5s ease all;
 
         </div>
         </div>
+        <div class="main_grid_2" id="main_grid_2"><!-- tablas -->
 
-      </article>
+          <div class="tablas" id="tablas">
+            <div class="marcoTabla1" id="marcoTabla1"><!-- ESTA div ES PARA Q' NO SE BORREN LOS BORDES DE LA TABLA EN NAVEGADOR FIREFOX -->
+             <!--  -->
+              <table class="tabla-css" id="tabla_1a">
+              <thead>
+                <tr name="TR">
+                  <td colspan="9" rowspan="1" class="td_Dtitulo">
+                    <div class="div_Dtitulo" id="div_Dtitulo">
   
-      <article class="main_grid_2" id="main_grid_2"><!-- tablas -->
-
-        <div class="tablas" id="tablas">
-          <div id="Lp"><p name="Lp1"></p></div>
-          <div class="marcoTabla1" id="marcoTabla1"><!-- ESTA div ES PARA Q' NO SE BORREN LOS BORDES DE LA TABLA EN NAVEGADOR FIREFOX -->
-           <!--  -->
-            <table class="tabla-css" id="tabla_1a">
+                    <div>TABLA DIN&Aacute;MICA</div>
+                    <div id="webSocket" style="display: none;justify-content:center ; opacity: 0.25; ">
+                      </div>
+                    <div class="divs_svgs">
+                      <!-- -->
+                      <div class="div_Dsvg"  id="div_svg_min" onclick="expandirD()">
+                        <svg id="" version="1.0" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path class="path" d="M14.075,17.789c0.478,0.479,0.478,1.254,0,1.732l-9.89,9.891h5.705c0.678,0,1.225,0.549,1.225,1.227  s-0.547,1.225-1.225,1.225H1.226C0.549,31.863,0,31.316,0,30.639v-8.666c0-0.676,0.549-1.225,1.226-1.225  c0.678,0,1.227,0.549,1.227,1.225v5.709l9.89-9.893c0.239-0.238,0.553-0.359,0.865-0.359C13.521,17.43,13.835,17.551,14.075,17.789z   M30.774,0.137H22.11c-0.678,0-1.226,0.547-1.226,1.225s0.548,1.227,1.226,1.227h5.705L17.79,12.615  c-0.479,0.479-0.479,1.254,0,1.732c0.478,0.479,1.253,0.479,1.732,0L29.548,4.32v5.707c0,0.676,0.549,1.225,1.227,1.225  c0.677,0,1.226-0.549,1.226-1.225V1.361C32,0.684,31.451,0.137,30.774,0.137z"/></svg>
+                      </div>
+                      <div class="div_Dsvg"  id="div_svg_max" onclick="contraerD()">
+                        <svg id="" version="1.0" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path class="path"  d="M14.436,18.655v8.665c0,0.677-0.549,1.226-1.227,1.226s-1.227-0.548-1.227-1.226v-5.707l-9.891,9.891  c-0.238,0.239-0.553,0.359-0.867,0.359c-0.313,0-0.625-0.12-0.865-0.359c-0.479-0.479-0.479-1.254,0-1.733l9.891-9.892H4.543  c-0.678,0-1.227-0.548-1.227-1.225c0-0.676,0.549-1.226,1.227-1.226h8.666C13.887,17.43,14.436,17.979,14.436,18.655z M31.641,0.495  c-0.477-0.479-1.252-0.479-1.732,0L19.883,10.522V4.815c0-0.677-0.549-1.225-1.227-1.225c-0.676,0-1.225,0.548-1.225,1.225v8.665  c0,0.677,0.549,1.226,1.225,1.226h8.664c0.678,0,1.227-0.549,1.227-1.226s-0.549-1.225-1.227-1.225h-5.705L31.641,2.229  C32.119,1.75,32.119,0.975,31.641,0.495z"/></svg>
+                      </div>
+                     <div class="div_Dsvg" id="div_Dsvg" onclick="eliminarTablaD()">
+                       <svg xmlns='http://www.w3.org/2000/svg' viewBox='-15 -10 80 80'><path class="path" d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg>
+                     </div>
+                    </div> 
+                    </div>
+                </td>
+                </tr>
+  
+                <tr name="TR" class="TR">
+                  <td class="tdHead"><div class="d_s">S&iacute;mbolo </div></td>
+                  <td class="tdHead"><div class="d_h"><p          > Capital inicial</p></div></td>
+                  <td class="tdHead"><div class="d_h"><p name="L" > Compra         </p></div></td>
+                  <td class="tdHead"><div class="d_h"><p name="L1"> Venta          </p></div></td>
+                  <td class="tdHead"><div class="d_h"><p name="L2"> Diferencia     </p></div></td>
+                  <td class="tdHead"><div class="d_h"><p name="L" > Comisi&oacute;n</p></div></td> 
+                  <td class="tdHead"><div class="d_h"><p name="L3"> Ganancia       </p></div></td>
+                  <td class="tdHead"><div class="d_h"><p name="L4"> Capital final  </p></div></td>
+                  <td class="tdHead"><div class="d_s">Eliminar       </div></td>
+                </tr>
+              </thead> 
+  
+                <tbody id="tbodyD">
+                <tr id="tr_1"  name="TR" class="TR">
+                  <td id="td_sp1" class="td_cf" name="d_sp" ><div class="ds"><input type="text" disabled class="de" id="dataeval1" value=""><div class="d_s" name="DS" id="p_s1" >BTCUSDT</div><div name="logo" id='logo1'></div></div></td>
+                  <td id="td_ci1" class="td_cf"><div class="d_cf"><p           id="p_ci1">1,550.46 </p></div></td>
+                  <td id="td_pc1" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc1">64,522.00</p></div></td>
+                  <td id="td_pv1" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv1">74,000.00</p></div></td>
+                  <td id="td_dp1" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp1">9,478.00 </p></div></td>
+                  <td id="td_c1"  class="td_cf"><div class="d_cf"><p name="L"  id="p_c1" >0.10     </p> </div></td>
+                  <td id="td_p1"  class="td_cf"><div class="d_cf"><p name="L3" id="p_p1" >224.42   </p></div></td>
+                  <td id="td_cf1" class="td_cf"><div class="d_cf"><p name="L4" id="p_cf1">1,774.88 </p></div></td>
+                  <td class="td_x" onclick="eliminarTr(1)" onmouseover="bordeOverTr(1)" onmouseout="bordeOutTr(1)"><div class="d_x">
+                    <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                  </div></td>
+                </tr>
+                <tr id="tr_2"  name="TR" class="TR">
+                  <td id="td_sp2" class="td_cf" name="d_sp" ><div class="ds"><input type="text" disabled class="de" id="dataeval2" value=""><div class="d_s" name="DS" id="p_s2">BTCUSDT</div><div name="logo" id='logo2'></div></div></td>
+                  <td id="td_ci2" class="td_cf"><div class="d_cf"><p           id="p_ci2" >617.23   </p></div></td>
+                  <td id="td_pc2" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc2" >58,000.00</p></div></td>
+                  <td id="td_pv2" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv2" >74,000.00</p></div></td>
+                  <td id="td_dp2" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp2" >16,000.00</p></div></td>
+                  <td id="td_c2"  class="td_cf"><div class="d_cf"><p name="L"  id="p_c2"  >0.10     </p> </div></td>
+                  <td id="td_p2"  class="td_cf"><div class="d_cf"><p name="L3" id="p_p2"  >168.86   </p></div></td>
+                  <td id="td_cf2" class="td_cf"><div class="d_cf"><p name="L4" id="p_cf2" >786.09   </p></div></td>
+                  <td class="td_x" onclick="eliminarTr(2)" onmouseover="bordeOverTr(2)" onmouseout="bordeOutTr(2)"><div class="d_x">
+                    <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                  </div></td>
+                </tr>
+                <tr id="tr_3"  name="TR" class="TR">
+                  <td id="td_sp3" class="td_cf" name="d_sp" ><div class="ds"><input type="text" disabled class="de" id="dataeval3" value=""><div class="d_s" name="DS" id="p_s3">XRPUSDT</div><div name="logo" id='logo3'></div></div></td>
+                  <td id="td_ci3" class="td_cf"><div class="d_cf"><p           id="p_ci3" >7.2261  </p></div></td>
+                  <td id="td_pc3" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc3" >0.525000   </p></div></td>
+                  <td id="td_pv3" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv3" >0.60   </p></div></td>
+                  <td id="td_dp3" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp3" >4.725   </p></div></td>
+                  <td id="td_c3"  class="td_cf"><div class="d_cf"><p name="L"  id="p_c3"  >0.10     </p> </div></td>
+                  <td id="td_p3"  class="td_cf"><div class="d_cf"><p name="L3" id="p_p3"  >64.9554129</p></div></td>
+                  <td id="td_cf3" class="td_cf"><div class="d_cf"><p name="L4" id="p_cf3" >72.1815129</p></div></td>
+                  <td class="td_x" onclick="eliminarTr(3)" onmouseover="bordeOverTr(3)" onmouseout="bordeOutTr(3)"><div class="d_x">
+                    <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                  </div></td>
+                </tr>
+                <tr id="tr_4"  name="TR" class="TR">
+                  <td id="td_sp4" class="td_cf" name="d_sp" ><div class="ds"><input type="text" disabled class="de" id="dataeval4" value=""><div class="d_s" name="DS" id="p_s4">NEARUSDT</div><div name="logo" id='logo4'></div></div></td>
+                  <td id="td_ci4" class="td_cf"><div class="d_cf"><p           id="p_ci4" >4.72527  </p></div></td>
+                  <td id="td_pc4" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc4" >4.73   </p></div></td>
+                  <td id="td_pv4" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv4" >5.25    </p></div></td>
+                  <td id="td_dp4" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp4" >4.725   </p></div></td>
+                  <td id="td_c4"  class="td_cf"><div class="d_cf"><p name="L"  id="p_c4"  >0.10     </p> </div></td>
+                  <td id="td_p4"  class="td_cf"><div class="d_cf"><p name="L3" id="p_p4"  >64.9554129</p></div></td>
+                  <td id="td_cf4" class="td_cf"><div class="d_cf"><p name="L4" id="p_cf4" >72.1815129</p></div></td>
+                  <td class="td_x" onclick="eliminarTr(4)" onmouseover="bordeOverTr(4)" onmouseout="bordeOutTr(4)"><div class="d_x">
+                    <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                  </div></td>
+                </tr>
+                <tr id="tr_5"  name="TR" class="TR">
+                  <td id="td_sp5" class="td_cf" name="d_sp" ><div class="ds"><input type="text" disabled class="de" id="dataeval5" value=""><div class="d_s" name="DS" id="p_s5">ICPUSDT</div><div name="logo" id='logo5'></div></div></td>
+                  <td id="td_ci5" class="td_cf"><div class="d_cf"><p           id="p_ci5" >4.91508  </p></div></td>
+                  <td id="td_pc5" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc5" >8.20   </p></div></td>
+                  <td id="td_pv5" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv5" >8.25    </p></div></td>
+                  <td id="td_dp5" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp5" >5.725   </p></div></td>
+                  <td id="td_c5"  class="td_cf"><div class="d_cf"><p name="L"  id="p_c5"  >0.10     </p> </div></td>
+                  <td id="td_p5"  class="td_cf"><div class="d_cf"><p name="L3" id="p_p5"  >65.9555129</p></div></td>
+                  <td id="td_cf5" class="td_cf"><div class="d_cf"><p name="L4" id="p_cf5" >72.1815129</p></div></td>
+                  <td class="td_x" onclick="eliminarTr(5)" onmouseover="bordeOverTr(5)" onmouseout="bordeOutTr(5)"><div class="d_x">
+                    <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                  </div></td>
+                </tr>
+                <tr id="tr_6"  name="TR" class="TR">
+                  <td id="td_sp6" class="td_cf" name="d_sp" ><div class="ds"><input type="text" disabled class="de" id="dataeval6" value=""><div class="d_s" name="DS" id="p_s6">TAOUSDT</div><div name="logo" id='logo6'></div></div></td>
+                  <td id="td_ci6" class="td_cf"><div class="d_cf"><p           id="p_ci6" >4.98257244</p></div></td>
+                  <td id="td_pc6" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc6" >560.40   </p></div></td>
+                  <td id="td_pv6" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv6" >560.50    </p></div></td>
+                  <td id="td_dp6" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp6" >6.726   </p></div></td>
+                  <td id="td_c6"  class="td_cf"><div class="d_cf"><p name="L"  id="p_c6"  >0.10     </p> </div></td>
+                  <td id="td_p6"  class="td_cf"><div class="d_cf"><p name="L3" id="p_p6"  >66.9666129</p></div></td>
+                  <td id="td_cf6" class="td_cf"><div class="d_cf"><p name="L4" id="p_cf6" >72.1816129</p></div></td>
+                  <td class="td_x" onclick="eliminarTr(6)" onmouseover="bordeOverTr(6)" onmouseout="bordeOutTr(6)"><div class="d_x">
+                    <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                  </div></td>
+                </tr>
+                <tr id="tr_7"  name="TR" class="TR">
+                  <td id="td_sp7" class="td_cf" name="d_sp" ><div class="ds"><input type="text" disabled class="de" id="dataeval7" value=""><div class="d_s" name="DS" id="p_s7">FETUSDT</div><div name="logo" id='logo7'></div></div></td>
+                  <td id="td_ci7" class="td_cf"><div class="d_cf"><p           id="p_ci7" >4.860135  </p></div></td>
+                  <td id="td_pc7" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc7" >1.390   </p></div></td>
+                  <td id="td_pv7" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv7" >1.40  </p></div></td>
+                  <td id="td_dp7" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp7" >7.727   </p></div></td>
+                  <td id="td_c7"  class="td_cf"><div class="d_cf"><p name="L"  id="p_c7"  >0.10     </p> </div></td>
+                  <td id="td_p7"  class="td_cf"><div class="d_cf"><p name="L3" id="p_p7"  >67.9777129</p></div></td>
+                  <td id="td_cf7" class="td_cf"><div class="d_cf"><p name="L4" id="p_cf7" >72.1817129</p></div></td>
+                  <td class="td_x" onclick="eliminarTr(7)" onmouseover="bordeOverTr(7)" onmouseout="bordeOutTr(7)"><div class="d_x">
+                    <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                  </div></td>
+                </tr>
+                <tr id="tr_8"  name="TR" class="TR">
+                  <td id="td_sp8" class="td_cf" name="d_sp" ><div class="ds"><input type="text" disabled class="de" id="dataeval8" value=""><div class="d_s" name="DS" id="p_s8">RENDERUSDT</div><div name="logo" id='logo8'></div></div></td>
+                  <td id="td_ci8" class="td_cf"><div class="d_cf"><p           id="p_ci8" >5.45454  </p></div></td>
+                  <td id="td_pc8" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc8" >5.46     </p></div></td>
+                  <td id="td_pv8" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv8" >5.47     </p></div></td>
+                  <td id="td_dp8" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp8" >8.828    </p></div></td>
+                  <td id="td_c8"  class="td_cf"><div class="d_cf"><p name="L"  id="p_c8"  >0.10     </p> </div></td>
+                  <td id="td_p8"  class="td_cf"><div class="d_cf"><p name="L3" id="p_p8"  >68.9888129</p></div></td>
+                  <td id="td_cf8" class="td_cf"><div class="d_cf"><p name="L4" id="p_cf8" >82.1818129</p></div></td>
+                  <td class="td_x" onclick="eliminarTr(8)" onmouseover="bordeOverTr(8)" onmouseout="bordeOutTr(8)"><div class="d_x">
+                    <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                  </div></td>
+                </tr>
+                <tr id="tr_9"  name="TR" class="TR">
+                  <td id="td_sp9" class="td_cf" name="d_sp" ><div class="ds"><input type="text" disabled class="de" id="dataeval9" value=""><div class="d_s" name="DS" id="p_s9">GRTUSDT</div><div name="logo" id='logo9'></div></div></td>
+                  <td id="td_ci9" class="td_cf"><div class="d_cf"><p           id="p_ci9" >4.93695274 </p></div></td>
+                  <td id="td_pc9" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc9" >0.1594   </p></div></td>
+                  <td id="td_pv9" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv9" >0.16    </p></div></td>
+                  <td id="td_dp9" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp9" >9.929   </p></div></td>
+                  <td id="td_c9"  class="td_cf"><div class="d_cf"><p name="L"  id="p_c9"  >0.10     </p> </div></td>
+                  <td id="td_p9"  class="td_cf"><div class="d_cf"><p name="L3" id="p_p9"  >69.9999129</p></div></td>
+                  <td id="td_cf9" class="td_cf"><div class="d_cf"><p name="L4" id="p_cf9" >92.1819129</p></div></td>
+                  <td class="td_x" onclick="eliminarTr(9)" onmouseover="bordeOverTr(9)" onmouseout="bordeOutTr(9)"><div class="d_x">
+                    <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                  </div></td>
+                </tr>
+                <tr id="tr_10"  name="TR" class="TR">
+                  <td id="td_sp10" class="td_cf" name="d_sp" ><div class="ds"><input type="text" disabled class="de" id="dataeval10" value=""><div class="d_s" name="DS" id="p_s10">TIAUSDT</div><div name="logo" id='logo10'></div></div></td>
+                  <td id="td_ci10" class="td_cf"><div class="d_cf"><p           id="p_ci10" >5.17482  </p></div></td>
+                  <td id="td_pc10" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc10" >5.18  </p></div></td>
+                  <td id="td_pv10" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv10" >5.19    </p></div></td>
+                  <td id="td_dp10" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp10" >10.10210   </p></div></td>
+                  <td id="td_c10"  class="td_cf"><div class="d_cf"><p name="L"  id="p_c10"  >0.10     </p> </div></td>
+                  <td id="td_p10"  class="td_cf"><div class="d_cf"><p name="L3" id="p_p10"  >610.910101</p></div></td>
+                  <td id="td_cf10" class="td_cf"><div class="d_cf"><p name="L4" id="p_cf10" >102.181101</p></div></td>
+                  <td class="td_x" onclick="eliminarTr(10)" onmouseover="bordeOverTr(10)" onmouseout="bordeOutTr(10)"><div class="d_x">
+                    <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                  </div></td>
+                </tr>
+                <tr id="tr_11"  name="TR" class="TR">
+                  <td id="td_sp11" class="td_cf" name="d_sp" ><div class="ds"><input type="text" disabled class="de" id="dataeval11" value=""><div class="d_s" name="DS" id="p_s11">MANTAUSDT</div><div name="logo" id='logo11'></div></div></td>
+                  <td id="td_ci11" class="td_cf"><div class="d_cf"><p           id="p_ci11" >4.9522428  </p></div></td>
+                  <td id="td_pc11" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc11" >0.729   </p></div></td>
+                  <td id="td_pv11" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv11" >0.73   </p></div></td>
+                  <td id="td_dp11" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp11" >11.11211   </p></div></td>
+                  <td id="td_c11"  class="td_cf"><div class="d_cf"><p name="L"  id="p_c11"  >0.10     </p> </div></td>
+                  <td id="td_p11"  class="td_cf"><div class="d_cf"><p name="L3" id="p_p11"  >611.91111</p></div></td>
+                  <td id="td_cf11" class="td_cf"><div class="d_cf"><p name="L4" id="p_cf11" >112.1811</p></div></td>
+                  <td class="td_x" onclick="eliminarTr(11)" onmouseover="bordeOverTr(11)" onmouseout="bordeOutTr(11)"><div class="d_x">
+                    <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                  </div></td>
+                </tr>
+                <tr id="tr_12"  name="TR" class="TR">
+                  <td id="td_sp12" class="td_cf" name="d_sp" ><div class="ds"><input type="text" disabled class="de" id="dataeval12" value=""><div class="d_s" name="DS" id="p_s12">PYTHUSDT</div><div name="logo" id='logo12'></div></div></td>
+                  <td id="td_ci12" class="td_cf"><div class="d_cf"><p           id="p_ci12" >5.78544876  </p></div></td>
+                  <td id="td_pc12" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc12" >0.3367  </p></div></td>
+                  <td id="td_pv12" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv12" >0.34    </p></div></td>
+                  <td id="td_dp12" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp12" >12.12212   </p></div></td>
+                  <td id="td_c12"  class="td_cf"><div class="d_cf"><p name="L"  id="p_c12"  >0.10     </p> </div></td>
+                  <td id="td_p12"  class="td_cf"><div class="d_cf"><p name="L3" id="p_p12"  >612.91212</p></div></td>
+                  <td id="td_cf12" class="td_cf"><div class="d_cf"><p name="L4" id="p_cf12" >122.18112</p></div></td>
+                  <td class="td_x" onclick="eliminarTr(12)" onmouseover="bordeOverTr(12)" onmouseout="bordeOutTr(12)"><div class="d_x">
+                    <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                  </div> </td>
+                </tr>
+                <tr id="tr_13"  name="TR" class="TR">
+                  <td id="td_sp13" class="td_cf" name="d_sp" ><div class="ds"><input type="text" disabled class="de" id="dataeval13" value=""><div class="d_s" name="DS" id="p_s13">PEPEUSDT</div><div name="logo" id='logo13'></div></div></td>
+                  <td id="td_ci13" class="td_cf"><div class="d_cf"><p           id="p_ci13" >4.99499360  </p></div></td>
+                  <td id="td_pc13" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc13" >0.000008933   </p></div></td>
+                  <td id="td_pv13" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv13" >0.00000895   </p></div></td>
+                  <td id="td_dp13" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp13" >0.000008492 </p></div></td>
+                  <td id="td_c13"  class="td_cf"><div class="d_cf"><p name="L"  id="p_c13"  >0.10     </p> </div></td>
+                  <td id="td_p13"  class="td_cf"><div class="d_cf"><p name="L3" id="p_p13"  >0.05988033    </p></div></td>
+                  <td id="td_cf13" class="td_cf"><div class="d_cf"><p name="L4" id="p_cf13" >5.05988033 </p></div></td>
+                  <td class="td_x" onclick="eliminarTr(13)" onmouseover="bordeOverTr(13)" onmouseout="bordeOutTr(13)"><div class="d_x">
+                    <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                  </div></td>
+                </tr>
+              </tbody>
+  
+              <tfoot>
+                <tr name="TR" class="TR">
+                  <td colspan="9" rowspan="1" class="td_separador"></td>
+  
+                </tr>
+                <tr name="TR" class="TR">
+                  <td colspan="6" rowspan="1" class="tdFinalT1">Capital inicial total</td>
+                  <td colspan="3" rowspan="1" class="tdFinalT2" id="capitalIniciaTotal">0</td>
+                </tr>
+                <tr name="TR" class="TR" id="TRD1">
+                  <td colspan="6" rowspan="1" class="tdFinalT1" id="capitalFinalT">Capital final total </td>
+                  <td colspan="3" rowspan="1" class="tdFinalT2" id="capitalFinalTotal">0</td>
+                </tr>
+                <tr name="TR" class="TR" id="TRD2">
+                  <td colspan="6" rowspan="1" class="tdFinalT1" id="gananciasPerdidas">Ganancias/P&eacute;rdidas</td>
+                  <td colspan="3" rowspan="1" class="tdFinalT2" id="diferenciaTotal">0</td>
+                </tr>
+              </tfoot>
+            </table> 
+            </div>
+           
+            <div class="marcoTabla2" id="marcoTabla2"><!-- ESTA div ES PARA Q' NO SE BORREN LOS BORDES DE LA TABLA EN NAVEGADOR FIREFOX -->
+           <table class="tabla-css" id="tabla_2a">
             <thead>
-              <tr name="TR">
+              <tr name="TR" >
                 <td colspan="9" rowspan="1" class="td_Dtitulo">
-                  <div class="div_Dtitulo" id="div_Dtitulo">
-
-                  <div>TABLA DIN&Aacute;MICA</div>
-                  <div id="webSocket" style="display: none;justify-content:center ; opacity: 0.25; ">
-                    </div>
-                  <div class="divs_svgs">
-                    <!-- -->
-                    <div class="div_Dsvg"  id="div_svg_min" onclick="expandirD()">
-                      <svg id="" version="1.0" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path class="path" d="M14.075,17.789c0.478,0.479,0.478,1.254,0,1.732l-9.89,9.891h5.705c0.678,0,1.225,0.549,1.225,1.227  s-0.547,1.225-1.225,1.225H1.226C0.549,31.863,0,31.316,0,30.639v-8.666c0-0.676,0.549-1.225,1.226-1.225  c0.678,0,1.227,0.549,1.227,1.225v5.709l9.89-9.893c0.239-0.238,0.553-0.359,0.865-0.359C13.521,17.43,13.835,17.551,14.075,17.789z   M30.774,0.137H22.11c-0.678,0-1.226,0.547-1.226,1.225s0.548,1.227,1.226,1.227h5.705L17.79,12.615  c-0.479,0.479-0.479,1.254,0,1.732c0.478,0.479,1.253,0.479,1.732,0L29.548,4.32v5.707c0,0.676,0.549,1.225,1.227,1.225  c0.677,0,1.226-0.549,1.226-1.225V1.361C32,0.684,31.451,0.137,30.774,0.137z"/></svg>
-                    </div>
-                    <div class="div_Dsvg"  id="div_svg_max" onclick="contraerD()">
-                      <svg id="" version="1.0" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path class="path"  d="M14.436,18.655v8.665c0,0.677-0.549,1.226-1.227,1.226s-1.227-0.548-1.227-1.226v-5.707l-9.891,9.891  c-0.238,0.239-0.553,0.359-0.867,0.359c-0.313,0-0.625-0.12-0.865-0.359c-0.479-0.479-0.479-1.254,0-1.733l9.891-9.892H4.543  c-0.678,0-1.227-0.548-1.227-1.225c0-0.676,0.549-1.226,1.227-1.226h8.666C13.887,17.43,14.436,17.979,14.436,18.655z M31.641,0.495  c-0.477-0.479-1.252-0.479-1.732,0L19.883,10.522V4.815c0-0.677-0.549-1.225-1.227-1.225c-0.676,0-1.225,0.548-1.225,1.225v8.665  c0,0.677,0.549,1.226,1.225,1.226h8.664c0.678,0,1.227-0.549,1.227-1.226s-0.549-1.225-1.227-1.225h-5.705L31.641,2.229  C32.119,1.75,32.119,0.975,31.641,0.495z"/></svg>
-                    </div>
-                   <div class="div_Dsvg" id="div_Dsvg" onclick="eliminarTablaD()">
-                     <svg xmlns='http://www.w3.org/2000/svg' viewBox='-15 -10 80 80'><path class="path" d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg>
-                   </div>
-                  </div> 
+                  <div class="div_Dtitulo">
+                    <div>TABLA EST&Aacute;TICA</div> 
+                    <div class="divs_svgs">
+                      <div class="div_Dsvg"  id="div_svg_minE" onclick="expandirE()">
+                        <svg id="" version="1.0" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path class="path"  d="M14.075,17.789c0.478,0.479,0.478,1.254,0,1.732l-9.89,9.891h5.705c0.678,0,1.225,0.549,1.225,1.227  s-0.547,1.225-1.225,1.225H1.226C0.549,31.863,0,31.316,0,30.639v-8.666c0-0.676,0.549-1.225,1.226-1.225  c0.678,0,1.227,0.549,1.227,1.225v5.709l9.89-9.893c0.239-0.238,0.553-0.359,0.865-0.359C13.521,17.43,13.835,17.551,14.075,17.789z   M30.774,0.137H22.11c-0.678,0-1.226,0.547-1.226,1.225s0.548,1.227,1.226,1.227h5.705L17.79,12.615  c-0.479,0.479-0.479,1.254,0,1.732c0.478,0.479,1.253,0.479,1.732,0L29.548,4.32v5.707c0,0.676,0.549,1.225,1.227,1.225  c0.677,0,1.226-0.549,1.226-1.225V1.361C32,0.684,31.451,0.137,30.774,0.137z"/></svg>
+                      </div>
+                      <div class="div_Dsvg"  id="div_svg_maxE" onclick="contraerE()">
+                        <svg id="" version="1.0" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path class="path"  d="M14.436,18.655v8.665c0,0.677-0.549,1.226-1.227,1.226s-1.227-0.548-1.227-1.226v-5.707l-9.891,9.891  c-0.238,0.239-0.553,0.359-0.867,0.359c-0.313,0-0.625-0.12-0.865-0.359c-0.479-0.479-0.479-1.254,0-1.733l9.891-9.892H4.543  c-0.678,0-1.227-0.548-1.227-1.225c0-0.676,0.549-1.226,1.227-1.226h8.666C13.887,17.43,14.436,17.979,14.436,18.655z M31.641,0.495  c-0.477-0.479-1.252-0.479-1.732,0L19.883,10.522V4.815c0-0.677-0.549-1.225-1.227-1.225c-0.676,0-1.225,0.548-1.225,1.225v8.665  c0,0.677,0.549,1.226,1.225,1.226h8.664c0.678,0,1.227-0.549,1.227-1.226s-0.549-1.225-1.227-1.225h-5.705L31.641,2.229  C32.119,1.75,32.119,0.975,31.641,0.495z"/></svg>
+                     </div>
+                  <div class="div_Dsvg"  id="div_DsvgE" onclick="eliminarTablaE()">
+                    <svg xmlns='http://www.w3.org/2000/svg' viewBox='-15 -10 80 80'><path class="path"  d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg>
                   </div>
+                </div>
+                </div>
               </td>
               </tr>
-
-              <tr name="TR" class="TR">
-                <td class="tdHead"><div class="d_s">S&iacute;mbolo </div></td>
-                <td class="tdHead"><div class="d_h"><p          > Capital inicial</p></div></td>
-                <td class="tdHead"><div class="d_h"><p name="L" > Compra         </p></div></td>
-                <td class="tdHead"><div class="d_h"><p name="L1"> Venta          </p></div></td>
-                <td class="tdHead"><div class="d_h"><p name="L2"> Diferencia     </p></div></td>
-                <td class="tdHead"><div class="d_h"><p name="L" > Comisi&oacute;n</p></div></td> 
-                <td class="tdHead"><div class="d_h"><p name="L3"> Ganancia       </p></div></td>
-                <td class="tdHead"><div class="d_h"><p name="L4"> Capital final  </p></div></td>
-                <td class="tdHead"><div class="d_s">Eliminar       </div></td>
+  
+              <tr name="TR" class="TR" >
+                <td class="tdHead"><div class="d_s" name="ds" >S&iacute;mbolo </div></td>
+                <td class="tdHead"><div class="d_h"><p           >Capital inicial</p></div></td>
+                <td class="tdHead"><div class="d_h"><p name="LE" >Compra         </p></div></td>
+                <td class="tdHead"><div class="d_h"><p name="LE1">Venta          </p></div></td>
+                <td class="tdHead"><div class="d_h"><p name="LE2">Diferencia     </p></div></td>
+                <td class="tdHead"><div class="d_h"><p name="LE" >Comisi&oacute;n</p></div></td>
+                <td class="tdHead"><div class="d_h"><p name="LE3">Ganancia       </p></div></td>
+                <td class="tdHead"><div class="d_h"><p name="LE4">Capital final  </p></td>
+                <td class="tdHead"><div class="d_s" name="ds" >Eliminar       </div></td>
               </tr>
             </thead> 
-
-              <tbody id="tbodyD">
-              <tr id="tr_1"  name="TR" class="TR">
-                <td id="td_sp1" class="td_cf" name="d_sp" ><div class="ds"><input type="text" disabled class="de" id="dataeval1" value=""><div class="d_s" name="DS" id="p_s1" >BTCUSDT</div><div name="logo" id='logo1'></div></div></td>
-                <td id="td_ci1" class="td_cf"><div class="d_cf"><p           id="p_ci1">1,550.46 </p></div></td>
-                <td id="td_pc1" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc1">64,522.00</p></div></td>
-                <td id="td_pv1" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv1">74,000.00</p></div></td>
-                <td id="td_dp1" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp1">9,478.00 </p></div></td>
-                <td id="td_c1"  class="td_cf"><div class="d_cf"><p name="L"  id="p_c1" >0.10     </p> </div></td>
-                <td id="td_p1"  class="td_cf"><div class="d_cf"><p name="L3" id="p_p1" >224.42   </p></div></td>
-                <td id="td_cf1" class="td_cf"><div class="d_cf"><p name="L4" id="p_cf1">1,774.88 </p></div></td>
-                <td class="td_x" onclick="eliminarTr(1)" onmouseover="bordeOverTr(1)" onmouseout="bordeOutTr(1)"><div class="d_x">
+  
+              <tbody id="tbodyE">
+              <tr id="tr_E1"  name="TR" class="TR" style="display: none;">
+                <td id="td_spE1" class="td_cf" name="d_spE" ><div class="ds"><input type="text" disabled class="de" id="dataevalE1" value=""><div class="d_s" name="DS" id="p_sE1">BTCUSDT </div><div name="logoE" id='logoE1'></div></div></td>
+                <td id="td_ciE1" class="td_cf"><div            class="d_cf" id="p_ciE1">0.00     </div></td>
+                <td id="td_pcE1" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE1">66,600.00</div></td>
+                <td id="td_pvE1" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE1">67,600.00</div></td>
+                <td id="td_dpE1" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE1">1,000.00 </div></td>
+                <td id= "td_cE1" class="td_cf"><div name="LE"  class="d_cf" id="p_cE1">0.10      </div> </td>
+                <td id= "td_pE1" class="td_cf"><div name="LE3" class="d_cf" id="p_pE1">0.00      </div> </td>
+                <td id="td_cfE1" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE1">0.00     </div> </td>
+                <td class="td_x" onclick="eliminarTrE(1)" onmouseover="bordeOverTrE(1)" onmouseout="bordeOutTrE(1)">
                   <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
-                </div></td>
+                </td>
               </tr>
-              <tr id="tr_2"  name="TR" class="TR">
-                <td id="td_sp2" class="td_cf" name="d_sp" ><div class="ds"><input type="text" disabled class="de" id="dataeval2" value=""><div class="d_s" name="DS" id="p_s2">BTCUSDT</div><div name="logo" id='logo2'></div></div></td>
-                <td id="td_ci2" class="td_cf"><div class="d_cf"><p           id="p_ci2" >617.23   </p></div></td>
-                <td id="td_pc2" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc2" >58,000.00</p></div></td>
-                <td id="td_pv2" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv2" >74,000.00</p></div></td>
-                <td id="td_dp2" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp2" >16,000.00</p></div></td>
-                <td id="td_c2"  class="td_cf"><div class="d_cf"><p name="L"  id="p_c2"  >0.10     </p> </div></td>
-                <td id="td_p2"  class="td_cf"><div class="d_cf"><p name="L3" id="p_p2"  >168.86   </p></div></td>
-                <td id="td_cf2" class="td_cf"><div class="d_cf"><p name="L4" id="p_cf2" >786.09   </p></div></td>
-                <td class="td_x" onclick="eliminarTr(2)" onmouseover="bordeOverTr(2)" onmouseout="bordeOutTr(2)"><div class="d_x">
-                  <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
-                </div></td>
+              <tr id="tr_E2"  name="TR" class="TR" style="display: none;">  
+                <td id="td_spE2" class="td_cf" name="d_spE" ><div class="ds"><input type="text" disabled class="de" id="dataevalE2" value=""><div class="d_s" name="DS" id="p_sE2">BTCUSDT </div><div name="logoE" id='logoE2'></div></div></td>
+                <td id="td_ciE2" class="td_cf"><div           class="d_cf" id="p_ciE2">0.00     </div></td>
+                <td id="td_pcE2" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE2">66,600.00</div></td>
+                <td id="td_pvE2" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE2">67,600.00</div></td>
+                <td id="td_dpE2" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE2">1,000.00 </div></td>
+                <td id= "td_cE2" class="td_cf"><div name="LE"  class="d_cf" id="p_cE2">0.10      </div> </td>
+                <td id= "td_pE2" class="td_cf"><div name="LE3" class="d_cf" id="p_pE2">0.00      </div> </td>
+                <td id="td_cfE2" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE2">0.00     </div> </td>
+                <td class="td_x" onclick="eliminarTrE(2)" onmouseover="bordeOverTrE(2)" onmouseout="bordeOutTrE(2)">
+                  <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                </td>
               </tr>
-              <tr id="tr_3"  name="TR" class="TR">
-                <td id="td_sp3" class="td_cf" name="d_sp" ><div class="ds"><input type="text" disabled class="de" id="dataeval3" value=""><div class="d_s" name="DS" id="p_s3">XRPUSDT</div><div name="logo" id='logo3'></div></div></td>
-                <td id="td_ci3" class="td_cf"><div class="d_cf"><p           id="p_ci3" >7.2261  </p></div></td>
-                <td id="td_pc3" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc3" >0.525000   </p></div></td>
-                <td id="td_pv3" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv3" >0.60   </p></div></td>
-                <td id="td_dp3" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp3" >4.725   </p></div></td>
-                <td id="td_c3"  class="td_cf"><div class="d_cf"><p name="L"  id="p_c3"  >0.10     </p> </div></td>
-                <td id="td_p3"  class="td_cf"><div class="d_cf"><p name="L3" id="p_p3"  >64.9554129</p></div></td>
-                <td id="td_cf3" class="td_cf"><div class="d_cf"><p name="L4" id="p_cf3" >72.1815129</p></div></td>
-                <td class="td_x" onclick="eliminarTr(3)" onmouseover="bordeOverTr(3)" onmouseout="bordeOutTr(3)"><div class="d_x">
-                  <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
-                </div></td>
+              <tr id="tr_E3"  name="TR" class="TR" style="display: none;">  
+                <td id="td_spE3" class="td_cf" name="d_spE" ><div class="ds"><input type="text" disabled class="de" id="dataevalE3" value=""><div class="d_s" name="DS" id="p_sE3">BTCUSDT </div><div name="logoE" id='logoE3'></div></div></td>
+                <td id="td_ciE3" class="td_cf"><div           class="d_cf" id="p_ciE3">0.00     </div></td>
+                <td id="td_pcE3" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE3">66,600.00</div></td>
+                <td id="td_pvE3" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE3">67,600.00</div></td>
+                <td id="td_dpE3" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE3">1,000.00 </div></td>
+                <td id= "td_cE3" class="td_cf"><div name="LE"  class="d_cf" id="p_cE3">0.10      </div> </td>
+                <td id= "td_pE3" class="td_cf"><div name="LE3" class="d_cf" id="p_pE3">0.00      </div> </td>
+                <td id="td_cfE3" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE3">0.00     </div> </td>
+                <td class="td_x" onclick="eliminarTrE(3)" onmouseover="bordeOverTrE(3)" onmouseout="bordeOutTrE(3)">
+                  <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                </td>
               </tr>
-              <tr id="tr_4"  name="TR" class="TR">
-                <td id="td_sp4" class="td_cf" name="d_sp" ><div class="ds"><input type="text" disabled class="de" id="dataeval4" value=""><div class="d_s" name="DS" id="p_s4">NEARUSDT</div><div name="logo" id='logo4'></div></div></td>
-                <td id="td_ci4" class="td_cf"><div class="d_cf"><p           id="p_ci4" >4.72527  </p></div></td>
-                <td id="td_pc4" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc4" >4.73   </p></div></td>
-                <td id="td_pv4" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv4" >5.25    </p></div></td>
-                <td id="td_dp4" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp4" >4.725   </p></div></td>
-                <td id="td_c4"  class="td_cf"><div class="d_cf"><p name="L"  id="p_c4"  >0.10     </p> </div></td>
-                <td id="td_p4"  class="td_cf"><div class="d_cf"><p name="L3" id="p_p4"  >64.9554129</p></div></td>
-                <td id="td_cf4" class="td_cf"><div class="d_cf"><p name="L4" id="p_cf4" >72.1815129</p></div></td>
-                <td class="td_x" onclick="eliminarTr(4)" onmouseover="bordeOverTr(4)" onmouseout="bordeOutTr(4)"><div class="d_x">
-                  <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
-                </div></td>
-              </tr>
-              <tr id="tr_5"  name="TR" class="TR">
-                <td id="td_sp5" class="td_cf" name="d_sp" ><div class="ds"><input type="text" disabled class="de" id="dataeval5" value=""><div class="d_s" name="DS" id="p_s5">ICPUSDT</div><div name="logo" id='logo5'></div></div></td>
-                <td id="td_ci5" class="td_cf"><div class="d_cf"><p           id="p_ci5" >4.91508  </p></div></td>
-                <td id="td_pc5" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc5" >8.20   </p></div></td>
-                <td id="td_pv5" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv5" >8.25    </p></div></td>
-                <td id="td_dp5" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp5" >5.725   </p></div></td>
-                <td id="td_c5"  class="td_cf"><div class="d_cf"><p name="L"  id="p_c5"  >0.10     </p> </div></td>
-                <td id="td_p5"  class="td_cf"><div class="d_cf"><p name="L3" id="p_p5"  >65.9555129</p></div></td>
-                <td id="td_cf5" class="td_cf"><div class="d_cf"><p name="L4" id="p_cf5" >72.1815129</p></div></td>
-                <td class="td_x" onclick="eliminarTr(5)" onmouseover="bordeOverTr(5)" onmouseout="bordeOutTr(5)"><div class="d_x">
-                  <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
-                </div></td>
-              </tr>
-              <tr id="tr_6"  name="TR" class="TR">
-                <td id="td_sp6" class="td_cf" name="d_sp" ><div class="ds"><input type="text" disabled class="de" id="dataeval6" value=""><div class="d_s" name="DS" id="p_s6">TAOUSDT</div><div name="logo" id='logo6'></div></div></td>
-                <td id="td_ci6" class="td_cf"><div class="d_cf"><p           id="p_ci6" >4.98257244</p></div></td>
-                <td id="td_pc6" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc6" >560.40   </p></div></td>
-                <td id="td_pv6" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv6" >560.50    </p></div></td>
-                <td id="td_dp6" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp6" >6.726   </p></div></td>
-                <td id="td_c6"  class="td_cf"><div class="d_cf"><p name="L"  id="p_c6"  >0.10     </p> </div></td>
-                <td id="td_p6"  class="td_cf"><div class="d_cf"><p name="L3" id="p_p6"  >66.9666129</p></div></td>
-                <td id="td_cf6" class="td_cf"><div class="d_cf"><p name="L4" id="p_cf6" >72.1816129</p></div></td>
-                <td class="td_x" onclick="eliminarTr(6)" onmouseover="bordeOverTr(6)" onmouseout="bordeOutTr(6)"><div class="d_x">
-                  <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
-                </div></td>
-              </tr>
-              <tr id="tr_7"  name="TR" class="TR">
-                <td id="td_sp7" class="td_cf" name="d_sp" ><div class="ds"><input type="text" disabled class="de" id="dataeval7" value=""><div class="d_s" name="DS" id="p_s7">FETUSDT</div><div name="logo" id='logo7'></div></div></td>
-                <td id="td_ci7" class="td_cf"><div class="d_cf"><p           id="p_ci7" >4.860135  </p></div></td>
-                <td id="td_pc7" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc7" >1.390   </p></div></td>
-                <td id="td_pv7" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv7" >1.40  </p></div></td>
-                <td id="td_dp7" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp7" >7.727   </p></div></td>
-                <td id="td_c7"  class="td_cf"><div class="d_cf"><p name="L"  id="p_c7"  >0.10     </p> </div></td>
-                <td id="td_p7"  class="td_cf"><div class="d_cf"><p name="L3" id="p_p7"  >67.9777129</p></div></td>
-                <td id="td_cf7" class="td_cf"><div class="d_cf"><p name="L4" id="p_cf7" >72.1817129</p></div></td>
-                <td class="td_x" onclick="eliminarTr(7)" onmouseover="bordeOverTr(7)" onmouseout="bordeOutTr(7)"><div class="d_x">
-                  <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
-                </div></td>
-              </tr>
-              <tr id="tr_8"  name="TR" class="TR">
-                <td id="td_sp8" class="td_cf" name="d_sp" ><div class="ds"><input type="text" disabled class="de" id="dataeval8" value=""><div class="d_s" name="DS" id="p_s8">RENDERUSDT</div><div name="logo" id='logo8'></div></div></td>
-                <td id="td_ci8" class="td_cf"><div class="d_cf"><p           id="p_ci8" >5.45454  </p></div></td>
-                <td id="td_pc8" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc8" >5.46     </p></div></td>
-                <td id="td_pv8" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv8" >5.47     </p></div></td>
-                <td id="td_dp8" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp8" >8.828    </p></div></td>
-                <td id="td_c8"  class="td_cf"><div class="d_cf"><p name="L"  id="p_c8"  >0.10     </p> </div></td>
-                <td id="td_p8"  class="td_cf"><div class="d_cf"><p name="L3" id="p_p8"  >68.9888129</p></div></td>
-                <td id="td_cf8" class="td_cf"><div class="d_cf"><p name="L4" id="p_cf8" >82.1818129</p></div></td>
-                <td class="td_x" onclick="eliminarTr(8)" onmouseover="bordeOverTr(8)" onmouseout="bordeOutTr(8)"><div class="d_x">
-                  <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
-                </div></td>
-              </tr>
-              <tr id="tr_9"  name="TR" class="TR">
-                <td id="td_sp9" class="td_cf" name="d_sp" ><div class="ds"><input type="text" disabled class="de" id="dataeval9" value=""><div class="d_s" name="DS" id="p_s9">GRTUSDT</div><div name="logo" id='logo9'></div></div></td>
-                <td id="td_ci9" class="td_cf"><div class="d_cf"><p           id="p_ci9" >4.93695274 </p></div></td>
-                <td id="td_pc9" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc9" >0.1594   </p></div></td>
-                <td id="td_pv9" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv9" >0.16    </p></div></td>
-                <td id="td_dp9" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp9" >9.929   </p></div></td>
-                <td id="td_c9"  class="td_cf"><div class="d_cf"><p name="L"  id="p_c9"  >0.10     </p> </div></td>
-                <td id="td_p9"  class="td_cf"><div class="d_cf"><p name="L3" id="p_p9"  >69.9999129</p></div></td>
-                <td id="td_cf9" class="td_cf"><div class="d_cf"><p name="L4" id="p_cf9" >92.1819129</p></div></td>
-                <td class="td_x" onclick="eliminarTr(9)" onmouseover="bordeOverTr(9)" onmouseout="bordeOutTr(9)"><div class="d_x">
-                  <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
-                </div></td>
-              </tr>
-              <tr id="tr_10"  name="TR" class="TR">
-                <td id="td_sp10" class="td_cf" name="d_sp" ><div class="ds"><input type="text" disabled class="de" id="dataeval10" value=""><div class="d_s" name="DS" id="p_s10">TIAUSDT</div><div name="logo" id='logo10'></div></div></td>
-                <td id="td_ci10" class="td_cf"><div class="d_cf"><p           id="p_ci10" >5.17482  </p></div></td>
-                <td id="td_pc10" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc10" >5.18  </p></div></td>
-                <td id="td_pv10" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv10" >5.19    </p></div></td>
-                <td id="td_dp10" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp10" >10.10210   </p></div></td>
-                <td id="td_c10"  class="td_cf"><div class="d_cf"><p name="L"  id="p_c10"  >0.10     </p> </div></td>
-                <td id="td_p10"  class="td_cf"><div class="d_cf"><p name="L3" id="p_p10"  >610.910101</p></div></td>
-                <td id="td_cf10" class="td_cf"><div class="d_cf"><p name="L4" id="p_cf10" >102.181101</p></div></td>
-                <td class="td_x" onclick="eliminarTr(10)" onmouseover="bordeOverTr(10)" onmouseout="bordeOutTr(10)"><div class="d_x">
-                  <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
-                </div></td>
-              </tr>
-              <tr id="tr_11"  name="TR" class="TR">
-                <td id="td_sp11" class="td_cf" name="d_sp" ><div class="ds"><input type="text" disabled class="de" id="dataeval11" value=""><div class="d_s" name="DS" id="p_s11">MANTAUSDT</div><div name="logo" id='logo11'></div></div></td>
-                <td id="td_ci11" class="td_cf"><div class="d_cf"><p           id="p_ci11" >4.9522428  </p></div></td>
-                <td id="td_pc11" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc11" >0.729   </p></div></td>
-                <td id="td_pv11" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv11" >0.73   </p></div></td>
-                <td id="td_dp11" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp11" >11.11211   </p></div></td>
-                <td id="td_c11"  class="td_cf"><div class="d_cf"><p name="L"  id="p_c11"  >0.10     </p> </div></td>
-                <td id="td_p11"  class="td_cf"><div class="d_cf"><p name="L3" id="p_p11"  >611.91111</p></div></td>
-                <td id="td_cf11" class="td_cf"><div class="d_cf"><p name="L4" id="p_cf11" >112.1811</p></div></td>
-                <td class="td_x" onclick="eliminarTr(11)" onmouseover="bordeOverTr(11)" onmouseout="bordeOutTr(11)"><div class="d_x">
-                  <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
-                </div></td>
-              </tr>
-              <tr id="tr_12"  name="TR" class="TR">
-                <td id="td_sp12" class="td_cf" name="d_sp" ><div class="ds"><input type="text" disabled class="de" id="dataeval12" value=""><div class="d_s" name="DS" id="p_s12">PYTHUSDT</div><div name="logo" id='logo12'></div></div></td>
-                <td id="td_ci12" class="td_cf"><div class="d_cf"><p           id="p_ci12" >5.78544876  </p></div></td>
-                <td id="td_pc12" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc12" >0.3367  </p></div></td>
-                <td id="td_pv12" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv12" >0.34    </p></div></td>
-                <td id="td_dp12" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp12" >12.12212   </p></div></td>
-                <td id="td_c12"  class="td_cf"><div class="d_cf"><p name="L"  id="p_c12"  >0.10     </p> </div></td>
-                <td id="td_p12"  class="td_cf"><div class="d_cf"><p name="L3" id="p_p12"  >612.91212</p></div></td>
-                <td id="td_cf12" class="td_cf"><div class="d_cf"><p name="L4" id="p_cf12" >122.18112</p></div></td>
-                <td class="td_x" onclick="eliminarTr(12)" onmouseover="bordeOverTr(12)" onmouseout="bordeOutTr(12)"><div class="d_x">
-                  <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
-                </div> </td>
-              </tr>
-              <tr id="tr_13"  name="TR" class="TR">
-                <td id="td_sp13" class="td_cf" name="d_sp" ><div class="ds"><input type="text" disabled class="de" id="dataeval13" value=""><div class="d_s" name="DS" id="p_s13">PEPEUSDT</div><div name="logo" id='logo13'></div></div></td>
-                <td id="td_ci13" class="td_cf"><div class="d_cf"><p           id="p_ci13" >4.99499360  </p></div></td>
-                <td id="td_pc13" class="td_cf"><div class="d_cf"><p name="L"  id="p_pc13" >0.000008933   </p></div></td>
-                <td id="td_pv13" class="td_cf"><div class="d_cf"><p name="L1" id="p_pv13" >0.00000895   </p></div></td>
-                <td id="td_dp13" class="td_cf"><div class="d_cf"><p name="L2" id="p_dp13" >0.000008492 </p></div></td>
-                <td id="td_c13"  class="td_cf"><div class="d_cf"><p name="L"  id="p_c13"  >0.10     </p> </div></td>
-                <td id="td_p13"  class="td_cf"><div class="d_cf"><p name="L3" id="p_p13"  >0.05988033    </p></div></td>
-                <td id="td_cf13" class="td_cf"><div class="d_cf"><p name="L4" id="p_cf13" >5.05988033 </p></div></td>
-                <td class="td_x" onclick="eliminarTr(13)" onmouseover="bordeOverTr(13)" onmouseout="bordeOutTr(13)"><div class="d_x">
-                  <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
-                </div></td>
-              </tr>
+              <tr id="tr_E4"  name="TR" class="TR" style="display: none;">  
+                <td id="td_spE4" class="td_cf" name="d_spE" ><div class="ds"><input type="text" disabled class="de" id="dataevalE4" value=""><div class="d_s" name="DS" id="p_sE4">BTCUSDT </div><div name="logoE" id='logoE4'></div></div></td>
+                <td id="td_ciE4" class="td_cf"><div           class="d_cf" id="p_ciE4">0.00     </div></td>
+                <td id="td_pcE4" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE4">66,600.00</div></td>
+                <td id="td_pvE4" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE4">67,600.00</div></td>
+                <td id="td_dpE4" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE4">1,000.00 </div></td>
+                <td id= "td_cE4" class="td_cf"><div name="LE"  class="d_cf" id="p_cE4">0.10      </div> </td>
+                <td id= "td_pE4" class="td_cf"><div name="LE3" class="d_cf" id="p_pE4">0.00      </div> </td>
+                <td id="td_cfE4" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE4">0.00     </div> </td>
+                <td class="td_x" onclick="eliminarTrE(4)" onmouseover="bordeOverTrE(4)" onmouseout="bordeOutTrE(4)">
+                  <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                </td>
+              </tr> 
+              <tr id="tr_E5"  name="TR" class="TR" style="display: none;">  
+                <td id="td_spE5" class="td_cf" name="d_spE" ><div class="ds"><input type="text" disabled class="de" id="dataevalE5" value=""><div class="d_s" name="DS" id="p_sE5">BTCUSDT </div><div name="logoE" id='logoE5'></div></div></td>
+                <td id="td_ciE5" class="td_cf"><div           class="d_cf" id="p_ciE5">0.00     </div></td>
+                <td id="td_pcE5" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE5">66,600.00</div></td>
+                <td id="td_pvE5" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE5">67,600.00</div></td>
+                <td id="td_dpE5" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE5">1,000.00 </div></td>
+                <td id= "td_cE5" class="td_cf"><div name="LE"  class="d_cf" id="p_cE5">0.10      </div> </td>
+                <td id= "td_pE5" class="td_cf"><div name="LE3" class="d_cf" id="p_pE5">0.00      </div> </td>
+                <td id="td_cfE5" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE5">0.00     </div> </td>
+                <td class="td_x" onclick="eliminarTrE(5)" onmouseover="bordeOverTrE(5)" onmouseout="bordeOutTrE(5)">
+                  <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                </td>
+              </tr> 
+              <tr id="tr_E6"  name="TR" class="TR" style="display: none;">  
+                <td id="td_spE6" class="td_cf" name="d_spE" ><div class="ds"><input type="text" disabled class="de" id="dataevalE6" value=""><div class="d_s" name="DS" id="p_sE6">BTCUSDT </div><div name="logoE" id='logoE6'></div></div></td>
+                <td id="td_ciE6" class="td_cf"><div           class="d_cf" id="p_ciE6">0.00     </div></td>
+                <td id="td_pcE6" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE6">66,600.00</div></td>
+                <td id="td_pvE6" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE6">67,600.00</div></td>
+                <td id="td_dpE6" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE6">1,000.00 </div></td>
+                <td id= "td_cE6" class="td_cf"><div name="LE"  class="d_cf" id="p_cE6">0.10      </div> </td>
+                <td id= "td_pE6" class="td_cf"><div name="LE3" class="d_cf" id="p_pE6">0.00      </div> </td>
+                <td id="td_cfE6" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE6">0.00     </div> </td>
+                <td class="td_x" onclick="eliminarTrE(6)" onmouseover="bordeOverTrE(6)" onmouseout="bordeOutTrE(6)">
+                  <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                </td>
+              </tr>   
+              <tr id="tr_E7"  name="TR" class="TR" style="display: none;">  
+                <td id="td_spE7" class="td_cf" name="d_spE" ><div class="ds"><input type="text" disabled class="de" id="dataevalE7" value=""><div class="d_s" name="DS" id="p_sE7">BTCUSDT </div><div name="logoE" id='logoE7'></div></div></td>
+                <td id="td_ciE7" class="td_cf"><div           class="d_cf" id="p_ciE7">0.00     </div></td>
+                <td id="td_pcE7" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE7">66,600.00</div></td>
+                <td id="td_pvE7" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE7">67,600.00</div></td>
+                <td id="td_dpE7" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE7">1,000.00 </div></td>
+                <td id= "td_cE7" class="td_cf"><div name="LE"  class="d_cf" id="p_cE7">0.10      </div> </td>
+                <td id= "td_pE7" class="td_cf"><div name="LE3" class="d_cf" id="p_pE7">0.00      </div> </td>
+                <td id="td_cfE7" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE7">0.00     </div> </td>
+                <td class="td_x" onclick="eliminarTrE(7)" onmouseover="bordeOverTrE(7)" onmouseout="bordeOutTrE(7)">
+                  <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                </td>
+              </tr>   
+              <tr id="tr_E8"  name="TR" class="TR" style="display: none;">  
+                <td id="td_spE8" class="td_cf" name="d_spE" ><div class="ds"><input type="text" disabled class="de" id="dataevalE8" value=""><div class="d_s" name="DS" id="p_sE8">BTCUSDT </div><div name="logoE" id='logoE8'></div></div></td>
+                <td id="td_ciE8" class="td_cf"><div           class="d_cf" id="p_ciE8">0.00     </div></td>
+                <td id="td_pcE8" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE8">66,600.00</div></td>
+                <td id="td_pvE8" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE8">68,600.00</div></td>
+                <td id="td_dpE8" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE8">1,000.00 </div></td>
+                <td id= "td_cE8" class="td_cf"><div name="LE"  class="d_cf" id="p_cE8">0.10      </div> </td>
+                <td id= "td_pE8" class="td_cf"><div name="LE3" class="d_cf" id="p_pE8">0.00      </div> </td>
+                <td id="td_cfE8" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE8">0.00     </div> </td>
+                <td class="td_x" onclick="eliminarTrE(8)" onmouseover="bordeOverTrE(8)" onmouseout="bordeOutTrE(8)">
+                  <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                </td>
+              </tr>  
+              <tr id="tr_E9"  name="TR" class="TR" style="display: none;">  
+                <td id="td_spE9" class="td_cf" name="d_spE" ><div class="ds"><input type="text" disabled class="de" id="dataevalE9" value=""><div class="d_s" name="DS" id="p_sE9">BTCUSDT </div><div name="logoE" id='logoE9'></div></div></td>
+                <td id="td_ciE9" class="td_cf"><div           class="d_cf" id="p_ciE9">0.00     </div></td>
+                <td id="td_pcE9" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE9">66,600.00</div></td>
+                <td id="td_pvE9" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE9">69,600.00</div></td>
+                <td id="td_dpE9" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE9">1,000.00 </div></td>
+                <td id= "td_cE9" class="td_cf"><div name="LE"  class="d_cf" id="p_cE9">0.10      </div> </td>
+                <td id= "td_pE9" class="td_cf"><div name="LE3" class="d_cf" id="p_pE9">0.00      </div> </td>
+                <td id="td_cfE9" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE9">0.00     </div> </td>
+                <td class="td_x" onclick="eliminarTrE(9)" onmouseover="bordeOverTrE(9)" onmouseout="bordeOutTrE(9)">
+                  <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                </td>
+              </tr>  
+              <tr id="tr_E10"  name="TR" class="TR" style="display: none;">  
+                <td id="td_spE10" class="td_cf" name="d_spE" ><div class="ds"><input type="text" disabled class="de" id="dataevalE10" value=""><div class="d_s" name="DS" id="p_sE10">BTCUSDT </div><div name="logoE" id='logoE10'></div></div></td>
+                <td id="td_ciE10" class="td_cf"><div           class="d_cf" id="p_ciE10">0.00     </div></td>
+                <td id="td_pcE10" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE10">66,600.00</div></td>
+                <td id="td_pvE10" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE10">610,600.00</div></td>
+                <td id="td_dpE10" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE10">1,000.00 </div></td>
+                <td id= "td_cE10" class="td_cf"><div name="LE"  class="d_cf" id="p_cE10">0.10      </div> </td>
+                <td id= "td_pE10" class="td_cf"><div name="LE3" class="d_cf" id="p_pE10">0.00      </div> </td>
+                <td id="td_cfE10" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE10">0.00     </div> </td>
+                <td class="td_x" onclick="eliminarTrE(10)" onmouseover="bordeOverTrE(10)" onmouseout="bordeOutTrE(10)">
+                  <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                </td>
+              </tr>  
+              <tr id="tr_E11"  name="TR" class="TR" style="display: none;">  
+                <td id="td_spE11" class="td_cf" name="d_spE" ><div class="ds"><input type="text" disabled class="de" id="dataevalE11" value=""><div class="d_s" name="DS" id="p_sE11">BTCUSDT </div><div name="logoE" id='logoE11'></div></div></td>
+                <td id="td_ciE11" class="td_cf"><div           class="d_cf" id="p_ciE11">0.00     </div></td>
+                <td id="td_pcE11" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE11">66,600.00</div></td>
+                <td id="td_pvE11" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE11">611,600.00</div></td>
+                <td id="td_dpE11" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE11">1,000.00 </div></td>
+                <td id= "td_cE11" class="td_cf"><div name="LE"  class="d_cf" id="p_cE11">0.10      </div> </td>
+                <td id= "td_pE11" class="td_cf"><div name="LE3" class="d_cf" id="p_pE11">0.00      </div> </td>
+                <td id="td_cfE11" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE11">0.00     </div> </td>
+                <td class="td_x" onclick="eliminarTrE(11)" onmouseover="bordeOverTrE(11)" onmouseout="bordeOutTrE(11)">
+                  <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                </td>
+              </tr>  
+              <tr id="tr_E12"  name="TR" class="TR" style="display: none;">  
+                <td id="td_spE12" class="td_cf" name="d_spE" ><div class="ds"><input type="text" disabled class="de" id="dataevalE12" value=""><div class="d_s" name="DS" id="p_sE12">BTCUSDT </div><div name="logoE" id='logoE12'></div></div></td>
+                <td id="td_ciE12" class="td_cf"><div           class="d_cf" id="p_ciE12">0.00     </div></td>
+                <td id="td_pcE12" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE12">66,600.00</div></td>
+                <td id="td_pvE12" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE12">612,600.00</div></td>
+                <td id="td_dpE12" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE12">1,000.00 </div></td>
+                <td id= "td_cE12" class="td_cf"><div name="LE"  class="d_cf" id="p_cE12">0.10      </div> </td>
+                <td id= "td_pE12" class="td_cf"><div name="LE3" class="d_cf" id="p_pE12">0.00      </div> </td>
+                <td id="td_cfE12" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE12">0.00     </div> </td>
+                <td class="td_x" onclick="eliminarTrE(12)" onmouseover="bordeOverTrE(12)" onmouseout="bordeOutTrE(12)">
+                  <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                </td>
+              </tr>  
+              <tr id="tr_E13"  name="TR" class="TR" style="display: none;">  
+                <td id="td_spE13" class="td_cf" name="d_spE" ><div class="ds"><input type="text" disabled class="de" id="dataevalE13" value=""><div class="d_s" name="DS" id="p_sE13">BTCUSDT </div><div name="logoE" id='logoE13'></div></div></td>
+                <td id="td_ciE13" class="td_cf"><div           class="d_cf" id="p_ciE13">0.00     </div></td>
+                <td id="td_pcE13" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE13">66,600.00</div></td>
+                <td id="td_pvE13" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE13">613,600.00</div></td>
+                <td id="td_dpE13" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE13">1,000.00 </div></td>
+                <td id= "td_cE13" class="td_cf"><div name="LE"  class="d_cf" id="p_cE13">0.10      </div> </td>
+                <td id= "td_pE13" class="td_cf"><div name="LE3" class="d_cf" id="p_pE13">0.00      </div> </td>
+                <td id="td_cfE13" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE13">0.00     </div> </td>
+                <td class="td_x" onclick="eliminarTrE(13)" onmouseover="bordeOverTrE(13)" onmouseout="bordeOutTrE(13)">
+                  <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
+                </td>
+              </tr>  
+   
+  
             </tbody>
-
+            
             <tfoot>
               <tr name="TR" class="TR">
                 <td colspan="9" rowspan="1" class="td_separador"></td>
-
+  
               </tr>
               <tr name="TR" class="TR">
                 <td colspan="6" rowspan="1" class="tdFinalT1">Capital inicial total</td>
-                <td colspan="3" rowspan="1" class="tdFinalT2" id="capitalIniciaTotal">0</td>
+                <td colspan="3" rowspan="1" class="tdFinalT2" id="capitalIniciaTotalE">0</td>
+  
+  
               </tr>
-              <tr name="TR" class="TR" id="TRD1">
-                <td colspan="6" rowspan="1" class="tdFinalT1" id="capitalFinalT">Capital final total </td>
-                <td colspan="3" rowspan="1" class="tdFinalT2" id="capitalFinalTotal">0</td>
+              <tr name="TR" class="TR">
+                <td colspan="6" rowspan="1" class="tdFinalT1">Capital final total</td>
+                <td colspan="3" rowspan="1" class="tdFinalT2" id="capitalFinalTotalE">0</td>
               </tr>
-              <tr name="TR" class="TR" id="TRD2">
-                <td colspan="6" rowspan="1" class="tdFinalT1" id="gananciasPerdidas">Ganancias/P&eacute;rdidas</td>
-                <td colspan="3" rowspan="1" class="tdFinalT2" id="diferenciaTotal">0</td>
+              <tr name="TR" class="TR">
+                <td colspan="6" rowspan="1" class="tdFinalT1" id="gananciasPerdidasE">Ganancias/P&eacute;rdidas</td>
+                <td colspan="3" rowspan="1" class="tdFinalT2" id="diferenciaTotalE">0</td>
               </tr>
             </tfoot>
-          </table> 
+           </table>
+           </div> 
+  
+          </div><!--  FIN DE <div class="tablas"></div> -->
+          <div class="tablas1" id="tablas1">
           </div>
-         
-          <div class="marcoTabla2" id="marcoTabla2"><!-- ESTA div ES PARA Q' NO SE BORREN LOS BORDES DE LA TABLA EN NAVEGADOR FIREFOX -->
-         <table class="tabla-css" id="tabla_2a">
-          <thead>
-            <tr name="TR" >
-              <td colspan="9" rowspan="1" class="td_Dtitulo">
-                <div class="div_Dtitulo">
-                  <div>TABLA EST&Aacute;TICA</div> 
-                  <div class="divs_svgs">
-                    <div class="div_Dsvg"  id="div_svg_minE" onclick="expandirE()">
-                      <svg id="" version="1.0" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path class="path"  d="M14.075,17.789c0.478,0.479,0.478,1.254,0,1.732l-9.89,9.891h5.705c0.678,0,1.225,0.549,1.225,1.227  s-0.547,1.225-1.225,1.225H1.226C0.549,31.863,0,31.316,0,30.639v-8.666c0-0.676,0.549-1.225,1.226-1.225  c0.678,0,1.227,0.549,1.227,1.225v5.709l9.89-9.893c0.239-0.238,0.553-0.359,0.865-0.359C13.521,17.43,13.835,17.551,14.075,17.789z   M30.774,0.137H22.11c-0.678,0-1.226,0.547-1.226,1.225s0.548,1.227,1.226,1.227h5.705L17.79,12.615  c-0.479,0.479-0.479,1.254,0,1.732c0.478,0.479,1.253,0.479,1.732,0L29.548,4.32v5.707c0,0.676,0.549,1.225,1.227,1.225  c0.677,0,1.226-0.549,1.226-1.225V1.361C32,0.684,31.451,0.137,30.774,0.137z"/></svg>
-                    </div>
-                    <div class="div_Dsvg"  id="div_svg_maxE" onclick="contraerE()">
-                      <svg id="" version="1.0" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path class="path"  d="M14.436,18.655v8.665c0,0.677-0.549,1.226-1.227,1.226s-1.227-0.548-1.227-1.226v-5.707l-9.891,9.891  c-0.238,0.239-0.553,0.359-0.867,0.359c-0.313,0-0.625-0.12-0.865-0.359c-0.479-0.479-0.479-1.254,0-1.733l9.891-9.892H4.543  c-0.678,0-1.227-0.548-1.227-1.225c0-0.676,0.549-1.226,1.227-1.226h8.666C13.887,17.43,14.436,17.979,14.436,18.655z M31.641,0.495  c-0.477-0.479-1.252-0.479-1.732,0L19.883,10.522V4.815c0-0.677-0.549-1.225-1.227-1.225c-0.676,0-1.225,0.548-1.225,1.225v8.665  c0,0.677,0.549,1.226,1.225,1.226h8.664c0.678,0,1.227-0.549,1.227-1.226s-0.549-1.225-1.227-1.225h-5.705L31.641,2.229  C32.119,1.75,32.119,0.975,31.641,0.495z"/></svg>
-                   </div>
-                <div class="div_Dsvg"  id="div_DsvgE" onclick="eliminarTablaE()">
-                  <svg xmlns='http://www.w3.org/2000/svg' viewBox='-15 -10 80 80'><path class="path"  d= 'M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z'/></svg>
-                </div>
-              </div>
-              </div>
-            </td>
-            </tr>
-
-            <tr name="TR" class="TR" >
-              <td class="tdHead"><div class="d_s" name="ds" >S&iacute;mbolo </div></td>
-              <td class="tdHead"><div class="d_h"><p           >Capital inicial</p></div></td>
-              <td class="tdHead"><div class="d_h"><p name="LE" >Compra         </p></div></td>
-              <td class="tdHead"><div class="d_h"><p name="LE1">Venta          </p></div></td>
-              <td class="tdHead"><div class="d_h"><p name="LE2">Diferencia     </p></div></td>
-              <td class="tdHead"><div class="d_h"><p name="LE" >Comisi&oacute;n</p></div></td>
-              <td class="tdHead"><div class="d_h"><p name="LE3">Ganancia       </p></div></td>
-              <td class="tdHead"><div class="d_h"><p name="LE4">Capital final  </p></td>
-              <td class="tdHead"><div class="d_s" name="ds" >Eliminar       </div></td>
-            </tr>
-          </thead> 
-
-            <tbody id="tbodyE">
-            <tr id="tr_E1"  name="TR" class="TR" style="display: none;">
-              <td id="td_spE1" class="td_cf" name="d_spE" ><div class="ds"><input type="text" disabled class="de" id="dataevalE1" value=""><div class="d_s" name="DS" id="p_sE1">BTCUSDT </div><div name="logoE" id='logoE1'></div></div></td>
-              <td id="td_ciE1" class="td_cf"><div            class="d_cf" id="p_ciE1">0.00     </div></td>
-              <td id="td_pcE1" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE1">66,600.00</div></td>
-              <td id="td_pvE1" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE1">67,600.00</div></td>
-              <td id="td_dpE1" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE1">1,000.00 </div></td>
-              <td id= "td_cE1" class="td_cf"><div name="LE"  class="d_cf" id="p_cE1">0.10      </div> </td>
-              <td id= "td_pE1" class="td_cf"><div name="LE3" class="d_cf" id="p_pE1">0.00      </div> </td>
-              <td id="td_cfE1" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE1">0.00     </div> </td>
-              <td class="td_x" onclick="eliminarTrE(1)" onmouseover="bordeOverTrE(1)" onmouseout="bordeOutTrE(1)">
-                <div><svg xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
-              </td>
-            </tr>
-            <tr id="tr_E2"  name="TR" class="TR" style="display: none;">  
-              <td id="td_spE2" class="td_cf" name="d_spE" ><div class="ds"><input type="text" disabled class="de" id="dataevalE2" value=""><div class="d_s" name="DS" id="p_sE2">BTCUSDT </div><div name="logoE" id='logoE2'></div></div></td>
-              <td id="td_ciE2" class="td_cf"><div           class="d_cf" id="p_ciE2">0.00     </div></td>
-              <td id="td_pcE2" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE2">66,600.00</div></td>
-              <td id="td_pvE2" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE2">67,600.00</div></td>
-              <td id="td_dpE2" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE2">1,000.00 </div></td>
-              <td id= "td_cE2" class="td_cf"><div name="LE"  class="d_cf" id="p_cE2">0.10      </div> </td>
-              <td id= "td_pE2" class="td_cf"><div name="LE3" class="d_cf" id="p_pE2">0.00      </div> </td>
-              <td id="td_cfE2" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE2">0.00     </div> </td>
-              <td class="td_x" onclick="eliminarTrE(2)" onmouseover="bordeOverTrE(2)" onmouseout="bordeOutTrE(2)">
-                <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
-              </td>
-            </tr>
-            <tr id="tr_E3"  name="TR" class="TR" style="display: none;">  
-              <td id="td_spE3" class="td_cf" name="d_spE" ><div class="ds"><input type="text" disabled class="de" id="dataevalE3" value=""><div class="d_s" name="DS" id="p_sE3">BTCUSDT </div><div name="logoE" id='logoE3'></div></div></td>
-              <td id="td_ciE3" class="td_cf"><div           class="d_cf" id="p_ciE3">0.00     </div></td>
-              <td id="td_pcE3" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE3">66,600.00</div></td>
-              <td id="td_pvE3" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE3">67,600.00</div></td>
-              <td id="td_dpE3" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE3">1,000.00 </div></td>
-              <td id= "td_cE3" class="td_cf"><div name="LE"  class="d_cf" id="p_cE3">0.10      </div> </td>
-              <td id= "td_pE3" class="td_cf"><div name="LE3" class="d_cf" id="p_pE3">0.00      </div> </td>
-              <td id="td_cfE3" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE3">0.00     </div> </td>
-              <td class="td_x" onclick="eliminarTrE(3)" onmouseover="bordeOverTrE(3)" onmouseout="bordeOutTrE(3)">
-                <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
-              </td>
-            </tr>
-            <tr id="tr_E4"  name="TR" class="TR" style="display: none;">  
-              <td id="td_spE4" class="td_cf" name="d_spE" ><div class="ds"><input type="text" disabled class="de" id="dataevalE4" value=""><div class="d_s" name="DS" id="p_sE4">BTCUSDT </div><div name="logoE" id='logoE4'></div></div></td>
-              <td id="td_ciE4" class="td_cf"><div           class="d_cf" id="p_ciE4">0.00     </div></td>
-              <td id="td_pcE4" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE4">66,600.00</div></td>
-              <td id="td_pvE4" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE4">67,600.00</div></td>
-              <td id="td_dpE4" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE4">1,000.00 </div></td>
-              <td id= "td_cE4" class="td_cf"><div name="LE"  class="d_cf" id="p_cE4">0.10      </div> </td>
-              <td id= "td_pE4" class="td_cf"><div name="LE3" class="d_cf" id="p_pE4">0.00      </div> </td>
-              <td id="td_cfE4" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE4">0.00     </div> </td>
-              <td class="td_x" onclick="eliminarTrE(4)" onmouseover="bordeOverTrE(4)" onmouseout="bordeOutTrE(4)">
-                <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
-              </td>
-            </tr> 
-            <tr id="tr_E5"  name="TR" class="TR" style="display: none;">  
-              <td id="td_spE5" class="td_cf" name="d_spE" ><div class="ds"><input type="text" disabled class="de" id="dataevalE5" value=""><div class="d_s" name="DS" id="p_sE5">BTCUSDT </div><div name="logoE" id='logoE5'></div></div></td>
-              <td id="td_ciE5" class="td_cf"><div           class="d_cf" id="p_ciE5">0.00     </div></td>
-              <td id="td_pcE5" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE5">66,600.00</div></td>
-              <td id="td_pvE5" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE5">67,600.00</div></td>
-              <td id="td_dpE5" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE5">1,000.00 </div></td>
-              <td id= "td_cE5" class="td_cf"><div name="LE"  class="d_cf" id="p_cE5">0.10      </div> </td>
-              <td id= "td_pE5" class="td_cf"><div name="LE3" class="d_cf" id="p_pE5">0.00      </div> </td>
-              <td id="td_cfE5" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE5">0.00     </div> </td>
-              <td class="td_x" onclick="eliminarTrE(5)" onmouseover="bordeOverTrE(5)" onmouseout="bordeOutTrE(5)">
-                <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
-              </td>
-            </tr> 
-            <tr id="tr_E6"  name="TR" class="TR" style="display: none;">  
-              <td id="td_spE6" class="td_cf" name="d_spE" ><div class="ds"><input type="text" disabled class="de" id="dataevalE6" value=""><div class="d_s" name="DS" id="p_sE6">BTCUSDT </div><div name="logoE" id='logoE6'></div></div></td>
-              <td id="td_ciE6" class="td_cf"><div           class="d_cf" id="p_ciE6">0.00     </div></td>
-              <td id="td_pcE6" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE6">66,600.00</div></td>
-              <td id="td_pvE6" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE6">67,600.00</div></td>
-              <td id="td_dpE6" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE6">1,000.00 </div></td>
-              <td id= "td_cE6" class="td_cf"><div name="LE"  class="d_cf" id="p_cE6">0.10      </div> </td>
-              <td id= "td_pE6" class="td_cf"><div name="LE3" class="d_cf" id="p_pE6">0.00      </div> </td>
-              <td id="td_cfE6" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE6">0.00     </div> </td>
-              <td class="td_x" onclick="eliminarTrE(6)" onmouseover="bordeOverTrE(6)" onmouseout="bordeOutTrE(6)">
-                <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
-              </td>
-            </tr>   
-            <tr id="tr_E7"  name="TR" class="TR" style="display: none;">  
-              <td id="td_spE7" class="td_cf" name="d_spE" ><div class="ds"><input type="text" disabled class="de" id="dataevalE7" value=""><div class="d_s" name="DS" id="p_sE7">BTCUSDT </div><div name="logoE" id='logoE7'></div></div></td>
-              <td id="td_ciE7" class="td_cf"><div           class="d_cf" id="p_ciE7">0.00     </div></td>
-              <td id="td_pcE7" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE7">66,600.00</div></td>
-              <td id="td_pvE7" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE7">67,600.00</div></td>
-              <td id="td_dpE7" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE7">1,000.00 </div></td>
-              <td id= "td_cE7" class="td_cf"><div name="LE"  class="d_cf" id="p_cE7">0.10      </div> </td>
-              <td id= "td_pE7" class="td_cf"><div name="LE3" class="d_cf" id="p_pE7">0.00      </div> </td>
-              <td id="td_cfE7" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE7">0.00     </div> </td>
-              <td class="td_x" onclick="eliminarTrE(7)" onmouseover="bordeOverTrE(7)" onmouseout="bordeOutTrE(7)">
-                <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
-              </td>
-            </tr>   
-            <tr id="tr_E8"  name="TR" class="TR" style="display: none;">  
-              <td id="td_spE8" class="td_cf" name="d_spE" ><div class="ds"><input type="text" disabled class="de" id="dataevalE8" value=""><div class="d_s" name="DS" id="p_sE8">BTCUSDT </div><div name="logoE" id='logoE8'></div></div></td>
-              <td id="td_ciE8" class="td_cf"><div           class="d_cf" id="p_ciE8">0.00     </div></td>
-              <td id="td_pcE8" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE8">66,600.00</div></td>
-              <td id="td_pvE8" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE8">68,600.00</div></td>
-              <td id="td_dpE8" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE8">1,000.00 </div></td>
-              <td id= "td_cE8" class="td_cf"><div name="LE"  class="d_cf" id="p_cE8">0.10      </div> </td>
-              <td id= "td_pE8" class="td_cf"><div name="LE3" class="d_cf" id="p_pE8">0.00      </div> </td>
-              <td id="td_cfE8" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE8">0.00     </div> </td>
-              <td class="td_x" onclick="eliminarTrE(8)" onmouseover="bordeOverTrE(8)" onmouseout="bordeOutTrE(8)">
-                <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
-              </td>
-            </tr>  
-            <tr id="tr_E9"  name="TR" class="TR" style="display: none;">  
-              <td id="td_spE9" class="td_cf" name="d_spE" ><div class="ds"><input type="text" disabled class="de" id="dataevalE9" value=""><div class="d_s" name="DS" id="p_sE9">BTCUSDT </div><div name="logoE" id='logoE9'></div></div></td>
-              <td id="td_ciE9" class="td_cf"><div           class="d_cf" id="p_ciE9">0.00     </div></td>
-              <td id="td_pcE9" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE9">66,600.00</div></td>
-              <td id="td_pvE9" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE9">69,600.00</div></td>
-              <td id="td_dpE9" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE9">1,000.00 </div></td>
-              <td id= "td_cE9" class="td_cf"><div name="LE"  class="d_cf" id="p_cE9">0.10      </div> </td>
-              <td id= "td_pE9" class="td_cf"><div name="LE3" class="d_cf" id="p_pE9">0.00      </div> </td>
-              <td id="td_cfE9" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE9">0.00     </div> </td>
-              <td class="td_x" onclick="eliminarTrE(9)" onmouseover="bordeOverTrE(9)" onmouseout="bordeOutTrE(9)">
-                <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
-              </td>
-            </tr>  
-            <tr id="tr_E10"  name="TR" class="TR" style="display: none;">  
-              <td id="td_spE10" class="td_cf" name="d_spE" ><div class="ds"><input type="text" disabled class="de" id="dataevalE10" value=""><div class="d_s" name="DS" id="p_sE10">BTCUSDT </div><div name="logoE" id='logoE10'></div></div></td>
-              <td id="td_ciE10" class="td_cf"><div           class="d_cf" id="p_ciE10">0.00     </div></td>
-              <td id="td_pcE10" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE10">66,600.00</div></td>
-              <td id="td_pvE10" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE10">610,600.00</div></td>
-              <td id="td_dpE10" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE10">1,000.00 </div></td>
-              <td id= "td_cE10" class="td_cf"><div name="LE"  class="d_cf" id="p_cE10">0.10      </div> </td>
-              <td id= "td_pE10" class="td_cf"><div name="LE3" class="d_cf" id="p_pE10">0.00      </div> </td>
-              <td id="td_cfE10" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE10">0.00     </div> </td>
-              <td class="td_x" onclick="eliminarTrE(10)" onmouseover="bordeOverTrE(10)" onmouseout="bordeOutTrE(10)">
-                <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
-              </td>
-            </tr>  
-            <tr id="tr_E11"  name="TR" class="TR" style="display: none;">  
-              <td id="td_spE11" class="td_cf" name="d_spE" ><div class="ds"><input type="text" disabled class="de" id="dataevalE11" value=""><div class="d_s" name="DS" id="p_sE11">BTCUSDT </div><div name="logoE" id='logoE11'></div></div></td>
-              <td id="td_ciE11" class="td_cf"><div           class="d_cf" id="p_ciE11">0.00     </div></td>
-              <td id="td_pcE11" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE11">66,600.00</div></td>
-              <td id="td_pvE11" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE11">611,600.00</div></td>
-              <td id="td_dpE11" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE11">1,000.00 </div></td>
-              <td id= "td_cE11" class="td_cf"><div name="LE"  class="d_cf" id="p_cE11">0.10      </div> </td>
-              <td id= "td_pE11" class="td_cf"><div name="LE3" class="d_cf" id="p_pE11">0.00      </div> </td>
-              <td id="td_cfE11" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE11">0.00     </div> </td>
-              <td class="td_x" onclick="eliminarTrE(11)" onmouseover="bordeOverTrE(11)" onmouseout="bordeOutTrE(11)">
-                <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
-              </td>
-            </tr>  
-            <tr id="tr_E12"  name="TR" class="TR" style="display: none;">  
-              <td id="td_spE12" class="td_cf" name="d_spE" ><div class="ds"><input type="text" disabled class="de" id="dataevalE12" value=""><div class="d_s" name="DS" id="p_sE12">BTCUSDT </div><div name="logoE" id='logoE12'></div></div></td>
-              <td id="td_ciE12" class="td_cf"><div           class="d_cf" id="p_ciE12">0.00     </div></td>
-              <td id="td_pcE12" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE12">66,600.00</div></td>
-              <td id="td_pvE12" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE12">612,600.00</div></td>
-              <td id="td_dpE12" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE12">1,000.00 </div></td>
-              <td id= "td_cE12" class="td_cf"><div name="LE"  class="d_cf" id="p_cE12">0.10      </div> </td>
-              <td id= "td_pE12" class="td_cf"><div name="LE3" class="d_cf" id="p_pE12">0.00      </div> </td>
-              <td id="td_cfE12" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE12">0.00     </div> </td>
-              <td class="td_x" onclick="eliminarTrE(12)" onmouseover="bordeOverTrE(12)" onmouseout="bordeOutTrE(12)">
-                <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
-              </td>
-            </tr>  
-            <tr id="tr_E13"  name="TR" class="TR" style="display: none;">  
-              <td id="td_spE13" class="td_cf" name="d_spE" ><div class="ds"><input type="text" disabled class="de" id="dataevalE13" value=""><div class="d_s" name="DS" id="p_sE13">BTCUSDT </div><div name="logoE" id='logoE13'></div></div></td>
-              <td id="td_ciE13" class="td_cf"><div           class="d_cf" id="p_ciE13">0.00     </div></td>
-              <td id="td_pcE13" class="td_cf"><div name="LE"  class="d_cf" id="p_pcE13">66,600.00</div></td>
-              <td id="td_pvE13" class="td_cf"><div name="LE1" class="d_cf" id="p_pvE13">613,600.00</div></td>
-              <td id="td_dpE13" class="td_cf"><div name="LE2" class="d_cf" id="p_dpE13">1,000.00 </div></td>
-              <td id= "td_cE13" class="td_cf"><div name="LE"  class="d_cf" id="p_cE13">0.10      </div> </td>
-              <td id= "td_pE13" class="td_cf"><div name="LE3" class="d_cf" id="p_pE13">0.00      </div> </td>
-              <td id="td_cfE13" class="td_cf"><div name="LE4" class="d_cf" id="p_cfE13">0.00     </div> </td>
-              <td class="td_x" onclick="eliminarTrE(13)" onmouseover="bordeOverTrE(13)" onmouseout="bordeOutTrE(13)">
-                <div><svg  xmlns='http://www.w3.org/2000/svg'  viewBox='-15 -10 80 80' width='16px' height='16px'><path fill='' d= "M59.595,52.861L37.094,30.359L59.473,7.98c1.825-1.826,1.825-4.786,0-6.611c-1.826-1.825-4.785-1.825-6.611,0L30.483,23.748L8.105,1.369c-1.826-1.825-4.785-1.825-6.611,0c-1.826,1.826-1.826,4.786,0,6.611l22.378,22.379L1.369,52.861c-1.826,1.826-1.826,4.785,0,6.611c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369l22.502-22.502l22.501,22.502c0.913,0.913,2.109,1.369,3.306,1.369s2.393-0.456,3.306-1.369C61.42,57.647,61.42,54.687,59.595,52.861z"/></svg></div>
-              </td>
-            </tr>  
- 
-
-          </tbody>
-          
-          <tfoot>
-            <tr name="TR" class="TR">
-              <td colspan="9" rowspan="1" class="td_separador"></td>
-
-            </tr>
-            <tr name="TR" class="TR">
-              <td colspan="6" rowspan="1" class="tdFinalT1">Capital inicial total</td>
-              <td colspan="3" rowspan="1" class="tdFinalT2" id="capitalIniciaTotalE">0</td>
-
-
-            </tr>
-            <tr name="TR" class="TR">
-              <td colspan="6" rowspan="1" class="tdFinalT1">Capital final total</td>
-              <td colspan="3" rowspan="1" class="tdFinalT2" id="capitalFinalTotalE">0</td>
-            </tr>
-            <tr name="TR" class="TR">
-              <td colspan="6" rowspan="1" class="tdFinalT1" id="gananciasPerdidasE">Ganancias/P&eacute;rdidas</td>
-              <td colspan="3" rowspan="1" class="tdFinalT2" id="diferenciaTotalE">0</td>
-            </tr>
-          </tfoot>
-         </table>
-         </div> 
-
-        </div><!--  FIN DE <div class="tablas"></div> -->
-        <div class="tablas1" id="tablas1">
-          <br>
-        </div>
-      </article><!-- FIN DE article class="main_grid_2" -->
-      <div class="main_grid_3">
-        <div id="card_2b">
-          <br>
-          <h3 >
-            INTERÉS SIMPLE E INTERÉS COMPUESTO: EJEMPLOS, GRÁFICOS Y FÓRMULAS
-          </h3><br>
-          <p>
-            &nbsp;&nbsp;¿Cuál es la diferencia entre el interés simple y el compuesto? ¿Cómo se calculan? 
-            <br><br>
-            &nbsp;&nbsp;Para una mejora radical de tus finanzas, es fundamental que conozcas ambos conceptos porque te darás cuenta de que actúan de forma exponencial para tus finanzas.
-            <br> <br>
-            &nbsp;&nbsp;Básicamente la diferencia está en que en el interés simple, el dinero que generan los intereses se calcula solo sobre 
-            el capital invertido al principio (principal) sin tener en cuenta la posible reinversión de los intereses que vaya 
-            generando nuestro dinero. Por otro lado, en el interés compuesto los intereses obtenidos se reinvierten creando con el 
-            paso del tiempo un "efecto bola de nieve" y obteniéndose un resultado sensiblemente mayor.
-            <br><br>
-            &nbsp;&nbsp;Ejemplo sobre el interés simple y el interés compuesto,
-            Imaginemos que tenemos <span class="spanN">10,000</span> dólares ahorrados y los invertimos consiguiendo un
-             <span class="spanN">10%</span> de interés anual durante <span class="spanN">5</span> años.
-            
-            En el caso del interés simple, recibiríamos <span class="spanN">1,000</span> dólares de intereses el primer año, 
-            el segundo año, el tercer año... y así sucesivamente. Cada año, retiraríamos esos <span class="spanN">1,000</span> 
-            dólares y simplemente seguiríamos consiguiendo el <span class="spanN">10%</span> de <span class="spanN">10,000</span> 
-            dólares cada <span class="spanN">12</span> meses. Esto sería así porque el capital sobre los que se calculan los 
-            intereses se mantendría invariable en los <span class="spanN">10,000</span> dólares iniciales. 
-            
-            En el caso del interés compuesto, los <span class="spanN">1,000</span> dólares que consigo de intereses los 
-            reinvertiría y permitiría que el <span class="spanN">10%</span> fuese "trabajando" cada cada vez sobre una cantidad
-             mayor. El primer año, obtendría <span class="spanN">1,000</span> dólares, los sumaría a los <span class="spanN">
-              10,000</span> iniciales y pondría a "trabajar" <span class="spanN">11,000</span> dólares el segundo año. 
-              Esos <span class="spanN">11,000</span> dólares al 10% de interés, generarían ya al año siguiente <span class="spanN">1,100</span> dólares de intereses. Los reinvierto y tendría una nueva cantidad de <span class="spanN">12,100</span> dólares               
-            sobre los que calcular la rentabilidad. Generaría <span class="spanN">1,210</span> dólares. Y así sucesivamente 
-            durante <span class="spanN">5</span> años. 
-            
-            En los primeros años, las diferencias existen pero no son muy abultadas. Sin embargo, tal y como se observa en la 
-            Tabla #1 a medida que pasa el tiempo esas diferencias son cada vez más y más grandes, hasta tal punto que en el último
-             año estaré generando un interés anual de <span class="spanN">1,464.10 </span> dólares en el caso del interés compuesto y
-              solo <span class="spanN">1,000</span> dólares en el caso del interés simple.
-            
-            Si sumamos las cantidades obtenidas en ambos casos, vemos como en el caso del interés simple acabaré con
-             <span class="spanN">15,000</span> dólares (<span class="spanN">10,000</span> iniciales y
-              <span class="spanN">5</span> pagos de <span class="spanN">1,000</span> dólares cada año) y que en el caso del 
-              interés compuesto terminaré con un montante acumulado de <span class="spanN">16,105.10</span> dólares (
-                <span class="spanN">10,000</span> dólares de inicio y <span class="spanN">6,105.10</span> dólares de intereses).
-                 La diferencia es muy llamativa como puede verse en la siguiente tabla.
-          </p><br>
-          <p>Tabla #1:</p><br>
-          <table class="table_ejemplo" >
-            <tr>
-              <td >Año</td><td>Interes simple</td><td>Interés compuesto</td>
-            </tr>
-            <tr>
-              <td><span class="spanN">0</span></td><td><span class="spanN">10,000.00</span><br>(inicial)</td><td><span class="spanN">10,000.00</span><br>(inicial)</td>
-            </tr>
-            <tr>
-              <td><span class="spanN">1</span></td><td><span class="spanN">11,000.00</span></td><td><span class="spanN">11,000.00</span></td>
-            </tr>
-            <tr>
-              <td><span class="spanN">2</span></td><td><span class="spanN">12,000.00</span></td><td><span class="spanN">12,100.00</span></td>
-            </tr>
-            <tr>
-              <td><span class="spanN">3</span></td><td><span class="spanN">13,000.00</span></td><td><span class="spanN">13,310.00</span></td>
-            </tr>
-            <tr>
-              <td><span class="spanN">4</span></td><td><span class="spanN">14,000.00</span></td><td><span class="spanN">14,641.00</span></td>
-            </tr>
-            <tr>
-              <td><span class="spanN">5</span></td><td><span class="spanN">15,000.00</span></td><td><span class="spanN">16,105.10</span></td>
-            </tr>
-          </table><br><br>
-          <h3 >Interés Simple: Fórmula</h3><br>
-
-          <p>A continuación se muestra la fórmula del interés simple:</p> 
-          <div class="formula">
-          <p class="">V<sub>f</sub> = V<sub>a</sub> (<span class="spanN">1</span> + n * i)</p> 
-          </div>
-          <p>
-            Donde: <br>
-            V<sub>f</sub> = Valor Futuro<br>
-            V<sub>a</sub> = Valor Actual<br>
-            i = Tasa de interés<br>
-            n = Periodo de tiempo
-          </p><br>
-          <p>Para aplicar la fórmula anterior se debe tener en cuenta que la tasa de interés y el número de períodos deben estar expresados en la misma unidad de tiempo.
-          </p><br>
-
-          <h3>Interés Compuesto: Fórmula</h3><br>
-          <p>A continuación se muestra la fórmula del Interés Compuesto y sus componentes:</p> 
-          <div class="formula">
-            <p class="">V<sub>f</sub> = V<sub>a</sub>(<span class="spanN">1</span> + i) <sup>n</sup></p>
-          </div>
-          <p>
-            Donde: <br>
-            V<sub>f</sub> = Valor Futuro <br>
-            V<sub>a</sub> = Valor Actual<br>
-            i = Tasa de interés<br>
-            n = Periodo de tiempo</p> <br>  
-            <p>Para aplicar la fórmula anterior se debe tener en cuenta que la tasa de interés y el número de períodos deben estar expresados en la misma unidad de tiempo.</p>        
-          <br><br>
-
-          <h3 >
-            DEPÓSITO A PLAZO FIJO, CÁLCULO DE INTERESES: 
-          </h3>
-          <br>
-          <p>Caso <span class="spanN">1</span> : Depósito y cancelación al vencimiento:</p><br>
-          <p>Se apertura un depósito de <span class="spanN">$30,000</span> a <span class="spanN">180</span> días
-          A plazo fijo, le corresponde una tasa de <span class="spanN">3.00%</span> efectiva anual.</p>
-          <p><span class="spanN">1</span>.-Se calcula la tasa efectiva diaria, la cual se obtiene de la siguiente manera:</p>
-          <div class="formula">
-            <p class="">id = ((<span class="spanN">1</span> + i)<sup><span class="spanN">1/360</span></sup> - <span class="spanN">1</span>)</p>
-          </div>
-          <p>
-            Donde: <br>
-            <p>id: Es la tasa efectiva diaria.<br>
-              i: Es la tasa de interés efectiva anual (<span class="spanN">360</span> días).<br>
-            </p>
-          </p> 
-          <p>id = ((<span class="spanN">1 + 0.030</span>)<sup><span class="spanN">1/360</span></sup> - <span class="spanN">1</span>)<br>id = 0.00008211<br>id = <span class="spanN">0.008211 %</span></p>
-          <br>
-          <p><span class="spanN">2</span>.-Se calcula la tasa de interés del periodo (180 días), la cual se obtiene de la siguiente manera:</p>
-          <div class="formula">
-            <p class="">ip = ((<span class="spanN">1</span> + id)<sup>n</sup> - <span class="spanN">1</span>)</p>
-          </div>
-          <p>
-            Donde: <br>
-            ip: Es la tasa de interés efectiva del periodo de vencimiento del depósito.<br>
-              n: Periodo en que se requiere expresar la tasa de interés.<br>
-            <p>ip = ((<span class="spanN">1 + 0.00008211</span>)<sup>180</sup> - <span class="spanN">1</span>)<br>ip = <span class="spanN">0.014889</span><br>ip = <span class="spanN">1.4889 %</span><br><br>
-          <span class="spanN">3</span>.-Se obtiene el interés(I) al vencimiento:</p>
-          <p>            
-            <div class="formula">
-            <p>I = ip * Depósito</p>
-            </div><p>I = <span class="spanN">0.014889</span> * <span class="spanN">30,000</span> <br>
-          I = <span class="spanN">$ 446.67</span></p> 
-         </p>
-      </div>
-          <div id="card_3b">
-
-           <div class="tituloCard0"  >
-            <p class="pT">CRIPTOMONEDA:&nbsp;</p><div id="IMG2" style=" display: flex;align-items: center;justify-content: center;"></div>&nbsp;<p class="pT" id="monedas2" >---</p>&nbsp;<p class="pT2" id="TEX2" ></p>
-          </div>
-           <table class="tablaP24h">
-            <tr>
-              <td class="tdP24h">Precio Máximo en 24h</td>
-              <td class="tdP24h_2"> <div class="div_v"><p id="tdPMax24h_b" ></p></div></td>
-            </tr>
-            <tr>
-              <td class="tdP24h">Precio Mínimo en 24h </td>
-              <td class="tdP24h_2"> <div class="div_v"><p id="tdPMin24h_b"></p></div></td>
-            </tr>
-            <tr>
-              <td class="tdP24h">Cambio en 24h</td>
-              <td class="tdP24h_2"> <div class="div_v"><p id="tdC24h_b"></p></div></td>
-            </tr>
-            <tr>
-              <td class="tdP24h">Cambio(%) en 24h</td>
-              <td class="tdP24h_2"> <div class="div_v" ><p id="tdCp24h_b"></p></div></td>
-            </tr>
-            <tr>
-              <td class="tdP24h"><div class="tituloCard" ><p > Volumen(</p><p id="volumen2" >---</p><p > ) en 24h</p></div></td>         
-              <td class="tdP24h_2" > <div class="div_v"><p>  <span id="tdV24hBTC_b" ></span><span id="volumen2a" ></span>  </p></div></td>
-            </tr>
-            <tr>    
-              <td class="tdP24h">Volumen(USDT) en 24h&nbsp;</td>
-              <td class="tdP24h_2"> <div class="div_v"><p id="tdV24hUSDT_b"></p></div></td>
-            </tr>
-           </table><br>            
-
-           <div class="hr"></div><br>
-           <h3 style="text-transform: uppercase">Criptomonedas</h3>
-           <p>
-            Las criptomonedas son un tipo de moneda digital, que son aquellas que no existen de forma física, pero que sirven como moneda de intercambio, permitiendo transacciones instantáneas a través de Internet y sin importar las fronteras. Otros tipos de moneda digital son las monedas virtuales (normalmente controlada por los desarrolladores), dinero electrónico y cupones de Internet.
-           </p>
-           <h3>¿Cómo funcionan las criptomonedas?</h3>
-           <p>Las criptomonedas utilizan la criptografía para asegurar las transacciones que se ejecutan dentro de una blockchain. Es decir, mediante complejos algoritmos matemáticos se privatizan los datos del usuario y se autentifican las transacciones. 
-
-            Una blockchain es una cadena de bloques interconectados, donde cada bloque contiene un registro de transacciones. Esta tecnología se basa en la descentralización, lo que significa que la información se almacena y verifica en múltiples nodos de la red, en lugar de depender de una autoridad central.
-            
-            Cuando se realiza una transacción con una criptomoneda, se crea un registro en la blockchain. Este registro incluye la dirección del remitente, la dirección del destinatario y la cantidad transferida. Las transacciones se agrupan en bloques y se añaden a la cadena de bloques mediante un proceso llamado minería.<br>
-            
-            La minería consiste en añadir nuevos bloques a la blockchain. Para ello, se utilizan grandes ordenadores que resuelven problemas matemáticos para validar y verificar las transacciones que se realizan dentro de una red.
-            
-            Existen miles de empresas y particulares, conocidos como mineros, alrededor de todo el mundo con dispositivos destinados a minar criptomonedas. Los mineros a cambio del trabajo que realizan reciben una comisión por las transacciones realizadas. 
-            
-            Es importante saber que el funcionamiento detallado de cada criptomoneda puede variar, ya que no todas se dedican a lo mismo. 
-            
-            Las criptomonedas nos permiten realizar transacciones alrededor de todo el mundo sin contar con un organismo central que lo regule. Es decir, a la hora de hacer una transferencia bancaria, necesitas tener cuenta en un banco para realizarla y que este mismo te la confirme. En el caso de las criptomonedas, tan solo necesitas la cantidad que decidas enviar. Las criptomonedas te permiten enviar fondos ilimitados, a cualquier lugar del mundo  y cuando quieras con un solo click. 
-            
-            El proceso a la hora de realizar una transacción comienza cuando un emisor decide enviar una cantidad de fondos a una dirección (puede ser suya o no). Tras verificar que el emisor cuenta con los fondos necesarios los mineros se encargan de confirmar e incluir dicha transacción en un bloque de la blockchain.</p>
-           
-           <h3>Ventajas y desventajas de las criptomonedas</h3>
-           <p>Las ventajas principales que caracterizan a la criptomoneda son:<br>
-
-           - Bajos costes de transacción, como consecuencia de la no presencia de intermediarios.<br>
-            - Seguridad, pues cada moneda pertenece solo a su dueño.<br>
-            - Anonimato, las transacciones que se realizan son anónimas. <br>
-            - Transparencia, ya que las transacciones se incorporan en un registro de acceso libre.<br>
-            - Facilidad, puedes hacer una transacción de cualquier cantidad, a cualquier lugar del mundo y a cualquier hora o día.<br>
-            - Se acumula en un espacio ínfimo como es un USB.<br><br>
-            Por su parte, las desventajas son:<br><br>
-            
-            - Volatilidad de sus precios.<br>
-            - Falta de aceptación actual por algunas empresas.<br>
-            - Al no necesitar un regulador como el Gobierno o el Banco Central y proporcionar privacidad pueden ser utilizadas para transacciones ilegales.</p>
-           <h3>¿Qué es el trading?</h3>
-           <p>
-            El trading es un concepto económico fundamental que conlleva la compra y venta de activos. Éstos pueden ser bienes y servicios, en los que el comprador remunera al vendedor. Mientras que en otro casos, la transacción puede consistir en un intercambio de bienes y servicios entre las partes que intervienen en el trade.
-           </p>
-           <p>
-            En el contexto de los mercados financieros, los activos tradeados son denominados instrumentos financieros. Éstos pueden ser valores, bonos, pares de divisas del mercado Forex, opciones, futuros, productos con margen, criptomonedas y muchos otros.
-           </p>
-           <p>
-           El término "trading" habitualmente se utiliza para referirse al trading a corto plazo -en el que los traders, de forma activa, entran y salen de sus posiciones en intervalos de tiempo relativamente cortos. Sin embargo, esta es una premisa un poco engañosa. De hecho, el trading puede aludir a un amplio rango de estrategias diferentes, como por ejemplo el "day trading", "swing trading", trading de tendencia y muchos otros.
-           </p>
-          </div>
-      </div><!--   FIN DE article class="main_grid_3" -->
+        </div><!-- FIN DE article class="main_grid_2" -->
+<br>
+      </article>
       
+      <br>
       <footer class="footer">
           <div class="socialmedia_1">
           <div class="socialmedia">
@@ -2691,8 +2347,8 @@ var mydate0=new Date() , dia0 = new String(mydate0.getDate()) , m0 = Number(myda
 if (dia0.length<2) {dia0="0"+dia0;}else{dia0=dia0;} if (mes0.length<2) {mes0="0"+mes0;}else{mes0=mes0;}
 var anio0 = Number( mydate0.getYear())+1900;//CORRECCION AL SISTEMA: +1900 
 Copyright.innerText= anio0;
-
-function genera_tabla() { 
+ 
+function genera_tabla() {  
   cont= cont+1; /*var n= cont;*/ ///document.getElementById("tex1").value=cont;
   // Crea un elemento <table> y un elemento <tbody> + thead
   var table1 = document.createElement("table"); table1.setAttribute("id", "table"+cont);table1.setAttribute("class", "cTable1");
@@ -3005,7 +2661,7 @@ function operacion(taza,exponente) {//CALCULO DE tea: A 180 DIAS → ted= 4 //RE
   return m;// return teda;//RETORNA 'teda' SIN USAR ARCHIVO: decimal.js 
 } 
 
-function iniciar(){genera_tabla()}
+function iniciar(){genera_tabla()} 
 
 function borrarT(cont){document.getElementById("table"+cont).remove();document.getElementById("br"+cont).remove();}
 function borrarT2(cont2){document.getElementById("table2_"+cont2).remove();}
@@ -3018,7 +2674,7 @@ function visibleTr2(cont2){document.getElementById("tbody2_"+cont2).style.visibi
 
  //#####################################################################################################################
 
-var r="rgba(200,0,0,0.75)", v='rgba(0,200,0,0.75)', TOGGLE=1, EDITAR=1, ACTUALIZAPRECIO=1, TABLADINAMICA=1, simboloPar='', arrayBox=[0,0,0,0,0,0,0,0], ANCHODIV=1, AD='', contAD=-1, colorRT=0, C=0, old_price1=0,precio1=0, px='35', px1='30'; 
+var r="rgba(200,0,0,0.85)", v='rgba(0,180,0,0.85)', TOGGLE=1, EDITAR=1, ACTUALIZAPRECIO=1, TABLADINAMICA=1, simboloPar='', arrayBox=[0,0,0,0,0,0,0,0], ANCHODIV=1, AD='', contAD=-1, colorRT=0, C=0, old_price1=0,precio1=0, px='35', px1='30'; 
 var cuentainicial=0, cuentafinal=0, sumaTotal_ci=0, sumaTotal_cf=0, array_ci=[], array_cf=[]
 let pvBTC=0,pvXRP=0, precio ='', EXPANDIR_D=1, EXPANDIR_E=1   , dd=0, n1=2, n2=4, n3=8, o={}; 
 // CUANDO SE AGREGA UNA NUEVA MONEDA, SE DEBEN DE AGREGAR AQUÍ:
@@ -3373,6 +3029,8 @@ let svg1='',svg2='', tex='';
 function cardPrice24hr() {//CAMBIO DE PRECIO CADA 1 SEGUNDO //Cotización de Bitcoin en 24 horas: (1): https://www.youtube.com/watch?v=O6e1aDVRfdo&t=184s  (2): https://github.com/binance/binance-spot-api-docs/blob/master/rest-api.md#24hr-ticker-price-change-statistics  
   let s ='["AVAXUSDT","BNBUSDT","BTCUSDT","DOGEUSDT","ETHUSDT","SOLUSDT","XRPUSDT","NEARUSDT","ICPUSDT","TAOUSDT","FETUSDT","RENDERUSDT","GRTUSDT","TIAUSDT","MANTAUSDT","PYTHUSDT","PEPEUSDT","SUIUSDT"]'  
   , S=document.getElementById('simbolo').textContent, SVG=[svgAVAX,svgBNB,svgBTC,svgDOGE,svgETH,svgSOL,svgXRP, svgNEAR,svgICP,svgTAO,svgFET,svgRENDER,svgGRT,svgTIA,svgMANTA,svgPYTH,svgPEPE,svgSUI];
+  
+  ///console.log('card_2b#######style.display',main_grid_3.style.background,document.getElementById('simbolo').style.display) ; 
 
   fetch('https://api.binance.com/api/v3/ticker/24hr?symbols='+s) 
   .then( respuesta => respuesta.json() )
@@ -3381,19 +3039,16 @@ function cardPrice24hr() {//CAMBIO DE PRECIO CADA 1 SEGUNDO //Cotización de Bit
   const mostrarData = (data)=>{
    for (let k = 0; k < data.length; k++) { 
      if (S==data[k].symbol/* && P[k]!='0'*/){//console.log() ;
-        volumen1.textContent=S.replace('USDT','');volumen2.textContent=S.replace('USDT','');volumen1a.textContent=S.replace('USDT','');volumen2a.textContent=S.replace('USDT','');
-        monedas1.textContent=S.replace('USDT','');monedas2.textContent=S.replace('USDT','');
+        volumen1.textContent=S.replace('USDT','');volumen1a.textContent=S.replace('USDT','');
+        monedas1.textContent=S.replace('USDT','');
         //Precios maximos y minimos:
         tdPMax24h_a.innerText=F3(data[k].highPrice, n3)+' USDT'; tdPMin24h_a.innerText=F3(data[k].lowPrice, n3)+' USDT';
-        tdPMax24h_b.innerText=F3(data[k].highPrice, n3)+' USDT'; tdPMin24h_b.innerText=F3(data[k].lowPrice, n3)+' USDT';
         //Cambio en 24 h :
         tdC24h_a.innerText=F3(data[k].priceChange, n3)+' USDT'; tdCp24h_a.innerText= F3(data[k].priceChangePercent, n1)+' %';
-        tdC24h_b.innerText=F3(data[k].priceChange, n3)+' USDT'; tdCp24h_b.innerText= F3(data[k].priceChangePercent, n1)+' %';
         //Actualizar Color:
-        (data[k].priceChange > 0)? (tdC24h_a.style.color=v , tdC24h_b.style.color=v) : (tdC24h_a.style.color=r , tdC24h_b.style.color=r);
-        (data[k].priceChangePercent > 0)? (tdCp24h_a.style.color=v , tdCp24h_b.style.color=v) : (tdCp24h_a.style.color=r , tdCp24h_b.style.color=r);
-        //24h Volumen(BTC),  24h Volumen(USDT) :
-        tdV24hBTC_b.innerText=F3(data[k].volume, n1)+' '; tdV24hUSDT_b.innerText=F3(data[k].quoteVolume, n1)+' USDT ';  
+        (data[k].priceChange > 0)? (tdC24h_a.style.color=v) : (tdC24h_a.style.color=r);
+        (data[k].priceChangePercent > 0)? (tdCp24h_a.style.color=v) : (tdCp24h_a.style.color=r);
+        //24h Volumen(BTC),  24h Volumen(USDT) : 
         tdV24hBTC_a.innerText=F3(data[k].volume, n1)+' '; tdV24hUSDT_a.innerText=F3(data[k].quoteVolume, n1)+' USDT ';
         switch (data[k].symbol) {///COLOCAR LOGO E IMPRIME PRECIO ACTUAL DE CADA MONEDA:
           case 'AVAXUSDT'  : svg1=SVG[0] ;svg2=SVG[0]   ;tex=TEX[0] ; break;
@@ -3414,9 +3069,9 @@ function cardPrice24hr() {//CAMBIO DE PRECIO CADA 1 SEGUNDO //Cotización de Bit
           case 'PYTHUSDT'  : svg1=SVG[15];svg2=SVG[15]  ;tex=TEX[15]; break;
           case 'PEPEUSDT'  : svg1=SVG[16];svg2=SVG[16]  ;tex=TEX[16]; break; 
           case 'SUIUSDT'   : svg1=SVG[17];svg2=SVG[17]  ;tex=TEX[17]; break; //default: PV.innerText=0;
-        }
-         TEX1.innerText=tex ; TEX2.innerText=tex ; 
-         document.getElementById('IMG2').innerHTML=svg2 ;document.getElementById('IMG1').innerHTML=svg1 ; //IMG1.innerHTML=svg1 ; IMG2.innerHTML=svg2 ;
+        }   
+        TEX1.innerText=tex ;
+        document.getElementById('IMG1').innerHTML=svg1 ; //IMG1.innerHTML=svg1 ; IMG2.innerHTML=svg2 ;
       }//console.log() ;
     }
   }  
@@ -3723,8 +3378,7 @@ function article1(){
   document.getElementById("article_center").style.display="inline";
   document.getElementById("article_center2").style.display="none";
 
-  document.getElementById("card_2b").style.display="block";
-  document.getElementById("card_3b").style.display="none";
+
   document.getElementById("card_2a").style.display="block";
   document.getElementById("card_3a").style.display="none";
 
@@ -3736,8 +3390,6 @@ function article2(){
   document.getElementById("article_center").style.display="none";
   document.getElementById("article_center2").style.display="block";
 
-  document.getElementById("card_2b").style.display="none";
-  document.getElementById("card_3b").style.display="block";
   document.getElementById("card_2a").style.display="none";
   document.getElementById("card_3a").style.display="block";
 
@@ -4320,31 +3972,7 @@ svgSOL=
 </linearGradient>
 <path class="st2" d="M333.1,120.1c-2.4-2.4-5.7-3.8-9.2-3.8H6.5c-5.8,0-8.7,7-4.6,11.1l62.7,62.7c2.4,2.4,5.7,3.8,9.2,3.8h317.4	c5.8,0,8.7-7,4.6-11.1L333.1,120.1z"/>
 </svg>
- `;
- svgSOL2=
-`
-<svg version="1.1" id="Layer_1c" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 397.7 311.7"  width="24px" height="24px" style="enable-background:new 0 0 397.7 311.7;" xml:space="preserve">
-<style type="text/css">
-	.st0c{fill:url(#SVGID_1cc_);}
-	.st1c{fill:url(#SVGID_2cc_);}
-	.st2c{fill:url(#SVGID_3cc_);}
-</style>
-<linearGradient id="SVGID_1cc_" gradientUnits="userSpaceOnUse" x1="360.8791" y1="351.4553" x2="141.213" y2="-69.2936" gradientTransform="matrix(1 0 0 -1 0 314)">
-	<stop  offset="0" style="stop-color:#00FFA3"/><stop  offset="1" style="stop-color:#DC1FFF"/>
-</linearGradient>
-<path class="st0c" d="M64.6,237.9c2.4-2.4,5.7-3.8,9.2-3.8h317.4c5.8,0,8.7,7,4.6,11.1l-62.7,62.7c-2.4,2.4-5.7,3.8-9.2,3.8H6.5	c-5.8,0-8.7-7-4.6-11.1L64.6,237.9z"/>
-<linearGradient id="SVGID_2cc_" gradientUnits="userSpaceOnUse" x1="264.8291" y1="401.6014" x2="45.163" y2="-19.1475" gradientTransform="matrix(1 0 0 -1 0 314)">
-	<stop  offset="0" style="stop-color:#00FFA3"/><stop  offset="1" style="stop-color:#DC1FFF"/>
-</linearGradient>
-<path class="st1c" d="M64.6,3.8C67.1,1.4,70.4,0,73.8,0h317.4c5.8,0,8.7,7,4.6,11.1l-62.7,62.7c-2.4,2.4-5.7,3.8-9.2,3.8H6.5	c-5.8,0-8.7-7-4.6-11.1L64.6,3.8z"/>
-<linearGradient id="SVGID_3cc_" gradientUnits="userSpaceOnUse" x1="312.5484" y1="376.688" x2="92.8822" y2="-44.061" gradientTransform="matrix(1 0 0 -1 0 314)">
-	<stop  offset="0" style="stop-color:#00FFA3"/><stop  offset="1" style="stop-color:#DC1FFF"/>
-</linearGradient>
-<path class="st2c" d="M333.1,120.1c-2.4-2.4-5.7-3.8-9.2-3.8H6.5c-5.8,0-8.7,7-4.6,11.1l62.7,62.7c2.4,2.4,5.7,3.8,9.2,3.8h317.4	c5.8,0,8.7-7,4.6-11.1L333.1,120.1z"/>
-</svg>
- `;
-
+ `; 
 svgBTC=
 `
 <div style=" display: flex;align-items: center;justify-content: center;background: rgba(220, 124, 14, 1.0); ;border-radius: 50%;">
@@ -4406,28 +4034,6 @@ svgICP=
   </linearGradient>
   <path class="st001b" d="M87.1,179.8c20,0,41.9-10.9,65-32.4c10.9-10.1,20.5-21.1,27.5-29.8c0,0-11.2-12.9-23.5-26.8  c-6.7,8.4-16.2,19.8-27.3,30.1c-20.5,19-34,23.1-41.6,23.1c-28.8,0-52.2-24.2-52.2-54.1c0-29.6,23.4-53.8,52.2-54.1  c1.4,0,3,0.2,5,0.6c-8.4-3.9-17.5-6.7-26-6.7C13.4,29.6,3,66.1,2.4,68.8C0.9,75.5,0,82.5,0,89.7C0,139.4,39,179.8,87.1,179.8z"/>
   <path class="st002b" d="M127.3,59.7c-5.8-5.6-34-28.5-61-29.3C18.1,29.2,4,64.2,2.7,68.7C12,29.5,46.4,0.2,87.2,0  c33.3,0,67,32.7,91.9,62.2c0,0,0.1-0.1,0.1-0.1c0,0,11.2,12.9,23.5,26.8c0,0,14,16.5,28.8,31c5.8,5.6,33.9,28.2,60.9,29  c49.5,1.4,63.2-35.6,63.9-38.4c-9.1,39.5-43.6,68.9-84.6,69.1c-33.3,0-67-32.7-92-62.2c0,0.1-0.1,0.1-0.1,0.2  c0,0-11.2-12.9-23.5-26.8C156.2,90.8,142.2,74.2,127.3,59.7z M2.7,69.1c0-0.1,0-0.2,0.1-0.3C2.7,68.9,2.7,69,2.7,69.1z"/>
-</svg>
-`;
-svgICP2=
-`
-<svg version="1.1" id="Layer_1bb" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
- viewBox="0 0 358.8 179.8"  width="`+px+`px" height="`+px+`px"   style="enable-background:new 0 0 358.8 179.8;" xml:space="preserve">
-  <style type="text/css">
-    .st000bb{fill:url(#SVGID_1bb_);}
-    .st001bb{fill:url(#SVGID_2bb_);}
-    .st002bb{fill-rule:evenodd;clip-rule:evenodd;fill:#0182b9;}
-  </style>
-  <linearGradient id="SVGID_1bb_" gradientUnits="userSpaceOnUse" x1="224.7853" y1="257.7536" x2="348.0663" y2="133.4581" gradientTransform="matrix(1 0 0 -1 0 272)">
-    <stop  offset="0.21" style="stop-color:#F15A24"/>
-    <stop  offset="0.6841" style="stop-color:#FBB03B"/>
-  </linearGradient>
-  <path class="st000bb" d="M271.6,0c-20,0-41.9,10.9-65,32.4c-10.9,10.1-20.5,21.1-27.5,29.8c0,0,11.2,12.9,23.5,26.8  c6.7-8.4,16.2-19.8,27.3-30.1c20.5-19.2,33.9-23.1,41.6-23.1c28.8,0,52.2,24.2,52.2,54.1c0,29.6-23.4,53.8-52.2,54.1  c-1.4,0-3-0.2-5-0.6c8.4,3.9,17.5,6.7,26,6.7c52.8,0,63.2-36.5,63.8-39.1c1.5-6.7,2.4-13.7,2.4-20.9C358.6,40.4,319.6,0,271.6,0z"/>
-  <linearGradient id="SVGID_2bb_" gradientUnits="userSpaceOnUse" x1="133.9461" y1="106.4262" x2="10.6653" y2="230.7215" gradientTransform="matrix(1 0 0 -1 0 272)">
-    <stop  offset="0.21" style="stop-color:#ED1E79"/>
-    <stop  offset="0.8929" style="stop-color:#522785"/>
-  </linearGradient>
-  <path class="st001bb" d="M87.1,179.8c20,0,41.9-10.9,65-32.4c10.9-10.1,20.5-21.1,27.5-29.8c0,0-11.2-12.9-23.5-26.8  c-6.7,8.4-16.2,19.8-27.3,30.1c-20.5,19-34,23.1-41.6,23.1c-28.8,0-52.2-24.2-52.2-54.1c0-29.6,23.4-53.8,52.2-54.1  c1.4,0,3,0.2,5,0.6c-8.4-3.9-17.5-6.7-26-6.7C13.4,29.6,3,66.1,2.4,68.8C0.9,75.5,0,82.5,0,89.7C0,139.4,39,179.8,87.1,179.8z"/>
-  <path class="st002bb" d="M127.3,59.7c-5.8-5.6-34-28.5-61-29.3C18.1,29.2,4,64.2,2.7,68.7C12,29.5,46.4,0.2,87.2,0  c33.3,0,67,32.7,91.9,62.2c0,0,0.1-0.1,0.1-0.1c0,0,11.2,12.9,23.5,26.8c0,0,14,16.5,28.8,31c5.8,5.6,33.9,28.2,60.9,29  c49.5,1.4,63.2-35.6,63.9-38.4c-9.1,39.5-43.6,68.9-84.6,69.1c-33.3,0-67-32.7-92-62.2c0,0.1-0.1,0.1-0.1,0.2  c0,0-11.2-12.9-23.5-26.8C156.2,90.8,142.2,74.2,127.3,59.7z M2.7,69.1c0-0.1,0-0.2,0.1-0.3C2.7,68.9,2.7,69,2.7,69.1z"/>
 </svg>
 `;
 svgTAO=
@@ -4566,60 +4172,6 @@ svgMANTA=
   </g>
 </svg>
      `;
-     svgMANTA2=
-     `
-     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 640 640" width="`+px+`px" height="`+px+`px" style="enable-background:new 0 0 358.8 179.8;" xml:space="preserve">
-       <style type="text/css">.st001xx{fill:url(#SVGID_2aa_);}</style>
-     
-      <linearGradient id="SVGID_2aa_" gradientUnits="userSpaceOnUse" x1="550.9461" y1="150.4262" x2="20.6653" y2="230.7215" gradientTransform="matrix(1 0 0 -1 0 872)">
-        <stop  offset="0.05" style="stop-color:#7918b0"/>
-        <stop  offset="0.5" style="stop-color:#40b3c2"/>
-      </linearGradient>
-      <circle cx="320" cy="320" r="320"  class="st001xx" />
-      <g transform="translate(0.000000,640.000000) scale(0.100000,-0.100000)">
-        <path d="M3005 6214 c-160 -16 -318 -39 -419 -60 -1187 -249 -2101 -1164
-        -2350 -2350 -45 -218 -60 -363 -60 -594 0 -1227 761 -2340 1909 -2793 365
-        -144 712 -211 1095 -211 1227 0 2340 761 2793 1909 144 365 211 712 211 1095
-        0 383 -67 730 -211 1095 -406 1029 -1327 1742 -2443 1890 -113 15 -446 27
-        -525 19z m535 -274 c109 -20 313 -60 350 -69 81 -21 216 -64 254 -80 23 -10
-        61 -26 86 -36 468 -189 883 -518 1208 -957 23 -32 42 -60 42 -63 0 -2 21 -38
-        48 -79 82 -131 123 -207 120 -224 -2 -11 -25 14 -62 68 -253 363 -595 645
-        -1041 860 -377 182 -777 287 -1178 311 -1011 59 -1923 -465 -2380 -1366 -80
-        -157 -161 -380 -192 -525 -60 -293 -60 -288 -60 -575 0 -287 -1 -280 60 -575
-        18 -83 90 -305 130 -396 31 -73 120 -247 149 -294 130 -206 233 -337 390 -493
-        240 -239 468 -372 701 -409 88 -13 270 -5 353 17 35 10 103 36 150 60 220 108
-        372 296 422 520 25 113 25 175 0 294 -53 256 -198 418 -510 568 -171 82 -459
-        175 -630 202 -41 7 -95 17 -120 21 -25 5 -81 14 -125 20 -198 26 -230 31 -238
-        39 -15 15 246 243 408 356 302 211 576 338 870 403 73 16 80 20 83 43 7 59
-        -134 216 -276 306 -76 49 -218 118 -283 139 -30 9 -79 24 -109 34 -30 10 -108
-        33 -172 51 -68 18 -118 37 -118 44 0 10 116 70 290 148 140 64 315 119 515
-        163 33 7 129 19 213 25 421 34 728 -67 1100 -364 80 -64 135 -113 287 -258
-        200 -190 292 -258 465 -342 132 -65 219 -90 415 -123 213 -35 319 -45 565 -52
-        l225 -7 3 -100 c4 -123 -12 -305 -43 -490 -31 -183 -39 -218 -82 -355 -104
-        -336 -264 -639 -482 -915 -72 -92 -336 -355 -431 -431 -206 -165 -463 -314
-        -705 -409 -107 -42 -345 -116 -415 -130 -316 -59 -526 -77 -740 -64 -208 13
-        -479 57 -611 99 -35 12 -89 28 -119 36 -76 21 -233 86 -370 153 -234 115 -492
-        303 -695 505 -236 235 -388 443 -531 727 -146 291 -213 516 -275 919 -16 104
-        -16 541 -1 620 6 30 16 96 22 145 11 84 40 218 59 275 5 14 19 61 31 105 13
-        44 26 87 31 95 4 8 19 49 35 90 28 77 109 247 159 335 28 50 123 201 138 220
-        4 6 18 24 30 41 120 171 337 400 512 540 351 280 771 474 1200 552 152 28 241 42 300 46 98 7 511 -3 575 -14z"/>
-        <path d="M2829 4201 c-90 -10 -152 -28 -146 -44 2 -7 28 -29 58 -50 78 -54
-        214 -181 259 -243 46 -62 90 -146 124 -235 27 -73 8 -64 206 -89 156 -20 400
-        -90 580 -167 19 -8 44 -19 55 -24 11 -4 112 -51 225 -103 239 -110 383 -166
-        506 -198 122 -31 368 -31 488 0 128 34 125 41 -24 62 -136 20 -334 70 -435
-        112 -248 101 -404 210 -677 473 -73 70 -163 152 -199 181 -37 30 -71 59 -75
-        65 -27 44 -352 215 -464 244 -75 19 -359 28 -481 16z"/>
-        <path d="M2850 3264 c-150 -24 -279 -68 -455 -154 -137 -68 -249 -136 -241
-        -149 3 -4 34 -16 68 -25 168 -46 418 -143 556 -217 156 -84 311 -201 375 -284
-        169 -219 230 -388 231 -645 1 -171 -11 -237 -67 -375 -101 -248 -272 -430
-        -522 -559 -49 -25 -93 -50 -98 -55 -12 -12 40 -27 168 -47 123 -20 501 -23
-        620 -5 598 91 1052 314 1445 710 358 361 577 773 679 1278 24 118 27 168 9
-        159 -84 -38 -265 -105 -308 -114 -233 -49 -367 -58 -510 -38 -238 35 -362 76
-        -685 227 -311 145 -500 218 -680 263 -84 21 -322 46 -419 45 -45 -1 -119 -7 -166 -15z"/>
-       </g>
-     </svg>
-          `;
-
 svgPEPE=
      `
 <div style=" display: flex;align-items: center;justify-content: center;background: rgb(0, 145, 0);border-radius: 50%;"> 
@@ -4975,6 +4527,7 @@ svgTIA=
  ////console.log('FIN');
  
  
+
 
 ////################ decimal.js #########################
 ////################ decimal.js #########################
