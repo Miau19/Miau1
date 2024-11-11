@@ -635,7 +635,7 @@ text-align: right; margin: 0.25rem  0.25rem 0.25rem  0.9rem ; /*OJO  margin: 0.2
 .main_grid_2 .tabla-css .td_cf .ds{
     display: flex;justify-content: start;align-items: center;
 }
-.main_grid_2 .tabla-css .td_cf .ds .de{background: rgba(255, 85, 0, 0.75);
+.main_grid_2 .tabla-css .td_cf .ds .de{background: rgba(193, 64, 0, 0.925);
     width:2px;font-size: 11px; opacity: 1;border: none;
 }
 .main_grid_2 .tablas .tabla-css .td_x{
@@ -1407,14 +1407,12 @@ transition: .5s ease all;
                   <div class="card_subtitle_tex1"><p class="TC2">TRADE CRIPTOMONEDAS&nbsp;</p> 
                   </div>  
                   <div class="card_arrows1" >
-                    
                     <div id="arrows" class="arrows" ><p id="cotizacionBTC">00000000</p>
                     <svg id="svgUP1"   style="display: none;fill: rgba(0,200,0,0.85);" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 3 24 20"><path d="M15,20H9V12H4.16L12,4.16L19.84,12H15V20Z" /></svg>
                     <svg id="svgDOWN1" style="display: none;fill: rgba(200,0,0,0.85);" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 1 24 20"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z" /></svg>
                     </div>
                    <div id="sinConexion" style="display: none;padding: 0;margin: 0;background: rgba(0, 7, 65, 0);"></div>             
                   </div>
-                  
                 </div>
                 
                 <div class="div_padding">
@@ -1432,9 +1430,11 @@ transition: .5s ease all;
                               </svg>
                               </div>
                             </div>
-                      
                             <div class="opciones" id="opciones3">
-                            <div class="opciones0" id="opciones03"> <!-- let s=['AVAXUSDT','BNBUSDT','BTCUSDT','DOGEUSDT','ETHUSDT','SOLUSDT','XRPUSDT','NEARUSDT','ICPUSDT','TAOUSDT','FETUSDT','RENDERUSDT','GRTUSDT','TIAUSDT','MANTAUSDT','PYTHUSDT','PEPEUSDT'];                               -->
+                            <div class="opciones0" id="opciones03"> <!--  -->
+
+                              <div class="contenido-opcion" ><input type="text" id="buscar" value="Linkusdt"></div>
+                              <div class="contenido-opcion" name="contenido_opcion3" id="buscado">LINKUSDT</div>
 
                               <div class="contenido-opcion" name="contenido_opcion3">AVAXUSDT</div>
                               <div class="contenido-opcion" name="contenido_opcion3">BNBUSDT</div>
@@ -1453,7 +1453,6 @@ transition: .5s ease all;
                               <div class="contenido-opcion" name="contenido_opcion3">MANTAUSDT</div>
                               <div class="contenido-opcion" name="contenido_opcion3">PYTHUSDT</div>
                               <div class="contenido-opcion" name="contenido_opcion3">PEPEUSDT</div>
-                              <div class="contenido-opcion" name="contenido_opcion3">SUIUSDT</div>  
                             </div>    
                             </div>
                           </div>
@@ -2679,13 +2678,14 @@ var cuentainicial=0, cuentafinal=0, sumaTotal_ci=0, sumaTotal_cf=0, array_ci=[],
 let pvBTC=0,pvXRP=0, precio ='', EXPANDIR_D=1, EXPANDIR_E=1   , dd=0, n1=2, n2=4, n3=8, o={}; 
 // CUANDO SE AGREGA UNA NUEVA MONEDA, SE DEBEN DE AGREGAR AQUÍ:
 let nn=13, contD=0+nn , contE=0+nn , contTD=nn , contTE=nn;//INCREMENTAR nn SOLO SI SE AUMENTAN tr EN CF[2024]-2d.html ⭢ <table class="tabla-css" id="tabla_1a"> Y <table class="tabla-css" id="tabla_2a"> 
-let ARRAY =["AVAXUSDT","BNBUSDT","BTCUSDT","DOGEUSDT","ETHUSDT","SOLUSDT","XRPUSDT","NEARUSDT","ICPUSDT","TAOUSDT","FETUSDT","RENDERUSDT","GRTUSDT","TIAUSDT","MANTAUSDT","PYTHUSDT","PEPEUSDT","SUIUSDT"]; 
+let ARRAY =["AVAXUSDT","BNBUSDT","BTCUSDT","DOGEUSDT","ETHUSDT","SOLUSDT","XRPUSDT","NEARUSDT","ICPUSDT","TAOUSDT","FETUSDT","RENDERUSDT","GRTUSDT","TIAUSDT","MANTAUSDT","PYTHUSDT","PEPEUSDT"]; 
 let AVAX='120.00',BNB='440.00', BTC='74000.00',DOGE='0.23', ETH='2440.00',SOL='140.00', XRP='0.510', NEAR='4.00', ICP='8.00', TAO='500.00', FET='1.40', RENDER='5.00', GRT='15.00', TIA='5.00', MANTA='0.80', PYTH='0.30', PEPE='0.00000895',SUI='2.80' ;
 let avax='0', bnb='0', btc='0', doge='0', eth='0', sol='0', xrp='0', near='0', ipc='0', tao='0', fet='0', render='0', grt='0', tia='0', manta='0', pyth='0', pepe='0',sui='0'; 
 var svgSOL,svgETH,svgDOGE,svgBNB,svgAVAX,svgBTC,svgXRP, svgNEAR,svgICP='',svgTAO,svgFET,svgRENDER,svgGRT,svgAKT='',svgPYTH,svgMANTA,svgPEPE,svgTIA,svgSUI,  svgICP2='', svgMANTA2='',svgSOL2='',  logo=''; 
 let TEX= ['(Avalanche)','(BNB)','(Bitcoin)','(Dogecoin)','(Ethereum)','(Solana)','(XRP)','(NEAR Protocol)','(Internet Computer)','(Bittensor)','(Artificial Superintelligence Alliance)','(Render)','(The Graph)','(Celestia)','(Manta Network)','(Pyth Network)','(Pepe)','(Sui)']; 
 //ADEMAS AGREGARLA EN: function ND(s){} , function cardPrice24hr(){} , function data(){} , function inicializarCard(){} , function actualizaTablaDinamica(n,s){} , function imagenesSVG(){} Y EN: CF[2024]-2d.html ⭢ <div class="opciones0" id="opciones03">       
 //FIN DE: CUANDO SE AGREGA UNA NUEVA MONEDA, SE DEBEN DE AGREGAR AQUÍ 
+let simboloUpperCase='',simboloLowerCase='', _precios=[], _P0=[], _P=[];
 
 function formato(input) { // OJO::::: RECTIFICAR PARA: 18888888888888888 INTRODUCIDO EN id="precioCompra", DA COMO RESULTADO: 18,888,888,888,888,890.00  // 1999999999999999999 ➡ 2,000,000,000,000,000,000.00  // 19999999999999999 ➡ 20,000,000,000,000,000.00
   var cadena= new String(input); var x = cadena.split("."); //var x = cadena.replace(/,/g,"").split(".");
@@ -2890,13 +2890,19 @@ function cleanBox(c){
 
 function ND(s) {//DETERMINA NUMERO DE DECIMALES POR CADA CRIPTOMONEDA 
   let n='';
-  let simbolo1=['AVAXUSDT','BNBUSDT','BTCUSDT','ETHUSDT','SOLUSDT'], simbolo2=['XRPUSDT','NEARUSDT','ICPUSDT','TAOUSDT','FETUSDT','RENDERUSDT','GRTUSDT','TIAUSDT','MANTAUSDT','PYTHUSDT','SUIUSDT'], simbolo3=['DOGEUSDT','PEPEUSDT']; 
-  for (let i = 0; i < simbolo1.length; i++) { if (s.textContent==simbolo1[i]) n=n1} 
-  for (let i = 0; i < simbolo2.length; i++) { if (s.textContent==simbolo2[i]) n=n2} 
-  for (let i = 0; i < simbolo3.length; i++) { if (s.textContent==simbolo3[i]) n=n3} 
+  let simbolo1=['AVAXUSDT','BNBUSDT','BTCUSDT','ETHUSDT','SOLUSDT'], simbolo2=['XRPUSDT','NEARUSDT','ICPUSDT','TAOUSDT','FETUSDT','RENDERUSDT','GRTUSDT','TIAUSDT','MANTAUSDT','PYTHUSDT'], simbolo3=['DOGEUSDT','PEPEUSDT']; 
+  let a=(simbolo1.concat(simbolo2)).concat(simbolo3);///console.log('a-----------------',a);
+  let e = a.includes(s.textContent);
+  if (e==true) {
+    for (let i = 0; i < simbolo1.length; i++) { if (s.textContent==simbolo1[i]) n=n1;}  
+    for (let i = 0; i < simbolo2.length; i++) { if (s.textContent==simbolo2[i]) n=n2;} 
+    for (let i = 0; i < simbolo3.length; i++) { if (s.textContent==simbolo3[i]) n=n3;} 
+  } else {
+    n=n3;
+  }
   return n;
 }
-
+//let ws19=new WebSocket('wss://stream.binance.com:9443/ws/linkusdt@trade')  ; ws19.onmessage=(event)=>{let data19=JSON.parse(event.data); LINK=  data19.p; link  =data19.p;console.log('data19 ................' ,data19);}
 function data() {//.....FUNCION SIN USO //CAMBIO DE PRECIO CADA 1 SEGUNDO , NO NECESITA TIMER. //Cotización de Bitcoin en tiempo real con WebSocket:  https://www.youtube.com/watch?v=bBqytMjLpoU    // https://drive.google.com/file/d/1b515bf3JMqNFcM6oITRZ7UcNHeZhUxeo/view  
   let ws1= new WebSocket('wss://stream.binance.com:9443/ws/avaxusdt@trade')  ; ws1.onmessage= (event)=>{let data1= JSON.parse(event.data); AVAX=  data1.p ; avax  =data1.p ;}
   let ws2= new WebSocket('wss://stream.binance.com:9443/ws/bnbusdt@trade')   ; ws2.onmessage= (event)=>{let data2= JSON.parse(event.data); BNB=   data2.p ; bnb   =data2.p ;}
@@ -2916,7 +2922,7 @@ function data() {//.....FUNCION SIN USO //CAMBIO DE PRECIO CADA 1 SEGUNDO , NO N
   let ws16=new WebSocket('wss://stream.binance.com:9443/ws/pythusdt@trade')  ; ws16.onmessage=(event)=>{let data16=JSON.parse(event.data); PYTH=  data16.p; pyth  =data16.p;}
   let ws17=new WebSocket('wss://stream.binance.com:9443/ws/pepeusdt@trade')  ; ws17.onmessage=(event)=>{let data17=JSON.parse(event.data); PEPE=  data17.p; pepe  =data17.p;}
 
-  let ws18=new WebSocket('wss://stream.binance.com:9443/ws/suiusdt@trade')   ; ws18.onmessage=(event)=>{let data18=JSON.parse(event.data); SUI=   data18.p; sui   =data18.p;}
+  //let ws18=new WebSocket('wss://stream.binance.com:9443/ws/suiusdt@trade')   ; ws18.onmessage=(event)=>{let data18=JSON.parse(event.data); SUI=   data18.p; sui   =data18.p;}
   //let ws19=new WebSocket('wss://stream.binance.com:9443/ws/linkusdt@trade')  ; ws19.onmessage=(event)=>{let data19=JSON.parse(event.data); LINK=  data19.p; link  =data19.p;}
   
   // Estado de la conexión: https://es.javascript.info/websocket 
@@ -3000,7 +3006,7 @@ function inicializarCard() {//CAMBIO DE PRECIO CADA 1 SEGUNDO //Cotización de B
   .then( datos => mostrarData(datos))
   .catch( e => console.log(e))
   
-  let mostrarData = (data)=>{
+  let mostrarData = (data)=>{//console.log('data',data) ;
     PRECIO=0; 
     for (let i=0; i < data.length; i++) {//TOTAL:2736 //XRPUSDT:i=307  BTCUSDT:i=12 //for (let i=0; i < data.length/50; i++)   //LONGITUD TOTAL: length: 2447
       if (simbolo.textContent==data[i].symbol) {
@@ -3019,7 +3025,7 @@ function inicializarCard() {//CAMBIO DE PRECIO CADA 1 SEGUNDO //Cotización de B
              /*load.style.display='none';*/ arrows.style.display='flex'; pVenta=data[i].price; cotizacionBTC.innerText=F(pVenta, n3)  ;
           }
         }  
-        document.getElementById('cotizacionBTC').innerText=F(data[i].price, n3); document.getElementById('cotizacionBTC').style.opacity='1'; 
+        document.getElementById('cotizacionBTC').innerText=F(data[i].price, n3);document.getElementById('cotizacionBTC').style.opacity='1';
       }
     }
   } 
@@ -3027,11 +3033,11 @@ function inicializarCard() {//CAMBIO DE PRECIO CADA 1 SEGUNDO //Cotización de B
 
 let svg1='',svg2='', tex='';
 function cardPrice24hr() {//CAMBIO DE PRECIO CADA 1 SEGUNDO //Cotización de Bitcoin en 24 horas: (1): https://www.youtube.com/watch?v=O6e1aDVRfdo&t=184s  (2): https://github.com/binance/binance-spot-api-docs/blob/master/rest-api.md#24hr-ticker-price-change-statistics  
-  let s ='["AVAXUSDT","BNBUSDT","BTCUSDT","DOGEUSDT","ETHUSDT","SOLUSDT","XRPUSDT","NEARUSDT","ICPUSDT","TAOUSDT","FETUSDT","RENDERUSDT","GRTUSDT","TIAUSDT","MANTAUSDT","PYTHUSDT","PEPEUSDT","SUIUSDT"]'  
-  , S=document.getElementById('simbolo').textContent, SVG=[svgAVAX,svgBNB,svgBTC,svgDOGE,svgETH,svgSOL,svgXRP, svgNEAR,svgICP,svgTAO,svgFET,svgRENDER,svgGRT,svgTIA,svgMANTA,svgPYTH,svgPEPE,svgSUI];
+  let S=document.getElementById('simbolo').textContent, x='';
+  if (ARRAY.includes(S)==false) x=','+'"'+S+'"';
+  let s ='["AVAXUSDT","BNBUSDT","BTCUSDT","DOGEUSDT","ETHUSDT","SOLUSDT","XRPUSDT","NEARUSDT","ICPUSDT","TAOUSDT","FETUSDT","RENDERUSDT","GRTUSDT","TIAUSDT","MANTAUSDT","PYTHUSDT","PEPEUSDT"'+x+']'  
+  , SVG=[svgAVAX,svgBNB,svgBTC,svgDOGE,svgETH,svgSOL,svgXRP, svgNEAR,svgICP,svgTAO,svgFET,svgRENDER,svgGRT,svgTIA,svgMANTA,svgPYTH,svgPEPE,svgSUI];
   
-  ///console.log('card_2b#######style.display',main_grid_3.style.background,document.getElementById('simbolo').style.display) ; 
-
   fetch('https://api.binance.com/api/v3/ticker/24hr?symbols='+s) 
   .then( respuesta => respuesta.json() )
   .then( datos => mostrarData(datos))
@@ -3051,38 +3057,37 @@ function cardPrice24hr() {//CAMBIO DE PRECIO CADA 1 SEGUNDO //Cotización de Bit
         //24h Volumen(BTC),  24h Volumen(USDT) : 
         tdV24hBTC_a.innerText=F3(data[k].volume, n1)+' '; tdV24hUSDT_a.innerText=F3(data[k].quoteVolume, n1)+' USDT ';
         switch (data[k].symbol) {///COLOCAR LOGO E IMPRIME PRECIO ACTUAL DE CADA MONEDA:
-          case 'AVAXUSDT'  : svg1=SVG[0] ;svg2=SVG[0]   ;tex=TEX[0] ; break;
-          case 'BNBUSDT'   : svg1=SVG[1] ;svg2=SVG[1]   ;tex=TEX[1] ; break;
-          case 'BTCUSDT'   : svg1=SVG[2] ;svg2=SVG[2]   ;tex=TEX[2] ; break;
-          case 'DOGEUSDT'  : svg1=SVG[3] ;svg2=SVG[3]   ;tex=TEX[3] ; break;
-          case 'ETHUSDT'   : svg1=SVG[4] ;svg2=SVG[4]   ;tex=TEX[4] ; break;
-          case 'SOLUSDT'   : svg1=SVG[5] ;svg2=svgSOL2  ;tex=TEX[5] ; break;// ⭠ CORREGIR, CON linearGradient NESESITA OTRO svg 
-          case 'XRPUSDT'   : svg1=SVG[6] ;svg2=SVG[6]   ;tex=TEX[6] ; break;
-          case 'NEARUSDT'  : svg1=SVG[7] ;svg2=SVG[7]   ;tex=TEX[7] ; break;
-          case 'ICPUSDT'   : svg1=SVG[8] ;svg2=svgICP2  ;tex=TEX[8] ; break;// ⭠ CORREGIR, CON linearGradient NESESITA OTRO svg 
-          case 'TAOUSDT'   : svg1=SVG[9] ;svg2=SVG[9]   ;tex=TEX[9] ; break;
-          case 'FETUSDT'   : svg1=SVG[10];svg2=SVG[10]  ;tex=TEX[10]; break;
-          case 'RENDERUSDT': svg1=SVG[11];svg2=SVG[11]  ;tex=TEX[11]; break;
-          case 'GRTUSDT'   : svg1=SVG[12];svg2=SVG[12]  ;tex=TEX[12]; break;
-          case 'TIAUSDT'   : svg1=SVG[13];svg2=SVG[13]  ;tex=TEX[13]; break;
-          case 'MANTAUSDT' : svg1=SVG[14];svg2=svgMANTA2;tex=TEX[14]; break;// ⭠ CORREGIR, CON linearGradient NESESITA OTRO svg 
-          case 'PYTHUSDT'  : svg1=SVG[15];svg2=SVG[15]  ;tex=TEX[15]; break;
-          case 'PEPEUSDT'  : svg1=SVG[16];svg2=SVG[16]  ;tex=TEX[16]; break; 
-          case 'SUIUSDT'   : svg1=SVG[17];svg2=SVG[17]  ;tex=TEX[17]; break; //default: PV.innerText=0;
+          case 'AVAXUSDT'  : svg1=SVG[0] ; tex=TEX[0] ; break;
+          case 'BNBUSDT'   : svg1=SVG[1] ; tex=TEX[1] ; break;
+          case 'BTCUSDT'   : svg1=SVG[2] ; tex=TEX[2] ; break;
+          case 'DOGEUSDT'  : svg1=SVG[3] ; tex=TEX[3] ; break;
+          case 'ETHUSDT'   : svg1=SVG[4] ; tex=TEX[4] ; break;
+          case 'SOLUSDT'   : svg1=SVG[5] ; tex=TEX[5] ; break;
+          case 'XRPUSDT'   : svg1=SVG[6] ; tex=TEX[6] ; break;
+          case 'NEARUSDT'  : svg1=SVG[7] ; tex=TEX[7] ; break;
+          case 'ICPUSDT'   : svg1=SVG[8] ; tex=TEX[8] ; break;
+          case 'TAOUSDT'   : svg1=SVG[9] ; tex=TEX[9] ; break;
+          case 'FETUSDT'   : svg1=SVG[10]; tex=TEX[10]; break;
+          case 'RENDERUSDT': svg1=SVG[11]; tex=TEX[11]; break;
+          case 'GRTUSDT'   : svg1=SVG[12]; tex=TEX[12]; break;
+          case 'TIAUSDT'   : svg1=SVG[13]; tex=TEX[13]; break;
+          case 'MANTAUSDT' : svg1=SVG[14]; tex=TEX[14]; break;
+          case 'PYTHUSDT'  : svg1=SVG[15]; tex=TEX[15]; break;
+          case 'PEPEUSDT'  : svg1=SVG[16]; tex=TEX[16]; break;//default: svg1=''; tex=''; 
+          default: svg1=''; tex='';
         }   
-        TEX1.innerText=tex ;
-        document.getElementById('IMG1').innerHTML=svg1 ; //IMG1.innerHTML=svg1 ; IMG2.innerHTML=svg2 ;
+        TEX1.innerText=tex ; document.getElementById('IMG1').innerHTML=svg1 ; 
       }//console.log() ;
     }
   }  
 } 
 
+let o1='1', o2='0.35', o3='0.8';
 function opacidad(p,a,S,L,CI,PC,PV,D,C,G,CF,l) {//opacidad(p,a,S,CI,PC,PV,D,C,G,CF) //MANTENER OPACIDAD EN CELDAS DE TABLA MIENTRAS NO CAMBIE DE '0'
   actualizaColor(a[0], a[4], Number(a[3]));
   actualizaColor(a[1], a[6], Number(a[5]));
   actualizaColor(a[2], a[6], Number(a[5]));
-  let o1='1', o2='0.35', o3='0.8', ee='', colorLetra = getComputedStyle(document.querySelector("#cuentaSpotI"));//console.log("",""); 
-
+  let ee='', colorLetra = getComputedStyle(document.querySelector("#cuentaSpotI"));//console.log("",""); 
 if (tdPMax24h_a.textContent=='') {
   L.style.display='none';S.style.opacity=o3; CI.style.opacity=o3; PC.style.opacity=o3; PV.style.opacity=o3; D.style.opacity=o3; C.style.opacity=o3; G.style.opacity=o3; CF.style.opacity=o3;
   capitalFinalTotal.style.opacity=o3;capitalFinalT.style.opacity=o3;gananciasPerdidas.style.opacity=o3;diferenciaTotal.style.opacity=o3;
@@ -3094,6 +3099,7 @@ else{
   else {
     L.style.display='none';S.style.opacity=o1; CI.style.opacity=o1; PC.style.opacity=o1; PV.style.opacity=o1; D.style.opacity=o1; C.style.opacity=o1; G.style.opacity=o1; CF.style.opacity=o1; 
   } 
+  
   ee = l.includes('flex');
   //if (ee==true) {TRD1.style.opacity=o2;TRD2.style.opacity=o2;}
   //else  {TRD1.style.opacity=o1;TRD2.style.opacity=o1;}
@@ -3142,8 +3148,9 @@ function ganancia(diferencia,pCompra,comision,cuentaI) {//.....FUNCION SIN USO
 let A=[], t='', E='', simbolos='';
 function agregarAtabla(){ 
   A=[];simbolos='';
-  let cuentaI= (cleanBox(cuentaSpotI.value)), pCompra= (cleanBox(precioCompra.value)),comision= (cleanBox(commission.value)), pVenta='', s=document.getElementById('simbolo'), ss='', v1='', v2='';
+  let cuentaI= (cleanBox(cuentaSpotI.value)), pCompra= (cleanBox(precioCompra.value)),comision= (cleanBox(commission.value)), pVenta='', s=document.getElementById('simbolo'), ss='', v1='', v2='', variable1='', variable2='';
   let a=['avaxusdt','bnbusdt','btcusdt','dogeusdt','ethusdt','solusdt','xrpusdt','nearusdt','icpusdt','taousdt','fetusdt','renderusdt','grtusdt','tiausdt','mantausdt','pythusdt','pepeusdt','suiusdt']; 
+  //_precios.push(s.textContent.replace('USDT','')); _P0.push((s.textContent.replace('USDT','')).toLowerCase()); _P.push((s.textContent.replace('USDT','')).toLowerCase());
 
   (EDITAR==1)? pVenta= (cleanBox(precioVenta.value)) : pVenta= (cleanBox(precioVenta.value));
   
@@ -3170,15 +3177,21 @@ function agregarAtabla(){
    // case 'PEPEUSDT'  : ss=s.textContent.toLowerCase(); v1=s.textContent.replace('USDT','') ;v2=s.textContent.replace('USDT','').toLowerCase() ;break; 
    // case 'SUIUSDT'   : ss=s.textContent.toLowerCase(); v1=s.textContent.replace('USDT','') ;v2=s.textContent.replace('USDT','').toLowerCase() ;break;*/ 
   }
-  for (let i = 0; i < ARRAY.length; i++) {
-    if (s.textContent==ARRAY[i]){ss=ARRAY[i].toLowerCase(); v1=ARRAY[i].replace('USDT','') ;v2=ARRAY[i].replace('USDT','').toLowerCase();} 
-  } 
+  //for (let i = 0; i < ARRAY.length; i++) {
+  //  if (s.textContent==ARRAY[i]){ss=ARRAY[i].toLowerCase(); v1=ARRAY[i].replace('USDT','') ;v2=ARRAY[i].replace('USDT','').toLowerCase();} 
+  //} 
+  ss=s.textContent.toLowerCase(); v1=s.textContent.replace('USDT','') ;v2=s.textContent.replace('USDT','').toLowerCase();
+  if (ARRAY.includes(s.textContent)==false){
+    ARRAY.push(s.textContent); 
+    simboloUpperCase+=","+v1; simboloLowerCase+=","+v2;
+  }
+  //(ARRAY.includes(s.textContent))?(variable1='', variable2=''):(variable1="let "+v1+";",variable2="let "+v2+";");// ⭠ SI SE DETECTA SIMBOLO REPETIDO, SE IMPRIME variable1='' Y variable2='' EN input 
   for (let j = 0; j < document.getElementsByName('DS').length; j++) {// ⭠ IMPRIME SIMBOLOS EN A[] 
     A.push(document.getElementsByName('DS')[j].textContent); //console.log('A===========', A);
   }
   E = A.includes(s.textContent);
-  if (E==true) t='';// ⭠ SI SE DETECTA SIMBOLO REPETIDO, NO SE IMPRIME t EN input 
-  else t="let ws"+C+"=new WebSocket('wss://stream.binance.com:9443/ws/"+ss+"@trade'); ws"+C+".onmessage=(event)=>{let data"+C+"=JSON.parse(event.data); "+v1+"=data"+C+".p; "+v2+"=data"+C+".p};";;
+  if (E==true) {t='';}// ⭠ SI SE DETECTA SIMBOLO REPETIDO, SE IMPRIME t='' EN input 
+  else {t="let ws"+C+"=new WebSocket('wss://stream.binance.com:9443/ws/"+ss+"@trade'); ws"+C+".onmessage=(event)=>{let data"+C+"=JSON.parse(event.data); "+v1+"=data"+C+".p; "+v2+"=data"+C+".p};";};
   console.log(E) // true
   let LOGO=''; (Number(cotizacionBTC.textContent)==0)?LOGO='':LOGO=logo;//CON CONEXION IMPRIME logo 
   let TR= `<tr       id='tr_`  +e+C+`'`+` name='TR' class='TR'>`+
@@ -3217,6 +3230,10 @@ function agregarAtabla(){
   for (let y = 0; y < document.getElementsByName('logoE').length; y++){//OCULTAR LOGOS EN TABLA ESTATICA
     document.getElementsByName('logoE')[y].style.display='none';
   }
+  //INICIALIZAR OPACIDAD:
+  document.getElementById('p_s'+''+C).style.opacity=o2; document.getElementById('p_ci'+''+C).style.opacity=o2; document.getElementById('p_pc'+''+C).style.opacity=o2; document.getElementById('p_pv'+''+C).style.opacity=o2; document.getElementById('p_dp'+''+C).style.opacity=o2; document.getElementById('p_c'+''+C).style.opacity=o2; document.getElementById('p_p'+''+C).style.opacity=o2; document.getElementById('p_cf'+''+C).style.opacity=o2; document.getElementById('p_s'+''+C).style.opacity=o2; document.getElementById('p_s'+''+C).style.opacity=o2; document.getElementById('p_s'+''+C).style.opacity=o2; 
+  document.getElementById('capitalFinalTotal'+'').style.opacity=o2; 
+  document.getElementById('diferenciaTotal'  +'').style.opacity=o2;
 }
 
 function EVAL() {
@@ -3224,14 +3241,14 @@ function EVAL() {
   for (let k = 0; k < document.getElementsByClassName('de').length; k++) {
     simbolos+=document.getElementsByClassName('de')[k].value; //console.log('simbolos===========', simbolos);
   }
-  eval(simbolos);
+  eval(simbolos);//LINK='00';link='000'; //eval("console.log('LINK........',LINK,link)")
 }
 EVAL();
 
 function actualizaPreciosCard() {//ACTUALIZA LOS FORMATOS DE LAS CASILLAS. 
-  let cuentaI= (cleanBox(cuentaSpotI.value)), pCompra= (cleanBox(precioCompra.value)), comision= (cleanBox(commission.value)), pVenta='', s=document.getElementById('simbolo'), P=[avax,bnb,btc,doge,eth,sol,xrp,near,ipc,tao,fet,render,grt,tia,manta,pyth,pepe,sui] ; 
-  for (let i = 0; i < ARRAY.length; i++) {
-    if (simbolo.textContent==ARRAY[i]) {
+  let cuentaI= (cleanBox(cuentaSpotI.value)), pCompra= (cleanBox(precioCompra.value)), comision= (cleanBox(commission.value)), pVenta='', s=document.getElementById('simbolo'), P=[avax,bnb,btc,doge,eth,sol,xrp,near,ipc,tao,fet,render,grt,tia,manta,pyth,pepe] ; 
+  //for (let i = 0; i < ARRAY.length; i++) {
+  //  if (simbolo.textContent==ARRAY[i]) {
       if (tdPMax24h_a.textContent=='') {//SIN CONEXIÓN
         precioVenta.value= F(cleanBox(precioVenta.value)  , ND(s))  ;
       } 
@@ -3242,8 +3259,8 @@ function actualizaPreciosCard() {//ACTUALIZA LOS FORMATOS DE LAS CASILLAS.
           precioVenta.value= F(cleanBox(cotizacionBTC.textContent)  , ND(s)); 
         }
       }  
-    }
-  } 
+  //  }
+  //} 
   (EDITAR==1)? pVenta= (cleanBox(precioVenta.value)) : pVenta= (cleanBox(precioVenta.value));
   c(pVenta,pCompra,comision,cuentaI); //console.log();
   Difprecio.value   = F(o.d     , ND(s));
@@ -3257,17 +3274,22 @@ function actualizaPreciosCard() {//ACTUALIZA LOS FORMATOS DE LAS CASILLAS.
   actualizaDiferenciaPrecio(); 
 } 
 
+
 function actualizaTablaDinamica(n,s){ 
-  let l=[];
+  let l=[]; //link='0';
+  //_precios=[]; _P0=[]; _P=[];
   for (let j = 1; j <= n; j++) { // RECORRE 'n' FILAS DE TABLA: 
     let S=document.getElementById('p_s'+s+j), L=document.getElementById('logo'+s+j),  CI=document.getElementById("p_ci"+s+j), PV=document.getElementById('p_pv'+s+j), PC=document.getElementById('p_pc'+s+j), D=document.getElementById('p_dp'+s+j), C=document.getElementById("p_c"+s+j), G=document.getElementById('p_p'+s+j), CF=document.getElementById('p_cf'+s+j) 
-    , cuentaI= (cleanBox(document.getElementById("p_ci"+s+j).textContent)), compra= (cleanBox(document.getElementById("p_pc"+s+j).textContent)), comision= (cleanBox(document.getElementById("p_c"+s+j).textContent))
-    , precios=[AVAX,BNB,BTC,DOGE,ETH,SOL,XRP,NEAR,ICP,TAO,FET,RENDER,GRT,TIA,MANTA,PYTH,PEPE,SUI]; //let simbolo=['AVAXUSDT','BNBUSDT','BTCUSDT','DOGEUSDT','ETHUSDT','SOLUSDT','XRPUSDT','NEARUSDT','ICPUSDT','TAOUSDT','FETUSDT','RENDERUSDT','GRTUSDT','TIAUSDT','MANTAUSDT','PYTHUSDT','PEPEUSDT'] ;
-    l.push(L.style.display); //console.log();
+    , cuentaI= (cleanBox(document.getElementById("p_ci"+s+j).textContent)), compra= (cleanBox(document.getElementById("p_pc"+s+j).textContent)), comision= (cleanBox(document.getElementById("p_c"+s+j).textContent));
+    //_precios.push(eval(S.textContent.replace('USDT',''))); _P0.push(eval((S.textContent.replace('USDT','')).toLowerCase())); _P.push(eval((S.textContent.replace('USDT','')).toLowerCase()));
+
+    let precios_=eval("[AVAX,BNB,BTC,DOGE,ETH,SOL,XRP,NEAR,ICP,TAO,FET,RENDER,GRT,TIA,MANTA,PYTH,PEPE"+simboloUpperCase+"]"), precios=precios_;//.concat(_precios); //let simbolo=['AVAXUSDT','BNBUSDT','BTCUSDT','DOGEUSDT','ETHUSDT','SOLUSDT','XRPUSDT','NEARUSDT','ICPUSDT','TAOUSDT','FETUSDT','RENDERUSDT','GRTUSDT','TIAUSDT','MANTAUSDT','PYTHUSDT','PEPEUSDT'] ;
+    l.push(L.style.display); //console.log('precios',precios);
     (tdPMax24h_a.textContent=='')? document.getElementById('logo'+j).innerHTML='' : document.getElementById('logo'+j).innerHTML=logo;
 
     for (let i = 0; i < ARRAY.length; i++) { 
-      let P0=[avax,bnb ,btc,doge ,eth ,sol,xrp ,near,ipc ,tao ,fet ,render,grt ,tia ,manta ,pyth,pepe,sui];
+      let P0_=eval("[avax,bnb ,btc,doge ,eth ,sol,xrp ,near,ipc ,tao ,fet ,render,grt ,tia ,manta ,pyth,pepe"+simboloLowerCase+"]"), P0=P0_;//.concat(_P0);
+      //console.log('P0',P0);
       if (S.textContent==ARRAY[i]) {
         (P0[i] != '0')? (PV.innerText=F(precios[i] ,ND(S))):(PV.innerText=F(cleanBox(PV.textContent) ,ND(S)));
       }// ⭠ IMPRIME PRECIO ACTUAL DE CADA MONEDA
@@ -3282,7 +3304,10 @@ function actualizaTablaDinamica(n,s){
     for (let i = 0; i < ARRAY.length; i++) { 
       if (S.textContent==ARRAY[i] && cuentaI!='0'){// ⭠ OJO: cuentaI!='0' ES SOLO PARA NO APLICAR opacidad(...) CUANDO SE HACE CLIC EN eliminarTr(...) ANTES DE Q' CARGE SU ENLACE ws. ENTONCES capitalFinalTotal.style.opacity='1'... 
         PC.innerText= F(compra, ND(S)); D.innerText= F(diferencia, ND(S)); G.innerText = F(ganancia, ND(S)); CF.innerText= F(cuentaF, ND(S));// ⭠ NUMERO DE DECIMALES PARA CADA MONEDA
-        let P=[avax,bnb ,btc,doge ,eth ,sol,xrp ,near,ipc ,tao ,fet ,render,grt ,tia ,manta ,pyth,pepe,sui];
+        //console.log('ND(S)........',ND(S), ganancia, F(ganancia, ND(S)));
+        let P_=eval("[avax,bnb ,btc,doge ,eth ,sol,xrp ,near,ipc ,tao ,fet ,render,grt ,tia ,manta ,pyth,pepe"+simboloLowerCase+"]"), P=P_;//.concat(_P);
+        //console.log('P ........',P);
+        //console.log('P[1] ........',P[i]);
         opacidad(P[i],a,S,L,CI,PC,PV,D,C,G,CF,l);// ⭠ Opacidad en: S,CI,PC,PV,D,C,G,CF + Actualizar Color en: D,G,CF // 0000 4
       }
     } 
@@ -3625,6 +3650,23 @@ boxes[i].addEventListener("input", (e) => {
 }); 
 
 }//FIN DE for (let i = 5; i < boxes.length - 2; i++) 
+
+//CASILLA id="buscar" :
+document.getElementById('buscar').addEventListener("input", (e) => {
+  let cadena=buscar.value.toUpperCase().replace(/ /g, '');
+  let x=','+'"'+cadena+'"';
+  let s ='["AVAXUSDT"'+x+']';console.log('s ::::::: ',s);
+  
+  fetch('https://api.binance.com/api/v3/ticker/24hr?symbols='+s) 
+  .then( respuesta => respuesta.json() )
+  .then( datos => mostrarData(datos))
+  .catch( e => buscado.textContent='-------------')
+  const mostrarData = (data)=>{
+   for (let k = 0; k < data.length; k++) { 
+     if (cadena==data[k].symbol) {buscado.textContent=cadena;console.log('buscado.textContent ::::::: ',buscado.textContent);}
+    }
+  } 
+}); 
 ///------------------------------------------------------------------------------------------------------------------------
 
  ///%%%%%%%%%%%%  LISTA DE OPCIONES 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
