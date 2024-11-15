@@ -1,7 +1,2 @@
-<?php
-
- echo '<p>HOLA MUNDO</p>'
-
-
- ?>
+<?php echo '<p>HOLA MUNDO !!!!!!!!!!</p>' ?>
 
