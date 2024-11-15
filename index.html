@@ -9,8 +9,17 @@
   <title>Formulario contactos</title>
 </head>
 <body>
-  <form action="contacto.php" method="post">
-     </form>
-  </form>
+   <h1><?php echo "¡Hola Mundo!" ?></h1>
+
+<h2>Listado de Empleados</h2>
+    <ul>
+      <?php
+        $empleados = array("Juan", "María", "Carlos");
+        foreach ($empleados as $empleado) {
+          echo "<li>$empleado</li>";
+        }
+      ?>
+    </ul>
+  
 </body>
 </html>
