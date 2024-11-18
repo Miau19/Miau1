@@ -1,5 +1,5 @@
 <?php
-$url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/category';
+$url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest';
 $parameters = [
   'start' => '1',
   'limit' => '50',
@@ -44,9 +44,9 @@ echo '</pre>';
 <body style="background: #818181;font-size: 1rem;color: #cacaca;">
 
   <div class="row">
-    <?php foreach($data['data'] as $row) { ?>
+    <?php foreach($data['data.quote.USD'] as $row) { ?>
    <h4>
-     <?php echo $row['name'] ?> (<?php echo $row['symbol'] ?>) percent_change_1h: <?php echo $row['percent_change_1h'] ?> percent_change_24h: <?php echo $row['percent_change_24h'] ?>
+     <?php echo $row['price'] ?> (<?php echo $row['price'] ?>) 
    </h4>
     <?php } ?>
   
