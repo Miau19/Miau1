@@ -129,7 +129,7 @@ document.getElementById('circulating_supply').textContent=F(document.getElementB
 
 }
 
-formatear();
+// formatear();
 
 
 
