@@ -1,5 +1,5 @@
 <?php
-$url = 'https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/listings/latest';
+$url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest';
 $parameters = [
   'start' => '1',
   'limit' => '50',
