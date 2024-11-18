@@ -1,4 +1,3 @@
-
 <?php
 $url = 'https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/listings/latest';
 $parameters = [
@@ -45,6 +44,15 @@ echo '</pre>';
   <title>Formulario contactos</title>
 </head>
 <body style="background: #818181;font-size: 2rem;">
+
+  <div class="row">
+    <?php foreach($response['data'] as $row) { ?>
+   <h4>
+     <?php echo $row['name'] ?> (<?php echo $row['symbol'] ?>)
+   </h4>
+    <?php } ?>
+  </div>
+
   <?php echo '<p  style="color: #00ff00;">##### HOLA MUNDO !!!!!!!!!!</p><p>HOLA MUNDO !!!!!!!!!! (index.php)</p>' ?> 
   <?php echo '<p  style="color: #ffff00;">HOLA MUNDO !!!!!!!!!!</p><p>HOLA MUNDO !!!!!!!!!! (index.php)</p>' ?>
 
