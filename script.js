@@ -1,3 +1,5 @@
+function formatear(){
+  
 function F1(m,n) { //FORMATEA CON n DECIMALES
   let cadena= new String(Number(m).toFixed(n3))/* toFixed(n3) CONVIERTE -4.7e-7 A -0.00000047 Y SE EVITA RESPUESTAS CON NOTACION CIENTIFICA; SI SE DESEA NOTACION CIENTIFICA USAR: let cadena= new String(m) */
   , rgx = /(\d+)(\d{3})/, ceros='',nuevaCadena='', decimal, d, nuevaParteEntera='', e; 
@@ -122,4 +124,13 @@ function F(m,n) {
   let f=F2(F1(m  , n));
   return f;
 }
+
+document.getElementById('circulating_supply').textContent=F(document.getElementById('circulating_supply').textContent,2);
+
+}
+
+formatear();
+
+
+
 
