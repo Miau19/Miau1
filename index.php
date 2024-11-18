@@ -44,7 +44,7 @@ echo '</pre>';
 <body style="background: #818181;font-size: 1rem;color: #cacaca;">
 
   <div class="row">
-    <?php foreach($data['data.quote'] as $row) { ?>
+    <?php foreach($data['quote'] as $row) { ?>
    <h4>
      <?php echo $row['price'] ?> (<?php echo $row['price'] ?>) 
    </h4>
