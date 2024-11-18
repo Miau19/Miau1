@@ -55,7 +55,7 @@ curl_close($curl); // Close request
   <div class="row">
         
     <?php foreach($res['data'] as $row) { ?>
-   <h4 style="color: #ff0000;">
+   <h4 style="color: #990000;">
      <?php echo $row['name'] ?> (((<?php echo $row['symbol'] ?>)))  circulating_supply: <?php echo $row['circulating_supply'] ?>   total_supply: <?php echo $row['total_supply'] ?>  
    </h4>
     <?php } ?>
