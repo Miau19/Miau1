@@ -1,3 +1,4 @@
+
 <?php
 $url = 'https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/listings/latest';
 $parameters = [
@@ -25,10 +26,14 @@ curl_setopt_array($curl, array(
 ));
 
 $response = curl_exec($curl); // Send the request, save the response
-print_r(json_decode($response)); // print json decoded response
+////print_r(json_decode($response)); // print json decoded response
 curl_close($curl); // Close request
-?>
 
+echo '<pre>';
+print_r(($response)); 
+echo '</pre>';
+
+?>
 
 <!DOCTYPE html>
 <html lang="en"> 
