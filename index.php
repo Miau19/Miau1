@@ -28,8 +28,13 @@ $response = curl_exec($curl); // Send the request, save the response
 ////print_r(json_decode($response)); // print json decoded response
 $res=json_decode($response);
 $uno=$res->data->quote->USD->price;
-print_r($uno);
+print_r(aMoneda($uno));
 curl_close($curl); // Close request
+
+function aMoneda($value){
+ $value=($value='')?0:$value;
+  return number_format($value,2);
+}
 
 //echo '<pre>';
 //  print_r($response); 
