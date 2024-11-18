@@ -67,5 +67,7 @@ curl_close($curl); // Close request
   <?php echo '<p  style="color: #ffff00;">HOLA MUNDO !!!!!!!!!!</p><p>HOLA MUNDO !!!!!!!!!! (index.php)</p>' ?>
 
   <h1>¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡Hola Mundo!!!!!!!!!!!!!!!!h1>
+
+    <script src="index.js"></script>
 </body>
 </html>
