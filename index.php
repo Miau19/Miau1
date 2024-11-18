@@ -46,7 +46,7 @@ curl_close($curl); // Close request
   <div class="row">
     <?php foreach($data['data'] as $row) { ?>
    <h4>
-     <?php echo $row['symbol'] ?> (((<?php echo $row['quote.USD.price'] ?>)))  ===<?php echo $row['USD.price'] ?>===
+     <?php echo $row['symbol'] ?> (((<?php echo $row['quote.USD.price'] ?>)))  ===<?php echo $row['USD.price'] ?>===   +++<?php echo $row['data.quote.USD.price'] ?>+++
    </h4>
     <?php } ?>
   
