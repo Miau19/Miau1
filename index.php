@@ -46,7 +46,7 @@ echo '</pre>';
   <div class="row">
     <?php foreach($data['data'] as $row) { ?>
    <h4>
-     <?php echo $row['price'] ?> (<?php echo $row['price'] ?>) 
+     <?php echo $row['symbol'] ?> (<?php echo $row['price'] ?>) 
    </h4>
     <?php } ?>
   
