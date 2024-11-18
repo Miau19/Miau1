@@ -2,7 +2,7 @@
 $url = 'https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/listings/latest';
 $parameters = [
   'start' => '1',
-  'limit' => '5000',
+  'limit' => '50',
   'convert' => 'USD'
 ];
 
@@ -30,7 +30,7 @@ $data=json_decode($response,true);
 curl_close($curl); // Close request
 
 echo '<pre>';
-print_r(($response)); 
+print_r($response); 
 echo '</pre>';
 
 ?>
