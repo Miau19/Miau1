@@ -1,23 +1,4 @@
-<?php
 
-require 'vendor/autoload.php';
-
-use Vittominacori\CoinMarketCap\CoinMarketCap;
-
-$client = new CoinMarketCap('cf14cf58-626e-49d9-aea8-a64c15e91dd2');
-
-$cryptos = ['BTC', 'ETH', 'DOGE'];
-
-foreach ($cryptos as $symbol) {
-    try {
-        $data = $client->cryptocurrency()->quotesLatest(['symbol' => $symbol]);
-        $price = $data['data'][$symbol]['quote']['USD']['price'];
-        echo "$symbol: $" . number_format($price, 2) . "\n";
-    } catch (\Exception $e) {
-        echo "Error fetching $symbol: " . $e->getMessage() . "\n";
-    }
-}
-?> 
 
 <!DOCTYPE html>
 <html lang="en"> 
