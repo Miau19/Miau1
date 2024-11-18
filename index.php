@@ -46,7 +46,7 @@ echo '</pre>';
   <div class="row">
     <?php foreach($data['data'] as $row) { ?>
    <h4>
-     <?php echo $row['name'] ?> (<?php echo $row['symbol'] ?>) Price: <?php echo $row['price'] ?> Cambio 24h: <?php echo $row['percent_change_24h'] ?>
+     <?php echo $row['name'] ?> (<?php echo $row['symbol'] ?>) circulating_supply: <?php echo $row['circulating_supply'] ?> total_supply: <?php echo $row['total_supply'] ?>
    </h4>
     <?php } ?>
   
