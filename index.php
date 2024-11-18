@@ -1,7 +1,3 @@
-/**
- * Requires curl enabled in php.ini
- **/
-
 <?php
 $url = 'https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/listings/latest';
 $parameters = [
@@ -24,6 +20,8 @@ curl_setopt_array($curl, array(
   CURLOPT_URL => $request,            // set the request URL
   CURLOPT_HTTPHEADER => $headers,     // set the headers 
   CURLOPT_RETURNTRANSFER => 1         // ask for raw response instead of bool
+  CURLOPT_USERAGENT => 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0'
+
 ));
 
 $response = curl_exec($curl); // Send the request, save the response
