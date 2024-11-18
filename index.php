@@ -26,7 +26,7 @@ curl_setopt_array($curl, array(
 
 $response = curl_exec($curl); // Send the request, save the response 
 ////print_r(json_decode($response)); // print json decoded response
-$res=json_decode($response);
+$res=json_decode($response,true);
 //$uno=$res->data->quote->USD->price;
 ///print_r(aMoneda($uno));
 //print_r($uno);
@@ -66,6 +66,6 @@ curl_close($curl); // Close request
   <?php echo '<p  style="color: #00ff00;">##### HOLA MUNDO !!!!!!!!!!</p><p>HOLA MUNDO !!!!!!!!!! (index.php)</p>' ?> 
   <?php echo '<p  style="color: #ffff00;">HOLA MUNDO !!!!!!!!!!</p><p>HOLA MUNDO !!!!!!!!!! (index.php)</p>' ?>
 
-  <h1>h1 ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡Hola Mundo*******************************h1>
+  <h1>h1 ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡Hola Mundo¨¨¨¨¨¨¨¨¨¨h1>
 </body>
 </html>
