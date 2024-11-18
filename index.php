@@ -28,17 +28,19 @@ $response = curl_exec($curl); // Send the request, save the response
 ////print_r(json_decode($response)); // print json decoded response
 $res=json_decode($response);
 $uno=$res->data->quote->USD->price;
-print_r(aMoneda($uno));
-
+///print_r(aMoneda($uno));
+print_r($uno);
+/*
 function aMoneda($value){
  $value=($value='')?0:$value;
   return number_format($value,2);
 }
-curl_close($curl); // Close request
-
+*/
 //echo '<pre>';
 //  print_r($response); 
 //echo '</pre>';
+
+curl_close($curl); // Close request
 
 ?>
 
@@ -66,6 +68,6 @@ curl_close($curl); // Close request
   <?php echo '<p  style="color: #00ff00;">##### HOLA MUNDO !!!!!!!!!!</p><p>HOLA MUNDO !!!!!!!!!! (index.php)</p>' ?> 
   <?php echo '<p  style="color: #ffff00;">HOLA MUNDO !!!!!!!!!!</p><p>HOLA MUNDO !!!!!!!!!! (index.php)</p>' ?>
 
-  <h1>h1 ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡Hola Mundo======================h1>
+  <h1>h1 ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡Hola Mundo?????????????????h1>
 </body>
 </html>
