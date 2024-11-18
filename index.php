@@ -26,6 +26,7 @@ curl_setopt_array($curl, array(
 
 $response = curl_exec($curl); // Send the request, save the response
 ////print_r(json_decode($response)); // print json decoded response
+$data=json_decode($response,true);
 curl_close($curl); // Close request
 
 echo '<pre>';
@@ -46,11 +47,13 @@ echo '</pre>';
 <body style="background: #818181;font-size: 2rem;">
 
   <div class="row">
-    <?php foreach($response['data'] as $row) { ?>
+    <?php foreach($data['data'] as $row) { ?>
    <h4>
      <?php echo $row['name'] ?> (<?php echo $row['symbol'] ?>)
    </h4>
     <?php } ?>
+  
+
   </div>
 
   <?php echo '<p  style="color: #00ff00;">##### HOLA MUNDO !!!!!!!!!!</p><p>HOLA MUNDO !!!!!!!!!! (index.php)</p>' ?> 
