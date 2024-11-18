@@ -30,7 +30,7 @@ $data=json_decode($response,true);
 curl_close($curl); // Close request
 
 echo '<pre>';
-print_r($response); 
+  print_r($response); 
 echo '</pre>';
 
 ?>
@@ -38,15 +38,15 @@ echo '</pre>';
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
-  <meta charset="UTF-8"> 
+  <meta charset="UTF-8">
   <title>Formulario contactos</title>
 </head>
-<body style="background: #818181;font-size: 2rem;">
+<body style="background: #818181;font-size: 1rem;color: #cacaca;">
 
   <div class="row">
     <?php foreach($data['data'] as $row) { ?>
    <h4>
-     <?php echo $row['name'] ?> (<?php echo $row['symbol'] ?>)
+     <?php echo $row['name'] ?> (<?php echo $row['symbol'] ?>) Price: <?php echo $row['price'] ?> Cambio 24h: <?php echo $row['percent_change_24h'] ?>
    </h4>
     <?php } ?>
   
@@ -56,6 +56,6 @@ echo '</pre>';
   <?php echo '<p  style="color: #00ff00;">##### HOLA MUNDO !!!!!!!!!!</p><p>HOLA MUNDO !!!!!!!!!! (index.php)</p>' ?> 
   <?php echo '<p  style="color: #ffff00;">HOLA MUNDO !!!!!!!!!!</p><p>HOLA MUNDO !!!!!!!!!! (index.php)</p>' ?>
 
-  <h1>h1 ¡Hola Mundo!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</h1>
+  <h1>h1 ¡Hola Mundo!</h1>
 </body>
 </html>
