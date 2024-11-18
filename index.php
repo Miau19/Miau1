@@ -1,35 +1,22 @@
-/**
- * Requires curl enabled in php.ini
- **/
-
 <?php
-$url = 'https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/listings/latest';
-$parameters = [
-  'start' => '1',
-  'limit' => '5000',
-  'convert' => 'USD'
-];
 
-$headers = [
-  'Accepts: application/json',
-  'X-CMC_PRO_API_KEY: cf14cf58-626e-49d9-aea8-a64c15e91dd2'
-];
-$qs = http_build_query($parameters); // query string encode the parameters
-$request = "{$url}?{$qs}"; // create the request URL
+require 'vendor/autoload.php';
 
+use Vittominacori\CoinMarketCap\CoinMarketCap;
 
-$curl = curl_init(); // Get cURL resource
-// Set cURL options
-curl_setopt_array($curl, array(
-  CURLOPT_URL => $request,            // set the request URL
-  CURLOPT_HTTPHEADER => $headers,     // set the headers 
-  CURLOPT_RETURNTRANSFER => 1         // ask for raw response instead of bool
-));
+$client = new CoinMarketCap('cf14cf58-626e-49d9-aea8-a64c15e91dd2');
 
-$response = curl_exec($curl); // Send the request, save the response
-print_r(json_decode($response)); // print json decoded response
-curl_close($curl); // Close request
-?>
+$cryptos = ['BTC', 'ETH', 'DOGE'];
+
+foreach ($cryptos as $symbol) {
+    try {
+        $data = $client->cryptocurrency()->quotesLatest(['symbol' => $symbol]);
+        $price = $data['data'][$symbol]['quote']['USD']['price'];
+        echo "$symbol: $" . number_format($price, 2) . "\n";
+    } catch (\Exception $e) {
+        echo "Error fetching $symbol: " . $e->getMessage() . "\n";
+    }
+}
 
 <!DOCTYPE html>
 <html lang="en"> 
