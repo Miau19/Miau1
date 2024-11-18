@@ -44,7 +44,7 @@ echo '</pre>';
 <body style="background: #818181;font-size: 1rem;color: #cacaca;">
 
   <div class="row">
-    <?php foreach($data['data.quote.USD'] as $row) { ?>
+    <?php foreach($data['data.quote'] as $row) { ?>
    <h4>
      <?php echo $row['price'] ?> (<?php echo $row['price'] ?>) 
    </h4>
@@ -56,6 +56,6 @@ echo '</pre>';
   <?php echo '<p  style="color: #00ff00;">##### HOLA MUNDO !!!!!!!!!!</p><p>HOLA MUNDO !!!!!!!!!! (index.php)</p>' ?> 
   <?php echo '<p  style="color: #ffff00;">HOLA MUNDO !!!!!!!!!!</p><p>HOLA MUNDO !!!!!!!!!! (index.php)</p>' ?>
 
-  <h1>h1 ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡Hola Mundo!!!!!!!!!!!!!!!!!!!!!!!!</h1>
+  <h1>h1 ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡Hola Mundo!</h1>
 </body>
 </html>
