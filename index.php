@@ -46,7 +46,7 @@ curl_close($curl); // Close request
   <div class="row">
     <?php foreach($data['data'] as $row) { ?>
    <h4>
-     <?php echo $row['symbol'] ?> (((<?php echo $row['quote'] ?>)))  ===<?php echo $row['USD'] ?>===
+     <?php echo $row['symbol'] ?> (((<?php echo $row['quote.USD.price'] ?>)))  ===<?php echo $row['USD.price'] ?>===
    </h4>
     <?php } ?>
   
@@ -56,6 +56,6 @@ curl_close($curl); // Close request
   <?php echo '<p  style="color: #00ff00;">##### HOLA MUNDO !!!!!!!!!!</p><p>HOLA MUNDO !!!!!!!!!! (index.php)</p>' ?> 
   <?php echo '<p  style="color: #ffff00;">HOLA MUNDO !!!!!!!!!!</p><p>HOLA MUNDO !!!!!!!!!! (index.php)</p>' ?>
 
-  <h1>h1 ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡Hola Mundo#################.----------------------------------</h1>
+  <h1>h1 ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡Hola Mundo&&&&&&&&&&&&.----------------------------------</h1>
 </body>
 </html>
