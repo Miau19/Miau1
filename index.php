@@ -27,9 +27,9 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl); // Send the request, save the response 
 ////print_r(json_decode($response)); // print json decoded response
 $res=json_decode($response);
-$uno=$res->data->quote->USD->price;
+//$uno=$res->data->quote->USD->price;
 ///print_r(aMoneda($uno));
-print_r($uno);
+//print_r($uno);
 /*
 function aMoneda($value){
  $value=($value='')?0:$value;
@@ -53,10 +53,8 @@ curl_close($curl); // Close request
 <body style="background: #818181;font-size: 1rem;color: #cacaca;">
 
   <div class="row">
-    
-    <div><?php  $uno ?></div>
-    
-    <?php foreach($d['data'] as $row) { ?>
+        
+    <?php foreach($res['data'] as $row) { ?>
    <h4>
      <?php echo $row['symbol'] ?> (((<?php echo $row['quote.USD.price'] ?>)))  ===<?php echo $row['d->data->quote->USD->price'] ?>===   +++<?php echo $row['data->quote->USD->price'] ?>+++
    </h4>
@@ -68,6 +66,6 @@ curl_close($curl); // Close request
   <?php echo '<p  style="color: #00ff00;">##### HOLA MUNDO !!!!!!!!!!</p><p>HOLA MUNDO !!!!!!!!!! (index.php)</p>' ?> 
   <?php echo '<p  style="color: #ffff00;">HOLA MUNDO !!!!!!!!!!</p><p>HOLA MUNDO !!!!!!!!!! (index.php)</p>' ?>
 
-  <h1>h1 ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡Hola Mundo:::::::::::::::::::::::::h1>
+  <h1>h1 ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡Hola Mundo*******************************h1>
 </body>
 </html>
