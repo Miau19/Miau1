@@ -54,7 +54,7 @@ curl_close($curl); // Close request
 
   <div class="row">
     
-    <div><?php echo $uno ?></div>
+    <div><?php  $uno ?></div>
     
     <?php foreach($d['data'] as $row) { ?>
    <h4>
@@ -68,6 +68,6 @@ curl_close($curl); // Close request
   <?php echo '<p  style="color: #00ff00;">##### HOLA MUNDO !!!!!!!!!!</p><p>HOLA MUNDO !!!!!!!!!! (index.php)</p>' ?> 
   <?php echo '<p  style="color: #ffff00;">HOLA MUNDO !!!!!!!!!!</p><p>HOLA MUNDO !!!!!!!!!! (index.php)</p>' ?>
 
-  <h1>h1 ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡Hola Mundo?????????????????h1>
+  <h1>h1 ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡Hola Mundo:::::::::::::::::::::::::h1>
 </body>
 </html>
