@@ -7,7 +7,7 @@
 
   <title>Formulario contactos</title>
 </head>
-<body style="background: #818181;color: #ff4d00;font-size: 2rem;">
+<body style="background: #818181;font-size: 2rem;">
   <?php echo '<p  style="color: #00ff00;">HOLA MUNDO !!!!!!!!!!</p><p>HOLA MUNDO !!!!!!!!!! (index.php)</p>' ?> 
  <?php echo '<p  style="color: #ffff00;>HOLA MUNDO !!!!!!!!!!</p><p>HOLA MUNDO !!!!!!!!!! (index.php)</p>' ?>
 </body>
