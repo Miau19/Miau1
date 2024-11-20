@@ -3,7 +3,7 @@
 $url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest';
 $parameters = [
   'start' => '1',
-  'limit' => '50',
+  'limit' => '100',
   'convert' => 'USD'
 ];
 
@@ -27,19 +27,27 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl); // Send the request, save the response 
 $datos=json_decode($response,true);
 
+
 $dato=$datos['data'];
 
-$simbolo = $_POST['simbolo'];//RECOGE DATO DE FORMULARIO
-$simboloMayuscula0=strtoupper($simbolo);//CONVIERTE A MAYUSCULA
-//$simboloMayuscula=trim($simboloMayuscula0);//trim ELIMINA ESPACIOS VACIOS AL INICIO Y AL FINAL
-$simboloMayuscula = str_replace(" ", "", $simboloMayuscula0);//str_replace REEMPLAZA TODOS LOS ESPACIOS VACIOS 
+if ($_POST) {
+  $simbolo = $_POST['simbolo'];//RECOGE DATO DE FORMULARIO
+  $simboloMayuscula0=strtoupper($simbolo);//CONVIERTE A MAYUSCULA
+  //$simboloMayuscula=trim($simboloMayuscula0);//trim ELIMINA ESPACIOS VACIOS AL INICIO Y AL FINAL
+  $simboloMayuscula = str_replace(" ", "", $simboloMayuscula0);//str_replace REEMPLAZA TODOS LOS ESPACIOS VACIOS 
+  
+  $moneda='';
+  $quote='';
+  foreach ($dato as $d) {
+    if ($d['symbol'] == $simboloMayuscula) {
+      $moneda=$d['name'];
+      $quote=$d['quote'];
+  
+    } 
+  }
+  }
 
-$moneda='';
-foreach ($dato as $d) {
-  if ($d['symbol'] == $simboloMayuscula) {
-    $moneda=$d['name'];
-  } 
-}
+//print_r($moneda); 
 
 curl_close($curl); // Close request
 
@@ -51,39 +59,50 @@ curl_close($curl); // Close request
   <meta charset="UTF-8">
   <title>Nombre de criptomonedas</title>
 </head>
-<body id="onload" onload="" style="background: #333333;font-size: 1rem;color: #cacaca;">
+<body id="onload" onload="" style="background: #333333;font-size: 1rem;color: #cacaca;"> 
 
+<!-- BLOQUE 1 -->
   <div style="background: #222222;">
-  'start' => '1', 'limit' => '50': <br>
+  'start' => '1', 'limit' => '100': <br>
   <?php foreach($datos['data'] as $r) { 
     echo "(".$r['cmc_rank'].") " .$r['name']."&nbsp;&nbsp;".$r['symbol']."&nbsp;&nbsp;".","."&nbsp;&nbsp;";
   } 
   ?>
-  
+  <br><br>
+  Obtener nombre y simbolo de <?php if ($_POST) {echo "&nbsp;". $simboloMayuscula; }?>:
   <div style="display: flex;justify-content: start;align-items: center;">
-   <p id='moneda' style="background: #000099;font-size: 2rem; ">
-    <?php echo $moneda ?>
+   <p id='moneda' style="background: #000099;font-size: 2rem; margin: 0.5rem">
+    <?php if ($_POST) { echo $moneda;} ?>
    </p>
-   <p id='symbol' style="background: #000099;font-size: 2rem; opacity: 0.5;">
-    <?php echo "&nbsp;". $simboloMayuscula ?>
+   <p id='symbol' style="background: #000099;font-size: 2rem; opacity: 0.5; margin: 0.5rem">
+    <?php if ($_POST) {echo "&nbsp;". $simboloMayuscula;} ?>
    </p>
   </div>
-  <?php echo '<div id="nombre" style="display:none;background: rgb(100, 0, 0);">xxx</div><br>' ?>
+  <div id="nombre" style="display:none;background: rgb(100, 0, 0);">xxx</div><br>
 
   <form action="index.php" method="post">
   Escribir simbolo:  
   <input type="text" id="simbolo" name="simbolo" value="" style="border: solid 1px #7e7e7e;padding: 0.25rem;">
   <input type="submit" value="Enviar" style=" border: solid 1px #7e7e7e;border-radius: 25%;padding: 0.25rem;"><br><br>
   </form>
-  </div>
+  </div><br><br>
+<!-- FIN DE:  BLOQUE 1  -->
 
+<!-- BLOQUE 2 -->
+ Obtener datos de <?php if ($_POST) { echo "&nbsp;". $simboloMayuscula;} ?>:
+ <div style="background: #444444;">
+   <div id="texto0" style="color: #550099;">
+   <?php if ($_POST) {print_r($quote);} ?> <?php echo '<br><br>' ?> 
+   </div><br>
+   Coinmarketcap(cambio cada 60s, actualizar pagina):
+   <div id="texto" style="color: #00ff00;background: rgb(12, 0, 24);   ;display: flex;justify-content: start;align-items: center;text-align: left;">
+   </div><br>
+ </div>
+<!-- FIN DE:  BLOQUE 2  -->
 
-  <!-- <script src="index.js"></script> -->
+<!-- <script src="index.js"></script> -->
 
-  <script>
-    function moneda() {
-      //document.getElementById('nombre').innerHTML=document.getElementById('moneda').textContent;
-    }
+<script>
     function F1(m,n) { //FORMATEA CON n DECIMALES 
      let cadena= new String(m), rgx = /(\d+)(\d{3})/, ceros='',nuevaCadena='', decimal, d, nuevaParteEntera='', e; //console.log('cadena====',cadena);//var x = cadena.replace(/,/g,"").split(".");
      (n==undefined || n==0 || n=='')? n=Number(n) : n=Number(n)//n=2: PARA UN RETORNO CON DOS DECIMALES COMO MINIMO
@@ -197,11 +216,11 @@ curl_close($curl); // Close request
       +'fully_diluted_market_cap : '+F1(fully_diluted_market_cap,9)+'<br>'
       ;
     }
-    //datos();
+    datos();
 
     // var timerID; 
     // function startTimer() {timerID=window.setInterval(datos,1000);}
     // startTimer() ;
-  </script>
+</script>
 </body>
 </html>
