@@ -70,7 +70,7 @@ curl_close($curl); // Close request
   </div>
   <?php echo '<div id="nombre" style="display:none;background: rgb(100, 0, 0);">xxx</div><br>' ?>
 
-  <form action="index2.php" method="post">
+  <form action="index.php" method="post">
   Escribir simbolo:  
   <input type="text" id="simbolo" name="simbolo" value="" style="border: solid 1px #7e7e7e;padding: 0.25rem;">
   <input type="submit" value="Enviar" style=" border: solid 1px #7e7e7e;border-radius: 25%;padding: 0.25rem;"><br><br>
