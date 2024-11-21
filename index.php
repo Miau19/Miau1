@@ -62,7 +62,7 @@ curl_close($curl); // Close request
 <body id="onload" onload="" style="background: #333333;font-size: 1rem;color: #cacaca;"> 
 
 <!-- BLOQUE 1 -->
-  <div style="background: #222222;">
+  <div style="background: #000099;">
   'start' => '1', 'limit' => '100': <br>
   <?php foreach($datos['data'] as $r) { 
     echo "(".$r['cmc_rank'].") " .$r['name']."&nbsp;&nbsp;".$r['symbol']."&nbsp;&nbsp;".","."&nbsp;&nbsp;";
