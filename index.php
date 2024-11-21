@@ -82,7 +82,7 @@ curl_close($curl); // Close request
 
   <form action="index.php" method="post">
   Escribir simbolo:  
-  <input type="text" id="simbolo" name="simbolo" value="" style="border: solid 1px #7e7e7e;padding: 0.25rem;">
+  <input type="text" id="simbolo" name="simbolo" value="BTC" style="border: solid 1px #7e7e7e;padding: 0.25rem;">
   <input type="submit" value="Enviar" style=" border: solid 1px #7e7e7e;border-radius: 25%;padding: 0.25rem;"><br><br>
   </form>
   </div><br><br>
@@ -220,7 +220,7 @@ curl_close($curl); // Close request
 
     // var timerID; 
     // function startTimer() {timerID=window.setInterval(datos,1000);}
-    // startTimer() ;
+    startTimer() ;
 </script>
 </body>
 </html>
