@@ -87,9 +87,11 @@ curl_close($curl); // Close request
 
   <form action="iframeindex.php" method="post">
   Escribir simbolo:  
-  <input type="text" id="simbolo" name="simbolo" value="BTC" style="border: solid 1px #7e7e7e;padding: 0.25rem;">
-  <input type="submit" id="enviar" value="Enviar" style=" border: solid 1px #7e7e7e;border-radius: 25%;padding: 0.25rem;"><br><br>
+  <input type="text" id="simbolo" name="simbolo" value="BTC" style="border: solid 1px #7e7e7e;padding: 0.5rem;"> 
+  <input type="submit" id="enviar" value="Enviar" style=" border: solid 1px #7e7e7e;border-radius: 25%;padding: 0.5rem;"><br><br>
   </form>
+  <input type="button" id="timer" value="Stop timer" onclick="timer()" style=" border: solid 1px #7e7e7e;border-radius: 25%;padding: 0.5rem;">
+
   </div><br>
 <!-- FIN DE:  BLOQUE 1  -->
 
@@ -108,6 +110,7 @@ curl_close($curl); // Close request
 <!-- <script src="index.js"></script> -->
 
 <script>
+  let TIMER=0;
     function F1(m,n) { //FORMATEA CON n DECIMALES 
      let cadena= new String(m), rgx = /(\d+)(\d{3})/, ceros='',nuevaCadena='', decimal, d, nuevaParteEntera='', e; //console.log('cadena====',cadena);//var x = cadena.replace(/,/g,"").split(".");
      (n==undefined || n==0 || n=='')? n=Number(n) : n=Number(n)//n=2: PARA UN RETORNO CON DOS DECIMALES COMO MINIMO
@@ -234,7 +237,11 @@ curl_close($curl); // Close request
 
     var timerID; 
     function startTimer() {timerID=window.setInterval(enviar,5000);}
-    //startTimer() ;
+    function stopTimer() {clearInterval(timerID);} 
+    function timer(){
+      (TIMER==0)? (stopTimer(),TIMER=1,document.getElementById('timer').value='Start timer'):(startTimer(),TIMER=0,document.getElementById('timer').value='Stop timer');
+    }
+    
 </script>
 </body>
 </html>
