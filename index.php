@@ -59,7 +59,7 @@ curl_close($curl); // Close request
   <meta charset="UTF-8">
   <title>Nombre de criptomonedas</title>
 </head>
-<body id="onload" onload="startTimer()" style="background: #999900;font-size: 1rem;color: #cacaca;"> 
+<body id="onload" onload="startTimer()" style="background: #000000;font-size: 1rem;color: #cacaca;"> 
 
 <div id="reloj"  style="background: #ff0000;font-size: 1rem;color: #999999;">xxx</div>
 
@@ -230,7 +230,7 @@ curl_close($curl); // Close request
     }
 
     var timerID; 
-    function startTimer() {timerID=window.setInterval(enviar,1000);}
+    function startTimer() {timerID=window.setInterval(enviar,5000);}
     //startTimer() ;
 </script>
 </body>
