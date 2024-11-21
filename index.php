@@ -59,7 +59,7 @@ curl_close($curl); // Close request
   <meta charset="UTF-8">
   <title>Nombre de criptomonedas</title>
 </head>
-<body id="onload" onload="enviar()" style="background: #00cc00;font-size: 1rem;color: #cacaca;"> 
+<body id="onload" onload="enviar()" style="background: #0000bb;font-size: 1rem;color: #cacaca;"> 
 <div id="reloj"></div>
 <!-- BLOQUE 1 -->
   <div style="background: #000099;">
@@ -228,8 +228,8 @@ curl_close($curl); // Close request
     startTimer() ;
       document.getElementById("reloj").innerText=ss;
     datos();
-      document.getElementById("myCheck").click();
-      //document.getElementById("enviar").click();
+      //document.getElementById("myCheck").click();
+      document.getElementById("enviar").click();
      //document.getElementById("enviar").addEventListener("clic", (e) =>{/* document.getElementById("marcoTabla1").style.border='1px solid '+r */}); 
     }
   
