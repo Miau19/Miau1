@@ -59,9 +59,9 @@ curl_close($curl); // Close request
   <meta charset="UTF-8">
   <title>Nombre de criptomonedas</title>
 </head>
-<body id="onload" onload="startTimer()" style="background: #00bbbb;font-size: 1rem;color: #cacaca;"> 
+<body id="onload" onload="startTimer()" style="background: #009900;font-size: 1rem;color: #cacaca;"> 
 
-<div id="reloj"></div>
+<div id="reloj"  style="background: #ff0000;font-size: 1rem;color: #999999;">xxx</div>
 
 <!-- BLOQUE 1 -->
   <div style="background: #0000aa;">
@@ -221,18 +221,16 @@ curl_close($curl); // Close request
     ///datos();
 
     function enviar() {
-      datos();
+      //datos();
       //GENERAR TIEMPO 1:
       Date.prototype.addMillisecs = function(d) { this.setTime(this.getTime() + (d)); return this; }
       var mydate0=new Date() , ss = new String(mydate0.getSeconds()); 
       document.getElementById("reloj").innerText=ss;
-      //document.getElementById("myCheck").click();
-      document.getElementById("enviar").click();
-     //document.getElementById("enviar").addEventListener("clic", (e) =>{/* document.getElementById("marcoTabla1").style.border='1px solid '+r */}); 
+      //document.getElementById("enviar").click();
     }
 
     var timerID; 
-    function startTimer() {timerID=window.setInterval(enviar,5000);}
+    function startTimer() {timerID=window.setInterval(enviar,1000);}
     //startTimer() ;
 </script>
 </body>
