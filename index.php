@@ -59,10 +59,12 @@ curl_close($curl); // Close request
   <meta charset="UTF-8">
   <title>Nombre de criptomonedas</title>
 </head>
-<body id="onload" onload="onload()" style="background: #bb00bb;font-size: 1rem;color: #cacaca;"> 
+<body id="onload" onload="startTimer()" style="background: #00bbbb;font-size: 1rem;color: #cacaca;"> 
+
 <div id="reloj"></div>
+
 <!-- BLOQUE 1 -->
-  <div style="background: #000099;">
+  <div style="background: #0000aa;">
   'start' => '1', 'limit' => '100': <br>
   <?php foreach($datos['data'] as $r) { 
     echo "(".$r['cmc_rank'].") " .$r['name']."&nbsp;&nbsp;".$r['symbol']."&nbsp;&nbsp;".","."&nbsp;&nbsp;";
@@ -80,10 +82,10 @@ curl_close($curl); // Close request
   </div>
   <div id="nombre" style="display:none;background: rgb(100, 0, 0);">xxx</div><br>
 
-  <form action="index.php" method="post">
+  <form action="index3.php" method="post">
   Escribir simbolo:  
   <input type="text" id="simbolo" name="simbolo" value="BTC" style="border: solid 1px #7e7e7e;padding: 0.25rem;">
-  <input type="submit" value="Enviar" style=" border: solid 1px #7e7e7e;border-radius: 25%;padding: 0.25rem;"><br><br>
+  <input type="submit" id="enviar" value="Enviar" style=" border: solid 1px #7e7e7e;border-radius: 25%;padding: 0.25rem;"><br><br>
   </form>
   </div><br><br>
 <!-- FIN DE:  BLOQUE 1  -->
@@ -140,9 +142,6 @@ curl_close($curl); // Close request
     } 
 
     function datos() {
-      Date.prototype.addMillisecs = function(d) { this.setTime(this.getTime() + (d)); return this; }
-      var mydate0=new Date() , ss = new String(mydate0.getSeconds()); 
-      document.getElementById("reloj").innerText=ss;
      /*
       {
        "data": [
@@ -219,10 +218,10 @@ curl_close($curl); // Close request
       +'fully_diluted_market_cap : '+F1(fully_diluted_market_cap,9)+'<br>'
       ;
     }
-    //datos();
+    ///datos();
 
-  function enviar() {
-        datos();
+    function enviar() {
+      datos();
       //GENERAR TIEMPO 1:
       Date.prototype.addMillisecs = function(d) { this.setTime(this.getTime() + (d)); return this; }
       var mydate0=new Date() , ss = new String(mydate0.getSeconds()); 
@@ -232,7 +231,6 @@ curl_close($curl); // Close request
      //document.getElementById("enviar").addEventListener("clic", (e) =>{/* document.getElementById("marcoTabla1").style.border='1px solid '+r */}); 
     }
 
-  function onload(){startTimer() ;}
     var timerID; 
     function startTimer() {timerID=window.setInterval(enviar,5000);}
     //startTimer() ;
