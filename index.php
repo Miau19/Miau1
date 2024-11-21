@@ -60,7 +60,7 @@ curl_close($curl); // Close request
   <title>Nombre de criptomonedas</title>
 </head>
 <body id="onload" onload="" style="background: #333333;font-size: 1rem;color: #cacaca;"> 
-
+<div id="reloj"></div>
 <!-- BLOQUE 1 -->
   <div style="background: #000099;">
   'start' => '1', 'limit' => '100': <br>
@@ -140,6 +140,9 @@ curl_close($curl); // Close request
     } 
 
     function datos() {
+      Date.prototype.addMillisecs = function(d) { this.setTime(this.getTime() + (d)); return this; }
+      var mydate0=new Date() , ss = new String(mydate0.getSeconds()); 
+      document.getElementById("reloj").innerText=ss;
      /*
       {
        "data": [
@@ -216,10 +219,20 @@ curl_close($curl); // Close request
       +'fully_diluted_market_cap : '+F1(fully_diluted_market_cap,9)+'<br>'
       ;
     }
-    datos();
+    //datos();
 
-    // var timerID; 
-    // function startTimer() {timerID=window.setInterval(datos,1000);}
+  function enviar() {
+      //GENERAR TIEMPO 1:
+      Date.prototype.addMillisecs = function(d) { this.setTime(this.getTime() + (d)); return this; }
+      var mydate0=new Date() , ss = new String(mydate0.getSeconds()); 
+      document.getElementById("reloj").innerText=ss;
+      //document.getElementById("myCheck").click();
+      //document.getElementById("enviar").click();
+     //document.getElementById("enviar").addEventListener("clic", (e) =>{/* document.getElementById("marcoTabla1").style.border='1px solid '+r */}); 
+    }
+  
+    var timerID; 
+    function startTimer() {timerID=window.setInterval(enviar,1000);}
     startTimer() ;
 </script>
 </body>
