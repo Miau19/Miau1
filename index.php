@@ -59,7 +59,7 @@ curl_close($curl); // Close request
   <meta charset="UTF-8">
   <title>Nombre de criptomonedas</title>
 </head>
-<body id="onload" onload="startTimer()" style="background: #009900;font-size: 1rem;color: #cacaca;"> 
+<body id="onload" onload="startTimer()" style="background: #999900;font-size: 1rem;color: #cacaca;"> 
 
 <div id="reloj"  style="background: #ff0000;font-size: 1rem;color: #999999;">xxx</div>
 
@@ -218,7 +218,7 @@ curl_close($curl); // Close request
       +'fully_diluted_market_cap : '+F1(fully_diluted_market_cap,9)+'<br>'
       ;
     }
-    ///datos();
+    datos();
 
     function enviar() {
       //datos();
@@ -226,7 +226,7 @@ curl_close($curl); // Close request
       Date.prototype.addMillisecs = function(d) { this.setTime(this.getTime() + (d)); return this; }
       var mydate0=new Date() , ss = new String(mydate0.getSeconds()); 
       document.getElementById("reloj").innerText=ss;
-      //document.getElementById("enviar").click();
+      document.getElementById("enviar").click();
     }
 
     var timerID; 
