@@ -65,7 +65,9 @@
 </style>
 </head>
 <body >
-    <?php echo '<div style="background: #000000;padding: 0.5rem;border-bottom:  1px solid var(--border-color);    color: var(--text-color); font-size: var(--font-size2);font-family: var(--font-family2); font-weight: var(--font-weight2);;">PRECIO DE CRIPTOMONEDAS</div> '.
+    <?php echo '<div style="background: #000000;position: fixed;width: 100%;height:2.0rem;  display: flex;justify-content: start;align-items: center; 
+    padding-left: 0.5rem; border-bottom: 1px solid var(--border-color);  color: var(--text-color); font-size: var(--font-size2);font-family: var(--font-family2); font-weight: var(--font-weight2);;">
+    PRECIO DE CRIPTOMONEDAS</div> '.
      '<input type="text" value="0" style="display: none;justify-content: start;align-items: center;background: #00aaaa;border: solid 1px #7e7e7e;padding: 0.5rem;" >
       <input type="text" style="display: none;justify-content: start;align-items: center;background: #00aaaa;border: solid 1px #7e7e7e;padding: 0.5rem;" >'
     ?>
