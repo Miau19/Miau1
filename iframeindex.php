@@ -248,7 +248,7 @@ curl_close($curl); // Close request
   transform: translateY(0) scale(1);
   }
   }
-  .contenido-opcion {margin: 0.5rem;;padding: 0.5rem;
+  .contenido-opcion {margin: 0.5rem;;padding: 0.5rem;background:  var(--bg-color);
     display: flex;justify-content: start;align-items: center;
   font-size: var(--font-size1);font-family: var(--font-family1);font-weight: var(--font-weight1);
   white-space: nowrap;
@@ -448,9 +448,9 @@ curl_close($curl); // Close request
       ,ceros=''; 
       for (let i = 0; i < D1.length; i++) {// ← CUENTA CEROS DESPUES DEL PUNTO 
         if (D1.charAt(i)!="0") break; ceros += D1[i];
-      }console.log('D1 ceros  ceros.length ..............',ceros, ceros.length);
+      }
 
-      let D2=D1.substring(0 , ceros.length+2); console.log('D2-----------',D2);
+      let D2=D1.substring(0 , ceros.length+2); 
      
       if (E1.length > 3) {// ← SI PARTE ENTERA ES MAYOR A TRES CIFRAS RETORNA: 3,210.55  3,210,567.55 ...
         n1=E1+'.'+(String(a).split('.'))[1];
@@ -587,14 +587,14 @@ curl_close($curl); // Close request
     , opciones3 = document.querySelector('#opciones3')
     , contenidoSelect3 = document.querySelector('#select3 .contenido-select3');
     for (let y = 0; y < document.getElementsByName('contenido_opcion3').length; y++) { // RECORRE CADA CASILLA
-        document.getElementsByName('contenido_opcion3')[y].addEventListener('click', function (e) {
-        //if (y) {
-          let s = document.getElementsByName('contenido_opcion3')[y].textContent;
-          simboloC.innerText = s;
-          simbolo.value=s;
+      let o=document.getElementsByName('contenido_opcion3')[y];  
+      o.addEventListener('click', function (e) {
+        if (o.textContent != '-------') {
+          simboloC.innerText = o.textContent;
+          simbolo.value=o.textContent;
           document.getElementById("enviar").click();
           opciones3.style.display='none'; SIMBOLO=0;
-        //}
+        } 
        })
     } 
     select3.addEventListener('click', function () {/// height: 12.25rem;
@@ -605,11 +605,14 @@ curl_close($curl); // Close request
     ///%%%%%%%%%%%% FIN DE LISTA DE OPCIONES 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
     //CASILLA id="buscar" :
-document.getElementById('buscar').addEventListener("input", (e) => {
-  let cadena=buscar.value.toUpperCase().replace(/ /g, '');
-  buscado.textContent=cadena;
-  
-}); 
+    document.getElementById('buscar').addEventListener("input", (e) => {
+    let cadena=buscar.value.toUpperCase().replace(/ /g, '');
+    if (cadena=='') {
+      buscado.textContent='-------';
+    }else{      buscado.textContent=cadena;
+    }
+    
+    }); 
   </script>
 </body>
 </html>
