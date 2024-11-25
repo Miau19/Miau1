@@ -3,7 +3,7 @@
 $url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest';
 $parameters = [
   'start' => '1',
-  'limit' => '200',
+  'limit' => '100',//CANTIDAD MAYOR A 5000 ARROJA ERROR 
   'convert' => 'USD'
 ];
 $headers = [
@@ -84,8 +84,8 @@ curl_close($curl); // Close request
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
-  <meta charset="UTF-8">
-  <title>Nombre de criptomonedas</title>
+<meta charset="UTF-8">
+<title>Nombre de criptomonedas</title>
 <style type="text/css">
   @import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
   /* 
@@ -109,7 +109,7 @@ curl_close($curl); // Close request
       --font-size2: 1.35rem; /*TAMAÑO PARA SUB TITULOS --font-size2: 0.86rem;*/ 
       --font-size3: 1rem; /*TAMAÑO PARA TITULOS --font-size3: 1.25rem; */
       --font-size4: 0.70rem; /*TAMAÑO PARA TELEF CON WIDTH 320PX --font-size4: 0.8rem; */
-      --font-size5: 2rem;/* PARA @media screen and  (max-width: 320px) */
+      --font-size5: 1.75rem;/* PARA @media screen and  (max-width: 320px) */
       --font-size6: 0.85rem;/* PARA NOMBRE DE CRIPTOMONEDA EN CARDs */
   
       --font-weight1: 700;  /*GROSOR PARA TEXTO TITULOS*/ 
@@ -131,7 +131,6 @@ curl_close($curl); // Close request
   
   html{background-color: var(--bg-color);}  /*  CORREGIR P' CUANDO TABLAS CREADAS SE DESBORDAN*/ 
   
-  
   body{
       background-color: var(--bg-color);
       margin: 0 0.5rem;
@@ -140,11 +139,13 @@ curl_close($curl); // Close request
       overflow:auto;
   
   }
-    body::-webkit-scrollbar{width: 10px;height: 10px;background: var(--bg-card-color);}
-    body::-webkit-scrollbar-track{      background: rgb(124, 124, 124) ;border-radius: 5px;}
-    body::-webkit-scrollbar-thumb{      background: rgb(   78, 78, 78);border-radius: 5px;}
-    body::-webkit-scrollbar-thumb:hover{background: rgb(   55, 55, 55);}
+  body::-webkit-scrollbar{width: 10px;height: 10px;background: var(--bg-card-color);}
+  body::-webkit-scrollbar-track{      background: rgb(124, 124, 124) ;border-radius: 5px;}
+  body::-webkit-scrollbar-thumb{      background: rgb(   78, 78, 78);border-radius: 5px;}
+  body::-webkit-scrollbar-thumb:hover{background: rgb(   55, 55, 55);}
   
+  .main{position: relative;top: 2.0rem}
+
   .container{
     background:  var(--bg-color);
     display: flex;justify-content: center;flex-direction: column;
@@ -164,13 +165,8 @@ curl_close($curl); // Close request
       cursor: pointer;
       transform: scaleX(1.125) scaleY(1.125) translateX(0px) translateY(0px); /*1 ANIMAR p */
   }
-  .textarea{
-    background: var(--bg-card-color);border: solid 1px rgb(169, 169, 169);
-    font-size: 0.75rem;color: var(--text-color); padding:0.25rem
-  }
-  .textarea0{
-    height: 4rem;overflow: auto;
-  }
+  .textarea{background: var(--bg-card-color);border: solid 1px rgb(169, 169, 169);font-size: 0.75rem;color: var(--text-color); padding:0.25rem}
+  .textarea0{height: 4rem;overflow: auto;}
   .textarea0::-webkit-scrollbar{width: 10px;height: 10px;background: var(--bg-card-color);}
   .textarea0::-webkit-scrollbar-track{      background: rgb(124, 124, 124) ;border-radius: 5px;}
   .textarea0::-webkit-scrollbar-thumb{      background: rgb(   78, 78, 78);border-radius: 5px;}
@@ -186,52 +182,50 @@ curl_close($curl); // Close request
 
   #symbol{opacity: 0.5;} 
 
-  .precio{background: #55005500;
+  .precio{
    font-family: var(--font-family1); 
    opacity: 1;padding: 0; margin: 0;
    color: #ff0000;
   }
 
-
   /* PARA LISTA DE OPCIONES */
   .div0{width: var(--width_LO1);height: var(--height_LO1); margin: 0px;background: #ff000000;}
   .contenedor3 {position: relative;width: 100%;height: 100%; ;}
   .select {
-  background: var(--bg-card-color);
-  position: relative; ;
-  height: var(--height_LO1); top: -0.9rem;
-  display: flex;justify-content: space-between;align-items: center;
-  box-shadow: var(--box-shadow1) ;
-  border-radius: var(--border-radius_tex);
-  cursor: pointer;
-  transition: .2s ease all;
+   background: var(--bg-card-color);
+   position: relative; ;
+   height: var(--height_LO1); top: -0.9rem;
+   display: flex;justify-content: space-between;align-items: center;
+   box-shadow: var(--box-shadow1) ;
+   border-radius: var(--border-radius_tex);
+   cursor: pointer;
+   transition: .2s ease all;
    padding: 0 0.50rem;
   }
   .select.active, .select:hover {box-shadow: var(--box-shadow1) ;}
   .select svg {width: var(--widhtSvg);height: var(--heightSvg);}
   .select svg path{fill:  var(--text-color); stroke-width: 4px;stroke: var(--text-color);}
-  .contenido-select3{padding: 0 0.0rem;width: 100% ;
-  color:  var(--text-color);
-  font-size: var(--font-size1);font-family: var(--font-family1);font-weight: var(--font-weight1);
+  .contenido-select3{padding: 0 0.0rem;width: 100% ;color:  var(--text-color);
+   font-size: var(--font-size1);font-family: var(--font-family1);font-weight: var(--font-weight1);
   } 
   .contenido-select3:hover {cursor: pointer;}
   
   
-  .opciones {
-  background:var(--bg-card-color); 
-  position: relative; ;
-  height: 0; width: calc(var(--width_LO1) + var(--n));left: calc((-1) * (var(--n) / 2)); top: -0.75rem;/* width: calc(var(--width_LO1)+(2*var(--n)));left: calc(-(var(--n)));  */
-  max-height: 15rem;
-  display: none;
-  border-radius: var(--border-radius_tex);
-  box-shadow: var(--box-shadow1) ;
+  .opciones {/* id= opciones3*/
+    background:var(--bg-card-color);
+    position: relative; ;
+    height: 0; width: calc(var(--width_LO1) + var(--n));left: calc((-1) * (var(--n) / 2)); top: -0.75rem;/* width: calc(var(--width_LO1)+(2*var(--n)));left: calc(-(var(--n)));  */
+    /*max-height: 20rem;*/
+    display: none;
+    border-radius: var(--border-radius_tex);
+    box-shadow: var(--box-shadow1) ;
   }
-  .opciones.active {display: block;height: 24.5rem;padding: 15rem; animation: fadeIn .3s forwards;}
+  .opciones.active {display: block;/*height: 20rem;*/padding: 0.25rem; animation: fadeIn .3s forwards;}
   
   .opciones0{
       display: block;
       position: relative;
-      height: 100%; 
+      height: 13rem; 
       overflow: auto;
    /* scrollbar-width: thin;   ancho de la barra de desplazamiento */
   }
@@ -240,6 +234,7 @@ curl_close($curl); // Close request
   .opciones0::-webkit-scrollbar-thumb{      background: rgb(   78, 78, 78);border-radius: 0.25rem;}
   .opciones0::-webkit-scrollbar-thumb:hover{background: rgb(   55, 55, 55);}
   .opciones0::-webkit-scrollbar-corner{background: var(--bg-card-color);}/* la esquina inferior de la barra de desplazamiento, donde se unen las barras de desplazamiento horizontal y vertical. */ 
+  
   @keyframes fadeIn {
   from {
   transform: translateY(-50px) scale(.5);
@@ -250,9 +245,9 @@ curl_close($curl); // Close request
   }
   .contenido-opcion {margin: 0.5rem;;padding: 0.5rem;background:  var(--bg-color);
     display: flex;justify-content: start;align-items: center;
-  font-size: var(--font-size1);font-family: var(--font-family1);font-weight: var(--font-weight1);
-  white-space: nowrap;
-  transition: .5s ease all;
+    font-size: var(--font-size1);font-family: var(--font-family1);font-weight: var(--font-weight1);
+    white-space: nowrap;
+    transition: .5s ease all;
   } 
 
   .contenido-opcion:hover{cursor: pointer;background:  var(--button-color);
@@ -263,147 +258,165 @@ curl_close($curl); // Close request
   .contenido-opcion0 input{background: var(--bg-color);width: 80%;border: 1px solid var(--border-color);padding: 0.5rem; margin: 0.5rem;}  
   .contenido-opcion0 input:hover{background:#00000000; } 
   /* FIN DE: PARA LISTA DE OPCIONES */
+
+  .table_quote{background: #0000ff;color: var(--text-color); font-size: var(--font-size3);font-family: var(--font-family2); font-weight: var(--font-weight2);}
+  .table_quote .td_quote1{background: #000011;border-bottom: 1px solid var(--border-color);}
+  .table_quote .td_quote2{background: #000011;border-bottom: 1px solid var(--border-color);text-align: right; padding: 0.5rem;margin: 0;}
+  .table_quote .td_quote2 span{background: #005500;white-space: nowrap;}
 </style>
 
 </head>
 <body id="onload" onload="onload()"> 
   
   <!-- BLOQUE 1 -->
-  <div class="container">
-
-    <div style="display: flex;justify-content: start;align-items: center;    color: var(--text-color); font-size: var(--font-size4);font-family: var(--font-family2); font-weight: var(--font-weight2);">
-      <div id="reloj">00</div>
-      <div class="button" id="timer" onclick="timer()" >Stop timer</div>
-      <div id="reloj2">00</div>
-    </div>
-    
-    <div style="background: #000055;display: flex;justify-content: center;align-items: center;border: solid 1px rgb(169, 169, 169);font-size: 0.75rem;color: #cccccc;" >
-      <p style="display: none;">'start' => '1', 'limit' => '100': </p>
-      <div class="textarea">
-        <div class="textarea0">
-         <?php foreach($datos['data'] as $r) { 
-           echo "(".$r['cmc_rank'].") " .$r['name']."&nbsp;&nbsp;".$r['symbol']."&nbsp;&nbsp;".","."&nbsp;&nbsp;";
-         } 
-         ?>
-        </div> 
-      </div>  
-    </div>
-    <p style="display: none;">Obtener nombre y simbolo de <?php if ($_POST) {echo "&nbsp;". $simboloMayuscula; }?>:</p>
-    <div class="criptomonedas">
-      <div ><span id='nombre'><?php if ($_POST) { echo $name;} ?></span></div>
-      <div ><span id='symbol'><?php if ($_POST) {echo $simboloMayuscula;} ?></span></div>
-      <div style="display: flex;justify-content: start;align-items: center;">
-        <div ><span id='precio' class="precio" ></span></div>
-        <div ><svg id="svgUP1"   style="display: none;fill: rgba(0,255,0,0.95); width: 1.5rem;height: 1.5rem; " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 3 24 20"><path d="M15,20H9V12H4.16L12,4.16L19.84,12H15V20Z" /></svg></div>
-        <div ><svg id="svgDOWN1" style="display: none;fill: rgba(255,0,0,0.95); width: 1.5rem;height: 1.5rem; " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 1 24 20"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z" /></svg></div>
-        <div><span class='usd'>USD</span></div>
+  <div class="main">
+    <div class="container">
+      <div style="display: flex;justify-content: start;align-items: center;    color: var(--text-color); font-size: var(--font-size4);font-family: var(--font-family2); font-weight: var(--font-weight2);">
+        <div id="reloj">00</div>
+        <div class="button" id="timer" onclick="timer()" >Stop timer</div>
+        <div id="reloj2">00</div>
       </div>
-    </div>
-    <form action="iframeindex.php" method="post" style="display: none; background: #000099;">
-     Escribir simbolo:  
-     <input type="text" id="simbolo" name="simbolo" style="background: #00aaaa;border: solid 1px #7e7e7e;padding: 0.5rem;" value=<?php if ($_POST) {print_r($symbol);} ?> > 
-     <input type="submit" id="enviar" value="Enviar"  onclick=""  style="background: #00aaaa; border: solid 1px #7e7e7e;border-radius: 6px;padding: 0.5rem;">
-    </form><br>
-
       
-    <!--div PARA LISTA DE OPCIONES -->
-    <div class="div0">
-      <div class="contenedor3">
-          <div class="selectbox">
-            <div class="select" id="select3">
-              <div class="contenido-select3" id="simboloC"></div>
-              <div >
-              <svg  class="svg1"  viewBox="0 -9 64 64" >
-                <path d="M32,37.21a2,2,0,0,1-1.28-.46l-28-23.21a2,2,0,1,1,2.55-3.08L32,32.62,58.72,10.46a2,2,0,1,1,2.55,3.08l-28,23.21A2,2,0,0,1,32,37.21Z"/>
-              </svg>
+      <div style="background: #000055;display: flex;justify-content: center;align-items: center;border: solid 1px rgb(169, 169, 169);font-size: 0.75rem;color: #cccccc;" >
+        <p style="display: none;">'start' => '1', 'limit' => '100': </p>
+        <div class="textarea">
+          <div class="textarea0">
+           <?php foreach($datos['data'] as $r) { 
+             echo "(".$r['cmc_rank'].") " .$r['name']."&nbsp;&nbsp;".$r['symbol']."&nbsp;&nbsp;".","."&nbsp;&nbsp;";
+           } 
+           ?>
+          </div> 
+        </div>  
+      </div>
+      <p style="display: none;">Obtener nombre y simbolo de <?php if ($_POST) {echo "&nbsp;". $simboloMayuscula; }?>:</p>
+      <div class="criptomonedas">
+        <div ><span id='nombre'><?php if ($_POST) { echo $name;} ?></span></div>
+        <div ><span id='symbol'><?php if ($_POST) {echo $simboloMayuscula;} ?></span></div>
+        <div style="display: flex;justify-content: start;align-items: center;">
+          <div ><span id='precio' class="precio" ></span></div>
+          <div style="display: flex;justify-content: center;align-items: center;" ><svg id="svgUP1"   style="display: none;fill: rgba(0,255,0,0.95); width: 1.5rem;height: 1.5rem; " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 3 24 20"><path d="M15,20H9V12H4.16L12,4.16L19.84,12H15V20Z" /></svg></div>
+          <div style="display: flex;justify-content: center;align-items: center;" ><svg id="svgDOWN1" style="display: none;fill: rgba(255,0,0,0.95); width: 1.5rem;height: 1.5rem; " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 1 24 20"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z" /></svg></div>
+          <div style="display: flex;justify-content: center;align-items: center;"><span class='usd'>USD</span></div>
+        </div>
+      </div>
+      <form action="iframeindex.php" method="post" style="display: none; background: #000099;">
+       Escribir simbolo:  
+       <input type="text" id="simbolo" name="simbolo" style="background: #00aaaa;border: solid 1px #7e7e7e;padding: 0.5rem;" value=<?php if ($_POST) {print_r($symbol);} ?> > 
+       <input type="submit" id="enviar" value="Enviar"  onclick=""  style="background: #00aaaa; border: solid 1px #7e7e7e;border-radius: 6px;padding: 0.5rem;">
+      </form><br>
+ 
+        
+      <!--div PARA LISTA DE OPCIONES -->
+      <div class="div0">
+        <div class="contenedor3">
+            <div class="selectbox">
+              <div class="select" id="select3">
+                <div class="contenido-select3" id="simboloC"></div>
+                <div >
+                <svg  class="svg1"  viewBox="0 -9 64 64" >
+                  <path d="M32,37.21a2,2,0,0,1-1.28-.46l-28-23.21a2,2,0,1,1,2.55-3.08L32,32.62,58.72,10.46a2,2,0,1,1,2.55,3.08l-28,23.21A2,2,0,0,1,32,37.21Z"/>
+                </svg>
+                </div>
+              </div>
+              <div class="opciones" id="opciones3">
+                <div class="contenido_opcion_fijo">
+                 <div class="contenido-opcion0"><input type="text" id="buscar"  placeholder="Escribir simbolo"></div>
+                 <div class="contenido-opcion" name="contenido_opcion3" id="buscado">-------</div>
+                </div>
+                <div class="opciones0" id="opciones03"> 
+                 <div class="contenido-opcion" name="contenido_opcion3">AVAX</div>
+                 <div class="contenido-opcion" name="contenido_opcion3">BNB</div>
+                 <div class="contenido-opcion" name="contenido_opcion3">BTC</div>
+                 <div class="contenido-opcion" name="contenido_opcion3">DOGE</div>
+                 <div class="contenido-opcion" name="contenido_opcion3">ETH</div>
+                 <div class="contenido-opcion" name="contenido_opcion3">SOL</div>
+                 <div class="contenido-opcion" name="contenido_opcion3">XRP</div>
+                 <div class="contenido-opcion" name="contenido_opcion3">NEAR</div>
+                 <div class="contenido-opcion" name="contenido_opcion3">ICP</div>
+                 <div class="contenido-opcion" name="contenido_opcion3">TAO</div>
+                 <div class="contenido-opcion" name="contenido_opcion3">FET</div>
+                 <div class="contenido-opcion" name="contenido_opcion3">RENDER</div>
+                 <div class="contenido-opcion" name="contenido_opcion3">GRT</div>
+                 <div class="contenido-opcion" name="contenido_opcion3">TIA</div>
+                 <div class="contenido-opcion" name="contenido_opcion3">MANTA</div>
+                 <div class="contenido-opcion" name="contenido_opcion3">PYTH</div>
+                 <div class="contenido-opcion" name="contenido_opcion3">PEPE</div>
+              </div>    
               </div>
             </div>
-            <div class="opciones" id="opciones3">
-            <div class="opciones0" id="opciones03"> 
-              
-              <div class="contenido-opcion0">
-                <input type="text" id="buscar"  placeholder="Escribir simbolo">
-              </div>
-              <div class="contenido-opcion" name="contenido_opcion3" id="buscado">-------</div>
-
-              <div class="contenido-opcion" name="contenido_opcion3">AVAX</div>
-              <div class="contenido-opcion" name="contenido_opcion3">BNB</div>
-              <div class="contenido-opcion" name="contenido_opcion3">BTC</div>
-              <div class="contenido-opcion" name="contenido_opcion3">DOGE</div>
-              <div class="contenido-opcion" name="contenido_opcion3">ETH</div>
-              <div class="contenido-opcion" name="contenido_opcion3">SOL</div>
-              <div class="contenido-opcion" name="contenido_opcion3">XRP</div>
-              <div class="contenido-opcion" name="contenido_opcion3">NEAR</div>
-              <div class="contenido-opcion" name="contenido_opcion3">ICP</div>
-              <div class="contenido-opcion" name="contenido_opcion3">TAO</div>
-              <div class="contenido-opcion" name="contenido_opcion3">FET</div>
-              <div class="contenido-opcion" name="contenido_opcion3">RENDER</div>
-              <div class="contenido-opcion" name="contenido_opcion3">GRT</div>
-              <div class="contenido-opcion" name="contenido_opcion3">TIA</div>
-              <div class="contenido-opcion" name="contenido_opcion3">MANTA</div>
-              <div class="contenido-opcion" name="contenido_opcion3">PYTH</div>
-              <div class="contenido-opcion" name="contenido_opcion3">PEPE</div>
-            </div>    
-            </div>
-          </div>
+        </div>
+      </div>
+      <!-- FIN DE: div PARA LISTA DE OPCIONES -->
+    </div> 
+<!--
+-->
+    <div style="overflow: auto;padding: 5px;background: #000000;">
+     <table class="table_quote" ><!--datos cotizaciones -->
+       <tr><td class="td_quote1">Cambio volumen 24h&nbsp;       </td> <td class="td_quote2"><span id="volume_24h">        </span></td></tr>
+       <tr><td class="td_quote1">Cambio volumen 24h&nbsp;       </td> <td class="td_quote2"><span id="volume_change_24h" ></span></td></tr>
+       <tr><td class="td_quote1">Cambio porcentual 1h&nbsp;     </td> <td class="td_quote2"><span id="percent_change_1h" ></span></td></tr>
+       <tr><td class="td_quote1">Cambio porcentual 1h&nbsp;     </td> <td class="td_quote2"><span id="percent_change_24h"></span></td></tr>
+       <tr><td class="td_quote1">Cambio porcentual 7d&nbsp;     </td> <td class="td_quote2"><span id="percent_change_7d" ></span></td></tr>
+       <tr><td class="td_quote1">Cambio porcentual 30d&nbsp;    </td> <td class="td_quote2"><span id="percent_change_30d"></span></td></tr>
+       <tr><td class="td_quote1">Cambio porcentual 60d&nbsp;    </td> <td class="td_quote2"><span id="percent_change_60d"></span></td></tr>
+       <tr><td class="td_quote1">Cambio porcentual 90d&nbsp;    </td> <td class="td_quote2"><span id="percent_change_90d"></span></td></tr>
+       <tr><td class="td_quote1">Capitalización de mercado&nbsp;</td> <td class="td_quote2"><span id="market_cap">        </span></td></tr>
+       <tr><td class="td_quote1">Dominio de la capitalización de mercado&nbsp;</td><td class="td_quote2"><span id="market_cap_dominance"></span></td></tr>
+     </table>
+    </div>
+   <!-- FIN DE:  BLOQUE 1  -->
+ 
+   <!-- BLOQUE 2 -->
+    <div style="display:inline;">
+ 
+     <div style="background: #00990022;display: none;justify-content: start;align-items: center;flex-wrap: wrap;font-size: 2rem;">
+       <div style="background: #00990022;">
+         <span style="background: #999900;">111</span>
+       </div>
+       <div style="background: #00990099;">
+         <span style="background: #999900;">222</span>
+       </div>
+       <div style="background: #009900dd;">
+         <span style="background: #999900;">333</span>
+       </div>
+     </div>
+ 
+      <div style="background: #000000;">
+      <div id="quote0" style="background: #880000;font-size: 0.75rem;">
+      quote0 ⇨⇨⇨⇨<br>
+        <?php print_r($quote0) ?> <?php echo '<br>' ?> 
+      </div>
+      <div id="name0" style="background: #440000;">
+        <?php print_r($name0) ?> <?php echo '<br>' ?> 
+      </div>
+      <div id="symbol0" style="background: #660000;">
+        <?php print_r($symbol0) ?> <?php echo '<br>' ?> 
+      </div>
+      
+      <div id="price0" style="background: #aa0000;">id="price"</div>
+      <br>
+       Obtener datos de <?php if ($_POST) { echo "&nbsp;". $simboloMayuscula;} ?>:
+       <div id="quote" style="color: #ff00ff;font-size: 0.75rem;">
+       quote ⇨⇨⇨⇨<br>
+        <?php if ($_POST) {print_r($quote);} ?> <?php echo '<br>' ?> 
+      </div>
+       <div id="symbol" style="color: #ff00ff;">
+        <?php if ($_POST) {print_r($symbol);} ?> <?php echo '<br>' ?> 
+      </div>
+      <div id="price" style="color: #ff00ff;font-size: 1.5rem;"></div>
+       Coinmarketcap(cambio cada 60s, actualizar pagina):
+      <div id="texto" style="color: #00ff00;background: rgb(12, 0, 24);   ;display: flex;justify-content: start;align-items: center;text-align: left;">
+         div id="texto"
+      </div><br>
       </div>
     </div>
-    <!-- FIN DE: div PARA LISTA DE OPCIONES -->
-
-
-  </div>  
- <!-- FIN DE:  BLOQUE 1  -->
-
- <!-- BLOQUE 2 -->
-  <div>
-
-   <div style="background: #00990022;display: none;justify-content: start;align-items: center;flex-wrap: wrap;font-size: 2rem;">
-     <div style="background: #00990022;">
-       <span style="background: #999900;">111</span>
-     </div>
-     <div style="background: #00990099;">
-       <span style="background: #999900;">222</span>
-     </div>
-     <div style="background: #009900dd;">
-       <span style="background: #999900;">333</span>
-     </div>
-   </div>
-
-    <div style="background: #000000;">
-    <div id="quote0" style="background: #880000;font-size: 0.75rem;">
-    quote0 ⇨⇨⇨⇨<br>
-      <?php print_r($quote0) ?> <?php echo '<br>' ?> 
-    </div>
-    <div id="name0" style="background: #440000;">
-      <?php print_r($name0) ?> <?php echo '<br>' ?> 
-    </div>
-    <div id="symbol0" style="background: #660000;">
-      <?php print_r($symbol0) ?> <?php echo '<br>' ?> 
-    </div>
+    <!-- FIN DE:  BLOQUE 2  -->
     
-    <div id="price0" style="background: #aa0000;">id="price"</div>
-    <br>
-     Obtener datos de <?php if ($_POST) { echo "&nbsp;". $simboloMayuscula;} ?>:
-     <div id="quote" style="color: #ff00ff;font-size: 0.75rem;">
-     quote ⇨⇨⇨⇨<br>
-      <?php if ($_POST) {print_r($quote);} ?> <?php echo '<br>' ?> 
-    </div>
-     <div id="symbol" style="color: #ff00ff;">
-      <?php if ($_POST) {print_r($symbol);} ?> <?php echo '<br>' ?> 
-    </div>
-    <div id="price" style="color: #ff00ff;font-size: 1.5rem;"></div>
-     Coinmarketcap(cambio cada 60s, actualizar pagina):
-    <div id="texto" style="color: #00ff00;background: rgb(12, 0, 24);   ;display: flex;justify-content: start;align-items: center;text-align: left;">
-       div id="texto"
-    </div><br>
-    </div>
-  </div>
- <!-- FIN DE:  BLOQUE 2  -->
- 
- <!-- <script src="index.js"></script> -->
+  </div><!-- FIN DE:  main  -->
+  <!-- <script src="index.js"></script> -->
 
  <script>
-    let TIMER=0, CONTADOR=0, price='', d1=13, precio1, old_price1=0 ,  r="rgba(255,0,0,0.95)", v='rgba(0,255,0,0.95)';
+    let TIMER=0, CONTADOR=0, price='', d1=13, precio1, old_price1=0 ,  r="rgba(255,0,0,0.95)", v='rgba(0,255,0,0.95)', fiat='USD';
     function F1(m,n) { // ← FORMATEA CON n DECIMALES 
      let cadena= new String(m), rgx = /(\d+)(\d{3})/, ceros='',nuevaCadena='', decimal, d, nuevaParteEntera='', e; //console.log('cadena====',cadena);//var x = cadena.replace(/,/g,"").split(".");
      (n==undefined || n==0 || n=='')? n=Number(n) : n=Number(n)//n=2: PARA UN RETORNO CON DOS DECIMALES COMO MINIMO
@@ -463,20 +476,6 @@ curl_close($curl); // Close request
     } 
 
     function datos() { // ← FUNCION PARA SEPARAR 'precio' de 'quote': 
-     /*
-     @[price] => 92100.810078196
-     @[volume_24h] => 72981638354.878
-     @[volume_change_24h] => -4.0925
-     @[percent_change_1h] => -0.97120962
-     @[percent_change_24h] => 0.37430519
-     @[percent_change_7d] => 3.55252826
-     @[percent_change_30d] => 34.04256665
-     @[percent_change_60d] => 45.56037248
-     @[percent_change_90d] => 50.48512072
-     @[market_cap] => 1822180265895.8
-     @[market_cap_dominance] => 59.3449
-     @[fully_diluted_market_cap] => 1934117011642.1
-     */
      let t0=quote.textContent.replace(/[[]/g,'@[');
        let t=t0.split('@').slice(2,14);
       price                = t[0].replace('[price] => ','');
@@ -527,6 +526,17 @@ curl_close($curl); // Close request
       svgDOWN1.style.display='inline';
       document.getElementById('precio').style.color=r;
       simboloC.innerHTML = document.getElementById('symbol').textContent;
+
+      document.getElementById('volume_24h').          innerHTML=F1(volume_24h          ,9)+' '+fiat;
+      document.getElementById('volume_change_24h').   innerHTML=F1(volume_change_24h   ,9)+' '+fiat;
+      document.getElementById('percent_change_1h').   innerHTML=F1(percent_change_1h   ,9)+' '+'%';
+      document.getElementById('percent_change_24h').  innerHTML=F1(percent_change_24h  ,9)+' '+'%';
+      document.getElementById('percent_change_7d').   innerHTML=F1(percent_change_7d   ,9)+' '+'%';
+      document.getElementById('percent_change_30d').  innerHTML=F1(percent_change_30d  ,9)+' '+'%';
+      document.getElementById('percent_change_60d').  innerHTML=F1(percent_change_60d  ,9)+' '+'%';
+      document.getElementById('percent_change_90d').  innerHTML=F1(percent_change_90d  ,9)+' '+'%';
+      document.getElementById('market_cap').          innerHTML=F1(market_cap          ,9)+' '+fiat;
+      document.getElementById('market_cap_dominance').innerHTML=F1(market_cap_dominance,9)+' '+'%';      
     }
     datos();
 
@@ -598,8 +608,9 @@ curl_close($curl); // Close request
        })
     } 
     select3.addEventListener('click', function () {/// height: 12.25rem;
-      (SIMBOLO==0)? (opciones3.style.display='block',opciones3.style.height='15rem',SIMBOLO=1) : 
+      (SIMBOLO==0)? (opciones3.style.display='block',opciones3.style.height='20rem',SIMBOLO=1) : 
       (opciones3.style.display='none',SIMBOLO=0);
+      timer();
     });
  
     ///%%%%%%%%%%%% FIN DE LISTA DE OPCIONES 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -607,11 +618,8 @@ curl_close($curl); // Close request
     //CASILLA id="buscar" :
     document.getElementById('buscar').addEventListener("input", (e) => {
     let cadena=buscar.value.toUpperCase().replace(/ /g, '');
-    if (cadena=='') {
-      buscado.textContent='-------';
-    }else{      buscado.textContent=cadena;
-    }
-    
+    if (cadena=='') buscado.textContent='-------';
+    else buscado.textContent=cadena;
     }); 
   </script>
 </body>
