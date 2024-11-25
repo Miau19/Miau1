@@ -3,7 +3,7 @@
 $url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest';
 $parameters = [
   'start' => '1',
-  'limit' => '100',
+  'limit' => '200',
   'convert' => 'USD'
 ];
 $headers = [
@@ -94,14 +94,14 @@ curl_close($curl); // Close request
   */  
   :root{   
       --html-color: hsla(240, 100%, 6%, 1.0);
-      --bg-color:rgb(28, 28, 28);           /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(0, 0%, 14%) */
-      --bg-card-color: rgb(17, 17, 17);      /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(0, 0%, 11%) */
+      --bg-color:rgb(18, 18, 18);           /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(0, 0%, 14%) */
+      --bg-card-color: rgb(40, 40, 40);      /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(0, 0%, 11%) */
       --pr1mary-color: rgb(192, 192, 192);/* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(228, 100%, 30%) */
       --text-color:rgba(234, 234, 234, 0.75);    /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(214, 7%, 79%) */
       --border-color: rgb(169, 169, 169);
       --border-tr-color: rgba(193, 193, 193, 0.5);
-      --border-radius_tex: 0.5rem;  /* PARA ARCO INTERNO */
-      --border-radius: 0.75rem;  /* PARA ARCO EXTERNO (ARCO INTERNO + PADDING)*/
+      --border-radius_tex: 0.25rem;  /* PARA ARCO INTERNO */
+      --border-radius: 0.25rem;  /* PARA ARCO EXTERNO (ARCO INTERNO + PADDING)*/
       --transition: color 0.1s, background-color 0.6s ease-in-out;
       --font-family1: 'Saira', 'Saira Expanded SemiBold', sans-serif;/*font-family: "Roboto", sans-serif;*/ /*font-family: Impact, sans-serif;'Times New Roman'; 'Consolas'; 'Oswald'*/
       --font-family2: 'Saira', 'Saira Expanded SemiBold', sans-serif; /*PARA NUMEROS*/ 
@@ -109,11 +109,11 @@ curl_close($curl); // Close request
       --font-size2: 1.35rem; /*TAMAÑO PARA SUB TITULOS --font-size2: 0.86rem;*/ 
       --font-size3: 1rem; /*TAMAÑO PARA TITULOS --font-size3: 1.25rem; */
       --font-size4: 0.70rem; /*TAMAÑO PARA TELEF CON WIDTH 320PX --font-size4: 0.8rem; */
-      --font-size5: 0.64rem;/* PARA @media screen and  (max-width: 320px) */
+      --font-size5: 2rem;/* PARA @media screen and  (max-width: 320px) */
       --font-size6: 0.85rem;/* PARA NOMBRE DE CRIPTOMONEDA EN CARDs */
   
       --font-weight1: 700;  /*GROSOR PARA TEXTO TITULOS*/ 
-      --font-weight2: 900;  /*GROSOR TEXTO NORMAL*/
+      --font-weight2: 600;  /*GROSOR TEXTO NORMAL*/
       --box-shadow1: 0 0 2px var(--border-color); /* --box-shadow1: none . Elimina (o simplemente no establece) sombra en un elemento.*/
       --box-shadow2: 0 0 4px var(--border-color); /* --box-shadow1: none . Elimina (o simplemente no establece) sombra en un elemento.*/
    
@@ -122,87 +122,282 @@ curl_close($curl); // Close request
       /* VALORES PARA CONTROL DE LISTA DE OPCIONES: */
       --height_LO1: 1.8rem;--height_LO2: 1.5rem;--height_LO3: 1.5rem;
       --width_LO1: 12rem;--width_LO2: 10rem;--width_LO3: 6.5rem;
-      --n: 0.6rem;
+      --n: 0rem;
       /*FIN DE: VALORES PARA CONTROL DE LISTA DE OPCIONES */
       --widhtSvg: 0.5rem; --heightSvg: 0.5rem; /* VALORES PARA LOS svg DE TABLAS*/
       --button-color: rgb(1, 61, 225);/* --button-color: rgb(1, 61, 225); */
       --n2:20px; --n3:20px;    
   }
   
-  .precio{
-  font-family: var(--font-family1);font-weight: var(--font-weight2); 
-  font-size: 2rem;font-weight: 400; opacity: 1;padding: 0; margin: 0rem;
-  color: #ff0000;
+  html{background-color: var(--bg-color);}  /*  CORREGIR P' CUANDO TABLAS CREADAS SE DESBORDAN*/ 
+  
+  
+  body{
+      background-color: var(--bg-color);
+      margin: 0 0.5rem;
+      color: var(--text-color);/* "Roboto",'Poppins', 'Oswald', sans-serif; sans-serif, 'Times New Roman', 'Arial Narrow', fantasy, Impact */
+      font-size: 1.2rem;font-weight: 700;
+      overflow:auto;
+  
   }
+    body::-webkit-scrollbar{width: 10px;height: 10px;background: var(--bg-card-color);}
+    body::-webkit-scrollbar-track{      background: rgb(124, 124, 124) ;border-radius: 5px;}
+    body::-webkit-scrollbar-thumb{      background: rgb(   78, 78, 78);border-radius: 5px;}
+    body::-webkit-scrollbar-thumb:hover{background: rgb(   55, 55, 55);}
+  
+  .container{
+    background:  var(--bg-color);
+    display: flex;justify-content: center;flex-direction: column;
+    padding: 0px;margin: 0;
+  }
+
+  .button{
+    text-align: center;
+    padding: 0.25rem 0.5rem;margin: 0.5rem;
+    color: var(--text-color); font-size: var(--font-size4);font-family: var(--font-family2); font-weight: var(--font-weight1);
+    background-color:  var(--button-color);
+    border-radius: var(--border-radius); 
+    transition: var(--transition); transition: 0.2s; 
+  }
+  .button:hover {
+      background-color:rgb(29, 82, 225);
+      cursor: pointer;
+      transform: scaleX(1.125) scaleY(1.125) translateX(0px) translateY(0px); /*1 ANIMAR p */
+  }
+  .textarea{
+    background: var(--bg-card-color);border: solid 1px rgb(169, 169, 169);
+    font-size: 0.75rem;color: var(--text-color); padding:0.25rem
+  }
+  .textarea0{
+    height: 4rem;overflow: auto;
+  }
+  .textarea0::-webkit-scrollbar{width: 10px;height: 10px;background: var(--bg-card-color);}
+  .textarea0::-webkit-scrollbar-track{      background: rgb(124, 124, 124) ;border-radius: 5px;}
+  .textarea0::-webkit-scrollbar-thumb{      background: rgb(   78, 78, 78);border-radius: 5px;}
+  .textarea0::-webkit-scrollbar-thumb:hover{background: rgb(   55, 55, 55);}
+
+  .criptomonedas{
+    background: #00990000;display: flex;justify-content: start;align-items: center;flex-wrap: wrap;padding: 0;margin: 0;
+    color: var(--text-color); font-size: var(--font-size5);font-family: var(--font-family2); font-weight: var(--font-weight2);
+  }
+  .criptomonedas span{margin-right: 1rem;}
+  .criptomonedas svg{margin-left: -1rem;}
+  .criptomonedas .usd{font-size: var(--font-size5);font-family: var(--font-family2); font-weight: var(--font-weight2);}
+
+  #symbol{opacity: 0.5;} 
+
+  .precio{background: #55005500;
+   font-family: var(--font-family1); 
+   opacity: 1;padding: 0; margin: 0;
+   color: #ff0000;
+  }
+
+
+  /* PARA LISTA DE OPCIONES */
+  .div0{width: var(--width_LO1);height: var(--height_LO1); margin: 0px;background: #ff000000;}
+  .contenedor3 {position: relative;width: 100%;height: 100%; ;}
+  .select {
+  background: var(--bg-card-color);
+  position: relative; ;
+  height: var(--height_LO1); top: -0.9rem;
+  display: flex;justify-content: space-between;align-items: center;
+  box-shadow: var(--box-shadow1) ;
+  border-radius: var(--border-radius_tex);
+  cursor: pointer;
+  transition: .2s ease all;
+   padding: 0 0.50rem;
+  }
+  .select.active, .select:hover {box-shadow: var(--box-shadow1) ;}
+  .select svg {width: var(--widhtSvg);height: var(--heightSvg);}
+  .select svg path{fill:  var(--text-color); stroke-width: 4px;stroke: var(--text-color);}
+  .contenido-select3{padding: 0 0.0rem;width: 100% ;
+  color:  var(--text-color);
+  font-size: var(--font-size1);font-family: var(--font-family1);font-weight: var(--font-weight1);
+  } 
+  .contenido-select3:hover {cursor: pointer;}
+  
+  
+  .opciones {
+  background:var(--bg-card-color); 
+  position: relative; ;
+  height: 0; width: calc(var(--width_LO1) + var(--n));left: calc((-1) * (var(--n) / 2)); top: -0.75rem;/* width: calc(var(--width_LO1)+(2*var(--n)));left: calc(-(var(--n)));  */
+  max-height: 15rem;
+  display: none;
+  border-radius: var(--border-radius_tex);
+  box-shadow: var(--box-shadow1) ;
+  }
+  .opciones.active {display: block;height: 24.5rem;padding: 15rem; animation: fadeIn .3s forwards;}
+  
+  .opciones0{
+      display: block;
+      position: relative;
+      height: 100%; 
+      overflow: auto;
+   /* scrollbar-width: thin;   ancho de la barra de desplazamiento */
+  }
+  .opciones0::-webkit-scrollbar{width: 10px;height: 10px;background: var(--bg-card-color);}
+  .opciones0::-webkit-scrollbar-track{      background: rgb(124, 124, 124);border-radius: 0.25rem;}
+  .opciones0::-webkit-scrollbar-thumb{      background: rgb(   78, 78, 78);border-radius: 0.25rem;}
+  .opciones0::-webkit-scrollbar-thumb:hover{background: rgb(   55, 55, 55);}
+  .opciones0::-webkit-scrollbar-corner{background: var(--bg-card-color);}/* la esquina inferior de la barra de desplazamiento, donde se unen las barras de desplazamiento horizontal y vertical. */ 
+  @keyframes fadeIn {
+  from {
+  transform: translateY(-50px) scale(.5);
+  }
+  to {
+  transform: translateY(0) scale(1);
+  }
+  }
+  .contenido-opcion {margin: 0.5rem;;padding: 0.5rem;
+    display: flex;justify-content: start;align-items: center;
+  font-size: var(--font-size1);font-family: var(--font-family1);font-weight: var(--font-weight1);
+  white-space: nowrap;
+  transition: .5s ease all;
+  } 
+
+  .contenido-opcion:hover{cursor: pointer;background:  var(--button-color);
+      font-size: var(--font-size1);font-family: var(--font-family1);font-weight: var(--font-weight1);
+      color:  var(--pr1mary-color);
+  } 
+  #buscado{color: #ffff00;opacity: 0.5;} 
+  .contenido-opcion0 input{background: var(--bg-color);width: 80%;border: 1px solid var(--border-color);padding: 0.5rem; margin: 0.5rem;}  
+  .contenido-opcion0 input:hover{background:#00000000; } 
+  /* FIN DE: PARA LISTA DE OPCIONES */
 </style>
 
 </head>
-<body id="onload" onload="onload()" style="background: #111111;font-size: 1rem;color: #cacaca;"> 
- <div style="display: flex;justify-content: start;align-items: center;">
-   <div id="reloj"  style="background: #550000;font-size: 1rem;color: #00ff00;">00</div>
-   <input type="button" id="timer" value="Stop timer" onclick="timer()" style="background: #00aaaa; border: solid 1px #7e7e7e;border-radius: 6px;padding: 0.25rem;margin: 0.25rem;">
-   <div id="reloj2"  style="background: #55005566;font-size: 1rem;color: #ffffff66;">00</div>
-  </div>
- <!-- BLOQUE 1 -->
-  <div style="background: #005500;">
-    <div style="background: #000055;font-size: 1rem;color: #cccccc;width: 100%; height: 100px; overflow: auto;" >
-     'start' => '1', 'limit' => '100': <br>
-     <?php foreach($datos['data'] as $r) { 
-       echo "(".$r['cmc_rank'].") " .$r['name']."&nbsp;&nbsp;".$r['symbol']."&nbsp;&nbsp;".","."&nbsp;&nbsp;";
-     } 
-     ?>
-    </div>
-  </div><br>
-  Obtener nombre y simbolo de <?php if ($_POST) {echo "&nbsp;". $simboloMayuscula; }?>:
-  <div style="display: flex;justify-content: start;align-items: center;background: #000033;">
-   <p id='nombre' style="background: #0000ff;font-size: 2rem;padding: 0; margin: 0.5rem">
-    <?php if ($_POST) { echo $name;} ?>
-    </p>
-   <p id='symbol' style="background: #0000ff;font-size: 2rem; opacity: 0.5;padding: 0; margin: 0.5rem">
-    <?php if ($_POST) {echo "&nbsp;". $simboloMayuscula;} ?>
-    </p>
-   <p id='precio' class="precio" >
-    </p>
-      <svg id="svgUP1"   style="display: none;fill: rgba(0,255,0,0.95); width: 1.5rem;height: 1.5rem; " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 3 24 20"><path d="M15,20H9V12H4.16L12,4.16L19.84,12H15V20Z" /></svg>
-      <svg id="svgDOWN1" style="display: none;fill: rgba(255,0,0,0.95); width: 1.5rem;height: 1.5rem; " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 1 24 20"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z" /></svg>
-  </div>
+<body id="onload" onload="onload()"> 
+  
+  <!-- BLOQUE 1 -->
+  <div class="container">
 
-  <form action="iframeindex.php" method="post">
-   Escribir simbolo:  
-   <input type="text" id="simbolo" name="simbolo" style="background: #00aaaa;border: solid 1px #7e7e7e;padding: 0.5rem;" value=<?php if ($_POST) {print_r($symbol);} ?> > 
-   <input type="submit" id="enviar" value="Enviar"  onclick=""  style="background: #00aaaa; border: solid 1px #7e7e7e;border-radius: 6px;padding: 0.5rem;">
-  </form><br>
+    <div style="display: flex;justify-content: start;align-items: center;    color: var(--text-color); font-size: var(--font-size4);font-family: var(--font-family2); font-weight: var(--font-weight2);">
+      <div id="reloj">00</div>
+      <div class="button" id="timer" onclick="timer()" >Stop timer</div>
+      <div id="reloj2">00</div>
+    </div>
+    
+    <div style="background: #000055;display: flex;justify-content: center;align-items: center;border: solid 1px rgb(169, 169, 169);font-size: 0.75rem;color: #cccccc;" >
+      <p style="display: none;">'start' => '1', 'limit' => '100': </p>
+      <div class="textarea">
+        <div class="textarea0">
+         <?php foreach($datos['data'] as $r) { 
+           echo "(".$r['cmc_rank'].") " .$r['name']."&nbsp;&nbsp;".$r['symbol']."&nbsp;&nbsp;".","."&nbsp;&nbsp;";
+         } 
+         ?>
+        </div> 
+      </div>  
+    </div>
+    <p style="display: none;">Obtener nombre y simbolo de <?php if ($_POST) {echo "&nbsp;". $simboloMayuscula; }?>:</p>
+    <div class="criptomonedas">
+      <div ><span id='nombre'><?php if ($_POST) { echo $name;} ?></span></div>
+      <div ><span id='symbol'><?php if ($_POST) {echo $simboloMayuscula;} ?></span></div>
+      <div style="display: flex;justify-content: start;align-items: center;">
+        <div ><span id='precio' class="precio" ></span></div>
+        <div ><svg id="svgUP1"   style="display: none;fill: rgba(0,255,0,0.95); width: 1.5rem;height: 1.5rem; " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 3 24 20"><path d="M15,20H9V12H4.16L12,4.16L19.84,12H15V20Z" /></svg></div>
+        <div ><svg id="svgDOWN1" style="display: none;fill: rgba(255,0,0,0.95); width: 1.5rem;height: 1.5rem; " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 1 24 20"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z" /></svg></div>
+        <div><span class='usd'>USD</span></div>
+      </div>
+    </div>
+    <form action="iframeindex.php" method="post" style="display: none; background: #000099;">
+     Escribir simbolo:  
+     <input type="text" id="simbolo" name="simbolo" style="background: #00aaaa;border: solid 1px #7e7e7e;padding: 0.5rem;" value=<?php if ($_POST) {print_r($symbol);} ?> > 
+     <input type="submit" id="enviar" value="Enviar"  onclick=""  style="background: #00aaaa; border: solid 1px #7e7e7e;border-radius: 6px;padding: 0.5rem;">
+    </form><br>
+
+      
+    <!--div PARA LISTA DE OPCIONES -->
+    <div class="div0">
+      <div class="contenedor3">
+          <div class="selectbox">
+            <div class="select" id="select3">
+              <div class="contenido-select3" id="simboloC"></div>
+              <div >
+              <svg  class="svg1"  viewBox="0 -9 64 64" >
+                <path d="M32,37.21a2,2,0,0,1-1.28-.46l-28-23.21a2,2,0,1,1,2.55-3.08L32,32.62,58.72,10.46a2,2,0,1,1,2.55,3.08l-28,23.21A2,2,0,0,1,32,37.21Z"/>
+              </svg>
+              </div>
+            </div>
+            <div class="opciones" id="opciones3">
+            <div class="opciones0" id="opciones03"> 
+              
+              <div class="contenido-opcion0">
+                <input type="text" id="buscar"  placeholder="Escribir simbolo">
+              </div>
+              <div class="contenido-opcion" name="contenido_opcion3" id="buscado">-------</div>
+
+              <div class="contenido-opcion" name="contenido_opcion3">AVAX</div>
+              <div class="contenido-opcion" name="contenido_opcion3">BNB</div>
+              <div class="contenido-opcion" name="contenido_opcion3">BTC</div>
+              <div class="contenido-opcion" name="contenido_opcion3">DOGE</div>
+              <div class="contenido-opcion" name="contenido_opcion3">ETH</div>
+              <div class="contenido-opcion" name="contenido_opcion3">SOL</div>
+              <div class="contenido-opcion" name="contenido_opcion3">XRP</div>
+              <div class="contenido-opcion" name="contenido_opcion3">NEAR</div>
+              <div class="contenido-opcion" name="contenido_opcion3">ICP</div>
+              <div class="contenido-opcion" name="contenido_opcion3">TAO</div>
+              <div class="contenido-opcion" name="contenido_opcion3">FET</div>
+              <div class="contenido-opcion" name="contenido_opcion3">RENDER</div>
+              <div class="contenido-opcion" name="contenido_opcion3">GRT</div>
+              <div class="contenido-opcion" name="contenido_opcion3">TIA</div>
+              <div class="contenido-opcion" name="contenido_opcion3">MANTA</div>
+              <div class="contenido-opcion" name="contenido_opcion3">PYTH</div>
+              <div class="contenido-opcion" name="contenido_opcion3">PEPE</div>
+            </div>    
+            </div>
+          </div>
+      </div>
+    </div>
+    <!-- FIN DE: div PARA LISTA DE OPCIONES -->
+
+
+  </div>  
  <!-- FIN DE:  BLOQUE 1  -->
 
  <!-- BLOQUE 2 -->
- <div style="background: #000000;">
- <div id="quote0" style="background: #880000;font-size: 0.75rem;">
- quote0 ⇨⇨⇨⇨<br>
-   <?php print_r($quote0) ?> <?php echo '<br>' ?> 
- </div>
- <div id="name0" style="background: #440000;">
-   <?php print_r($name0) ?> <?php echo '<br>' ?> 
- </div>
- <div id="symbol0" style="background: #660000;">
-   <?php print_r($symbol0) ?> <?php echo '<br>' ?> 
- </div>
- 
- <div id="price0" style="background: #aa0000;">id="price"</div>
- <br>
-  Obtener datos de <?php if ($_POST) { echo "&nbsp;". $simboloMayuscula;} ?>:
-  <div id="quote" style="color: #ff00ff;font-size: 0.75rem;">
-  quote ⇨⇨⇨⇨<br>
-   <?php if ($_POST) {print_r($quote);} ?> <?php echo '<br>' ?> 
- </div>
-  <div id="symbol" style="color: #ff00ff;">
-   <?php if ($_POST) {print_r($symbol);} ?> <?php echo '<br>' ?> 
- </div>
- <div id="price" style="color: #ff00ff;font-size: 1.5rem;"></div>
-  Coinmarketcap(cambio cada 60s, actualizar pagina):
- <div id="texto" style="color: #00ff00;background: rgb(12, 0, 24);   ;display: flex;justify-content: start;align-items: center;text-align: left;">
-    div id="texto"
- </div><br>
- </div>
+  <div>
+
+   <div style="background: #00990022;display: none;justify-content: start;align-items: center;flex-wrap: wrap;font-size: 2rem;">
+     <div style="background: #00990022;">
+       <span style="background: #999900;">111</span>
+     </div>
+     <div style="background: #00990099;">
+       <span style="background: #999900;">222</span>
+     </div>
+     <div style="background: #009900dd;">
+       <span style="background: #999900;">333</span>
+     </div>
+   </div>
+
+    <div style="background: #000000;">
+    <div id="quote0" style="background: #880000;font-size: 0.75rem;">
+    quote0 ⇨⇨⇨⇨<br>
+      <?php print_r($quote0) ?> <?php echo '<br>' ?> 
+    </div>
+    <div id="name0" style="background: #440000;">
+      <?php print_r($name0) ?> <?php echo '<br>' ?> 
+    </div>
+    <div id="symbol0" style="background: #660000;">
+      <?php print_r($symbol0) ?> <?php echo '<br>' ?> 
+    </div>
+    
+    <div id="price0" style="background: #aa0000;">id="price"</div>
+    <br>
+     Obtener datos de <?php if ($_POST) { echo "&nbsp;". $simboloMayuscula;} ?>:
+     <div id="quote" style="color: #ff00ff;font-size: 0.75rem;">
+     quote ⇨⇨⇨⇨<br>
+      <?php if ($_POST) {print_r($quote);} ?> <?php echo '<br>' ?> 
+    </div>
+     <div id="symbol" style="color: #ff00ff;">
+      <?php if ($_POST) {print_r($symbol);} ?> <?php echo '<br>' ?> 
+    </div>
+    <div id="price" style="color: #ff00ff;font-size: 1.5rem;"></div>
+     Coinmarketcap(cambio cada 60s, actualizar pagina):
+    <div id="texto" style="color: #00ff00;background: rgb(12, 0, 24);   ;display: flex;justify-content: start;align-items: center;text-align: left;">
+       div id="texto"
+    </div><br>
+    </div>
+  </div>
  <!-- FIN DE:  BLOQUE 2  -->
  
  <!-- <script src="index.js"></script> -->
@@ -331,6 +526,7 @@ curl_close($curl); // Close request
       
       svgDOWN1.style.display='inline';
       document.getElementById('precio').style.color=r;
+      simboloC.innerHTML = document.getElementById('symbol').textContent;
     }
     datos();
 
@@ -349,6 +545,8 @@ curl_close($curl); // Close request
       
       svgDOWN1.style.display='inline';
       document.getElementById('precio').style.color=r;
+      simboloC.innerHTML = document.getElementById('symbol0').textContent;
+      document.getElementById("enviar").click();
     } 
 
     function reloj() {
@@ -374,7 +572,7 @@ curl_close($curl); // Close request
     function stopTimer2() {clearInterval(timerID2);} 
 
     function timer(){
-      (TIMER==0)? (stopTimer(),stopTimer2(),TIMER=1,document.getElementById('timer').value='Start timer'):(startTimer(),startTimer2(),TIMER=0,document.getElementById('timer').value='Stop timer');
+      (TIMER==0)? (stopTimer(),stopTimer2(),TIMER=1,document.getElementById('timer').innerText='Start timer'):(startTimer(),startTimer2(),TIMER=0,document.getElementById('timer').innerText='Stop timer');
     }
     
     function onload() {
@@ -382,6 +580,36 @@ curl_close($curl); // Close request
       startTimer();// ← TIMER PARA ANIMACION DE 2 ULTIMOS DECIMALES
       startTimer2();// ← TIMER PARA ENVIO DE FORMULARIO 
     }
+
+    ///%%%%%%%%%%%%  LISTA DE OPCIONES 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    let OPCIONES=0, SIMBOLO=0;
+    const select3 = document.querySelector('#select3')
+    , opciones3 = document.querySelector('#opciones3')
+    , contenidoSelect3 = document.querySelector('#select3 .contenido-select3');
+    for (let y = 0; y < document.getElementsByName('contenido_opcion3').length; y++) { // RECORRE CADA CASILLA
+        document.getElementsByName('contenido_opcion3')[y].addEventListener('click', function (e) {
+        //if (y) {
+          let s = document.getElementsByName('contenido_opcion3')[y].textContent;
+          simboloC.innerText = s;
+          simbolo.value=s;
+          document.getElementById("enviar").click();
+          opciones3.style.display='none'; SIMBOLO=0;
+        //}
+       })
+    } 
+    select3.addEventListener('click', function () {/// height: 12.25rem;
+      (SIMBOLO==0)? (opciones3.style.display='block',opciones3.style.height='15rem',SIMBOLO=1) : 
+      (opciones3.style.display='none',SIMBOLO=0);
+    });
+ 
+    ///%%%%%%%%%%%% FIN DE LISTA DE OPCIONES 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    //CASILLA id="buscar" :
+document.getElementById('buscar').addEventListener("input", (e) => {
+  let cadena=buscar.value.toUpperCase().replace(/ /g, '');
+  buscado.textContent=cadena;
+  
+}); 
   </script>
 </body>
 </html>
