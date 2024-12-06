@@ -187,7 +187,7 @@ transform: translateY(0) scale(1);
   cursor: pointer; transition: .4s ease all;}
 .coincidirTex , .coincidirTex0{color: #bf5115;opacity: 1;background: #03647500;}
 
-.contenido-opcion0 input{background: var(--bg-color); width: 80%;border: 1px solid var(--border-color);padding: 0.5rem; margin: 0.5rem;}  
+.contenido-opcion0 input{background: var(--bg-color);color: var(--text-color); width: 80%;border: 1px solid var(--border-color);padding: 0.5rem; margin: 0.5rem;}  
 .contenido-opcion0 input:hover{background:#00000000; } 
 /* FIN DE: PARA LISTA DE OPCIONES */
 
