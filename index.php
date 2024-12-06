@@ -16,10 +16,11 @@
     </form>
     <div id="reloj1"></div>
     <div>
-        <div id="simboloC" style="display: block;background: #0042ea;cursor: pointer;">BTC</div>
-        <div id="opcionC" style="display: none;">
+        <div id="simboloC" style="display: block;background: #0222c0;cursor: pointer;">BTC</div>
+        <div id="opcionC" style="display: none;background: #018b2200;">
             <div class="contenido-opcion0"><input type="text" id="buscar"  placeholder="Escribir simbolo"></div>
-                 <div class="contenido-opcion" name="contenido_opcion3" id="buscado">-------</div>
+            <div id="coincidencias">0</div>     
+            <div class="contenido-opcion" name="" id="buscado">-------</div>
             <div class="opciones0" id="opciones03"> 
                 <div class="contenido-opcion" name="contenido_opcion3">AVAX</div>
                 <div class="contenido-opcion" name="contenido_opcion3">BNB</div>
@@ -67,7 +68,7 @@
         </table>
        </div>
     <div id="respuesta" style="background: blue;overflow: auto;">|</div>
-    <div id="respuesta3" style="background: rgb(0, 0, 0);overflow: auto;">|</div>
+    <div id="respuesta3" style="background: rgb(0, 35, 0);overflow: auto;">|</div>
 
 
     <script>
@@ -135,7 +136,7 @@
         formulario.addEventListener('submit',function (e) {
             e.preventDefault();
             var datos=new FormData(formulario);
-            console.log(datos.get('usuario'));
+            ///console.log(datos.get('usuario'));
             fetch('post.php',{
                 method: 'POST',
                 body: datos
@@ -179,7 +180,7 @@
                 document.getElementById('market_cap').          innerHTML=market_cap          ;
                 document.getElementById('market_cap_dominance').innerHTML=market_cap_dominance;
                 document.getElementById('cmc_rank').            innerHTML=cmc_rank            ;    
-            })
+            }) 
         })
          /*
         let datos=new FormData(formulario);
@@ -219,7 +220,7 @@
         let OPCIONES=0, SIMBOLO=0, opcion='';
         simboloC.addEventListener("click", () => {
             (SIMBOLO==0)? (opcionC.style.display='block', SIMBOLO=1, buscado.innerText='-------',buscar.value=''):(opcionC.style.display='none',SIMBOLO=0) ;
-        
+            coincidencias.innerText='0';
         });
 
         for (let y = 0; y < document.getElementsByName('contenido_opcion3').length; y++) { // RECORRE CADA CASILLA
@@ -231,25 +232,43 @@
             usuario.value=o.textContent;
             ENVIAR.click();
             opcionC.style.display='none'; SIMBOLO=0;
+            coincidencias.innerText='0';
             }
          })
        }  
 
+       let index='';
         //CASILLA id="buscar" :
         document.getElementById('buscar').addEventListener("input", (e) => {
-        let cadena=buscar.value.toUpperCase().replace(/ /g, '');
+          let cadena=buscar.value.replace(/ /g, '');
           if (cadena=='') buscado.textContent='-------';
           else {
-              //let ee = ARRAY3.includes(cadena);
-              //(ee==true)? buscado.textContent=cadena : buscado.textContent='-------';
-              let filteredCountries = ARRAY3.filter((country) => country.toLowerCase().startsWith(buscar.value));//USAR: startsWith() PARA coincir primeras letras , endsWith() PARA coincir ultimas letras , y includes() determina si una cadena de texto puede ser encontrada dentro de otra cadena de texto
-              if(filteredCountries.length==0) buscado.innerHTML='-------';;console.log('filteredCountries.length ########## ',filteredCountries.length);
-              filteredCountries.forEach((country) => {//USAR createElement PARA UNA MAYOR RAPIDEZ 
-                buscado.innerHTML=country;
-              })
+              buscado.innerHTML = '';
+              let texto =buscar.value.toLowerCase();//* toUpperCase
+              for(let i = 0; i < ARRAY3.length; i++){
+                 let nombre = ARRAY3[i].toLowerCase();
+                 if(nombre.indexOf(texto) !== -1){
+                     index=i; //console.log('index......',index);
+                     let r=ARRAY3[index].toLowerCase().replace(texto, `<span class='coincidirTex'>${texto}</span>`);//console.log('r...',r);
+                     let div = document.createElement("div");//USAR createElement PARA UNA MAYOR RAPIDEZ 
+                     div.setAttribute('name','option0');div.setAttribute('class','option0');div.setAttribute('onclick',`insertar(${index})`);
+                     div.innerHTML = r;
+                     buscado.appendChild(div);
+                     coincidencias.innerText='Total encontrado: '+ buscado.children.length; //console.log('buscado.children.length......',buscado.children.length);
+                     //opcionesXX.style.display='none';buscado0.style.display='block';
+                   } 
+               }
             }
         });
-        
+        function insertar(x) {
+            simboloC.innerText=ARRAY3[x]; console.log('ARRAY3[x].textContent......',ARRAY3[x]);
+            usuario.value=ARRAY3[x];
+            opcionC.style.display='none'; SIMBOLO=0;
+            coincidencias.innerText='0';
+            ENVIAR.click();
+        } 
+
+
         function onload() {ENVIAR.click();}
 
     
