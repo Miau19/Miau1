@@ -65,12 +65,13 @@
           <tr><td class="td_quote1">Ranking&nbsp;</td><td class="td_quote2"><span id="cmc_rank"></span></td></tr>
 
         </table>
-       </div><br><br>
+       </div>
     <div id="respuesta" style="background: blue;overflow: auto;">|</div>
-    
+    <div id="respuesta3" style="background: rgb(0, 35, 0);overflow: auto;">|</div>
+
 
     <script>
-        let TIMER=0, CONTADOR=0, price='', d1=13, precio1, old_price1=0 ,  r="rgba(255,0,0,0.95)", v='rgba(0,255,0,0.95)', fiat='USD';
+        let TIMER=0, CONTADOR=0, price='', d1=13, precio1, old_price1=0 ,  r="rgba(255,0,0,0.95)", v='rgba(0,255,0,0.95)', fiat='USD', ARRAY3;
   
         function F1(m,n) { // ← FORMATEA CON n DECIMALES 
            let cadena= new String(m), rgx = /(\d+)(\d{3})/, ceros='',nuevaCadena='', decimal, d, nuevaParteEntera='', e; //console.log('cadena====',cadena);//var x = cadena.replace(/,/g,"").split(".");
@@ -141,11 +142,14 @@
             })
             .then(res=>res.json())
             .then(data=>{
-                console.log(data)
+                //console.log(data)
                 respuesta.innerHTML=`${data}`;
                 let array1=data.split('@')[0]
                 ,array2=data.split('@')[1]
-                ,n=nombre.textContent;  console.log('array2.....',array2);
+                ,array3=data.split('@')[2]
+                ,n=nombre.textContent; 
+                ARRAY3=array3; console.log('ARRAY3.....',ARRAY3);
+                respuesta3.innerHTML=ARRAY3;
 
                 nombre.innerHTML = (n=='')?    array1.split(',')[1] :    array2.split(',')[1] ;
                 simbolo.innerHTML= (n=='')?    array1.split(',')[2] :    array2.split(',')[2] ;
@@ -221,11 +225,13 @@
         for (let y = 0; y < document.getElementsByName('contenido_opcion3').length; y++) { // RECORRE CADA CASILLA
          let o=document.getElementsByName('contenido_opcion3')[y];  
          o.addEventListener('click', function (e) {
+            if (o.textContent != '-------') {
             simboloC.innerText = o.textContent;
             //simbolo.innerText=o.textContent;
             usuario.value=o.textContent;
             ENVIAR.click();
             opcionC.style.display='none'; SIMBOLO=0;
+            }
          })
        }  
 
@@ -233,7 +239,11 @@
         document.getElementById('buscar').addEventListener("input", (e) => {
         let cadena=buscar.value.toUpperCase().replace(/ /g, '');
         if (cadena=='') buscado.textContent='-------';
-        else buscado.textContent=cadena;
+        else {
+            let ee = ARRAY3.includes(cadena);
+            (ee==true)? buscado.textContent=cadena : buscado.textContent='-------';
+            
+        }
         });
 
         function onload() {ENVIAR.click();}
