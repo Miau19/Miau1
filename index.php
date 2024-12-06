@@ -67,7 +67,7 @@
         </table>
        </div>
     <div id="respuesta" style="background: blue;overflow: auto;">|</div>
-    <div id="respuesta3" style="background: rgb(20, 0, 0);overflow: auto;">|</div>
+    <div id="respuesta3" style="background: rgb(0, 10, 0);overflow: auto;">|</div>
 
 
     <script>
@@ -148,7 +148,8 @@
                 ,array2=data.split('@')[1]
                 ,array3=data.split('@')[2]
                 ,n=nombre.textContent; 
-                ARRAY3=array3.split(','); console.log('ARRAY3.....',ARRAY3);
+                ARRAY3=array3;
+                ARRAY3.split(','); console.log('ARRAY3.....',ARRAY3);
                 respuesta3.innerHTML=ARRAY3;
 
                 nombre.innerHTML = (n=='')?    array1.split(',')[1] :    array2.split(',')[1] ;
