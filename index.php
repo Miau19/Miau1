@@ -67,11 +67,11 @@
         </table>
        </div>
     <div id="respuesta" style="background: blue;overflow: auto;">|</div>
-    <div id="respuesta3" style="background: rgb(0, 10, 0);overflow: auto;">|</div>
+    <div id="respuesta3" style="background: rgb(100, 0, 0);overflow: auto;">|</div>
 
 
     <script>
-        let TIMER=0, CONTADOR=0, price='', d1=13, precio1, old_price1=0 ,  r="rgba(255,0,0,0.95)", v='rgba(0,255,0,0.95)', fiat='USD', ARRAY3=[];
+        let TIMER=0, CONTADOR=0, price='', d1=13, precio1, old_price1=0 ,  r="rgba(255,0,0,0.95)", v='rgba(0,255,0,0.95)', fiat='USD', ARRAY3;
   
         function F1(m,n) { // ← FORMATEA CON n DECIMALES 
            let cadena= new String(m), rgx = /(\d+)(\d{3})/, ceros='',nuevaCadena='', decimal, d, nuevaParteEntera='', e; //console.log('cadena====',cadena);//var x = cadena.replace(/,/g,"").split(".");
@@ -148,8 +148,7 @@
                 ,array2=data.split('@')[1]
                 ,array3=data.split('@')[2]
                 ,n=nombre.textContent; 
-                ARRAY3=array3;
-                ARRAY3.split(','); console.log('ARRAY3.....',ARRAY3);
+                ARRAY3=array3.split(',');; console.log('ARRAY3.....',ARRAY3);
                 respuesta3.innerHTML=ARRAY3;
 
                 nombre.innerHTML = (n=='')?    array1.split(',')[1] :    array2.split(',')[1] ;
