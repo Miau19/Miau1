@@ -67,7 +67,7 @@
         </table>
        </div>
     <div id="respuesta" style="background: blue;overflow: auto;">|</div>
-    <div id="respuesta3" style="background: rgb(200, 200, 0);overflow: auto;">|</div>
+    <div id="respuesta3" style="background: rgb(35, 35, 0);overflow: auto;">|</div>
 
 
     <script>
@@ -149,7 +149,7 @@
                 ,n=nombre.textContent;
                 array3=data.split('@')[2]; console.log('array3.....',array3);
                 //ARRAY3=array3.split(',');; console.log('ARRAY3.....',ARRAY3);
-                //respuesta3.innerHTML=ARRAY3;
+                respuesta3.innerHTML=array3;
 
                 nombre.innerHTML = (n=='')?    array1.split(',')[1] :    array2.split(',')[1] ;
                 simbolo.innerHTML= (n=='')?    array1.split(',')[2] :    array2.split(',')[2] ;
@@ -252,3 +252,13 @@
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
