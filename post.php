@@ -51,6 +51,8 @@
         $cmc_rank=$d['cmc_rank'];
         $quote=$d['quote'];
       }
+      $arr1.=$d['symbol'].',';//*array_push($arr, $d['symbol']); 
+      $arr2 = substr($arr1, 0, -1);//eliminar ultimo caracter
     } 
     foreach ($quote0 as $d) {
       $price0=$d['price'];
@@ -71,7 +73,7 @@
   //);
   echo json_encode($cmc_rank0.','. $name0.','.$symbol0.','.$price0.','.$volume_24h0  .','.$volume_change_24h0.','.$percent_change_1h0 .','.$percent_change_24h0  .','.$percent_change_7d0.','.$percent_change_30d0.','.$percent_change_60d0.','.$percent_change_90d0  .','.$market_cap0.','.$market_cap_dominance0
   .'@'.$cmc_rank.','. $name.','.$symbol.','.$price.','.$volume_24h  .','.$volume_change_24h.','.$percent_change_1h .','.$percent_change_24h  .','.$percent_change_7d .','.$percent_change_30d.','.$percent_change_60d.','.$percent_change_90d  .','.$market_cap.','.$market_cap_dominance
-  );
+  .'@'.$arr2);
 
   curl_close($curl); // Close request
  
