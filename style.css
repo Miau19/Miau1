@@ -133,7 +133,7 @@ body::-webkit-scrollbar-thumb:hover{background: rgb(   55, 55, 55);}
 }
 .opciones.active {display: block;/*height: 20rem;*/padding: 0.25rem; animation: fadeIn .3s forwards;}
 
-.opciones0{
+.opciones0{margin: 0.5rem;background: #0000ff00;
     display: block;
     position: relative;
     height: 13rem; 
@@ -165,8 +165,29 @@ transform: translateY(0) scale(1);
     font-size: var(--font-size1);font-family: var(--font-family1);font-weight: var(--font-weight1);
     color:  var(--pr1mary-color);
 } 
-#buscado{color: #ffff00;opacity: 0.5;} 
-.contenido-opcion0 input{background: var(--bg-color);width: 80%;border: 1px solid var(--border-color);padding: 0.5rem; margin: 0.5rem;}  
+.BUSCADO{background: var(--bg-card-color); background: rgba(104, 139, 1, 0);
+  margin: 0.25rem 0.25rem  0.25rem  0rem;padding: 0rem 0; display: flex;justify-content: start;align-items: center;flex-direction: column;
+}
+#simboloC{font-size: var(--font-size2);font-family: var(--font-family1);font-weight: var(--font-weight1);}
+#buscado0{background: #37000000;width: 100%;padding: 0 0rem;;}
+#coincidencias0 , #coincidencias{background: #00089e00;padding: 0.25rem 0.5rem; font-size: var(--font-size4);font-family: var(--font-family1);font-weight: var(--font-weight1);color:#bf5115;opacity: 1;}
+#buscado{background: var(--bg-card-color);color: var(--text-color); overflow: auto; 
+  display: block;max-height: 100px;;margin: 0.5rem;
+}
+#buscado::-webkit-scrollbar{width: 10px;height: 10px;background: var(--bg-card-color);}
+#buscado::-webkit-scrollbar-track{      background: rgb(124, 124, 124);;border-radius: 5px;}
+#buscado::-webkit-scrollbar-thumb{      background: rgb( 78,   78, 78);border-radius: 5px;}
+#buscado::-webkit-scrollbar-thumb:hover{background: rgb( 55,   55, 55);}
+
+.option0{background: var(--bg-card-color);padding: 0.25rem 0.5rem;margin: 0rem 0.25rem 0rem 0.25rem;background: #00691500;
+  font-size: var(--font-size1);font-family: var(--font-family1);font-weight: var(--font-weight1);
+  text-transform:uppercase;
+}
+.option0:hover{background:  var(--button-color);
+  cursor: pointer; transition: .4s ease all;}
+.coincidirTex , .coincidirTex0{color: #bf5115;opacity: 1;background: #03647500;}
+
+.contenido-opcion0 input{background: var(--bg-color); width: 80%;border: 1px solid var(--border-color);padding: 0.5rem; margin: 0.5rem;}  
 .contenido-opcion0 input:hover{background:#00000000; } 
 /* FIN DE: PARA LISTA DE OPCIONES */
 
