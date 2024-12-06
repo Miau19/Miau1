@@ -18,6 +18,8 @@
     <div>
         <div id="simboloC" style="display: block;background: #0042ea;cursor: pointer;">BTC</div>
         <div id="opcionC" style="display: none;">
+            <div class="contenido-opcion0"><input type="text" id="buscar"  placeholder="Escribir simbolo"></div>
+                 <div class="contenido-opcion" name="contenido_opcion3" id="buscado">-------</div>
             <div class="opciones0" id="opciones03"> 
                 <div class="contenido-opcion" name="contenido_opcion3">AVAX</div>
                 <div class="contenido-opcion" name="contenido_opcion3">BNB</div>
@@ -63,7 +65,7 @@
           <tr><td class="td_quote1">Ranking&nbsp;</td><td class="td_quote2"><span id="cmc_rank"></span></td></tr>
 
         </table>
-       </div>
+       </div><br><br>
     <div id="respuesta" style="background: blue;overflow: auto;">|</div>
     
 
@@ -212,7 +214,7 @@
 
         let OPCIONES=0, SIMBOLO=0, opcion='';
         simboloC.addEventListener("click", () => {
-            (SIMBOLO==0)? (opcionC.style.display='block', SIMBOLO=1):(opcionC.style.display='none',SIMBOLO=0) ;
+            (SIMBOLO==0)? (opcionC.style.display='block', SIMBOLO=1, buscado.innerText='-------',buscar.value=''):(opcionC.style.display='none',SIMBOLO=0) ;
         
         });
 
@@ -223,38 +225,18 @@
             //simbolo.innerText=o.textContent;
             usuario.value=o.textContent;
             ENVIAR.click();
-
             opcionC.style.display='none'; SIMBOLO=0;
          })
        }  
 
-        function opciones() {
-            return opcion=`
-            <div class="opciones0" id="opciones03"> 
-                 <div class="contenido-opcion" name="contenido_opcion3">AVAX</div>
-                 <div class="contenido-opcion" name="contenido_opcion3">BNB</div>
-                 <div class="contenido-opcion" name="contenido_opcion3">BTC</div>
-                 <div class="contenido-opcion" name="contenido_opcion3">DOGE</div>
-                 <div class="contenido-opcion" name="contenido_opcion3">ETH</div>
-                 <div class="contenido-opcion" name="contenido_opcion3">SOL</div>
-                 <div class="contenido-opcion" name="contenido_opcion3">XRP</div>
-                 <div class="contenido-opcion" name="contenido_opcion3">NEAR</div>
-                 <div class="contenido-opcion" name="contenido_opcion3">ICP</div>
-                 <div class="contenido-opcion" name="contenido_opcion3">TAO</div>
-                 <div class="contenido-opcion" name="contenido_opcion3">FET</div>
-                 <div class="contenido-opcion" name="contenido_opcion3">RENDER</div>
-                 <div class="contenido-opcion" name="contenido_opcion3">GRT</div>
-                 <div class="contenido-opcion" name="contenido_opcion3">TIA</div>
-                 <div class="contenido-opcion" name="contenido_opcion3">MANTA</div>
-                 <div class="contenido-opcion" name="contenido_opcion3">PYTH</div>
-                 <div class="contenido-opcion" name="contenido_opcion3">PEPE</div>
-              </div> 
-            `
-        } 
-        
-        function onload() {
-            ENVIAR.click();
-        }
+        //CASILLA id="buscar" :
+        document.getElementById('buscar').addEventListener("input", (e) => {
+        let cadena=buscar.value.toUpperCase().replace(/ /g, '');
+        if (cadena=='') buscado.textContent='-------';
+        else buscado.textContent=cadena;
+        });
+
+        function onload() {ENVIAR.click();}
 
     
     </script>
