@@ -21,6 +21,9 @@
             <div id="coincidencias">0</div>     
             <div class="contenido-opcion" name="" id="buscado">-------</div>
             <div class="opciones0" id="opciones03"> 
+                <div class="contenido-opcion" name="contenido_opcion3">FARTCOIN</div>
+                <div class="contenido-opcion" name="contenido_opcion3">WLD</div>
+                
                 <div class="contenido-opcion" name="contenido_opcion3">AVAX</div>
                 <div class="contenido-opcion" name="contenido_opcion3">BNB</div>
                 <div class="contenido-opcion" name="contenido_opcion3">BTC</div>
