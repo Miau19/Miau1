@@ -66,7 +66,7 @@
 
         </table>
        </div>
-    <div id="respuesta" style="background:  rgb(0, 255, 255);overflow: auto;">|</div>
+    <div id="respuesta" style="background:  rgb(47, 2, 74);overflow: auto;">|</div>
     <div id="respuesta3" style="background: rgb(0, 35, 0);overflow: auto;">|</div>
 
 
