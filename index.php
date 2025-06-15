@@ -8,7 +8,7 @@
     <title>Consumir API PHP</title>
 </head>
 <body onload="onload()">
-    <form action="" id="formulario" style="display: none;">
+    <form action="" id="formulario" style="display: none;"> 
         <input type="text" name="usuario" id="usuario" value="BTC">
         <input type="text" name="pass" value="333">
         <button type="submit" id="ENVIAR">Enviar Formulario(actualizar precio)</button>
