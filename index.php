@@ -1,19 +1,18 @@
-<!-- https://www.youtube.com/watch?v=nLrL9Ip3tWI&list=PLHW-COpapaVuXpbYgOPMLcaFXEmr6JUoi&index=22 -->
 <!DOCTYPE html>
 <html lang="es">
 <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css"/>
     <title>Consumir API PHP</title>
 </head>
 <body onload="onload()">
-    <form action="" id="formulario" style="display: none;">
+    <form action="" id="formulario" style="display: inline;">
         <input type="text" name="usuario" id="usuario" value="BTC">
         <input type="text" name="pass" value="333">
         <button type="submit" id="ENVIAR">Enviar Formulario(actualizar precio)</button>
-    </form>
+    </form> 
     <div id="reloj1"></div>
     <div>
         <div id="simboloC" style="display: block;background: #0222c0;cursor: pointer;">BTC</div>
@@ -56,7 +55,7 @@
           <tr><td class="td_quote1">Volumen 24h&nbsp;              </td> <td class="td_quote2"><span id="volume_24h">        </span></td></tr>
           <tr><td class="td_quote1">Cambio volumen 24h&nbsp;       </td> <td class="td_quote2"><span id="volume_change_24h" ></span></td></tr>
           <tr><td class="td_quote1">Cambio porcentual 1h&nbsp;     </td> <td class="td_quote2"><span id="percent_change_1h" ></span></td></tr>
-          <tr><td class="td_quote1">Cambio porcentual 1h&nbsp;     </td> <td class="td_quote2"><span id="percent_change_24h"></span></td></tr>
+          <tr><td class="td_quote1">Cambio porcentual 24h&nbsp;     </td> <td class="td_quote2"><span id="percent_change_24h"></span></td></tr>
           <tr><td class="td_quote1">Cambio porcentual 7d&nbsp;     </td> <td class="td_quote2"><span id="percent_change_7d" ></span></td></tr>
           <tr><td class="td_quote1">Cambio porcentual 30d&nbsp;    </td> <td class="td_quote2"><span id="percent_change_30d"></span></td></tr>
           <tr><td class="td_quote1">Cambio porcentual 60d&nbsp;    </td> <td class="td_quote2"><span id="percent_change_60d"></span></td></tr>
@@ -208,6 +207,7 @@
         function reloj1() {
             var mydate0=new Date(), ss = new String(mydate0.getSeconds()); 
             document.getElementById("reloj1").innerText=ss;
+            ENVIAR.click();
         }
 
         var timerID, timerID1, timerID2; 
@@ -215,7 +215,7 @@
         function stopTimer() {clearInterval(timerID);} 
         function startTimer1() {timerID1=window.setInterval(reloj1,1000);}
         function stopTimer1() {clearInterval(timerID1);} 
-        startTimer1();// price: 97824.743890165  97831.413331412 97846.819100209
+        //startTimer1();// price: 97824.743890165  97831.413331412 97846.819100209
 
         let OPCIONES=0, SIMBOLO=0, opcion='';
         simboloC.addEventListener("click", () => {
@@ -269,19 +269,11 @@
         } 
 
 
-        function onload() {ENVIAR.click();}
+        function onload() {ENVIAR.click(); startTimer1();}
 
     
     </script>
 </body>
+<!-- https://www.youtube.com/watch?v=nLrL9Ip3tWI&list=PLHW-COpapaVuXpbYgOPMLcaFXEmr6JUoi&index=22 -->
+
 </html>
-
-
-
-
-
-
-
-
-
-
