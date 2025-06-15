@@ -213,7 +213,7 @@
         var timerID, timerID1, timerID2; 
         function startTimer() {timerID=window.setInterval(enviar,60000);}
         function stopTimer() {clearInterval(timerID);} 
-        function startTimer1() {timerID1=window.setInterval(reloj1,1000);}
+        function startTimer1() {timerID1=window.setInterval(reloj1,5000);}
         function stopTimer1() {clearInterval(timerID1);} 
         //startTimer1();// price: 97824.743890165  97831.413331412 97846.819100209
 
