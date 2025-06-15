@@ -8,7 +8,7 @@
     <title>Consumir API PHP</title>
 </head>
 <body onload="onload()">
-    <form action="" id="formulario" style="display: inline;">
+    <form action="" id="formulario" style="display: none;">
         <input type="text" name="usuario" id="usuario" value="BTC">
         <input type="text" name="pass" value="333">
         <button type="submit" id="ENVIAR">Enviar Formulario(actualizar precio)</button>
@@ -48,7 +48,7 @@
         </div>
         <div style="display: flex;justify-content: center;align-items: center;" ><svg id="svgUP1"   style="display: none;fill: rgba(0,255,0,0.95); width: 1.5rem;height: 1.5rem; " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 3 24 20"><path d="M15,20H9V12H4.16L12,4.16L19.84,12H15V20Z" /></svg></div>
         <div style="display: flex;justify-content: center;align-items: center;" ><svg id="svgDOWN1" style="display: none;fill: rgba(255,0,0,0.95); width: 1.5rem;height: 1.5rem; " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 1 24 20"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z" /></svg></div>
-        <div style="display: flex;justify-content: center;align-items: center;"><span class='usd'>USD</span></div>
+        <div style="display: flex;justify-content: center;align-items: center;"><span class='usd'>USD (Timer: 5 segundos)</span></div>
       </div>
       <div style="overflow: auto;padding: 5px;background: #000000;">
         <table class="table_quote" ><!--datos cotizaciones -->
@@ -66,7 +66,7 @@
 
         </table>
        </div>
-    <div id="respuesta" style="background: blue;overflow: auto;">|</div>
+    <div id="respuesta" style="background:  rgb(47, 2, 74);overflow: auto;">|</div>
     <div id="respuesta3" style="background: rgb(0, 35, 0);overflow: auto;">|</div>
 
 
@@ -213,7 +213,7 @@
         var timerID, timerID1, timerID2; 
         function startTimer() {timerID=window.setInterval(enviar,60000);}
         function stopTimer() {clearInterval(timerID);} 
-        function startTimer1() {timerID1=window.setInterval(reloj1,5000);}
+        function startTimer1() {timerID1=window.setInterval(reloj1,1000);}
         function stopTimer1() {clearInterval(timerID1);} 
         //startTimer1();// price: 97824.743890165  97831.413331412 97846.819100209
 
