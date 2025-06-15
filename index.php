@@ -205,8 +205,8 @@
         //enviar();
         */
         function reloj1() {
-            var mydate0=new Date(), ss = new String(mydate0.getSeconds()); 
-            document.getElementById("reloj1").innerText=ss;
+            //var mydate0=new Date(), ss = new String(mydate0.getSeconds()); 
+            //document.getElementById("reloj1").innerText=ss;
             ENVIAR.click();
         }
 
