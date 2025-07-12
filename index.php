@@ -305,6 +305,44 @@
       }
   } 
 
+    let n3=8;
+function F(m,n) { //FORMATEA CON n DECIMALES
+  let cadena= new String(Number(m).toFixed(n3))/* toFixed(n3) CONVIERTE -4.7e-7 A -0.00000047 Y SE EVITA RESPUESTAS CON NOTACION CIENTIFICA; SI SE DESEA NOTACION CIENTIFICA USAR: let cadena= new String(m) */
+  , rgx = /(\d+)(\d{3})/, ceros='',nuevaCadena='', decimal, d, nuevaParteEntera='', e; 
+  (n==undefined || n==0 || n=='')? n=Number(n) : n=Number(n)//n=2: PARA UN RETORNO CON DOS DECIMALES COMO MINIMO
+  if (/[a-zA-Z]/.test(cadena)==true) { //SI ENCUENTRA LETRAS EN LA CADENA: infinity NaN isNaN 5.554680159996e+333
+    return cadena; 
+  }
+  else {//SI ENCUENTRA SOLO NUMEROS Y UN PUNTO EN LA CADENA
+      if (/[.]/.test(cadena)==true) {//SI ENCUENTRA PUNTO EN LA CADENA
+          e = cadena.split('.')[0];//d: PARTE ENTERA
+          d = cadena.split('.')[1];//d: PARTE DECIMAL
+          if (d.length >=n) {
+              decimal = d.substring(0, n);//CORTAR CADENA DE DECIMALES A n DIGITOS  
+          }
+          if (d.length < n) {
+              for (let i = 1; i <= n-d.length; i++) {ceros += '0';}//COMPLETA PARTE DECIMAL CON CEROS
+              decimal = d+ceros;//console.log('decimal....',decimal);
+          }
+          //AGREGAR COMAS A LA PARTE ENTERA:
+          for (i = 1; i <= Math.trunc(e.length/3); i++) {// trunc OBTIENE LA PARTE ENTERA DE: LA LONGITUD DE e DIVIDIDO POR 3
+              e = e.replace(rgx, '$1' + ',' + '$2');  
+          } 
+          (n==undefined || n==0 || n=='')? nuevaParteEntera=e+'' : nuevaParteEntera=e+'.'+decimal;
+          return nuevaParteEntera;
+      } 
+      else {
+          for (let i = 1; i <= n; i++) {ceros += '0';}//GENERAR CEROS PARA PARTE DECIMAL DE 2CADENA
+          //AGREGAR COMAS A LA CADENA:
+          for (let i = 1; i <= Math.trunc(cadena.length/3); i++) {// trunc OBTIENE LA PARTE ENTERA DE: LA LONGITUD DE e DIVIDIDO POR 3
+              cadena = cadena.replace(rgx, '$1' + ',' + '$2');  
+          } 
+          (n==undefined || n==0 || n=='')? nuevaCadena = cadena : nuevaCadena = cadena+'.'+ceros;
+          return nuevaCadena;
+      }
+  }
+} 
+	
   function datos() { // ← FUNCION PARA SEPARAR 'precio' de 'quote': 
     saludame();
     //let quote0= document.getElementById('quote0');
@@ -337,37 +375,26 @@
     // precio02.innerText='18.30269 XRP'        +' x '+FD(Number(price2).toFixed(d1)) + ' = '+ FD(r2.toFixed(d1)) + ' USDT';/// *0.02677632 
     // precio03.innerText='97.91192 FARTCOIN'   +' x '+FD(Number(price3).toFixed(d1)) + ' = '+ FD(r3.toFixed(d1)) + ' USDT';/// *0.02677632 
     // precio04.innerText='98.901 WLD'          +' x '+FD(Number(price4).toFixed(d1)) + ' = '+ FD(r4.toFixed(d1)) + ' USDT';/// *0.02677632
-    precio01.innerText='0.02677632 BTC'      +' x '+Number(price1) + ' = '+ r1 + ' USDT';/// *0.02677632 
-    precio02.innerText='18.30269 XRP'        +' x '+Number(price2) + ' = '+ r2 + ' USDT';/// *0.02677632 
-    precio03.innerText='97.91192 FARTCOIN'   +' x '+Number(price3) + ' = '+ r3 + ' USDT';/// *0.02677632 
-    precio04.innerText='98.901 WLD'          +' x '+Number(price4) + ' = '+ r4 + ' USDT';/// *0.02677632
+    precio01.innerText='0.02677632 BTC'      +' x '+ F(Number(price1) , 4) + ' = '+ F(r1 , 4) + ' USDT';/// *0.02677632 
+    precio02.innerText='18.30269 XRP'        +' x '+ F(Number(price2) , 4) + ' = '+ F(r2 , 4) + ' USDT';/// *0.02677632 
+    precio03.innerText='97.91192 FARTCOIN'   +' x '+ F(Number(price3) , 4) + ' = '+ F(r3 , 4) + ' USDT';/// *0.02677632 
+    precio04.innerText='98.901 WLD'          +' x '+ F(Number(price4) , 4) + ' = '+ F(r4 , 4) + ' USDT';/// *0.02677632
 
     let t=r1+r2+r3+r4;
 
     // document.getElementById('total').textContent='TOTAL = ' + FD(t.toFixed(d1)) + ' USDT';   
-    document.getElementById('total').textContent='TOTAL = ' + t + ' USDT';   
+    document.getElementById('total').textContent='TOTAL = ' + F(t , 4) + ' USDT';   
 
     ////////
     document.getElementById('SALUDAME').click();   
     ////////
-    /*                             6                7                8  
-117408.63883362  117452.84565829   117439.73822251  117445.17729051  117419.48611349                                              
-2.7292116356126  2.7126816708736   2.7100226085705  2.7100226085705  2.7057301846652                                             
-1.2086409146975  1.212681539459    1.2172502358574  1.2172502358574  1.2185425145828                                            
-1.0083434102889  1.0079856448348   1.0086866862378  1.0103575009098  1.0101013940078                                                
+    /*  1                2                3                4                5                6                7                8  
+        117056.54830059  117056.54830059  117027.33021975  117050.7788561                                            
+        2.6769518539977  2.6769518539977  2.6772834793582  2.6850984860974                                         
+        1.2114176915252  1.2114176915252  1.2099861011665  1.2089878781299                                            
+        0.9966215963169  0.9966215963169  0.99549204202995 0.99648702976459                                                                                           
     */
 
-  }
-
-     let n=1;
-    function texto() { // 
-    ////////
-    document.getElementById('texto').value= n++;
-    if (document.getElementById('texto').value== 12) {
-      n= 1;
-    }
-    ////////
-    
   }
 
   function quote0() {////SIN USO ← IMPRIME nombre , simbolo y precio AL ABRIR PAGINA 
