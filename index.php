@@ -333,19 +333,29 @@
     let r3=Number(p3)*97.91192;
     let r4=Number(p4)*98.901;
 
-    precio01.innerText='0.02677632 BTC'      +' x '+FD(Number(price1).toFixed(d1)) + ' = '+ FD(r1.toFixed(d1)) + ' USDT';/// *0.02677632 
-    precio02.innerText='18.30269 XRP'        +' x '+FD(Number(price2).toFixed(d1)) + ' = '+ FD(r2.toFixed(d1)) + ' USDT';/// *0.02677632 
-    precio03.innerText='97.91192 FARTCOIN'   +' x '+FD(Number(price3).toFixed(d1)) + ' = '+ FD(r3.toFixed(d1)) + ' USDT';/// *0.02677632 
-    precio04.innerText='98.901 WLD'          +' x '+FD(Number(price4).toFixed(d1)) + ' = '+ FD(r4.toFixed(d1)) + ' USDT';/// *0.02677632
-    
+    // precio01.innerText='0.02677632 BTC'      +' x '+FD(Number(price1).toFixed(d1)) + ' = '+ FD(r1.toFixed(d1)) + ' USDT';/// *0.02677632 
+    // precio02.innerText='18.30269 XRP'        +' x '+FD(Number(price2).toFixed(d1)) + ' = '+ FD(r2.toFixed(d1)) + ' USDT';/// *0.02677632 
+    // precio03.innerText='97.91192 FARTCOIN'   +' x '+FD(Number(price3).toFixed(d1)) + ' = '+ FD(r3.toFixed(d1)) + ' USDT';/// *0.02677632 
+    // precio04.innerText='98.901 WLD'          +' x '+FD(Number(price4).toFixed(d1)) + ' = '+ FD(r4.toFixed(d1)) + ' USDT';/// *0.02677632
+    precio01.innerText='0.02677632 BTC'      +' x '+Number(price1) + ' = '+ r1 + ' USDT';/// *0.02677632 
+    precio02.innerText='18.30269 XRP'        +' x '+Number(price2) + ' = '+ r2 + ' USDT';/// *0.02677632 
+    precio03.innerText='97.91192 FARTCOIN'   +' x '+Number(price3) + ' = '+ r3 + ' USDT';/// *0.02677632 
+    precio04.innerText='98.901 WLD'          +' x '+Number(price4) + ' = '+ r4 + ' USDT';/// *0.02677632
+
     let t=r1+r2+r3+r4;
 
-    document.getElementById('total').textContent='TOTAL = ' + FD(t.toFixed(d1)) + ' USDT';
+    // document.getElementById('total').textContent='TOTAL = ' + FD(t.toFixed(d1)) + ' USDT';   
+    document.getElementById('total').textContent='TOTAL = ' + t + ' USDT';   
 
     ////////
     document.getElementById('SALUDAME').click();   
     ////////
-    
+    /*                             6                7                8  
+117408.63883362  117452.84565829   117439.73822251  117445.17729051  117419.48611349                                              
+2.7292116356126  2.7126816708736   2.7100226085705  2.7100226085705  2.7057301846652                                             
+1.2086409146975  1.212681539459    1.2172502358574  1.2172502358574  1.2185425145828                                            
+1.0083434102889  1.0079856448348   1.0086866862378  1.0103575009098  1.0101013940078                                                
+    */
 
   }
 
