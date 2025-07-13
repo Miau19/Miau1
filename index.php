@@ -1,11 +1,11 @@
 <!--  https://www.youtube.com/watch?v=_0iZ3W2u_Bo&t=733s 
      https://dostinhurtado.com/site/cursos/curso-php/php-capitulo-11/ 
 -->
-
+ 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Probando</title> 
+	<title>Wallet 01</title> 
 	<script src="jquery-3.4.1.min.js"></script>
   <style type="text/css">
     @import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
@@ -26,7 +26,7 @@
         --transition: color 0.1s, background-color 0.6s ease-in-out;
         --font-family1: 'Saira', 'Saira Expanded SemiBold', sans-serif;/*font-family: "Roboto", sans-serif;*/ /*font-family: Impact, sans-serif;'Times New Roman'; 'Consolas'; 'Oswald'*/
         --font-family2: 'Saira', 'Saira Expanded SemiBold', sans-serif; /*PARA NUMEROS*/ 
-        --font-size1: 0.9rem;/*TAMAÑO TEXTO NORMAL --font-size1: 0.80rem;*/ 
+        --font-size1: 0.7rem;/*TAMAÑO TEXTO NORMAL --font-size1: 0.80rem;*/ 
         --font-size2: 1.35rem; /*TAMAÑO PARA SUB TITULOS --font-size2: 0.86rem;*/ 
         --font-size3: 1rem; /*TAMAÑO PARA TITULOS --font-size3: 1.25rem; */
         --font-size4: 0.70rem; /*TAMAÑO PARA TELEF CON WIDTH 320PX --font-size4: 0.8rem; */
@@ -49,141 +49,35 @@
         --button-color: rgb(1, 61, 225);/* --button-color: rgb(1, 61, 225); */
         --n2:20px; --n3:20px;    
     }
-    
-    html{background-color: var(--bg-color);}  /*  CORREGIR P' CUANDO TABLAS CREADAS SE DESBORDAN*/ 
-    
-    body{
-        background-color: var(--bg-color);
-        margin: 0 0.5rem;
-        color: var(--text-color);/* "Roboto",'Poppins', 'Oswald', sans-serif; sans-serif, 'Times New Roman', 'Arial Narrow', fantasy, Impact */
-        font-size: 1.2rem;font-weight: 700;
-        overflow:auto;
-    
+
+    .divTabla{
+      background: rgba(80, 49, 1, 1);
+      width: 100%;
+display: flex; justify-content: center; flex-direction: column; padding: 5px;
+      overflow:auto;
+
     }
-    body::-webkit-scrollbar{width: 10px;height: 10px;background: var(--bg-card-color);}
-    body::-webkit-scrollbar-track{      background: rgb(124, 124, 124) ;border-radius: 5px;}
-    body::-webkit-scrollbar-thumb{      background: rgb(   78, 78, 78);border-radius: 5px;}
-    body::-webkit-scrollbar-thumb:hover{background: rgb(   55, 55, 55);}
-    
-    .main{position: relative;top: 2.0rem}
-  
-    .container{
-      background:  var(--bg-color);
-      display: flex;justify-content: center;flex-direction: column;
-      padding: 0px;margin: 0;
+    .tabla1{
+      background: rgba(0, 0, 0, 1);
+      border: 2px solid rgba(88, 88, 88, 1);
+          border-collapse: collapse;
+          color: var(--text-color);font-family: var(--font-family1);font-weight: var(--font-weight1);font-size: var(--font-size1);
+
     }
-  
-    .button{
-      text-align: center;
-      padding: 0.25rem 0.5rem;margin: 0.5rem;
-      color: var(--text-color); font-size: var(--font-size4);font-family: var(--font-family2); font-weight: var(--font-weight1);
-      background-color:  var(--button-color);
-      border-radius: var(--border-radius); 
-      transition: var(--transition); transition: 0.2s; 
+    .tabla1 td{
+      background: rgba(0, 0, 0, 1);
+      border: 2px solid rgba(156, 156, 156, 1);
+
     }
-    .button:hover {
-        background-color:rgb(29, 82, 225);
-        cursor: pointer;
-        transform: scaleX(1.125) scaleY(1.125) translateX(0px) translateY(0px); /*1 ANIMAR p */
-    }
-    .textarea{background: var(--bg-card-color);border: solid 1px rgb(169, 169, 169);font-size: 0.75rem;color: var(--text-color); padding:0.25rem}
-    .textarea0{height: 4rem;overflow: auto;}
-    .textarea0::-webkit-scrollbar{width: 10px;height: 10px;background: var(--bg-card-color);}
-    .textarea0::-webkit-scrollbar-track{      background: rgb(124, 124, 124) ;border-radius: 5px;}
-    .textarea0::-webkit-scrollbar-thumb{      background: rgb(   78, 78, 78);border-radius: 5px;}
-    .textarea0::-webkit-scrollbar-thumb:hover{background: rgb(   55, 55, 55);}
-  
-    .criptomonedas{
-      background: #00990000;display: flex;justify-content: start;align-items: center;flex-wrap: wrap;padding: 0;margin: 0;
-      color: var(--text-color); font-size: var(--font-size5);font-family: var(--font-family2); font-weight: var(--font-weight2);
-    }
-    .criptomonedas span{margin-right: 1rem;}
-    .criptomonedas svg{margin-left: -1rem;}
-    .criptomonedas .usd{font-size: var(--font-size5);font-family: var(--font-family2); font-weight: var(--font-weight2);}
-  
-    #symbol{opacity: 0.5;} 
-  
-    .precio{background:rgb(82, 0, 10,0);
-     font-family: var(--font-family1); 
-     opacity: 1;padding: 0; margin: 0;
-     color:rgb(255, 191, 0);
-    }
-  
-    /* PARA LISTA DE OPCIONES */
-    .div0{width: var(--width_LO1);height: var(--height_LO1); margin: 0px;background: #ff000000;}
-    .contenedor3 {position: relative;width: 100%;height: 100%; ;}
-    .select {
-     background: var(--bg-card-color);
-     position: relative; ;
-     height: var(--height_LO1); top: -0.9rem;
-     display: flex;justify-content: space-between;align-items: center;
-     box-shadow: var(--box-shadow1) ;
-     border-radius: var(--border-radius_tex);
-     cursor: pointer;
-     transition: .2s ease all;
-     padding: 0 0.50rem;
-    }
-    .select.active, .select:hover {box-shadow: var(--box-shadow1) ;}
-    .select svg {width: var(--widhtSvg);height: var(--heightSvg);}
-    .select svg path{fill:  var(--text-color); stroke-width: 4px;stroke: var(--text-color);}
-    .contenido-select3{padding: 0 0.0rem;width: 100% ;color:  var(--text-color);
-     font-size: var(--font-size1);font-family: var(--font-family1);font-weight: var(--font-weight1);
-    } 
-    .contenido-select3:hover {cursor: pointer;}
-    
-    
-    .opciones {/* id= opciones3*/
-      background:var(--bg-card-color);
-      position: relative; ;
-      height: 0; width: calc(var(--width_LO1) + var(--n));left: calc((-1) * (var(--n) / 2)); top: -0.75rem;/* width: calc(var(--width_LO1)+(2*var(--n)));left: calc(-(var(--n)));  */
-      /*max-height: 20rem;*/
-      display: none;
-      border-radius: var(--border-radius_tex);
-      box-shadow: var(--box-shadow1) ;
-    }
-    .opciones.active {display: block;/*height: 20rem;*/padding: 0.25rem; animation: fadeIn .3s forwards;}
-    
-    .opciones0{
-        display: block;
-        position: relative;
-        height: 13rem; 
-        overflow: auto;
-     /* scrollbar-width: thin;   ancho de la barra de desplazamiento */
-    }
-    .opciones0::-webkit-scrollbar{width: 10px;height: 10px;background: var(--bg-card-color);}
-    .opciones0::-webkit-scrollbar-track{      background: rgb(124, 124, 124);border-radius: 0.25rem;}
-    .opciones0::-webkit-scrollbar-thumb{      background: rgb(   78, 78, 78);border-radius: 0.25rem;}
-    .opciones0::-webkit-scrollbar-thumb:hover{background: rgb(   55, 55, 55);}
-    .opciones0::-webkit-scrollbar-corner{background: var(--bg-card-color);}/* la esquina inferior de la barra de desplazamiento, donde se unen las barras de desplazamiento horizontal y vertical. */ 
-    
-    @keyframes fadeIn {
-    from {
-    transform: translateY(-50px) scale(.5);
-    }
-    to {
-    transform: translateY(0) scale(1);
-    }
-    }
-    .contenido-opcion {margin: 0.5rem;;padding: 0.5rem;background:  var(--bg-color);
-      display: flex;justify-content: start;align-items: center;
-      font-size: var(--font-size1);font-family: var(--font-family1);font-weight: var(--font-weight1);
+    .tabla1 td div{
+      background: rgba(0, 2, 21, 1);
+      border: none;
+      display: flex;justify-content: center;align-items: center;
+       /*width: 100%;height: 100%;*/
+      padding: 10px;;
       white-space: nowrap;
-      transition: .5s ease all;
-    } 
-  
-    .contenido-opcion:hover{cursor: pointer;background:  var(--button-color);
-        font-size: var(--font-size1);font-family: var(--font-family1);font-weight: var(--font-weight1);
-        color:  var(--pr1mary-color);
-    } 
-    #buscado{color: #ffff00;opacity: 0.5;} 
-    .contenido-opcion0 input{background: var(--bg-color);width: 80%;border: 1px solid var(--border-color);padding: 0.5rem; margin: 0.5rem;}  
-    .contenido-opcion0 input:hover{background:#00000000; } 
-    /* FIN DE: PARA LISTA DE OPCIONES */
-  
-    .table_quote{background: #0000ff;color: var(--text-color); font-size: var(--font-size3);font-family: var(--font-family2); font-weight: var(--font-weight2);}
-    .table_quote .td_quote1{background: #000011;border-bottom: 1px solid var(--border-color);}
-    .table_quote .td_quote2{background: #000011;border-bottom: 1px solid var(--border-color);text-align: right; padding: 0.5rem;margin: 0;}
-    .table_quote .td_quote2 span{background: #005500;white-space: nowrap;}
+    }
+
   </style>
 </head>
 <body  onload="onload()">
@@ -193,15 +87,51 @@
     <?php echo 'Reloj1: &nbsp;' ?>
     <div id="reloj1">00</div><?php echo '&nbsp;&nbsp; Reloj2: &nbsp;' ?><div id="reloj2">00</div>
   </div>
-  <input type="button" id='SALUDAME' value="ACTUALIZAR" onclick="datos() , texto();">
-  <input type="text" id="texto" value="0.0">Timer: 60000 ms 
+  <input type="button" id='SALUDAME' value="SALUDAME" onclick="datos() , texto();">
+    <input type="button" id='gt' value="agregar" onclick="generatabla();">
+
+  <input type="text" id="texto" value="0.0">Timer: 60,000 ms 
+  <input type="text" name="usuario" id="usuario" value="BTC">
   <div id="quote0" style="background:rgb(10, 46, 0);font-size: 1rem;"></div><br>
 
-  <div id="quote1" style="background:rgb(26, 0, 46,1);font-size: 1rem;"></div>
-  <div id="quote2" style="background:rgb(26, 0, 46,1);font-size: 1rem;"></div>
-  <div id="quote3" style="background:rgb(26, 0, 46,1);font-size: 1rem;"></div>
-  <div id="quote4" style="background:rgb(26, 0, 46,1);font-size: 1rem;"></div><br>
+  <div id="quote1" style="background:rgb(26, 0, 46);font-size: 1rem;"></div>
+  <div id="quote2" style="background:rgb(26, 0, 46);font-size: 1rem;"></div>
+  <div id="quote3" style="background:rgb(50, 2, 87);font-size: 1rem;"></div>
+  <div id="quote4" style="background:rgb(50, 2, 87);font-size: 1rem;"></div>
+  <div id="quote5" style="background:rgb(50, 2, 87);font-size: 1rem;"></div><br>
 
+ <div class='divTabla'>
+  <table class="tabla1" id="tabla_1">
+    <tr>
+      <td><div>SIMBOLO</div></td><td><div>CANTIDAD</div></td><td><div>CAPITAL INICIAL</div></td><td><div>PRECIO DE COMPRA</div></td><td><div>PRECIO ACTUAL</div></td><td><div>DIFERENCIA</div></td><td><div>GANANCIAS/PERDIDAS</div></td><td><div>CAPITAL FINAL</div></td>
+    </tr>
+    <tbody id='tbodyD'></tbody>
+      <tfoot>
+             
+                <tr class="TR">
+                  <td><div class='divx'></div></td><td><div class='divx'></div></td><td><div id='capitalIniciaTotal'>00</div></td><td><div class='divx'></div></td><td><div class='divx'></div></td><td><div class='divx'></div></td><td><div id='diferenciaTotal'>0</div></td><td><div id='capitalFinalTotal'>0</div></td>
+                </tr>
+              </tfoot>
+     <!-- x<tfoot>
+                <tr class="TR">
+                  <td colspan="8" rowspan="1" class="td_separador"><div><p>|</p></div></td>
+  
+                </tr>
+                <tr class="TR">
+                  <td colspan="4" rowspan="1" class="tdFinalT1"><div class="dFinalT1"><p>Capital inicial total                                  </p></div></td>
+                  <td colspan="4" rowspan="1" class="tdFinalT2"><div class="dFinalT2"><p></p><p  name="CT" id="capitalIniciaTotal">2,229.00 USDT</p></div></td>
+                </tr>
+                <tr class="TR">
+                  <td colspan="4" rowspan="1" class="tdFinalT1"><div class="dFinalT1"><p id="capitalFinalT">Capital final total                </p></div></td>
+                  <td colspan="4" rowspan="1" class="tdFinalT2"><div class="dFinalT2"><p></p><p  name="CT" id="capitalFinalTotal">3,634.63 USDT</p></div></td>
+                </tr>
+                <tr class="TR">
+                  <td colspan="4" rowspan="1" class="tdFinalT1"><div class="dFinalT1"><p id="gananciasPerdidas">Ganancias/P&eacute;rdidas             </p></div></td>
+                  <td colspan="4" rowspan="1" class="tdFinalT2"><div class="dFinalT2"><p></p><p  name="CT" id="diferenciaTotal">1,403.97 USDT (62.98%)</p></div></td>
+                </tr>
+              </tfoot>name="L3" -->  
+    </table>
+  </div>
   <div ><span id='price0' class="precio" ></span></div>
   <div ><span id='price' class="precio" ></span></div>
   
@@ -209,7 +139,8 @@
     <div ><span id='precio01' class="precio" ></span></div>
     <div ><span id='precio02' class="precio" ></span></div>
     <div ><span id='precio03' class="precio" ></span></div>
-    <div ><span id='precio04' class="precio" ></span></div><br>
+    <div ><span id='precio04' class="precio" ></span></div>
+    <div ><span id='precio05' class="precio" ></span></div><br>
 
     <div ><span id='total' class="precio" ></span></div>
 
@@ -230,7 +161,7 @@
     };
     $.ajax({
       data: parametros,
-      url: 'codigo_php2.php', 
+      url: 'codigo_php01.php', 
       type: 'POST',
       
       beforesend: function()
@@ -242,71 +173,14 @@
         $('#quote0').html(mensaje);
       }
     });
-
+ 
   } 
 
   let TIMER=0, CONTADOR=0, price='', d1=13, precio1, old_price1=0 ,  r="rgba(255,0,0,0.95)", v='rgba(0,255,0,0.95)', fiat='USD';
+  let n3=8; 
+  let array=['BTC','BTC','XRP','XRP','XLM','FARTCOIN','WLD','NEARUSDT','ICPUSDT','FETUSDT','RENDERUSDT','GRTUSDT','TIAUSDT','MANTAUSDT','PYTHUSDT','PEPEUSDT'];
   
-  function F1(m,n) { // ← FORMATEA CON n DECIMALES 
-     let cadena= new String(m), rgx = /(\d+)(\d{3})/, ceros='',nuevaCadena='', decimal, d, nuevaParteEntera='', e; //console.log('cadena====',cadena);//var x = cadena.replace(/,/g,"").split(".");
-     (n==undefined || n==0 || n=='')? n=Number(n) : n=Number(n)//n=2: PARA UN RETORNO CON DOS DECIMALES COMO MINIMO
-     if (/[a-zA-Z]/.test(cadena)==true) { //SI ENCUENTRA LETRAS EN LA CADENA: infinity NaN isNaN 5.554680159996e+333
-       return cadena; 
-     }
-     else {//SI ENCUENTRA SOLO NUMEROS Y UN PUNTO EN LA CADENA
-         if (/[.]/.test(cadena)==true) {//SI ENCUENTRA PUNTO EN LA CADENA
-             e = cadena.split('.')[0];//d: PARTE ENTERA
-             d = cadena.split('.')[1];//d: PARTE DECIMAL
-             if (d.length >=n) {
-                 decimal = d.substring(0, n);//CORTAR CADENA DE DECIMALES A n DIGITOS  
-             }
-             if (d.length < n) {
-                 for (let i = 1; i <= n-d.length; i++) {ceros += '0';}//COMPLETA PARTE DECIMAL CON CEROS
-                 decimal = d+ceros;//console.log('decimal....',decimal);
-             }
-             //AGREGAR COMAS A LA PARTE ENTERA:
-             for (i = 1; i <= Math.trunc(e.length/3); i++) {// trunc OBTIENE LA PARTE ENTERA DE: LA LONGITUD DE e DIVIDIDO POR 3
-                 e = e.replace(rgx, '$1' + ',' + '$2');  
-             } 
-             (n==undefined || n==0 || n=='')? nuevaParteEntera=e+'' : nuevaParteEntera=e+'.'+decimal;
-             return nuevaParteEntera;
-         } 
-         else {
-             for (let i = 1; i <= n; i++) {ceros += '0';}//GENERAR CEROS PARA PARTE DECIMAL DE 2CADENA
-             //AGREGAR COMAS A LA CADENA:
-             for (let i = 1; i <= Math.trunc(cadena.length/3); i++) {// trunc OBTIENE LA PARTE ENTERA DE: LA LONGITUD DE e DIVIDIDO POR 3
-                 cadena = cadena.replace(rgx, '$1' + ',' + '$2');  
-             } 
-             (n==undefined || n==0 || n=='')? nuevaCadena = cadena : nuevaCadena = cadena+'.'+ceros;
-             return nuevaCadena;
-         }
-     }
-  } 
-
-  function FD(N1) {// ← CONSTRUYE FORMATO PARA precio 
-      // VET 0, GALA 0 , FLOKI 000 , PEPE 0000 , BTT 00000    
-      let E1=((N1.split('.'))[0]).replace(/[,]/g, '')
-      ,D1=(N1.split('.'))[1]
-      ,a=Math.random()
-      ,ceros=''; 
-      for (let i = 0; i < D1.length; i++) {// ← CUENTA CEROS DESPUES DEL PUNTO 
-        if (D1.charAt(i)!="0") break; ceros += D1[i];
-      }
-
-      let D2=D1.substring(0 , ceros.length+2); 
-     
-      if (E1.length > 3) {// ← SI PARTE ENTERA ES MAYOR A TRES CIFRAS RETORNA: 3,210.55  3,210,567.55 ...
-        n1=E1+'.'+(String(a).split('.'))[1];
-        return F1(n1,2);
-      } 
-      else {// ← FORMATO PARA PARTE ENTERA IGUAL O MENOR QUE 3: 888.3467321444   123.0467321444   12.000366543333   0.000002567856  RETORNA: 888.55  123.04655  12.0003655  0.000002555  ...
-        let n2=E1+'.'+D2 + String((a.toFixed(1)).split('.')[1]);
-        return n2;
-      }
-  } 
-
-    let n3=8;
-function F(m,n) { //FORMATEA CON n DECIMALES
+  function F(m,n) { //FORMATEA CON n DECIMALES
   let cadena= new String(Number(m).toFixed(n3))/* toFixed(n3) CONVIERTE -4.7e-7 A -0.00000047 Y SE EVITA RESPUESTAS CON NOTACION CIENTIFICA; SI SE DESEA NOTACION CIENTIFICA USAR: let cadena= new String(m) */
   , rgx = /(\d+)(\d{3})/, ceros='',nuevaCadena='', decimal, d, nuevaParteEntera='', e; 
   (n==undefined || n==0 || n=='')? n=Number(n) : n=Number(n)//n=2: PARA UN RETORNO CON DOS DECIMALES COMO MINIMO
@@ -341,60 +215,135 @@ function F(m,n) { //FORMATEA CON n DECIMALES
           return nuevaCadena;
       }
   }
-} 
-	
-  function datos() { // ← FUNCION PARA SEPARAR 'precio' de 'quote': 
-    saludame();
-    //let quote0= document.getElementById('quote0');
-    //let t0=quote0.textContent.replace(/[[]/g,'@[');
-    //let t=t0.split('@').slice(2,14);
-    //price = t[0].replace('[price] => ','');
+  } 
 
+  function generatabla() {
+    let e=1, C=2, d=4, simbolo='s', cantidad=0, capitalI=0, pCompra=0, pVenta=0, diferencia=0, gp=0, capitalF=0;
+    
+    for (let i = 1; i < 15; i++) {// ⭠ IMPRIME 
+    let TR= `<tr       id='tr_`  +i+`'`+` name='TR' class='TR'>`+
+    `<td class='td_cf' id='td_sp`+i+`'><div class='d_s' name='SYMBOL`+i+`' id='p_s`+i+`'>`+simbolo+`</div></td>`+ 
+    `<td class='td_cf' id='td_ci`+i+`'><div class='d_cf' name='cantidad`+''+`'   id='p_c` +i+`'>`+F(cantidad   ,d)+`</div></td>`+                   /*               */ 
+    `<td class='td_cf' id='td_pc`+i+`'><div class='d_cf' name='cinicial`+''+`'   id='p_ci`+i+`'>`+F(capitalI   ,d)+`</div></td>`+                   /*name='L`+e+`'  */      
+    `<td class='td_cf' id='td_pc`+i+`'><div class='d_cf' name='compra`+''+`'     id='p_pc`+i+`'>`+F(pCompra    ,d)+`</div></td>`+                   /*name='L`+e+`'  */      
+    `<td class='td_cf' id='td_pv`+i+`'><div class='d_cf' name='venta`+''+`'      id='p_pv`+i+`'>`+F(pVenta     ,d)+`</div></td>`+                   /*name='L`+e+`1' */      
+    `<td class='td_cf' id='td_dp`+i+`'><div class='d_cf' name='diferencia`+''+`' id='p_dp`+i+`'>`+F(diferencia ,d)+`</div></td>`+                   /*name='L`+e+`2' */      
+    `<td class='td_cf' id='td_c` +i+`'><div class='d_cf' name='profit`+''+`'     id='p_p` +i+`'>`+F(gp         ,d)+`</div></td>`+                   /*name='L`+e+`'  */      
+    `<td class='td_cf' id='td_cf`+i+`'><div class='d_cf' name='cfinal`+''+`'     id='p_cf`+i+`'>`+F(capitalF   ,d)+`</div></td>`+                   /*name='L`+e+`4' */ 
+    `</tr>`;
+    tbodyD.innerHTML += TR;
+    document.getElementById('p_s'+i).innerText=array[i-1];
+    }
+    
+  }
+
+        var n=0, cuentainicial=0, cuentafinal=0, sumaTotal_ci=0, sumaTotal_cf=0, array_ci=[], array_cf=[];
+
+  function datos() { // ← FUNCION PARA SEPARAR 'precio' de 'quote': 
+    /// document.getElementById('quote0').textContent= "117500.00@2.7373@0.39445@1.27658@1.0215";
+    saludame();
+    
     let quote0= document.getElementById('quote0').textContent;
     document.getElementById('quote1').textContent=quote0.replace(/"/g,'').split('@')[0];
     document.getElementById('quote2').textContent=quote0.replace(/"/g,'').split('@')[1];
     document.getElementById('quote3').textContent=quote0.replace(/"/g,'').split('@')[2];
     document.getElementById('quote4').textContent=quote0.replace(/"/g,'').split('@')[3];
+    document.getElementById('quote5').textContent=quote0.replace(/"/g,'').split('@')[4];
 
     let p1=quote0.replace(/"/g,'').split('@')[0];
     let p2=quote0.replace(/"/g,'').split('@')[1];
     let p3=quote0.replace(/"/g,'').split('@')[2];
     let p4=quote0.replace(/"/g,'').split('@')[3];
+    let p5=quote0.replace(/"/g,'').split('@')[4];
 
     let price1 = document.getElementById('quote1').textContent;
     let price2 = document.getElementById('quote2').textContent;
     let price3 = document.getElementById('quote3').textContent;
     let price4 = document.getElementById('quote4').textContent;
+    let price5 = document.getElementById('quote5').textContent;
 
     let r1=Number(p1)*0.02677632;
     let r2=Number(p2)*18.30269;
-    let r3=Number(p3)*97.91192;
-    let r4=Number(p4)*98.901;
+    let r3=Number(p3)*83.00;
+    let r4=Number(p4)*97.91192;
+    let r5=Number(p5)*98.901;
 
-    // precio01.innerText='0.02677632 BTC'      +' x '+FD(Number(price1).toFixed(d1)) + ' = '+ FD(r1.toFixed(d1)) + ' USDT';/// *0.02677632 
-    // precio02.innerText='18.30269 XRP'        +' x '+FD(Number(price2).toFixed(d1)) + ' = '+ FD(r2.toFixed(d1)) + ' USDT';/// *0.02677632 
-    // precio03.innerText='97.91192 FARTCOIN'   +' x '+FD(Number(price3).toFixed(d1)) + ' = '+ FD(r3.toFixed(d1)) + ' USDT';/// *0.02677632 
-    // precio04.innerText='98.901 WLD'          +' x '+FD(Number(price4).toFixed(d1)) + ' = '+ FD(r4.toFixed(d1)) + ' USDT';/// *0.02677632
-    precio01.innerText='0.02677632 BTC'      +' x '+ F(Number(price1) , 4) + ' = '+ F(r1 , 4) + ' USDT';/// *0.02677632 
-    precio02.innerText='18.30269 XRP'        +' x '+ F(Number(price2) , 4) + ' = '+ F(r2 , 4) + ' USDT';/// *0.02677632 
-    precio03.innerText='97.91192 FARTCOIN'   +' x '+ F(Number(price3) , 4) + ' = '+ F(r3 , 4) + ' USDT';/// *0.02677632 
-    precio04.innerText='98.901 WLD'          +' x '+ F(Number(price4) , 4) + ' = '+ F(r4 , 4) + ' USDT';/// *0.02677632
+    precio01.innerText='0.02677632 BTC'   +' x '+ F(Number(price1) , 4) + ' = '+ F(r1 , 4) + ' USDT';  
+    precio02.innerText='18.30269 XRP'     +' x '+ F(Number(price2) , 4) + ' = '+ F(r2 , 4) + ' USDT';  
+    precio03.innerText='83.00 XLM'        +' x '+ F(Number(price3) , 4) + ' = '+ F(r3 , 4) + ' USDT';  
+    precio04.innerText='97.91192 FARTCOIN'+' x '+ F(Number(price4) , 4) + ' = '+ F(r4 , 4) + ' USDT'; 
+    precio04.innerText='98.901 WLD'       +' x '+ F(Number(price4) , 4) + ' = '+ F(r4 , 4) + ' USDT'; 
 
     let t=r1+r2+r3+r4;
+    //let array=     ['BTC'      ,'BTC'       ,'XRP'    ,'XRP'    ,'XLM'       ,'FARTCOIN','WLD'   ,'NEARUSDT','ICPUSDT','FETUSDT','RENDERUSDT','GRTUSDT','TIAUSDT','MANTAUSDT','PYTHUSDT','PEPEUSDT'];
+    let cantidadM=    ['0.0178'   ,'0.00897632','11.00'  ,'7.30269','83.00'     ,'97.91192','98.901','8','9','10','11','12','13','14','15','16','17'];
+    let preciocompra=['64,522.00','58,000.00' ,'1.97478','0.525'  ,'0.241084'  ,'1.3090'  ,'1.291' ,'8','9','10','11','12','13','14','15','16','17'];
+    let precioactual=[price1     ,price1      ,price2   ,price2   ,price3      ,price4    ,price5  ,0,0,0,0,0,0,0,0,0,0];// 'price6,price7,price8,price9,price10,price11,price12,price13,price14,price15,price16,price17'
 
-    // document.getElementById('total').textContent='TOTAL = ' + FD(t.toFixed(d1)) + ' USDT';   
-    document.getElementById('total').textContent='TOTAL = ' + F(t , 4) + ' USDT';   
+    document.getElementById('total').textContent='TOTAL = ' + F(t , 4) + ' USDT'; 
+
+    for (let i = 1; i < cantidadM.length+1; i++) {
+
+      let cantidad= Number(cantidadM[i-1].replace(/,/g,'')),
+      cuentaI= Number(cantidadM[i-1].replace(/,/g,'')) * Number(preciocompra[i-1].replace(/,/g,'')),
+      compra= preciocompra[i-1].replace(/,/g,''), 
+      diferencia=  Number(precioactual[i-1].replace(/,/g,'')) - Number(preciocompra[i-1].replace(/,/g,'')) ,
+      comision= 0.10,
+      ganancia= (diferencia - (((Number(compra)/100)*Number(comision)) +(((Number(compra) + diferencia)/100)*Number(comision))))*(Number(cuentaI)/Number(compra)) ;
+      document.getElementById('p_c' +i).innerText=F(cantidad                 ,4);
+      document.getElementById('p_ci'+i).innerText=F(cuentaI                  ,4);
+      document.getElementById('p_pc'+i).innerText=F(compra                   ,4);
+      document.getElementById('p_pv'+i).innerText=F(precioactual[i-1]        ,4);
+      document.getElementById('p_dp'+i).innerText=F(diferencia               ,4);
+      document.getElementById('p_p' +i).innerText=F(ganancia                 ,4) + '' + ' ('+F((((Number(cuentaI)+ganancia)-cuentaI)*100)/cuentaI, 4 )+'%)';
+      document.getElementById('p_cf'+i).innerText=F(Number(cuentaI)+ganancia ,4); 
+
+      console.log("################## : ",compra,comision,cuentaI,ganancia,Number(cuentaI)+ganancia); 
+
+      // n+=Number(document.getElementById('p_cf'+i).textContent.replace(/,/g,''));  document.getElementById('capitalFinalTotal').innerText= n;
+      let ni1= Number(document.getElementById('p_ci1').textContent.replace(/,/g,'')),
+          ni2= Number(document.getElementById('p_ci2').textContent.replace(/,/g,'')),
+          ni3= Number(document.getElementById('p_ci3').textContent.replace(/,/g,'')),
+          ni4= Number(document.getElementById('p_ci4').textContent.replace(/,/g,'')),
+          ni5= Number(document.getElementById('p_ci5').textContent.replace(/,/g,'')),
+          ni6= Number(document.getElementById('p_ci6').textContent.replace(/,/g,'')),
+          ni7= Number(document.getElementById('p_ci7').textContent.replace(/,/g,''));
+       document.getElementById('capitalIniciaTotal').innerText= F((ni1+ni2+ni3+ni4+ni5+ni6+ni7),4);
+       
+      let nf1= Number(document.getElementById('p_cf1').textContent.replace(/,/g,'')),
+          nf2= Number(document.getElementById('p_cf2').textContent.replace(/,/g,'')),
+          nf3= Number(document.getElementById('p_cf3').textContent.replace(/,/g,'')),
+          nf4= Number(document.getElementById('p_cf4').textContent.replace(/,/g,'')),
+          nf5= Number(document.getElementById('p_cf5').textContent.replace(/,/g,'')),
+          nf6= Number(document.getElementById('p_cf6').textContent.replace(/,/g,'')),
+          nf7= Number(document.getElementById('p_cf7').textContent.replace(/,/g,''));
+       document.getElementById('capitalFinalTotal').innerText= F((nf1+nf2+nf3+nf4+nf5+nf6+nf7),4);
+        
+       let d=(nf1+nf2+nf3+nf4+nf5+nf6+nf7) - (ni1+ni2+ni3+ni4+ni5+ni6+ni7);
+           document.getElementById('diferenciaTotal').innerText=F((d) , 4)+ ' USDT' + ' ('+F(((d)*100)/(ni1+ni2+ni3+ni4+ni5+ni6+ni7), 4 )+'%)';
+
+    } 
 
     ////////
     document.getElementById('SALUDAME').click();   
     ////////
-    /*  1                2                3                4                5                6                7                8  
-        117056.54830059  117056.54830059  117027.33021975  117050.7788561                                            
-        2.6769518539977  2.6769518539977  2.6772834793582  2.6850984860974                                         
-        1.2114176915252  1.2114176915252  1.2099861011665  1.2089878781299                                            
-        0.9966215963169  0.9966215963169  0.99549204202995 0.99648702976459                                                                                           
+   /*
+    1,970.5322     1,491.8073 USDT (75.7058%)    3,462.3395   
+                  1,491.7180 USDT (75.7012%)     3,462.2502   
+
     */
 
+  }
+
+     let nn=1;  
+    function texto() { // 
+    ////////
+    document.getElementById('texto').value= nn++;
+    if (document.getElementById('texto').value== 12) {
+      nn= 1;
+    }
+    ////////
+    
   }
 
   function quote0() {////SIN USO ← IMPRIME nombre , simbolo y precio AL ABRIR PAGINA 
@@ -414,14 +363,12 @@ function F(m,n) { //FORMATEA CON n DECIMALES
       document.getElementById('precio').style.color=r;
       //simboloC.innerHTML = document.getElementById('symbol0').textContent;
       //document.getElementById("enviar").click();
-    }   
+  }   
   
   function onload() {
     saludame();
-    //document.getElementById("SALUDAME").click();;
-    //if (document.getElementById('price0').textContent=='') {quote0();} 
-    startTimer();
-    startTimer1();startTimer2();
+    generatabla();
+    startTimer(); startTimer1();startTimer2();
   }
 
   function reloj() {//SIN USO
@@ -455,9 +402,7 @@ function F(m,n) { //FORMATEA CON n DECIMALES
   function startTimer1() {timerID1=window.setInterval(reloj1,1000);}
   function stopTimer1() {clearInterval(timerID1);} 
   function startTimer2() {timerID2=window.setInterval(reloj2,2000);}
-  function stopTimer2() {clearInterval(timerID2);} 
-  //quote0: 103175.72969849   102868.75678894   102447.74303898   102447.74303898                           
-  //precio: 103,175.80        103,175.38        102,868.27        102,447.36        ATRASADO 60 SEGUNDOS   
+  function stopTimer2() {clearInterval(timerID2);}  
 
 </script>
 </body>
