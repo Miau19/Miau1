@@ -192,6 +192,7 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
     }
 
     .pp{text-align: right;;white-space: nowrap;color: var(--text-color); background: rgba(39, 39, 39, 1);;} /*OJO  margin: 0.25rem  0.25rem 0.25rem  1rem  */
+    .pp3{text-align: right;;white-space: nowrap;color: #874100ff; background: rgba(54, 54, 54, 1);;} /*OJO  margin: 0.25rem  0.25rem 0.25rem  1rem  */
 
     .tabla1 .d_cf3{
       background: rgba(0, 0, 12, 1);
@@ -353,7 +354,7 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
     `<td class='td_cf' id='td_ci`+i+`'><div class='d_cf' ><p></p><p class="pp"  name='cantidad`+''+`'   id='p_c` +i+`'>`+F(cantidad   ,d)+`</p></div></td>`+                   /*               */ 
     `<td class='td_cf' id='td_pc`+i+`'><div class='d_cf' ><p></p><p class="pp"  name='cinicial`+''+`'   id='p_ci`+i+`'>`+F(capitalI   ,d)+`</p></div></td>`+                   /*name='L`+e+`'  */      
     `<td class='td_cf' id='td_pv`+i+`'><div class='d_cf' ><p></p><p class="pp"  name='compra`+''+`'     id='p_pc`+i+`'>`+F(pCompra    ,d)+`</p></div></td>`+                   /*name='L`+e+`1' */      
-    `<td class='td_cf' id='td_dp`+i+`'><div class='d_cf3'><p></p><p class="pp"  name='venta`+''+`'      id='p_pv`+i+`'>`+F(pVenta     ,d)+`</p></div></td>`+                   /*name='L`+e+`2' */      
+    `<td class='td_cf' id='td_dp`+i+`'><div class='d_cf3'><p></p><p class="pp3" name='venta`+''+`'      id='p_pv`+i+`'>`+F(pVenta     ,d)+`</p></div></td>`+                   /*name='L`+e+`2' */      
     `<td class='td_cf' id='td_c` +i+`'><div class='d_cf' ><p></p><p class="pp"  name='diferencia`+''+`' id='p_dp`+i+`'>`+F(diferencia ,d)+`</p></div></td>`+                   /*name='L`+e+`'  */      
     `<td class='td_cf' id='td_p` +i+`'><div class='d_cf' ><p></p><p class="pp"  name='profit`+''+`'     id='p_p` +i+`'>`+F(gp         ,d)+`</p></div></td>`+ /*name='L`+e+`3' */
     `<td class='td_cf' id='td_cf`+i+`'><div class='d_cf' ><p></p><p class="pp"  name='cfinal`+''+`'     id='p_cf`+i+`'>`+F(capitalF   ,d)+`</p></div></td>`+                   /*name='L`+e+`4' */ 
