@@ -222,7 +222,7 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
     </style>
 </head>
 <body class="grid_container"   onload="onload()">
-    <header class="header">header
+    <header class="header">header header
         <div style="width: auto;">
             <div style="display: flex;justify-content: start;align-items: center;    color: var(--text-color);font-family: var(--font-family2); font-weight: var(--font-weight2);">
             <div id="reloj"></div>
