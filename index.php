@@ -196,7 +196,7 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
     .tabla1 .d_cf3{
       background: rgba(0, 0, 12, 1);
       color: #875400ff;
-            display: flex;justify-content: end;align-items: center;
+      display: flex;justify-content:space-between;align-items: center;
       padding: 10px;;
       white-space: nowrap;
 
