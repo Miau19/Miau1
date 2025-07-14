@@ -1,32 +1,37 @@
-<!--  https://www.youtube.com/watch?v=_0iZ3W2u_Bo&t=733s 
-     https://dostinhurtado.com/site/cursos/curso-php/php-capitulo-11/ 
--->
- 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Wallet 01</title> 
-	<script src="jquery-3.4.1.min.js"></script>
-  <style type="text/css">
-    @import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
-    /*  
-    @font-face {font-family: "Saira Expanded";src: url("Saira_Expanded-Bold.ttf");}
-    @font-face {font-family: "Saira Expanded SemiBold";src: url("Saira_Expanded-SemiBold.ttf");}
-    */  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style(para centrar tabbla).css"> -->
+    <title>Mmaquetado-Grid</title>
+
+    	<script src="jquery-3.4.1.min.js"></script>
+
+    <style type="text/css">
+       /* REFERENCIAS: */
+      /* https://www.youtube.com/watch?v=xNZNHdplmxk&list=PLHW-COpapaVvMABXh_x9R20j57Dex19xI&index=1 */
+      /* https://www.youtube.com/watch?v=Sgf4HEAW-gQ */
+
+          @import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
+       /*  
+       @font-face {font-family: "Saira Expanded";src: url("Saira_Expanded-Bold.ttf");}
+       @font-face {font-family: "Saira Expanded SemiBold";src: url("Saira_Expanded-SemiBold.ttf");}
+      */  
     :root{   
         --html-color: hsla(240, 100%, 6%, 1.0);
         --bg-color:rgb(18, 18, 18);           /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(0, 0%, 14%) */
         --bg-card-color: rgb(40, 40, 40);      /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(0, 0%, 11%) */
         --pr1mary-color: rgb(192, 192, 192);/* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(228, 100%, 30%) */
-        --text-color:rgba(234, 234, 234, 0.75);    /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(214, 7%, 79%) */
-        --border-color: rgb(169, 169, 169);
+        --text-color:rgba(205, 219, 220, 0.98);    /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(214, 7%, 79%) */
+        --border-color: rgba(169, 169, 169,, 0.5);
         --border-tr-color: rgba(193, 193, 193, 0.5);
         --border-radius_tex: 0.25rem;  /* PARA ARCO INTERNO */
         --border-radius: 0.25rem;  /* PARA ARCO EXTERNO (ARCO INTERNO + PADDING)*/
         --transition: color 0.1s, background-color 0.6s ease-in-out;
         --font-family1: 'Saira', 'Saira Expanded SemiBold', sans-serif;/*font-family: "Roboto", sans-serif;*/ /*font-family: Impact, sans-serif;'Times New Roman'; 'Consolas'; 'Oswald'*/
         --font-family2: 'Saira', 'Saira Expanded SemiBold', sans-serif; /*PARA NUMEROS*/ 
-        --font-size1: 0.7rem;/*TAMAÑO TEXTO NORMAL --font-size1: 0.80rem;*/ 
+        --font-size1: 0.5rem;/*TAMAÑO TEXTO NORMAL --font-size1: 0.80rem;*/ 
         --font-size2: 1.35rem; /*TAMAÑO PARA SUB TITULOS --font-size2: 0.86rem;*/ 
         --font-size3: 1rem; /*TAMAÑO PARA TITULOS --font-size3: 1.25rem; */
         --font-size4: 0.70rem; /*TAMAÑO PARA TELEF CON WIDTH 320PX --font-size4: 0.8rem; */
@@ -50,108 +55,236 @@
         --n2:20px; --n3:20px;    
     }
 
-    .divTabla{
-      background: rgba(80, 49, 1, 1);
-      width: 100%;
-display: flex; justify-content: center; flex-direction: column; padding: 5px;
-      overflow:auto;
+      
+      *{
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+      }
+      html{
+          font-size: 30px; /* Fuente raiz, si cambiar a otros valor entonces cambiaran el resto. Fuente predeterminada del explorador 16px  */  /* https://www.youtube.com/watch?v=Sgf4HEAW-gQ */
+      }
+      body{
+          background-color: rgb(0, 2, 110);
+color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--font-family1);
+           /*font-size: 30%; 50% de: html{font-size: 16px;} */
+           font-size: var(--font-size1);
+          text-transform: uppercase;
+          min-height: 100vh;
+          padding: 10px;
+      } 
+      .grid_container > * {
+          border-radius: 10px;
+          padding: 10px;
+          text-align: center;
+      
+      }
+      .grid_container{
+          display: grid;
+          gap : 10px;
+          grid-template:
+          "header" auto
+          "navbar" 60px
+          "main" auto
+          "sidebar" 40px
+          "footer" 40px;
+      }
+      
+      .header{
+          grid-area: header;
+          background-color: rgba(13, 0, 31, 1);
+          /*display: none;*/
+      }
+      .navbar{
+          grid-area: navbar;
+          background-color: rgba(20, 0, 15, 0.99);
+      }
+      .sidebar{
+          grid-area: sidebar;
+          background-color: rgba(0, 16, 4, 1);
+      }
+      .main{
+          grid-area: main;
+          background-color: rgba(25, 25, 25, 0.57);
+      
+      overflow: auto;
+      }
+      .footer{
+          grid-area: footer;
+          background-color: rgba(29, 14, 0, 1);
+      }
+      
+      
+      
+      
+      @media (min-width: 768px) {
+          .grid_container{
+              grid-template:   
+             "header  navbar" auto
+             "sidebar main"   auto
+             "footer  footer"  40px /
+              200px   auto ;
+          }
 
-    }
-    .tabla1{
-      background: rgba(0, 0, 0, 1);
-      border: 2px solid rgba(88, 88, 88, 1);
+      }
+      @media (min-width: 992px) {
+          .grid_container{ 
+             grid-template:
+             "header  header header" auto
+             "navbar  main  sidebar" auto
+             "footer  footer footer"  60px /
+              200px   auto   200px;
+          }
+  
+      }
+      .DIV{
+          background: rgba(52, 0, 125, 1);
+             padding: 5px;
+             width: 100%;
+      }
+       .div1{
+          background: rgba(0, 6, 180, 1);
+                  padding: 5px;
+           width: 100%;
+           overflow: auto;
+       }
+       .tabla1 {
+              background: rgba(0, 0, 7, 1);
+            border:  2px solid var(--border-color);;
+           /*border: 2px solid rgb(4, 150, 1);*/
+           width: 100%;
           border-collapse: collapse;
-          color: var(--text-color);font-family: var(--font-family1);font-weight: var(--font-weight1);font-size: var(--font-size1);
-
-    }
-    .tabla1 td{
-      background: rgba(0, 0, 0, 1);
-      border: 2px solid rgba(156, 156, 156, 1);
-
-    }
-    .tabla1 td div{
-      background: rgba(0, 2, 21, 1);
-      border: none;
-      display: flex;justify-content: center;align-items: center;
+       }
+        .tabla1 td{
+                 border-top:  2px solid var(--border-color);;border-bottom:  2px solid var(--border-color);;
+ border-left: none;border-right: none;
+       }
+    
+    .tabla1 .d1{
+      background: rgba(0, 9, 80, 1);
+      display: flex;justify-content: end;align-items: center;
        /*width: 100%;height: 100%;*/
       padding: 10px;;
       white-space: nowrap;
+      /*text-align: left;*/
+    }
+    .tabla1 .d0{
+      background: rgba(0, 9, 80, 1);
+            display: flex;justify-content: start;align-items: center;
+       /*width: 100%;height: 100%;*/
+      padding: 10px;;
+      white-space: nowrap;
+      /*text-align: left;*/
     }
 
-  </style>
+    .tabla1 .d_s{
+      background: rgba(0, 1, 9, 1);
+            display: flex;justify-content: start;align-items: center;  
+      padding: 10px;;
+            white-space: nowrap;
+
+    }
+        .tabla1 .d_cf{
+      background: rgba(0, 0, 12, 1);
+            display: flex;justify-content: end;align-items: center;
+      padding: 10px;;
+      white-space: nowrap;
+
+
+
+    }
+       .tabla1 .d_cf3{
+      background: rgba(0, 0, 12, 1);
+      color: #875400ff;
+            display: flex;justify-content: end;align-items: center;
+      padding: 10px;;
+      white-space: nowrap;
+
+
+
+    }
+        .tabla1 .divx{
+          display: none;
+      background: rgba(0, 0, 7, 0);
+                  display: flex;justify-content: end;align-items: center;
+      padding: 10px;;
+      white-space: nowrap;
+
+    }
+       .tabla1 .divx1{
+          display: none;
+      background: rgba(0, 0, 7, 1);
+                  display: flex;justify-content: end;align-items: center;
+      padding: 10px;;
+      white-space: nowrap;
+
+    }
+    </style>
 </head>
-<body  onload="onload()">
- 
-  <div style="display: flex;justify-content: start;align-items: center;    color: var(--text-color); font-size: var(--font-size4);font-family: var(--font-family2); font-weight: var(--font-weight2);">
-    <div id="reloj"></div>
-    <?php echo 'Reloj1: &nbsp;' ?>
-    <div id="reloj1">00</div><?php echo '&nbsp;&nbsp; Reloj2: &nbsp;' ?><div id="reloj2">00</div>
-  </div>
-  <input type="button" id='SALUDAME' value="SALUDAME" onclick="datos() , texto();">
-    <input type="button" id='gt' value="agregar" onclick="generatabla();">
+<body class="grid_container"   onload="onload()">
+    <header class="header">header
+        <div style="width: auto;">
+            <div style="display: flex;justify-content: start;align-items: center;    color: var(--text-color);font-family: var(--font-family2); font-weight: var(--font-weight2);">
+            <div id="reloj"></div>
+            <?php echo 'Reloj1: &nbsp;' ?>
+            <div id="reloj1">00</div><?php echo '&nbsp;&nbsp; Reloj2: &nbsp;' ?><div id="reloj2">00</div>
+            </div>
+            <input type="button" id='SALUDAME' value="SALUDAME" onclick="datos() , texto();">
+            <input type="button" id='gt' value="agregar" onclick="generatabla();">
+          
+            <input type="text" id="texto" value="0.0">Timer: 60,000 ms 
+            <input type="text" name="usuario" id="usuario" value="BTC">
+            <div id="quote0" style="background:rgb(10, 46, 0);"></div><br>
+          
+            <div id="quote1" style="background:rgb(26, 0, 46);"></div>
+            <div id="quote2" style="background:rgb(26, 0, 46);"></div>
+            <div id="quote3" style="background:rgb(50, 2, 87);"></div>
+            <div id="quote4" style="background:rgb(50, 2, 87);"></div>
+            <div id="quote5" style="background:rgb(50, 2, 87);"></div><br>
 
-  <input type="text" id="texto" value="0.0">Timer: 60,000 ms 
-  <input type="text" name="usuario" id="usuario" value="BTC">
-  <div id="quote0" style="background:rgb(10, 46, 0);font-size: 1rem;"></div><br>
-
-  <div id="quote1" style="background:rgb(26, 0, 46);font-size: 1rem;"></div>
-  <div id="quote2" style="background:rgb(26, 0, 46);font-size: 1rem;"></div>
-  <div id="quote3" style="background:rgb(50, 2, 87);font-size: 1rem;"></div>
-  <div id="quote4" style="background:rgb(50, 2, 87);font-size: 1rem;"></div>
-  <div id="quote5" style="background:rgb(50, 2, 87);font-size: 1rem;"></div><br>
-
- <div class='divTabla'>
-  <table class="tabla1" id="tabla_1">
-    <tr>
-      <td><div>SIMBOLO</div></td><td><div>CANTIDAD</div></td><td><div>CAPITAL INICIAL</div></td><td><div>PRECIO DE COMPRA</div></td><td><div>PRECIO ACTUAL</div></td><td><div>DIFERENCIA</div></td><td><div>GANANCIAS/PERDIDAS</div></td><td><div>CAPITAL FINAL</div></td>
-    </tr>
-    <tbody id='tbodyD'></tbody>
-      <tfoot>
-             
-                <tr class="TR">
-                  <td><div class='divx'></div></td><td><div class='divx'></div></td><td><div id='capitalIniciaTotal'>00</div></td><td><div class='divx'></div></td><td><div class='divx'></div></td><td><div class='divx'></div></td><td><div id='diferenciaTotal'>0</div></td><td><div id='capitalFinalTotal'>0</div></td>
-                </tr>
+            <div ><span id='price0' class="precio" ></span></div>
+            <div ><span id='price' class="precio" ></span></div>
+            
+            <div >
+              <div ><span id='precio01' class="precio" ></span></div>
+              <div ><span id='precio02' class="precio" ></span></div>
+              <div ><span id='precio03' class="precio" ></span></div>
+              <div ><span id='precio04' class="precio" ></span></div>
+              <div ><span id='precio05' class="precio" ></span></div><br>
+          
+              <div ><span id='total' class="precio" ></span></div>
+          
+              <div style="display: flex;justify-content: center;align-items: center;" ><svg id="svgUP1"   style="display: none;fill: rgba(0,255,0,0.95); width: 1.5rem;height: 1.5rem; " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 3 24 20"><path d="M15,20H9V12H4.16L12,4.16L19.84,12H15V20Z" /></svg></div>
+              <div style="display: flex;justify-content: center;align-items: center;" ><svg id="svgDOWN1" style="display: none;fill: rgba(255,0,0,0.95); width: 1.5rem;height: 1.5rem; " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 1 24 20"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z" /></svg></div>
+              <div style="display: flex;justify-content: center;align-items: center;"><span class='usd'></span></div>
+            </div>
+        </div>
+    </header>
+    <nav class="navbar">navbar</nav>
+    <aside class="sidebar">sidebar</aside>
+    <article class="main">main
+        <div class="DIV">
+            <div class="div1">
+            <table class="tabla1" id="tabla_1"> 
+              <tr>
+                <td><div class='d0'>SIMBOLO</div></td><td><div class='d1'>CANTIDAD</div></td><td><div class='d1'>CAPITAL INICIAL</div></td><td><div class='d1'>PRECIO DE COMPRA</div></td><td><div class='d1'>PRECIO ACTUAL</div></td><td><div class='d1'>DIFERENCIA</div></td><td><div class='d1'>GANANCIAS/PERDIDAS</div></td><td><div class='d1'>CAPITAL FINAL</div></td>
+              </tr>
+              <tbody id='tbodyD'></tbody>
+                <tfoot>
+                    <tr class="TR">
+                       <td><div class='divx'></div></td><td><div class='divx'></div></td><td><div class='divx1' id='capitalIniciaTotal'>00</div></td><td><div class='divx'></div></td><td><div class='divx'></div></td><td><div class='divx'></div></td><td><div class='divx1' id='diferenciaTotal'>0</div></td><td><div class='divx1' id='capitalFinalTotal'>0</div></td>
+                    </tr>
               </tfoot>
-     <!-- x<tfoot>
-                <tr class="TR">
-                  <td colspan="8" rowspan="1" class="td_separador"><div><p>|</p></div></td>
-  
-                </tr>
-                <tr class="TR">
-                  <td colspan="4" rowspan="1" class="tdFinalT1"><div class="dFinalT1"><p>Capital inicial total                                  </p></div></td>
-                  <td colspan="4" rowspan="1" class="tdFinalT2"><div class="dFinalT2"><p></p><p  name="CT" id="capitalIniciaTotal">2,229.00 USDT</p></div></td>
-                </tr>
-                <tr class="TR">
-                  <td colspan="4" rowspan="1" class="tdFinalT1"><div class="dFinalT1"><p id="capitalFinalT">Capital final total                </p></div></td>
-                  <td colspan="4" rowspan="1" class="tdFinalT2"><div class="dFinalT2"><p></p><p  name="CT" id="capitalFinalTotal">3,634.63 USDT</p></div></td>
-                </tr>
-                <tr class="TR">
-                  <td colspan="4" rowspan="1" class="tdFinalT1"><div class="dFinalT1"><p id="gananciasPerdidas">Ganancias/P&eacute;rdidas             </p></div></td>
-                  <td colspan="4" rowspan="1" class="tdFinalT2"><div class="dFinalT2"><p></p><p  name="CT" id="diferenciaTotal">1,403.97 USDT (62.98%)</p></div></td>
-                </tr>
-              </tfoot>name="L3" -->  
-    </table>
-  </div>
-  <div ><span id='price0' class="precio" ></span></div>
-  <div ><span id='price' class="precio" ></span></div>
-  
-  <div style="">
-    <div ><span id='precio01' class="precio" ></span></div>
-    <div ><span id='precio02' class="precio" ></span></div>
-    <div ><span id='precio03' class="precio" ></span></div>
-    <div ><span id='precio04' class="precio" ></span></div>
-    <div ><span id='precio05' class="precio" ></span></div><br>
+               <!--  -->  
+            </table>
+            </div>
+        </div>
+    </article>
+    <footer class="footer">footer</footer>           
 
-    <div ><span id='total' class="precio" ></span></div>
-
-
-    <div style="display: flex;justify-content: center;align-items: center;" ><svg id="svgUP1"   style="display: none;fill: rgba(0,255,0,0.95); width: 1.5rem;height: 1.5rem; " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 3 24 20"><path d="M15,20H9V12H4.16L12,4.16L19.84,12H15V20Z" /></svg></div>
-    <div style="display: flex;justify-content: center;align-items: center;" ><svg id="svgDOWN1" style="display: none;fill: rgba(255,0,0,0.95); width: 1.5rem;height: 1.5rem; " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 1 24 20"><path d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z" /></svg></div>
-    <div style="display: flex;justify-content: center;align-items: center;"><span class='usd'></span></div>
-  </div>
-  
-<script>
-	function saludame(){ 
+    <script>
+	function saludame(){   
+     /*
     let texto='wwwwwwwwwww';
     var parametros = 
     {
@@ -161,7 +294,7 @@ display: flex; justify-content: center; flex-direction: column; padding: 5px;
     };
     $.ajax({
       data: parametros,
-      url: 'codigo_php01.php', 
+      url: 'codigo_php02.php', 
       type: 'POST',
       
       beforesend: function()
@@ -173,48 +306,48 @@ display: flex; justify-content: center; flex-direction: column; padding: 5px;
         $('#quote0').html(mensaje);
       }
     });
- 
+    */
   } 
 
-  let TIMER=0, CONTADOR=0, price='', d1=13, precio1, old_price1=0 ,  r="rgba(255,0,0,0.95)", v='rgba(0,255,0,0.95)', fiat='USD';
+  let TIMER=0, CONTADOR=0, price='', d1=13, precio1, old_price1=0 ,  r="rgba(255,0,0,0.95)", v='rgba(0,255,0,0.95)', b='#f4feffff', fiat='USD';
   let n3=8; 
   let array=['BTC','BTC','XRP','XRP','XLM','FARTCOIN','WLD','NEARUSDT','ICPUSDT','FETUSDT','RENDERUSDT','GRTUSDT','TIAUSDT','MANTAUSDT','PYTHUSDT','PEPEUSDT'];
   
   function F(m,n) { //FORMATEA CON n DECIMALES
-  let cadena= new String(Number(m).toFixed(n3))/* toFixed(n3) CONVIERTE -4.7e-7 A -0.00000047 Y SE EVITA RESPUESTAS CON NOTACION CIENTIFICA; SI SE DESEA NOTACION CIENTIFICA USAR: let cadena= new String(m) */
-  , rgx = /(\d+)(\d{3})/, ceros='',nuevaCadena='', decimal, d, nuevaParteEntera='', e; 
-  (n==undefined || n==0 || n=='')? n=Number(n) : n=Number(n)//n=2: PARA UN RETORNO CON DOS DECIMALES COMO MINIMO
-  if (/[a-zA-Z]/.test(cadena)==true) { //SI ENCUENTRA LETRAS EN LA CADENA: infinity NaN isNaN 5.554680159996e+333
-    return cadena; 
-  }
-  else {//SI ENCUENTRA SOLO NUMEROS Y UN PUNTO EN LA CADENA
-      if (/[.]/.test(cadena)==true) {//SI ENCUENTRA PUNTO EN LA CADENA
-          e = cadena.split('.')[0];//d: PARTE ENTERA
-          d = cadena.split('.')[1];//d: PARTE DECIMAL
-          if (d.length >=n) {
-              decimal = d.substring(0, n);//CORTAR CADENA DE DECIMALES A n DIGITOS  
-          }
-          if (d.length < n) {
-              for (let i = 1; i <= n-d.length; i++) {ceros += '0';}//COMPLETA PARTE DECIMAL CON CEROS
-              decimal = d+ceros;//console.log('decimal....',decimal);
-          }
-          //AGREGAR COMAS A LA PARTE ENTERA:
-          for (i = 1; i <= Math.trunc(e.length/3); i++) {// trunc OBTIENE LA PARTE ENTERA DE: LA LONGITUD DE e DIVIDIDO POR 3
-              e = e.replace(rgx, '$1' + ',' + '$2');  
-          } 
-          (n==undefined || n==0 || n=='')? nuevaParteEntera=e+'' : nuevaParteEntera=e+'.'+decimal;
-          return nuevaParteEntera;
-      } 
-      else {
-          for (let i = 1; i <= n; i++) {ceros += '0';}//GENERAR CEROS PARA PARTE DECIMAL DE 2CADENA
-          //AGREGAR COMAS A LA CADENA:
-          for (let i = 1; i <= Math.trunc(cadena.length/3); i++) {// trunc OBTIENE LA PARTE ENTERA DE: LA LONGITUD DE e DIVIDIDO POR 3
-              cadena = cadena.replace(rgx, '$1' + ',' + '$2');  
-          } 
-          (n==undefined || n==0 || n=='')? nuevaCadena = cadena : nuevaCadena = cadena+'.'+ceros;
+    let cadena= new String(Number(m).toFixed(n3))/* toFixed(n3) CONVIERTE -4.7e-7 A -0.00000047 Y SE EVITA RESPUESTAS CON NOTACION CIENTIFICA; SI SE DESEA NOTACION CIENTIFICA USAR: let cadena= new String(m) */
+    , rgx = /(\d+)(\d{3})/, ceros='',nuevaCadena='', decimal, d, nuevaParteEntera='', e; 
+    (n==undefined || n==0 || n=='')? n=Number(n) : n=Number(n)//n=2: PARA UN RETORNO CON DOS DECIMALES COMO MINIMO
+    if (/[a-zA-Z]/.test(cadena)==true) { //SI ENCUENTRA LETRAS EN LA CADENA: infinity NaN isNaN 5.554680159996e+333
+      return cadena; 
+    }
+    else {//SI ENCUENTRA SOLO NUMEROS Y UN PUNTO EN LA CADENA
+        if (/[.]/.test(cadena)==true) {//SI ENCUENTRA PUNTO EN LA CADENA
+            e = cadena.split('.')[0];//d: PARTE ENTERA
+            d = cadena.split('.')[1];//d: PARTE DECIMAL
+            if (d.length >=n) {
+                decimal = d.substring(0, n);//CORTAR CADENA DE DECIMALES A n DIGITOS  
+            }
+            if (d.length < n) {
+                for (let i = 1; i <= n-d.length; i++) {ceros += '0';}//COMPLETA PARTE DECIMAL CON CEROS
+                decimal = d+ceros;//console.log('decimal....',decimal);
+            }
+            //AGREGAR COMAS A LA PARTE ENTERA:
+            for (i = 1; i <= Math.trunc(e.length/3); i++) {// trunc OBTIENE LA PARTE ENTERA DE: LA LONGITUD DE e DIVIDIDO POR 3
+                e = e.replace(rgx, '$1' + ',' + '$2');  
+            } 
+            (n==undefined || n==0 || n=='')? nuevaParteEntera=e+'' : nuevaParteEntera=e+'.'+decimal;
+            return nuevaParteEntera;
+        } 
+        else {
+            for (let i = 1; i <= n; i++) {ceros += '0';}//GENERAR CEROS PARA PARTE DECIMAL DE 2CADENA
+            //AGREGAR COMAS A LA CADENA:
+            for (let i = 1; i <= Math.trunc(cadena.length/3); i++) {// trunc OBTIENE LA PARTE ENTERA DE: LA LONGITUD DE e DIVIDIDO POR 3
+                cadena = cadena.replace(rgx, '$1' + ',' + '$2');  
+            } 
+            (n==undefined || n==0 || n=='')? nuevaCadena = cadena : nuevaCadena = cadena+'.'+ceros;
           return nuevaCadena;
       }
-  }
+    }
   } 
 
   function generatabla() {
@@ -226,7 +359,7 @@ display: flex; justify-content: center; flex-direction: column; padding: 5px;
     `<td class='td_cf' id='td_ci`+i+`'><div class='d_cf' name='cantidad`+''+`'   id='p_c` +i+`'>`+F(cantidad   ,d)+`</div></td>`+                   /*               */ 
     `<td class='td_cf' id='td_pc`+i+`'><div class='d_cf' name='cinicial`+''+`'   id='p_ci`+i+`'>`+F(capitalI   ,d)+`</div></td>`+                   /*name='L`+e+`'  */      
     `<td class='td_cf' id='td_pc`+i+`'><div class='d_cf' name='compra`+''+`'     id='p_pc`+i+`'>`+F(pCompra    ,d)+`</div></td>`+                   /*name='L`+e+`'  */      
-    `<td class='td_cf' id='td_pv`+i+`'><div class='d_cf' name='venta`+''+`'      id='p_pv`+i+`'>`+F(pVenta     ,d)+`</div></td>`+                   /*name='L`+e+`1' */      
+    `<td class='td_cf' id='td_pv`+i+`'><div class='d_cf3' name='venta`+''+`'     id='p_pv`+i+`'>`+F(pVenta     ,d)+`</div></td>`+                   /*name='L`+e+`1' */      
     `<td class='td_cf' id='td_dp`+i+`'><div class='d_cf' name='diferencia`+''+`' id='p_dp`+i+`'>`+F(diferencia ,d)+`</div></td>`+                   /*name='L`+e+`2' */      
     `<td class='td_cf' id='td_c` +i+`'><div class='d_cf' name='profit`+''+`'     id='p_p` +i+`'>`+F(gp         ,d)+`</div></td>`+                   /*name='L`+e+`'  */      
     `<td class='td_cf' id='td_cf`+i+`'><div class='d_cf' name='cfinal`+''+`'     id='p_cf`+i+`'>`+F(capitalF   ,d)+`</div></td>`+                   /*name='L`+e+`4' */ 
@@ -240,7 +373,7 @@ display: flex; justify-content: center; flex-direction: column; padding: 5px;
         var n=0, cuentainicial=0, cuentafinal=0, sumaTotal_ci=0, sumaTotal_cf=0, array_ci=[], array_cf=[];
 
   function datos() { // ← FUNCION PARA SEPARAR 'precio' de 'quote': 
-    /// document.getElementById('quote0').textContent= "117500.00@2.7373@0.39445@1.27658@1.0215";
+     document.getElementById('quote0').textContent= "117500.00@2.7373@0.39445@1.27658@1.0215";
     saludame();
     
     let quote0= document.getElementById('quote0').textContent;
@@ -297,8 +430,11 @@ display: flex; justify-content: center; flex-direction: column; padding: 5px;
       document.getElementById('p_dp'+i).innerText=F(diferencia               ,4);
       document.getElementById('p_p' +i).innerText=F(ganancia                 ,4) + '' + ' ('+F((((Number(cuentaI)+ganancia)-cuentaI)*100)/cuentaI, 4 )+'%)';
       document.getElementById('p_cf'+i).innerText=F(Number(cuentaI)+ganancia ,4); 
-
-      console.log("################## : ",compra,comision,cuentaI,ganancia,Number(cuentaI)+ganancia); 
+      
+      if(ganancia > 0)  {document.getElementById('p_p'+i).style.color=v; document.getElementById('p_cf'+i).style.color=v;}   
+      if(ganancia < 0)  {document.getElementById('p_p'+i).style.color=r; document.getElementById('p_cf'+i).style.color=r;  }
+      if(ganancia == 0) {document.getElementById('p_p'+i).style.color=b; document.getElementById('p_cf'+i).style.color=b;}   
+     // console.log("################## : ",compra,comision,cuentaI,ganancia,Number(cuentaI)+ganancia); 
 
       // n+=Number(document.getElementById('p_cf'+i).textContent.replace(/,/g,''));  document.getElementById('capitalFinalTotal').innerText= n;
       let ni1= Number(document.getElementById('p_ci1').textContent.replace(/,/g,'')),
@@ -320,7 +456,11 @@ display: flex; justify-content: center; flex-direction: column; padding: 5px;
        document.getElementById('capitalFinalTotal').innerText= F((nf1+nf2+nf3+nf4+nf5+nf6+nf7),4);
         
        let d=(nf1+nf2+nf3+nf4+nf5+nf6+nf7) - (ni1+ni2+ni3+ni4+ni5+ni6+ni7);
-           document.getElementById('diferenciaTotal').innerText=F((d) , 4)+ ' USDT' + ' ('+F(((d)*100)/(ni1+ni2+ni3+ni4+ni5+ni6+ni7), 4 )+'%)';
+       document.getElementById('diferenciaTotal').innerText=F((d) , 4)+ ' USDT' + ' ('+F(((d)*100)/(ni1+ni2+ni3+ni4+ni5+ni6+ni7), 4 )+'%)';
+
+      if(d > 0)  {document.getElementById('diferenciaTotal').style.color=v;document.getElementById('capitalFinalTotal').style.color=v;}   
+      if(d < 0)  {document.getElementById('diferenciaTotal').style.color=r;document.getElementById('capitalFinalTotal').style.color=r;  } 
+      if(d == 0) {document.getElementById('diferenciaTotal').style.color=b;document.getElementById('capitalFinalTotal').style.color=b;}   
 
     } 
 
@@ -404,6 +544,6 @@ display: flex; justify-content: center; flex-direction: column; padding: 5px;
   function startTimer2() {timerID2=window.setInterval(reloj2,2000);}
   function stopTimer2() {clearInterval(timerID2);}  
 
-</script>
+    </script>
 </body>
-</html>
+</html> 
