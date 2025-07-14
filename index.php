@@ -371,7 +371,7 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
         var n=0, cuentainicial=0, cuentafinal=0, sumaTotal_ci=0, sumaTotal_cf=0, array_ci=[], array_cf=[];
 
   function datos() { // ← FUNCION PARA SEPARAR 'precio' de 'quote': 
-     document.getElementById('quote0').textContent= "117500.00@2.7373@0.39445@1.27658@1.0215";
+    // document.getElementById('quote0').textContent= "117500.00@2.7373@0.39445@1.27658@1.0215";
     saludame();
     
     let quote0= document.getElementById('quote0').textContent;
