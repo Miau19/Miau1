@@ -284,7 +284,6 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
 
     <script>
 	function saludame(){   
-     /*
     let texto='wwwwwwwwwww';
     var parametros = 
     {
@@ -294,7 +293,7 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
     };
     $.ajax({
       data: parametros,
-      url: 'codigo_php02.php', 
+      url: 'codigo_php01.php', 
       type: 'POST',
       
       beforesend: function()
@@ -306,7 +305,6 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
         $('#quote0').html(mensaje);
       }
     });
-    */
   } 
 
   let TIMER=0, CONTADOR=0, price='', d1=13, precio1, old_price1=0 ,  r="rgba(255,0,0,0.95)", v='rgba(0,255,0,0.95)', b='#f4feffff', fiat='USD';
