@@ -157,25 +157,25 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
        }
         .tabla1 td{
                  border-top:  2px solid var(--border-color);;border-bottom:  2px solid var(--border-color);;
- border-left: none;border-right: none;
+          border-left: none;border-right: none;
        }
+
+   .tabla1 .d0{
+      background: rgba(0, 9, 80, 1);
+      display: flex;justify-content:space-between;align-items: center;       /*width: 100%;height: 100%;*/
+      padding: 10px;;
+      white-space: nowrap;
+      /*text-align: left;*/
+    }
     
-    .tabla1 .d1{
+  .tabla1 .d1{
       background: rgba(0, 9, 80, 1);
-      display: flex;justify-content: end;align-items: center;
-       /*width: 100%;height: 100%;*/
+      display: flex;justify-content:space-between;align-items: center;       /*width: 100%;height: 100%;*/
       padding: 10px;;
       white-space: nowrap;
       /*text-align: left;*/
     }
-    .tabla1 .d0{
-      background: rgba(0, 9, 80, 1);
-            display: flex;justify-content: start;align-items: center;
-       /*width: 100%;height: 100%;*/
-      padding: 10px;;
-      white-space: nowrap;
-      /*text-align: left;*/
-    }
+   
 
     .tabla1 .d_s{
       background: rgba(0, 1, 9, 1);
@@ -186,24 +186,22 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
     }
         .tabla1 .d_cf{
       background: rgba(0, 0, 12, 1);
-            display: flex;justify-content: end;align-items: center;
+      display: flex;justify-content:space-between;align-items: center;
       padding: 10px;;
       white-space: nowrap;
-
-
-
     }
-       .tabla1 .d_cf3{
+
+    .pp{text-align: right;;white-space: nowrap;color: var(--text-color);} /*OJO  margin: 0.25rem  0.25rem 0.25rem  1rem  */
+
+    .tabla1 .d_cf3{
       background: rgba(0, 0, 12, 1);
       color: #875400ff;
             display: flex;justify-content: end;align-items: center;
       padding: 10px;;
       white-space: nowrap;
 
-
-
     }
-        .tabla1 .divx{
+    .tabla1 .divx{
           display: none;
       background: rgba(0, 0, 7, 0);
                   display: flex;justify-content: end;align-items: center;
@@ -234,7 +232,7 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
           
             <input type="text" id="texto" value="0.0">Timer: 60,000 ms 
             <input type="text" name="usuario" id="usuario" value="BTC">
-            <div id="quote0" style="background:rgb(10, 46, 0);"></div><br>
+            <div id="quote0" style="background:rgb(10, 46, 0);width: 80%; overflow:auto;"></div><br>
           
             <div id="quote1" style="background:rgb(26, 0, 46);"></div>
             <div id="quote2" style="background:rgb(26, 0, 46);"></div>
@@ -267,12 +265,12 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
             <div class="div1">
             <table class="tabla1" id="tabla_1"> 
               <tr>
-                <td><div class='d0'>SIMBOLO</div></td><td><div class='d1'>CANTIDAD</div></td><td><div class='d1'>CAPITAL INICIAL</div></td><td><div class='d1'>PRECIO DE COMPRA</div></td><td><div class='d1'>PRECIO ACTUAL</div></td><td><div class='d1'>DIFERENCIA</div></td><td><div class='d1'>GANANCIAS/PERDIDAS</div></td><td><div class='d1'>CAPITAL FINAL</div></td>
+                <td><div class='d0'><p>SIMBOLO</p><p></p></div></td><td><div class='d1'><p></p><p>CANTIDAD</div></td><td><div class='d1'><p></p><p>CAPITAL INICIAL</div></td><td><div class='d1'><p></p><p>PRECIO DE COMPRA</div></td><td><div class='d1'><p></p><p>PRECIO ACTUAL</p></div></td><td><div class='d1'><p></p><p>DIFERENCIA</p></div></td><td><div class='d1'><p></p><p>GANANCIAS/PERDIDAS</p></div></td><td><div class='d1'><p></p><p>CAPITAL FINAL</p></div></td>
               </tr>
               <tbody id='tbodyD'></tbody>
                 <tfoot>
                     <tr class="TR">
-                       <td><div class='divx'></div></td><td><div class='divx'></div></td><td><div class='divx1' id='capitalIniciaTotal'>00</div></td><td><div class='divx'></div></td><td><div class='divx'></div></td><td><div class='divx'></div></td><td><div class='divx1' id='diferenciaTotal'>0</div></td><td><div class='divx1' id='capitalFinalTotal'>0</div></td>
+                       <td><div class='divx'></div></td><td><div class='divx'></div></td><td><div class='divx1' id='capitalIniciaTotal'><p></p><p>00</p></div></td><td><div class='divx'></div></td><td><div class='divx'></div></td><td><div class='divx'></div></td><td><div class='divx1' id='diferenciaTotal'><p></p><p>0</p></div></td><td><div class='divx1' id='capitalFinalTotal'><p></p><p>0</p></div></td>
                     </tr>
               </tfoot>
                <!--  -->  
@@ -354,16 +352,28 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
     let e=1, C=2, d=4, simbolo='s', cantidad=0, capitalI=0, pCompra=0, pVenta=0, diferencia=0, gp=0, capitalF=0;
     
     for (let i = 1; i < 15; i++) {// ⭠ IMPRIME 
-    let TR= `<tr       id='tr_`  +i+`'`+` name='TR' class='TR'>`+
+
+    let TR= `<tr       id='tr_`  +i+`'`+` name='TR' class='TR'>`+ 
     `<td class='td_cf' id='td_sp`+i+`'><div class='d_s' name='SYMBOL`+i+`' id='p_s`+i+`'>`+simbolo+`</div></td>`+ 
-    `<td class='td_cf' id='td_ci`+i+`'><div class='d_cf' name='cantidad`+''+`'   id='p_c` +i+`'>`+F(cantidad   ,d)+`</div></td>`+                   /*               */ 
-    `<td class='td_cf' id='td_pc`+i+`'><div class='d_cf' name='cinicial`+''+`'   id='p_ci`+i+`'>`+F(capitalI   ,d)+`</div></td>`+                   /*name='L`+e+`'  */      
-    `<td class='td_cf' id='td_pc`+i+`'><div class='d_cf' name='compra`+''+`'     id='p_pc`+i+`'>`+F(pCompra    ,d)+`</div></td>`+                   /*name='L`+e+`'  */      
-    `<td class='td_cf' id='td_pv`+i+`'><div class='d_cf3' name='venta`+''+`'     id='p_pv`+i+`'>`+F(pVenta     ,d)+`</div></td>`+                   /*name='L`+e+`1' */      
-    `<td class='td_cf' id='td_dp`+i+`'><div class='d_cf' name='diferencia`+''+`' id='p_dp`+i+`'>`+F(diferencia ,d)+`</div></td>`+                   /*name='L`+e+`2' */      
-    `<td class='td_cf' id='td_c` +i+`'><div class='d_cf' name='profit`+''+`'     id='p_p` +i+`'>`+F(gp         ,d)+`</div></td>`+                   /*name='L`+e+`'  */      
-    `<td class='td_cf' id='td_cf`+i+`'><div class='d_cf' name='cfinal`+''+`'     id='p_cf`+i+`'>`+F(capitalF   ,d)+`</div></td>`+                   /*name='L`+e+`4' */ 
-    `</tr>`;
+    `<td class='td_cf' id='td_ci`+i+`'><div class='d_cf' ><p></p><p class="pp"  name='cantidad`+''+`'   id='p_c` +i+`'>`+F(cantidad   ,d)+`</p></div></td>`+                   /*               */ 
+    `<td class='td_cf' id='td_pc`+i+`'><div class='d_cf' ><p></p><p class="pp"  name='cinicial`+''+`'   id='p_ci`+i+`'>`+F(capitalI   ,d)+`</p></div></td>`+                   /*name='L`+e+`'  */      
+    `<td class='td_cf' id='td_pv`+i+`'><div class='d_cf' ><p></p><p class="pp"  name='compra`+''+`'     id='p_pc`+i+`'>`+F(pCompra    ,d)+`</p></div></td>`+                   /*name='L`+e+`1' */      
+    `<td class='td_cf' id='td_dp`+i+`'><div class='d_cf3'><p></p><p class="pp"  name='venta`+''+`'      id='p_pv`+i+`'>`+F(pVenta     ,d)+`</p></div></td>`+                   /*name='L`+e+`2' */      
+    `<td class='td_cf' id='td_c` +i+`'><div class='d_cf' ><p></p><p class="pp"  name='diferencia`+''+`' id='p_dp`+i+`'>`+F(diferencia ,d)+`</p></div></td>`+                   /*name='L`+e+`'  */      
+    `<td class='td_cf' id='td_p` +i+`'><div class='d_cf' ><p></p><p class="pp"  name='profit`+''+`'     id='p_p` +i+`'>`+F(gp         ,d)+`</p></div></td>`+ /*name='L`+e+`3' */
+    `<td class='td_cf' id='td_cf`+i+`'><div class='d_cf' ><p></p><p class="pp"  name='cfinal`+''+`'     id='p_cf`+i+`'>`+F(capitalF   ,d)+`</p></div></td>`+                   /*name='L`+e+`4' */ 
+    `</tr>`; 
+    /*
+    let TR= `<tr       id='tr_`  +i+`'`+` name='TR' class='TR'>`+ 
+    `<td class='td_cf' id='td_sp`+i+`'><div class='d_s' name='SYMBOL`+i+`' id='p_s`+i+`'>`+simbolo+`</div></td>`+
+    `<td class='td_cf' id='td_ci`+i+`'><div class='d_cf' name='cantidad`+''+`'   id='p_c` +i+`'>`+F(cantidad   ,d)+`</div></td>`+                  
+    `<td class='td_cf' id='td_pc`+i+`'><div class='d_cf' name='cinicial`+''+`'   id='p_ci`+i+`'>`+F(capitalI   ,d)+`</div></td>`+                       
+    `<td class='td_cf' id='td_pc`+i+`'><div class='d_cf' name='compra`+''+`'     id='p_pc`+i+`'>`+F(pCompra    ,d)+`</div></td>`+                       
+    `<td class='td_cf' id='td_pv`+i+`'><div class='d_cf3' name='venta`+''+`'     id='p_pv`+i+`'>`+F(pVenta     ,d)+`</div></td>`+                       
+    `<td class='td_cf' id='td_dp`+i+`'><div class='d_cf' name='diferencia`+''+`' id='p_dp`+i+`'>`+F(diferencia ,d)+`</div></td>`+                       
+    `<td class='td_cf' id='td_c` +i+`'><div class='d_cf' name='profit`+''+`'     id='p_p` +i+`'>`+F(gp         ,d)+`</div></td>`+                       
+    `<td class='td_cf' id='td_cf`+i+`'><div class='d_cf' name='cfinal`+''+`'     id='p_cf`+i+`'>`+F(capitalF   ,d)+`</div></td>`+                
+    `</tr>`; */
     tbodyD.innerHTML += TR;
     document.getElementById('p_s'+i).innerText=array[i-1];
     }
@@ -373,7 +383,7 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
         var n=0, cuentainicial=0, cuentafinal=0, sumaTotal_ci=0, sumaTotal_cf=0, array_ci=[], array_cf=[];
 
   function datos() { // ← FUNCION PARA SEPARAR 'precio' de 'quote': 
-     //  document.getElementById('quote0').textContent= "117500.00@2.7373@0.39445@1.27658@1.0215";
+      // document.getElementById('quote0').textContent= "117500.00@2.7373@0.39445@1.27658@1.0215";
     saludame();
     
     let quote0= document.getElementById('quote0').textContent;
