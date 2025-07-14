@@ -92,7 +92,7 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
       
       .header{
           grid-area: header;
-          background-color: rgba(13, 0, 31, 1);
+          background-color: rgba(0, 0, 0, 1);
           /*display: none;*/
       }
       .navbar{
