@@ -24,7 +24,7 @@
         --bg-card-color: rgb(40, 40, 40);      /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(0, 0%, 11%) */
         --pr1mary-color: rgb(192, 192, 192);/* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(228, 100%, 30%) */
         --text-color:rgba(205, 219, 220, 0.98);    /* PARA INICIAR EN MODO CLARO CAMBIAR A: hsl(214, 7%, 79%) */
-        --border-color: rgba(169, 169, 169,, 0.5);
+        --border-color: rgba(169, 169, 169,, 0.9);
         --border-tr-color: rgba(193, 193, 193, 0.5);
         --border-radius_tex: 0.25rem;  /* PARA ARCO INTERNO */
         --border-radius: 0.25rem;  /* PARA ARCO EXTERNO (ARCO INTERNO + PADDING)*/
@@ -191,7 +191,7 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
       white-space: nowrap;
     }
 
-    .pp{text-align: right;;white-space: nowrap;color: var(--text-color);} /*OJO  margin: 0.25rem  0.25rem 0.25rem  1rem  */
+    .pp{text-align: right;;white-space: nowrap;color: var(--text-color); background: rgba(39, 39, 39, 1);;} /*OJO  margin: 0.25rem  0.25rem 0.25rem  1rem  */
 
     .tabla1 .d_cf3{
       background: rgba(0, 0, 12, 1);
@@ -202,17 +202,15 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
 
     }
     .tabla1 .divx{
-          display: none;
       background: rgba(0, 0, 7, 0);
-                  display: flex;justify-content: end;align-items: center;
+      display: flex;justify-content:space-between;align-items: center;
       padding: 10px;;
       white-space: nowrap;
 
     }
        .tabla1 .divx1{
-          display: none;
       background: rgba(0, 0, 7, 1);
-                  display: flex;justify-content: end;align-items: center;
+      display: flex;justify-content:space-between;align-items: center;
       padding: 10px;;
       white-space: nowrap;
 
@@ -268,12 +266,9 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
                 <td><div class='d0'><p>SIMBOLO</p><p></p></div></td><td><div class='d1'><p></p><p>CANTIDAD</div></td><td><div class='d1'><p></p><p>CAPITAL INICIAL</div></td><td><div class='d1'><p></p><p>PRECIO DE COMPRA</div></td><td><div class='d1'><p></p><p>PRECIO ACTUAL</p></div></td><td><div class='d1'><p></p><p>DIFERENCIA</p></div></td><td><div class='d1'><p></p><p>GANANCIAS/PERDIDAS</p></div></td><td><div class='d1'><p></p><p>CAPITAL FINAL</p></div></td>
               </tr>
               <tbody id='tbodyD'></tbody>
-                <tfoot>
-                    <tr class="TR">
-                       <td><div class='divx'></div></td><td><div class='divx'></div></td><td><div class='divx1' id='capitalIniciaTotal'><p></p><p>00</p></div></td><td><div class='divx'></div></td><td><div class='divx'></div></td><td><div class='divx'></div></td><td><div class='divx1' id='diferenciaTotal'><p></p><p>0</p></div></td><td><div class='divx1' id='capitalFinalTotal'><p></p><p>0</p></div></td>
-                    </tr>
-              </tfoot>
-               <!--  -->  
+                <tfoot id='tfootD'>
+                   <tr> <td><div class='divx'></div></td><td><div class='divx'></div></td><td><div class='divx1'><p></p><p class="pp"  id='capitalIniciaTotal'>0</p></div></td><td><div class='divx'></div></td><td><div class='divx'></div></td><td><div class='divx'></div></td><td><div class='divx1'><p></p><p class="pp" id='diferenciaTotal'>0</p></div></td><td><div class='divx1'><p></p><p class="pp" id='capitalFinalTotal'>0</p></div></td> </tr> 
+                </tfoot>
             </table>
             </div>
         </div>
@@ -281,7 +276,7 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
     <footer class="footer">footer</footer>           
 
     <script>
-	function saludame(){// "122523.34802947@2.9760536969663@0.4759308538933@1.369319172081@1.0816661870274"
+	function saludame(){// "122523.34802947@2.9760536969663@0.4759308538933@1.369319172081@1.0816661870274" //////////////////////////////////////////////
                       //  "122528.24146987@2.9752721537366@0.47609867379437@1.369711692016@1.0816661870274"
      let texto='wwwwwwwwwww';
     var parametros = 
@@ -289,7 +284,7 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
       "nombre" : texto,
       "apellido" : "hurtado",
       "telefono" : "123456789"
-    }; 
+    };
     $.ajax({
       data: parametros,
       url: 'codigo_php01.php', 
@@ -307,7 +302,7 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
 
   } 
 
-  let TIMER=0, CONTADOR=0, price='', d1=13, precio1, old_price1=0 ,  r="rgba(255,0,0,0.95)", v='rgba(0,255,0,0.95)', b='#f4feffff',color4= '#875400ff', fiat='USD';
+  let TIMER=0, CONTADOR=0, price='', d1=13, precio1, old_price1=0 ,  r="rgba(255,0,0,0.95)", v='rgba(0,255,0,0.95)', b='#f4feffff', fiat='USD';
   let n3=8; 
   let array=['BTC','BTC','XRP','XRP','XLM','FARTCOIN','WLD','NEARUSDT','ICPUSDT','FETUSDT','RENDERUSDT','GRTUSDT','TIAUSDT','MANTAUSDT','PYTHUSDT','PEPEUSDT'];
   
@@ -363,7 +358,9 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
     `<td class='td_cf' id='td_p` +i+`'><div class='d_cf' ><p></p><p class="pp"  name='profit`+''+`'     id='p_p` +i+`'>`+F(gp         ,d)+`</p></div></td>`+ /*name='L`+e+`3' */
     `<td class='td_cf' id='td_cf`+i+`'><div class='d_cf' ><p></p><p class="pp"  name='cfinal`+''+`'     id='p_cf`+i+`'>`+F(capitalF   ,d)+`</p></div></td>`+                   /*name='L`+e+`4' */ 
     `</tr>`; 
-    /*
+    /* 
+    let TR2=
+    `<tr> <td><div class='divx'></div></td><td><div class='divx'></div></td><td><div class='divx1' id='capitalIniciaTotal'><p></p><p class="pp">00000</p></div></td><td><div class='divx'></div></td><td><div class='divx'></div></td><td><div class='divx'></div></td><td><div class='divx1' id='diferenciaTotal'><p></p><p class="pp">0</p></div></td><td><div class='divx1' id='capitalFinalTotal'><p></p><p class="pp">0</p></div></td> </tr>`
     let TR= `<tr       id='tr_`  +i+`'`+` name='TR' class='TR'>`+ 
     `<td class='td_cf' id='td_sp`+i+`'><div class='d_s' name='SYMBOL`+i+`' id='p_s`+i+`'>`+simbolo+`</div></td>`+
     `<td class='td_cf' id='td_ci`+i+`'><div class='d_cf' name='cantidad`+''+`'   id='p_c` +i+`'>`+F(cantidad   ,d)+`</div></td>`+                  
@@ -375,6 +372,7 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
     `<td class='td_cf' id='td_cf`+i+`'><div class='d_cf' name='cfinal`+''+`'     id='p_cf`+i+`'>`+F(capitalF   ,d)+`</div></td>`+                
     `</tr>`; */
     tbodyD.innerHTML += TR;
+    // tfootD.innerHTML = TR2; 
     document.getElementById('p_s'+i).innerText=array[i-1];
     }
     
@@ -383,7 +381,7 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
         var n=0, cuentainicial=0, cuentafinal=0, sumaTotal_ci=0, sumaTotal_cf=0, array_ci=[], array_cf=[];
 
   function datos() { // ← FUNCION PARA SEPARAR 'precio' de 'quote': 
-      // document.getElementById('quote0').textContent= "117500.00@2.7373@0.39445@1.27658@1.0215";
+      //document.getElementById('quote0').textContent= "117500.00@2.7373@0.39445@1.27658@1.0215";
     saludame();
     
     let quote0= document.getElementById('quote0').textContent;
@@ -424,7 +422,7 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
     let precioactual=[price1     ,price1      ,price2   ,price2   ,price3      ,price4    ,price5  ,0,0,0,0,0,0,0,0,0,0];// 'price6,price7,price8,price9,price10,price11,price12,price13,price14,price15,price16,price17'
 
     document.getElementById('total').textContent='TOTAL = ' + F(t , 4) + ' USDT'; 
-
+    let d=0, ni=0, nf=0;
     for (let i = 1; i < cantidadM.length+1; i++) {
 
       let cantidad= Number(cantidadM[i-1].replace(/,/g,'')),
@@ -440,6 +438,8 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
       document.getElementById('p_dp'+i).innerText=F(diferencia               ,4);
       document.getElementById('p_p' +i).innerText=F(ganancia                 ,4) + '' + ' ('+F((((Number(cuentaI)+ganancia)-cuentaI)*100)/cuentaI, 4 )+'%)';
       document.getElementById('p_cf'+i).innerText=F(Number(cuentaI)+ganancia ,4); 
+
+      document.getElementById('p_pv'+i).style.color='#875400ff';
       
       if(ganancia > 0)  {document.getElementById('p_p'+i).style.color=v; document.getElementById('p_cf'+i).style.color=v;}   
       if(ganancia < 0)  {document.getElementById('p_p'+i).style.color=r; document.getElementById('p_cf'+i).style.color=r;  }
@@ -454,7 +454,7 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
           ni5= Number(document.getElementById('p_ci5').textContent.replace(/,/g,'')),
           ni6= Number(document.getElementById('p_ci6').textContent.replace(/,/g,'')),
           ni7= Number(document.getElementById('p_ci7').textContent.replace(/,/g,''));
-       document.getElementById('capitalIniciaTotal').innerText= F((ni1+ni2+ni3+ni4+ni5+ni6+ni7),4);
+      ni= F((ni1+ni2+ni3+ni4+ni5+ni6+ni7),4);  document.getElementById('capitalIniciaTotal').innerText= ni;
        
       let nf1= Number(document.getElementById('p_cf1').textContent.replace(/,/g,'')),
           nf2= Number(document.getElementById('p_cf2').textContent.replace(/,/g,'')),
@@ -463,19 +463,25 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
           nf5= Number(document.getElementById('p_cf5').textContent.replace(/,/g,'')),
           nf6= Number(document.getElementById('p_cf6').textContent.replace(/,/g,'')),
           nf7= Number(document.getElementById('p_cf7').textContent.replace(/,/g,''));
-       document.getElementById('capitalFinalTotal').innerText= F((nf1+nf2+nf3+nf4+nf5+nf6+nf7),4);
+       nf= F((nf1+nf2+nf3+nf4+nf5+nf6+nf7),4); document.getElementById('capitalFinalTotal').innerText= nf;
         
-       let d=(nf1+nf2+nf3+nf4+nf5+nf6+nf7) - (ni1+ni2+ni3+ni4+ni5+ni6+ni7);
-       document.getElementById('diferenciaTotal').innerText=F((d) , 4)+ ' USDT' + ' ('+F(((d)*100)/(ni1+ni2+ni3+ni4+ni5+ni6+ni7), 4 )+'%)';
+       d=(nf1+nf2+nf3+nf4+nf5+nf6+nf7) - (ni1+ni2+ni3+ni4+ni5+ni6+ni7);
+       dt=F((d) , 4)+ ' USDT' + ' ('+F(((d)*100)/(ni1+ni2+ni3+ni4+ni5+ni6+ni7), 4 )+'%)'; document.getElementById('diferenciaTotal').innerText= dt;
+
 
       if(d > 0)  {document.getElementById('diferenciaTotal').style.color=v;document.getElementById('capitalFinalTotal').style.color=v;}   
       if(d < 0)  {document.getElementById('diferenciaTotal').style.color=r;document.getElementById('capitalFinalTotal').style.color=r;  } 
-      if(d == 0) {document.getElementById('diferenciaTotal').style.color=b;document.getElementById('capitalFinalTotal').style.color=b;} 
-      
-      document.getElementById('p_pv'+i).style.color=color4;
+      if(d == 0) {document.getElementById('diferenciaTotal').style.color=b;document.getElementById('capitalFinalTotal').style.color=b;}
+    }
+    /* 
+    document.getElementById('capitalIniciaTotal').innerText= ni;
+    document.getElementById('capitalFinalTotal').innerText= nf;
+    document.getElementById('diferenciaTotal').innerText= dt;
 
-    } 
-
+    if(d > 0)  {document.getElementById('diferenciaTotal').style.color=v;document.getElementById('capitalFinalTotal').style.color=v;}   
+      if(d < 0)  {document.getElementById('diferenciaTotal').style.color=r;document.getElementById('capitalFinalTotal').style.color=r;  } 
+      if(d == 0) {document.getElementById('diferenciaTotal').style.color=b;document.getElementById('capitalFinalTotal').style.color=b;}
+     */
     ////////
     document.getElementById('SALUDAME').click();   
     ////////
