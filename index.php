@@ -289,7 +289,7 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
       "nombre" : texto,
       "apellido" : "hurtado",
       "telefono" : "123456789"
-    };
+    }; 
     $.ajax({
       data: parametros,
       url: 'codigo_php01.php', 
@@ -307,7 +307,7 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
 
   } 
 
-  let TIMER=0, CONTADOR=0, price='', d1=13, precio1, old_price1=0 ,  r="rgba(255,0,0,0.95)", v='rgba(0,255,0,0.95)', b='#f4feffff', fiat='USD';
+  let TIMER=0, CONTADOR=0, price='', d1=13, precio1, old_price1=0 ,  r="rgba(255,0,0,0.95)", v='rgba(0,255,0,0.95)', b='#f4feffff',color4= '#875400ff', fiat='USD';
   let n3=8; 
   let array=['BTC','BTC','XRP','XRP','XLM','FARTCOIN','WLD','NEARUSDT','ICPUSDT','FETUSDT','RENDERUSDT','GRTUSDT','TIAUSDT','MANTAUSDT','PYTHUSDT','PEPEUSDT'];
   
@@ -470,7 +470,9 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
 
       if(d > 0)  {document.getElementById('diferenciaTotal').style.color=v;document.getElementById('capitalFinalTotal').style.color=v;}   
       if(d < 0)  {document.getElementById('diferenciaTotal').style.color=r;document.getElementById('capitalFinalTotal').style.color=r;  } 
-      if(d == 0) {document.getElementById('diferenciaTotal').style.color=b;document.getElementById('capitalFinalTotal').style.color=b;}   
+      if(d == 0) {document.getElementById('diferenciaTotal').style.color=b;document.getElementById('capitalFinalTotal').style.color=b;} 
+      
+      document.getElementById('p_pv'+i).style.color=color4;
 
     } 
 
