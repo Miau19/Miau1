@@ -84,9 +84,9 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
           gap : 10px;
           grid-template:
           "header" auto
-          "navbar" 60px
+          "navbar" 20px
           "main" auto
-          "sidebar" 40px
+          "sidebar" 20px
           "footer" 40px;
       }
       
@@ -123,7 +123,7 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
              "header  navbar" auto
              "sidebar main"   auto
              "footer  footer"  40px /
-              200px   auto ;
+              20px   auto ;
           }
 
       }
@@ -133,7 +133,7 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
              "header  header header" auto
              "navbar  main  sidebar" auto
              "footer  footer footer"  60px /
-              200px   auto   200px;
+              20px   auto   20px;
           }
   
       }
@@ -222,7 +222,7 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
     </style>
 </head>
 <body class="grid_container"   onload="onload()">
-    <header class="header">header header
+    <header class="header">header
         <div style="width: auto;">
             <div style="display: flex;justify-content: start;align-items: center;    color: var(--text-color);font-family: var(--font-family2); font-weight: var(--font-weight2);">
             <div id="reloj"></div>
@@ -260,9 +260,9 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
             </div>
         </div>
     </header>
-    <nav class="navbar">navbar</nav>
-    <aside class="sidebar">sidebar</aside>
-    <article class="main">main
+    <nav class="navbar"></nav>
+    <aside class="sidebar"></aside>
+    <article class="main">
         <div class="DIV">
             <div class="div1">
             <table class="tabla1" id="tabla_1"> 
@@ -283,8 +283,9 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
     <footer class="footer">footer</footer>           
 
     <script>
-	function saludame(){   
-    let texto='wwwwwwwwwww';
+	function saludame(){// "122523.34802947@2.9760536969663@0.4759308538933@1.369319172081@1.0816661870274"
+                      //  "122528.24146987@2.9752721537366@0.47609867379437@1.369711692016@1.0816661870274"
+     let texto='wwwwwwwwwww';
     var parametros = 
     {
       "nombre" : texto,
@@ -305,6 +306,7 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
         $('#quote0').html(mensaje);
       }
     });
+
   } 
 
   let TIMER=0, CONTADOR=0, price='', d1=13, precio1, old_price1=0 ,  r="rgba(255,0,0,0.95)", v='rgba(0,255,0,0.95)', b='#f4feffff', fiat='USD';
@@ -371,7 +373,7 @@ color: var(--text-color); font-weight: var(--font-weight1);font-family: var(--fo
         var n=0, cuentainicial=0, cuentafinal=0, sumaTotal_ci=0, sumaTotal_cf=0, array_ci=[], array_cf=[];
 
   function datos() { // ← FUNCION PARA SEPARAR 'precio' de 'quote': 
-    // document.getElementById('quote0').textContent= "117500.00@2.7373@0.39445@1.27658@1.0215";
+     //  document.getElementById('quote0').textContent= "117500.00@2.7373@0.39445@1.27658@1.0215";
     saludame();
     
     let quote0= document.getElementById('quote0').textContent;
